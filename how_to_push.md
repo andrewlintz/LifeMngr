@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
 <body>
+
 <h1>  Hello World</h1>
 	<p>
 		This is a test document to demonstrate that i can push new files to Github.
@@ -37,4 +33,3 @@
 	</ul>
 
 </body>
-</html>
