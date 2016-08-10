@@ -1,0 +1,241 @@
+<template name="versionlogPage">
+  <h1>Version Log</h1>
+
+-------------------------------------------------------<br>
+	<strong>MISSION:</strong>
+		<p>
+		To hook up a database to a questionair to log daily habits & accomplishments.
+		</p>
+
+<ul>
+	<li>
+		<strong>4.0.003</strong>
+		<p>
+		To Push to GitHub Before adding anything further. 
+		</p>
+	</li>
+	<li>
+		<strong>4.0.002</strong>
+		<p>
+		Success in establishing the Database.	
+		</p>
+	</li>
+	<li>
+		<strong>4.0.001</strong>
+		<p>
+			Add a second Database.
+		</p>
+	</li>
+--------------------------------------------------------
+	<li>
+		<strong>3.9.089</strong>
+		<p>
+			Added a counter
+		</p>
+	</li>	
+	<li>
+		<strong>3.9.088</strong>
+		<p>
+			Added events for checking the check box, and a helper to add function to the fetching DB results, if checked returned checked, else  ""; then added css styling to the class "checked" so that if checked becomes stylized. 
+		</p>
+	</li>
+	<li>
+		<strong>3.9.087</strong>
+		<p>
+			Added console.log to the if completed, gras _id: documentId and sets to true/false
+		</p>
+	</li>
+	<li>
+		<strong>3.9.086</strong>
+		<p>
+			Added Check Boxes to the "to do's"
+		</p>
+	</li>
+	<li>
+		<strong>3.9.084</strong>
+		<p>
+			Added the function to lose focus upon hitting the return & esc Key. 
+		</p>
+	</li>
+	<li>
+		<strong>3.9.080</strong>
+		<p>
+			Did some styling corrections.  The hover and focus ws going global, and I really wanted it to remain just with the Gyst Tester. 
+		</p>
+	</li>
+	<li>
+		<strong>3.9.079</strong>
+		<p>
+			Key logger with Keyup save to the database & Styling css
+		</p>
+	</li>
+	<li>
+		<strong>3.9.072</strong>
+		<p>
+			continuing the <a href="http://meteortips.com/second-meteor-tutorial/managing-todos/">meteor tips 2nd tutorial</a> to add an Edit button.
+		</p>	
+	</li>
+	<li>
+		<strong>3.9.070</strong>
+		<p>
+			<strong>Success!</strong> I've successfully followed the tutorial of creating a basic todo's app, with a input form field that inserts into the database an entry, then lists back the entry, as well as a delete button. This is all being done within a routed app. 
+		</p>
+		<p>
+			After this, I will continue to follow the tutorial to add an edit feature, as well as what ever other features it presents.
+		</p>
+		<p>
+			Afterwhich I will then set off to apply what I have learned modified to create a form to log my Day's activity GYST. 
+		</p>
+	</li>
+	<li>
+		<strong>3.9.069</strong>
+		<p>
+			SUCCESS! multiple templates rendered on a single view with spacebars accomplished with routing! 
+		</p>
+		<p> Here's How:</p>
+		<code>
+			Router.route('/gyst', function () {
+  			this.render('gystPage', 'todoItem');
+  			this.layout('mainSide');
+			});
+		</code>
+		<p>
+			Notice the: 
+		</p>
+		<code>
+			this.render('gystPage', 'todoItem');
+		</code>
+
+		<p>
+			Skiped a version as it was minor tweaks to make it work.
+		</p>
+	</li>
+	<li>
+		<strong>3.9.067</strong>
+		<p>
+			To address the issure, on the routers page, on the routed page i added
+		</p>
+			<code>this.render('todoItem')</code>
+		<p>
+			with
+		</p>
+			<code>
+				Router.route('/gyst', function () {
+ 				this.render('gystPage');
+ 				this.render('todoItem')
+  				this.layout('mainSide');
+				});
+			</code>
+	</li>
+	<li>
+		<strong>Issue</strong>
+		<p>
+			Following the tutorial, the start off real simple, where I already have a routed system.  everything is working ok up to this point of following the tutorial.  The tutorial wants me to have multiple templates on a single .html.  Currently on the router, I believe I have to have a routed entry for every template.  I have yet demonstrated nor seen how to have multiple templates on a single view NESTed on a page routed in a sub directory. 
+		</p>
+	</li>
+	<li>
+		<strong>3.9.066</strong>
+		<p>Cleaning up the Gyst View by removing the stupid click me button & counter</p>
+	</li>
+	<li>
+		<strong>3.9.065:</strong>
+		<p>
+			Successfully created on the GYST view, a Space bar & a template helper that makes a call to the mongo DB to find and display enteries. :D
+		</p>
+	</li>
+	<li>
+		<strong>3.9.064</strong>
+		<p>Attempt multiple templates on a single view using the space bars</p>
+	</li>
+	<li>
+		<strong>3.9.063:</strong>
+		Success establish a Mongo DB collection "tester" & and insert an items via consol.log
+	</li>
+	<li>
+		<strong>Issue</strong>
+		<p>currently concerned about how to have multiple templates on a single view, or maybe i'm going about this all wrong. Perhaps it isn't a template but a ____?____. </p>
+
+		<p>Also concerned about how to back up, migrate, restore a mongo db collection.  And should the app be one big collection or multiple collections.</p>
+	</li>
+	<li>
+		<strong>3.9.062:</strong>
+		Following <a href="http://meteortips.com/second-meteor-tutorial/getting-started/">This tutorial on a making a basic app with Meteor Iron Routing, to fulfill the mission of hooking up DB</a>
+	</li>
+	<li>
+		<strong>3.9.061:</strong> 
+		Success at DeBugging the Console Log!!!
+
+		import './routes.js';
+		import '../lib/routes.js';
+
+	</li>
+	<li>
+		<strong>Current Issue:</strong>
+		Think it was a routing issue
+	</li>
+	<li>
+		<strong>3.9.060:</strong> 
+		Moved: 
+		import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+		from body.js to main.js
+	</li>
+	<li>
+		<strong>Current Issue:</strong>
+		
+	</li>
+	<li>
+		<strong>3.9.059:</strong> 
+		Removed 
+		import { ReactiveDict } from 'meteor/reactive-dict' from the body.js
+	</li>
+	<li>
+		<strong>Current Issue:</strong>
+		
+	</li>
+	<li>
+		<strong>3.9.057:</strong> 
+		Removed 
+		import './main.html'; from the main.js
+	</li>
+	<li>
+		<strong>Current Issue:</strong>
+		install.js:101Uncaught Error: Cannot find module './routes.js'  
+		Something about body.js:5  removed import './body.html';fom body.js
+	</li>
+	<li>
+		<strong>3.9.056:</strong> 
+		<strong>emboldeden words</strong> in the version log page. Also aded page seperators and entery template
+	</li>
+	<li>
+		<strong>MISSION:</strong>
+		Hook up Mongo DB and a basic entery inputer by following a tutorial
+	</li>
+	<li>
+		<strong>Objective:</strong>
+	</li>
+	<li>
+		<strong>Current Issue:</strong>
+		install.js:101 Uncaught Error: Cannot find module './main.html'
+	</li>
+
+--------------------------------------------------------
+	<li>
+		3.9.055: 
+		updating Verion log page to have first listed post.
+	</li>
+	<li>
+		MISSION:
+		Hook up Mongo DB and a basic entery inputer by following a tutorial
+	</li>
+	<li>
+		Objective:
+	</li>
+	<li>
+		Current Issue:
+		install.js:101 Uncaught Error: Cannot find module './main.html'
+	</li>
+-------------------------------------------------------
+
+</ul>
+</template>

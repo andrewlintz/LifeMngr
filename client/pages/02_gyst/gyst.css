@@ -1,0 +1,35 @@
+[name=testerItem]{
+    border:none;
+    font-family: "Times New Roman";
+    font-size: 100%;
+    padding:0.15em;
+}
+
+[name=testerItem]:Hover {
+	background-color: #f9f9f9;
+    cursor:pointer;
+}
+
+[name=testerItem]:focus {
+	background-color: #f9f9f9;
+    cursor:default;
+    outline:none;
+}
+
+
+
+
+.checked{
+    background-color:#f0f0f0;
+    color:#666;
+}
+
+.checked [name=testerItem]{
+    text-decoration: line-through;
+}
+
+.checked [name=testerItem],
+.checked [name=testerItem]:hover,
+.checked [name=testerItem]:focus{
+    background-color:#f0f0f0;
+}
