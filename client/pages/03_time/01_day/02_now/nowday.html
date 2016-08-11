@@ -1,5 +1,44 @@
-<template name="dayPage">
+<template name="nowdayPage">
+	{{> dayInput}}
+	{{> daycounter}}
+
+</template>
+
+<template name="dayInput">
   <h1>What you Got going on Today</h1>
+
+  <form class="form-horizontal" id="blogForm">
+  <div class="form-group">
+    <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of your day">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputStory" class="col-sm-2 control-label">Story</label>
+    <div class="col-sm-10">
+      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of the day"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Brush you teeth?
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+
+ <p>
+ 	---------------------------------
+ </p> 
 <ul>
 	<li> How did you Sleep?</li>
 	<li><input type="text" name="sleep" placeholder="  Tell me how well you Slept"></li>
@@ -59,8 +98,10 @@
 	<li>time</li>
 	</ul>
 
-  <button>Click Me</button>
+  <button>Submit</button>
+  </template>
+
+<template name="daycounter">
   <p>You've pressed the button {{counter}} times.</p>
+ 
 </template>
-
-
