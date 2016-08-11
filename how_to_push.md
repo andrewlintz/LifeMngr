@@ -1,9 +1,6 @@
 <body>
 
-<h1>  Hello World</h1>
-	<p>
-		This is a test document to demonstrate that i can push new files to Github.
-	</p>
+<h1>  Git tips reminder</h1>
 
 	- git clone  : pulls repository into our local directory
 			
