@@ -3,10 +3,10 @@ Template.dayInput.events({
 		e.preventDefault();
 		var headline = $('#dayHeadline').val();
 		var story = $('#dayStory').val();
-		alert(headline + "" + story);
+		Meteor.call = $('#submitPost', headline, story);
+		alert(headline + " " + story);
 	}
 });
-
 
 Template.daycounter.onCreated(function daycounterOnCreated() {
   // counter starts at 0

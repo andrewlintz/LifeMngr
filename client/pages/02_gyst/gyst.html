@@ -13,14 +13,12 @@
 
 </template>
 
-<template name="testerCount">
-		{{#if totalTester}}
-		<p>
-			You have completed {{completedTester}} out of {{totalTester}} testers 
-		</p>
-		{{/if}}
+<template name="addTesteritem">
+    <form>
+        Create a Tester Item:
+        <input type="text" placeholder="Type a tester item here..." name="testeritemName">
+    </form>
 </template>
-
 
 <template name="testerItem">
     <li class="{{checked}}">
@@ -30,10 +28,12 @@
     </li>
 </template>
 
-<template name="addTesteritem">
-    <form>
-        Create a Tester Item:
-        <input type="text" placeholder="Type a tester item here..." name="testeritemName">
-    </form>
+<template name="testerCount">
+    {{#if totalTester}}
+    <p>
+      You have completed {{completedTester}} out of {{totalTester}} testers 
+    </p>
+    {{/if}}
 </template>
+
 
