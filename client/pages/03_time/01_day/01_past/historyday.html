@@ -3,19 +3,52 @@
 		Hello World of the Past!
 	</h1>
 
-	<a href="/time/day">Input for the Day</a>
+<div class="container">
+	<div class="row">
+		<a href="/time/day">Input for the Day</a>
+	</div>
+</div>
 
-	<ul>
-  		{{#each dayHistory}}
-			{{> dayHistoryItem}}
-		{{/each}}
-	</ul>
+	<br>
+
+<div class="container">
+	<div class="row">
+  		<ul>
+  			{{#each ester}}
+				{{> esterItem}}
+				{{> storyItem}}
+  			{{/each}}
+  		</ul>
+  	</div>
+</div>  	
 
 </template>
 
-<template name="dayHistoryItem">
-	
-	<p>Hello</p>
-    	<input type="text" value="{{headline}}" name="daysheadlineItem">
-    
+
+
+<template name="esterItem">
+ <div class="container">   
+ 	<div class="row">
+    	<li>
+    		<label for="inputHeadline" class="col-sm-2 control-label">Headline <a href="" class="delete-esteritem">	Delete </a></label>	
+    		<div class="col-sm-10">
+    			<textarea class="form-control" rows="2" value="{{headline}}" name="esterItem"></textarea>
+    		</div>
+    	</li>
+    </div>
+ </div>   
 </template>
+
+<template name="storyItem">
+ <div class="container">   
+ 	<div class="row">
+    	<li>
+    		<label for="inputStory" class="col-sm-2 control-label">The Day's Story <a href="" class="delete-storyitem">	Delete </a></label>	
+    		<div class="col-sm-10">
+    			<textarea class="form-control" rows="5" value="{{story}}" name="storyItem"></textarea>
+    		</div>
+    	</li>
+    </div>
+ </div>   
+</template>
+
