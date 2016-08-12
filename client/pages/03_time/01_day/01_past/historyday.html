@@ -1,0 +1,21 @@
+<template name="historydayPage">
+	<h1>
+		Hello World of the Past!
+	</h1>
+
+	<a href="/time/day">Input for the Day</a>
+
+	<ul>
+  		{{#each dayHistory}}
+			{{> dayHistoryItem}}
+		{{/each}}
+	</ul>
+
+</template>
+
+<template name="dayHistoryItem">
+	
+	<p>Hello</p>
+    	<input type="text" value="{{headline}}" name="daysheadlineItem">
+    
+</template>
