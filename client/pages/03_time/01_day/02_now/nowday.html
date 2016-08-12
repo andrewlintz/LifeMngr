@@ -1,14 +1,19 @@
 <template name="nowdayPage">
 	{{> dayInput}}
-	{{> daycounter}}
-
+	{{> dayheadlineNstory}}
+	{{> collapseCity}}
+	{{> tobeMade}}
 </template>
 
 <template name="dayInput">
   <h1>What you Got going on Today</h1>
 
     <a href="/time/daypast">Review the Day's Past</a>
+</template>
 
+
+
+<template name="dayheadlineNstory">
   <form class="form-horizontal" id="blogForm">
   <div class="form-group">
     <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
@@ -37,6 +42,7 @@
     </div>
   </div>
 </form>
+</template>
 
 
 
@@ -48,10 +54,36 @@
 
 
 
+<template name="collapseCity">
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+<div class="collapse" id="collapseExample2">
+  <div class="card card-block">
+    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+  </div>
+</div>
+
+</template>
 
 
 
 
+
+
+
+
+<template name="tobeMade">
  <p>
  	---------------------------------
  </p> 
@@ -116,8 +148,3 @@
 
   <button>Submit</button>
   </template>
-
-<template name="daycounter">
-  <p>You've pressed the button {{counter}} times.</p>
- 
-</template>
