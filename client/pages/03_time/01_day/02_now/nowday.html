@@ -5,15 +5,20 @@
 	{{> tobeMade}}
 </template>
 
-<template name="dayInput">
-  <h1>What you Got going on Today</h1>
+<!--   Below is the Heading Lable  -->
 
-    <a href="/time/daypast">Review the Day's Past</a>
+<template name="dayInput">
+  <h1>Great Day to be Alive!</h1>
+
+    <a href="/time/daypast">Day's History</a>
 </template>
 
 
+<!--   ////  Healine & Story ////  -->
+
 
 <template name="dayheadlineNstory">
+
   <form class="form-horizontal" id="blogForm">
   <div class="form-group">
     <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
@@ -21,21 +26,14 @@
       <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of your day">
     </div>
   </div>
+
   <div class="form-group">
     <label for="inputStory" class="col-sm-2 control-label">Story</label>
     <div class="col-sm-10">
       <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of the day"></textarea>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Brush you teeth?
-        </label>
-      </div>
-    </div>
-  </div>
+
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button id="submtPost" type="submit" class="btn btn-default">Submit</button>
@@ -48,35 +46,572 @@
 
 
 
-
+<!--   ////  Collapse City ////  -->
 
 
 
 
 
 <template name="collapseCity">
+
+<!-- //// SLEEP //// -->
+
 <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-    Button with data-target
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="false" aria-controls="lastnightsleep">
+    Last Night's Sleep
   </button>
+
+<div class="collapse" id="lastnightsleep">
+  <div class="card card-block">
+	
+	<form class="form-horizontal" id="blogForm">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How did you sleep lastnight?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Tell me the Story of your Dreams lastnight.">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
 </p>
-<div class="collapse" id="collapseExample">
+
+<!-- //// WAKE //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
+    Morning wake!
+  </button>
+
+<div class="collapse" id="morning">
   <div class="card card-block">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+	
+	<form class="form-horizontal" id="blogForm">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="When did you wake up?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="What time did you get out of bed?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
   </div>
 </div>
-<div class="collapse" id="collapseExample2">
+</p>
+
+<!-- //// Mind //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" aria-expanded="false" aria-controls="mind">
+    Mind
+  </button>
+
+<div class="collapse" id="mind">
   <div class="card card-block">
-    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Mood?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Psyche?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What's your creative thoughts?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Opinion?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your ideas / Inventions?">
+   		 	</div>
+ 		 </div>
+ 	</form> 	
+
   </div>
 </div>
+</p>
+
+<!-- //// AGENDA //// -->
+
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" aria-expanded="false" aria-controls="agenda">
+    Agenda
+  </button>
+
+<div class="collapse" id="agenda">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What is your Mission for today">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What is your Objective for today">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What is your Tasks & Todos">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What is your Job / Career">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// HEALTH //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#health" aria-expanded="false" aria-controls="health">
+    Health
+  </button>
+
+<div class="collapse" id="health">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Health/ feeling an pains?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Poop / Pee?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+
+<!-- //// HYGIENE //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#hygiene" aria-expanded="false" aria-controls="hygiene">
+    Hygiene
+  </button>
+
+<div class="collapse" id="hygiene">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Brush your teeth?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Shower?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Shave?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="How are you dressed?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// FENGSHUI //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#fengshui" aria-expanded="false" aria-controls="copy">
+    Fengshui
+  </button>
+
+<div class="collapse" id="fengshui">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Is your Home tighty,  clean, organize?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Is your Car tighty,  clean, organize?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Is your workspace tighty,  clean, organize?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Chores todo">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// EXERCISE //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exercies" aria-expanded="false" aria-controls="exercies">
+    Exercise
+  </button>
+
+<div class="collapse" id="exercies">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What did you do for Exercise?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+			<div class="checkbox">
+		   		<label>
+      				<input type="checkbox"> Did you do your morning Stretches?
+    			</label>
+    		</div>
+  </div>
+</div>
+</p>
+
+<!-- //// DIET //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#diet" aria-expanded="false" aria-controls="diet">
+    Diet
+  </button>
+
+<div class="collapse" id="diet">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="General Appetite">
+   		 	</div>
+ 		 </div>
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Breakfast">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Lunch">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Snack">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Dinner">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Deserts">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Drinks Alcohol & Soda">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Water">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Fruit">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Smokes & Drugs">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// MONEY //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#money" aria-expanded="false" aria-controls="money">
+    Money
+  </button>
+
+<div class="collapse" id="money">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Money Spent?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Borrowed?">
+   		 	</div>
+ 		 </div>
+
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Money Earned?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Saved?">
+   		 	</div>
+ 		 </div>
+ 		 <div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="dreamDiary" placeholder="Budget.">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// TIME //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#time" aria-expanded="false" aria-controls="time">
+    Time
+  </button>
+
+<div class="collapse" id="time">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Major events happen in the world">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// PEOPLE //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#people" aria-expanded="false" aria-controls="people">
+    People
+  </button>
+
+<div class="collapse" id="people">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="who did you engage with today?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// STUFF & THINGS //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#things" aria-expanded="false" aria-controls="things">
+    Stuff & Things
+  </button>
+
+<div class="collapse" id="things">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="What's up with your stuff?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// LOVE //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#love" aria-expanded="false" aria-controls="love">
+    Love
+  </button>
+
+<div class="collapse" id="love">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Love?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// SPIRT //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#spirit" aria-expanded="false" aria-controls="spirit">
+    Spirit
+  </button>
+
+<div class="collapse" id="spirit">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="The God within me acknowldges the god within you?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// LOCATION //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#location" aria-expanded="false" aria-controls="location">
+    Location
+  </button>
+
+<div class="collapse" id="location">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Where are you at / have been?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
 
 </template>
 
 
+<!-- //// COPY & PASTE TEMPLATE BELOW //// -->
+
+
+<template name="copythis">
+
+<!-- //// COPY //// -->
+
+	<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#copy" aria-expanded="false" aria-controls="copy">
+    Copy
+  </button>
+
+<div class="collapse" id="copy">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Brush your teeth?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+</template>
 
 
 
@@ -88,63 +623,10 @@
  	---------------------------------
  </p> 
 <ul>
-	<li> How did you Sleep?</li>
-	<li><input type="text" name="sleep" placeholder="  Tell me how well you Slept"></li>
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> Did you have any dreams?
-    		</label>
-    	</div>
-    </li>
-	<li><input type="text" name="sleep" placeholder="  Tell me the story"></li>
-	<li>When did you wake up?</li><input type="text" name="time_woke_up" placeholder="  When?">
-	<li>When did you get out of Bed</li><input type="text" name="time_got_out_of_bed" placeholder="  When?">
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> Did you do your morning Stretches?
-    		</label>
-    	</div>
-    </li>
-	<li>Great Day to be Alive !</li>
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> Shower?
-    		</label>
-    	</div>
-	</li>
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> Shave?
-    		</label>
-    	</div>
-	</li>
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> Brush Teeth?
-    		</label>
-    	</div>
-    </li>
-	<li>
-		<div class="checkbox">
-		    <label>
-      			<input type="checkbox"> How you Dress?
-    		</label>
-    	</div>
-    </li>
-    <li>What is your Mission</li>
-	<li>What's your Objective for the Day?</li>
-	<li>Your Agenda</li>
-	<li>What is your tasks?</li>
-	<li>Diet</li>
-	<li>Exercise</li>
-	<li>money</li>
-	<li>time</li>
-	</ul>
 
-  <button>Submit</button>
+
+	<li>nothing else to be added ATM</li>
+
+
+</ul>
   </template>
