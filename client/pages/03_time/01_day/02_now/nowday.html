@@ -1,6 +1,5 @@
 <template name="nowdayPage">
 	{{> dayInput}}
-	{{> dayheadlineNstory}}
 	{{> collapseCity}}
 	{{> tobeMade}}
 </template>
@@ -14,8 +13,8 @@
 </template>
 
 
-<!--   ////  Healine & Story ////  -->
-
+<!--   ////  Healine & Story ////  --
+	{{> dayheadlineNstory}}
 
 <template name="dayheadlineNstory">
 
@@ -43,16 +42,46 @@
 </template>
 
 
-
+-->
 
 
 <!--   ////  Collapse City ////  -->
 
 
 
-
+<!--   ////  Today's Story ////  -->
 
 <template name="collapseCity">
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#todaysstory1" aria-expanded="false" aria-controls="todaysstory1">
+    Today's Story
+  </button>
+
+<div class="collapse" id="todaysstory1">
+  <form class="form-horizontal" id="todaysstory">
+  <div class="form-group">
+    <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of your day">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputStory" class="col-sm-2 control-label">Story</label>
+    <div class="col-sm-10">
+      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of the day"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="submtPost" type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+</p>
+
 
 <!-- //// SLEEP //// -->
 
@@ -533,27 +562,27 @@
 </div>
 </p>
 
-<!-- //// PEOPLE //// -->
+<!-- //// LOCATION //// -->
 
 <p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#people" aria-expanded="false" aria-controls="people">
-    People
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#location" aria-expanded="false" aria-controls="location">
+    Location
   </button>
 
-<div class="collapse" id="people">
+<div class="collapse" id="location">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="who did you engage with today?">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Where are you at / have been?">
    		 	</div>
  		 </div>
  	</form>
  	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Gift Idea for person">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Wheres a place you want to go?">
    		 	</div>
  		 </div>
  	</form>
@@ -561,6 +590,7 @@
   </div>
 </div>
 </p>
+
 
 <!-- //// STUFF & THINGS //// -->
 
@@ -590,6 +620,35 @@
   		<div class="form-group">
     		<div class="col-sm-10">
       			<input type="text" class="form-control" id="howdidUsleep" placeholder="Warranty List">
+   		 	</div>
+ 		 </div>
+ 	</form>
+
+  </div>
+</div>
+</p>
+
+<!-- //// PEOPLE //// -->
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#people" aria-expanded="false" aria-controls="people">
+    People
+  </button>
+
+<div class="collapse" id="people">
+  <div class="card card-block">
+	
+	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="who did you engage with today?">
+   		 	</div>
+ 		 </div>
+ 	</form>
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Gift Idea for person">
    		 	</div>
  		 </div>
  	</form>
@@ -662,31 +721,37 @@
 </div>
 </p>
 
-<!-- //// LOCATION //// -->
+<!-- //// Companion: pets & garden //// -->
 
 <p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#location" aria-expanded="false" aria-controls="location">
-    Location
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pets" aria-expanded="false" aria-controls="pets">
+    Companions: Pets & Garden
   </button>
 
-<div class="collapse" id="location">
+<div class="collapse" id="pets">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Where are you at / have been?">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Type of Companion">
    		 	</div>
  		 </div>
  	</form>
  	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Wheres a place you want to go?">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Description of Companion: Photo, Name, Age, Sex, Weight,">
    		 	</div>
  		 </div>
  	</form>
-
+ 	<form class="form-horizontal">
+  		<div class="form-group">
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Medical history">
+   		 	</div>
+ 		 </div>
+ 	</form>
   </div>
 </div>
 </p>
@@ -695,7 +760,7 @@
 
 <p>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#society" aria-expanded="false" aria-controls="society">
-    Copy
+    Society & Government
   </button>
 
 <div class="collapse" id="society">
