@@ -7,7 +7,5 @@ Meteor.startup(() => {
 
 Meteor.methods({
 	'submitsPost': function(headline, story){
-		console.log(headline);
-		console.log(story);
 	}
 });

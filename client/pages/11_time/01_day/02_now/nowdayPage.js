@@ -26,7 +26,6 @@ Template.collapseCity.events({
         story: story,
         createdAt: new Date()
     });
-    console.log("You have just added " + headline + " " + story + " successfully!");
-  }
+   }
 });
 

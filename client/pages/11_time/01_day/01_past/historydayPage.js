@@ -25,7 +25,6 @@ Template.esterItem.events({
 	'keyup [name=esterItem]': function(event){
     if(event.which == 13 || event.which == 27){
     	$(event.target).blur();
-        console.log("You tapped the Return or Escape key");
     } else {
         var documentId = this._id;
         var esterItem = $(event.target).val();
@@ -47,7 +46,6 @@ Template.storyItem.events({
 	'keyup [name=storyItem]': function(event){
     if(event.which == 13 || event.which == 27){
     	$(event.target).blur();
-        console.log("You tapped the Return or Escape key");
     } else {
         var documentId = this._id;
         var storyItem = $(event.target).val();
