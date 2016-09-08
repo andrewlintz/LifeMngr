@@ -32,39 +32,55 @@ Template.agendaInput.events({
 
 /////// cards //////
 
-Template.currentMission.events({
+////////* Mission Events *//////
+
+Template.addmissionItem.events({
     /// events go here
-    'submit currentMission': function(event){
+    'submit form': function(event){
     event.preventDefault();
-    var currentmissionName = $('[name="currentmissionName"]').val();
+    var missionitemName = $('[name="missionitemName"]').val();
     Agenda.insert({
-        mission: currentmissionName,
+        mission: missionitemName,
         createdAt: new Date()
     });
-    $('[name="currentmissionName"]').val('');
+    $('[name="missionitemName"]').val('');
 }
 });
 
-
 Template.missionItem.events({
-	// events go here
+    // events go here
     'click .delete-missionitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-    		Agenda.remove({ _id: documentId });
-	},
+            Agenda.remove({ _id: documentId });
+    },
 
-	'keyup [name=missionItem]': function(event){
+    'keyup [name=missionItem]': function(event){
     if(event.which == 13 || event.which == 27){
-    	$(event.target).blur();
+        $(event.target).blur();
     } else {
         var documentId = this._id;
         var missionItem = $(event.target).val();
         Agenda.update({ _id: documentId }, {$set: { mission: missionItem }});
-    	}
+        }
     },
 
+});
+
+////////* Goals Events *//////
+
+Template.addgoalsItem.events({
+    /// events go here
+    'submit form': function(event){
+    event.preventDefault();
+    var goalsitemName = $('[name="goalsitemName"]').val();
+    Agenda.insert({
+        goals: goalsitemName,
+        createdAt: new Date()
+    });
+    $('[name="goalsitemName"]').val('');
+}
 });
 
 Template.goalsItem.events({

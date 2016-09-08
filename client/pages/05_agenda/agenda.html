@@ -1,35 +1,29 @@
 <template name="agendaPage">
 	<h1>Agenda Page</h1>
 
-<!--	drop down -->
-<div class="container">
-	<div class="row">
-		{{>agendaInput}}
-	</div>
-</div>
-
 <!-- Cards -->
 
-<br>
 
-	<div class="panel-primary col-sm-5"> 
+
+
+<!-- Mission Card -->
+	<div class="panel-primary col-sm-5"> 	
 	  	<div class="panel-heading" for="inputMission">
-	  	Your Mission</div>	
-		
+	  	Mission</div>
+
 		<div class="list-group">
 			<ul class="list-group-item">
+	  			
+	  				{{> addmissionItem}}
 
-	  				{{> currentMission}}
-
-			
 <p></p>	  	
 
 	  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMissions" aria-expanded="false" aria-controls="collapseMissions">
-    			Past Missions 
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMission" aria-expanded="false" aria-controls="collapseMission">
+    			Past Missions
   					</button>
 				</p>
-				<div class="collapse" id="collapseMissions">
+				<div class="collapse" id="collapseMission">
 					<div class="list-group">
 							<ul class="list-group-item">
 					  			{{#each agenda}}
@@ -38,11 +32,12 @@
 					  		</ul>
 					</div>
 				</div>	
+	  			
 			</ul>
-		</div>
+	  	</div>
 	</div>
 
-
+<!-- Goals Card -->
 	<div class="panel-primary col-sm-5"> 	
 	  	<div class="panel-heading" for="inputGoals">
 	  	Goals</div>
@@ -50,7 +45,7 @@
 		<div class="list-group">
 			<ul class="list-group-item">
 	  			
-	  				{{> goalsItem}}
+	  				{{> addgoalsItem}}
 
 <p></p>	  	
 
@@ -73,7 +68,7 @@
 	  	</div>
 	</div>
 
-
+<!-- Agenda Card -->
 	<div class="panel-primary col-sm-5"> 
 	  	<div class="panel-heading" for="inputAgenda">
 	  	Agenda</div>
@@ -186,24 +181,36 @@
 
 
 
-<template name="currentMission">
- 	<div>   
-    	<textarea class="form-control" rows="2" name="currentMission" placeholder="What is your current mission?" value="{{mission}}"></textarea>
-	</div> 
-</template>
 
+
+<!-- Mission Card -->
+
+<template name="addmissionItem">
+    <form>
+        Add a Mission Item:
+        <input type="text" class="form-control" placeholder="Type a Goal..." name="missionitemName">
+    </form>
+</template>
 
 
 <template name="missionItem">
- 	<div>   
-    	<textarea class="form-control" rows="1" value="{{mission}}" name="missionItem"></textarea>
-	</div>   
+    <input type="text" value="{{mission}}" name="missionItem">
+    [<a href="#" class="delete-missionitem">	Delete </a>]
 </template>
 
+<!-- Goals Card -->
+
+<template name="addgoalsItem">
+    <form>
+        Add a goal Item:
+        <input type="text" class="form-control" placeholder="Type a Goal..." name="goalsitemName">
+    </form>
+</template>
+
+
 <template name="goalsItem">
-    <div>
-        <textarea class="form-control" rows="1" value="{{goals}}" name="goalsItem"></textarea>
-    </div>  
+    <input type="text" value="{{goals}}" name="goalsItem">
+    [<a href="#" class="delete-goalsitem">	Delete </a>]
 </template>
 
 
