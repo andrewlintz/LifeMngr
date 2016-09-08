@@ -90,6 +90,9 @@ Template.goalsItem.events({
 
 
 
+
+////////* Agenda Events *//////
+
 Template.addagendaItem.events({
     /// events go here
     'submit form': function(event){

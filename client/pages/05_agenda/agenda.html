@@ -208,6 +208,9 @@
 
 
 
+
+<!-- Agenda Card) -->
+
 <template name="addagendaItem">
     <form>
         Add an Agenda Item:
@@ -217,7 +220,6 @@
 
 
 <template name="agendaItem">
-	
     <input type="text" value="{{agenda}}" name="agendaItem">
     [<a href="#" class="delete-agendaitem">	Delete </a>]
 </template>
@@ -239,23 +241,15 @@
 </template>
 
 <template name="currentNission">
- 	<div>   
-    	<textarea class="form-control" rows="2" name="nissionitemName2" placeholder="What is your current mission?"></textarea>
-	</div> 
-
-<p></p>
     <form>
         Create a Nission:
         <input type="text" class="form-control" placeholder="Type Nission..." name="nissionitemName">
     </form>
 </template>
 
-<template name="nissionItem">
-    
-    	
+<template name="nissionItem">	
     	<input type="text" value="{{name}}" name="nissionItem">
     	[<a href="#" class="delete-nissionitem">	Delete </a>]
-    
 </template>
 
 
