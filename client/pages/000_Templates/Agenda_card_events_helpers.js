@@ -1,4 +1,4 @@
-import './mind.html';
+
 
 ////////* Todos Events *//////
 

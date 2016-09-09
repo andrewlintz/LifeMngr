@@ -3,7 +3,34 @@
 
 <!-- Cards -->
 
+<!-- Vision Card -->
 
+<div class="panel-primary col-sm-10">
+	<div class="panel-heading" for="inputVision">
+	Vision</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addvisionItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseVision">
+    			Vision Log
+  					</button>
+			</p>
+				<div class="collapse" id="collapseVision">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> visionItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Vision card -->
 
 
 <!-- Mission Card -->
@@ -37,6 +64,35 @@
 	  	</div>
 	</div>
 
+<!-- Values Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputValues">
+	Values</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addvaluesItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseValues" aria-expanded="false" aria-controls="collapseValues">
+    			Values Log 
+  					</button>
+			</p>
+				<div class="collapse" id="collapseValues">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> valuesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Values card -->
+
 <!-- Goals Card -->
 	<div class="panel-primary col-sm-5"> 	
 	  	<div class="panel-heading" for="inputGoals">
@@ -68,28 +124,62 @@
 	  	</div>
 	</div>
 
-<!-- Agenda Card -->
+
+
+<!-- Accomplishments Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputAccomplishments">
+	Accomplishments</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addaccomplishmentsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAccomplishments" aria-expanded="false" aria-controls="collapseAccomplishments">
+    			Accivement Lists 
+  					</button>
+			</p>
+				<div class="collapse" id="collapseAccomplishments">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> accomplishmentsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Accomplishments card -->
+
+
+
+<!-- Successes Card -->
+
 	<div class="panel-primary col-sm-5"> 
-	  	<div class="panel-heading" for="inputAgenda">
-	  	Agenda</div>
+	  	<div class="panel-heading" for="inputSuccesses">
+	  	Successes</div>
 
 		<div class="list-group">
 			<ul class="list-group-item">
 	  			
-	  				{{> addagendaItem}}
+	  				{{> addsuccessesItem}}
 	  			
 	  			<p></p>	  	
 
 	  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAgendas" aria-expanded="false" aria-controls="collapseAgendas">
-    			Past Agendas
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSuccesses" aria-expanded="false" aria-controls="collapseSuccesses">
+    			Successes Log
   					</button>
 				</p>
-				<div class="collapse" id="collapseAgendas">
+				<div class="collapse" id="collapseSuccesses">
 					<div class="list-group">
 							<ul class="list-group-item">
 					  			{{#each agenda}}
-					  				{{> agendaItem}}
+					  				{{> successesItem}}
 					  			{{/each}}
 					  		</ul>
 					</div>
@@ -100,26 +190,26 @@
 
 
 
-<!-- Nission Card -->
+<!-- Failure Card -->
 
 <div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputNission">
-	Nission Card</div>
+	<div class="panel-heading" for="inputFailure">
+	Failure</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> currentNission}}
+			{{> currentFailure}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseNissions" aria-expanded="false" aria-controls="collapseNissions">
-    			Past Nissions 
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFailure" aria-expanded="false" aria-controls="collapseFailure">
+    			Failures Log
   					</button>
 			</p>
-				<div class="collapse" id="collapseNissions">
+				<div class="collapse" id="collapseFailure">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each agenda}}
-								{{> nissionItem}}
+								{{> failureItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -127,60 +217,179 @@
 			</ul>
 	</div>
 </div>
+<!-- end of Failure card -->
 
+<!-- Strengths Card -->
 
-<!-- end of Nission card -->
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputStrengths">
+	Strengths</div>
 
-</template>
-
-
-
-<!-- Collapsable Drop down -->
-<template name="agendaInput">
-<p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agendaInputter" aria-expanded="false" aria-controls="agendaInputter">
-    Update Agenda
-  </button>
-<div class="collapse" id="agendaInputter">
-
-  <form class="form-horizontal">
-
-  <div class="form-group">
-    <label for="inputMission" class="col-sm-2 control-label">Mission</label>
-    <div class="col-sm-10">
-      <textarea id="currentMission" class="form-control" rows="3" placeholder="Mission: A mission is the statement of purpose from which a company, business or individual operates. The mission statement is designed to guide the everyday actions of and decisions made by a business or organization. For instance, a nonprofit might include in its mission statement that it works toward the betterment of the education of low-income women in a certain geographical area."></textarea>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputGoals" class="col-sm-2 control-label">Goals</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="currentGoals" placeholder="Your Goals: A goal is a stated result or specific aim that an individual or team works toward.">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputAgenda" class="col-sm-2 control-label">Agenda</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="currentAgenda" placeholder="Your Agenda">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button id="submtPost" type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
-</form>
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addstrengthsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStrengths" aria-expanded="false" aria-controls="collapseStrengths">
+    			Strengths List
+  					</button>
+			</p>
+				<div class="collapse" id="collapseStrengths">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> strengthsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
 </div>
-</p>
+<!-- end of Strengths card -->
+
+<!-- Weaknesses Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputWeaknesses">
+	Weaknesses</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addweaknessesItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWeaknesses" aria-expanded="false" aria-controls="collapseWeaknesses">
+    			Weaknesses List 
+  					</button>
+			</p>
+				<div class="collapse" id="collapseWeaknesses">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> weaknessesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Weaknesses card -->
+
+<!-- Career Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputCareer">
+	Career</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addcareerItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCareer" aria-expanded="false" aria-controls="collapseCareer">
+    			Career Enteries
+  					</button>
+			</p>
+				<div class="collapse" id="collapseCareer">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> careerItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Career card -->
+
+<!-- Projects Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputProjects">
+	Projects</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addprojectsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseProjects" aria-expanded="false" aria-controls="collapseProjects">
+    			Projects Enteries
+  					</button>
+			</p>
+				<div class="collapse" id="collapseProjects">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> projectsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Projects card -->
+
+<!-- Todos Card -->
+
+<div class="panel-primary col-sm-10">
+	<div class="panel-heading" for="inputTodos">
+	Todos</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addtodosItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTodos" aria-expanded="false" aria-controls="collapseTodos">
+    			Todos Enteries
+  					</button>
+			</p>
+				<div class="collapse" id="collapseTodos">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> todosItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+<!-- end of Todos card -->
+
+
+
 </template>
 
 
-<!-- Cards --> 	
 
 
 
+
+<!-- Templates --> 	
+
+
+
+<!-- Vision Card) -->
+
+<template name="addvisionItem">
+    <form>
+        Create a Vision:
+        <input type="text" class="form-control" placeholder="Type Your Vision..." name="visionitemName">
+    </form>
+</template>
+
+<template name="visionItem">	
+    	<input type="text" value="{{vision}}" name="visionItem" class="col-sm-10">
+    	[<a href="#" class="delete-visionitem">	Delete </a>]
+</template>
 
 
 <!-- Mission Card -->
@@ -196,6 +405,20 @@
 <template name="missionItem">
     <input type="text" value="{{mission}}" name="missionItem">
     [<a href="#" class="delete-missionitem">	Delete </a>]
+</template>
+
+<!-- Values Card) -->
+
+<template name="addvaluesItem">
+    <form>
+        Create a Values:
+        <input type="text" class="form-control" placeholder="Type Your Values..." name="valuesitemName">
+    </form>
+</template>
+
+<template name="valuesItem">	
+    	<input type="text" value="{{values}}" name="valuesItem">
+    	[<a href="#" class="delete-valuesitem">	Delete </a>]
 </template>
 
 <!-- Goals Card -->
@@ -214,48 +437,124 @@
 </template>
 
 
+<!-- Accomplishments Card) -->
 
-
-<!-- Agenda Card) -->
-
-<template name="addagendaItem">
+<template name="addaccomplishmentsItem">
     <form>
-        Add an Agenda Item:
-        <input type="text" class="form-control" placeholder="Type an Agenda..." name="agendaitemName">
+        Create a Accomplishments:
+        <input type="text" class="form-control" placeholder="Type Your Accomplishments..." name="accomplishmentsitemName">
+    </form>
+</template>
+
+<template name="accomplishmentsItem">	
+    	<input type="text" value="{{accomplishments}}" name="accomplishmentsItem">
+    	[<a href="#" class="delete-accomplishmentsitem">	Delete </a>]
+</template>
+
+
+<!-- Successes Card) -->
+
+<template name="addsuccessesItem">
+    <form>
+        Add an Successes Item:
+        <input type="text" class="form-control" placeholder="Type an Success..." name="successesitemName">
     </form>
 </template>
 
 
-<template name="agendaItem">
-    <input type="text" value="{{agenda}}" name="agendaItem">
-    [<a href="#" class="delete-agendaitem">	Delete </a>]
+<template name="successesItem">
+    <input type="text" value="{{successes}}" name="successesItem">
+    [<a href="#" class="delete-successesitem">	Delete </a>]
 </template>
 
 
-<!-------    GYST COPY  ---->
+<!-- Failures Card) -->
 
 
-<template name="nission">
-  <h1>Nission Dashboard</h1>
 
-	{{> currentNission}}
-	<br>
-  <ul>
-  {{#each nission}}
-		{{> nissionItem}}
-  {{/each}}
-  </ul>
-</template>
-
-<template name="currentNission">
+<template name="currentFailure">
     <form>
-        Create a Nission:
-        <input type="text" class="form-control" placeholder="Type Nission..." name="nissionitemName">
+        Describe a Failure & Lesson learned:
+        <input type="text" class="form-control" placeholder="Type Failure..." name="failureitemName">
     </form>
 </template>
 
-<template name="nissionItem">	
-    	<input type="text" value="{{name}}" name="nissionItem">
-    	[<a href="#" class="delete-nissionitem">	Delete </a>]
+<template name="failureItem">	
+    	<input type="text" value="{{failure}}" name="failureItem">
+    	[<a href="#" class="delete-failureitem">	Delete </a>]
 </template>
 
+
+<!-- Strengths Card) -->
+
+<template name="addstrengthsItem">
+    <form>
+        Create a Strengths:
+        <input type="text" class="form-control" placeholder="Type Your Strengths..." name="strengthsitemName">
+    </form>
+</template>
+
+<template name="strengthsItem">	
+    	<input type="text" value="{{strengths}}" name="strengthsItem">
+    	[<a href="#" class="delete-strengthsitem">	Delete </a>]
+</template>
+
+
+<!-- Weaknesses Card) -->
+
+<template name="addweaknessesItem">
+    <form>
+        Create a Weaknesses:
+        <input type="text" class="form-control" placeholder="Type Your Weaknesses..." name="weaknessesitemName">
+    </form>
+</template>
+
+<template name="weaknessesItem">	
+    	<input type="text" value="{{weaknesses}}" name="weaknessesItem">
+    	[<a href="#" class="delete-weaknessesitem">	Delete </a>]
+</template>
+
+
+<!-- Career Card -->
+
+<template name="addcareerItem">
+    <form>
+        Add to you Career vision:
+        <input type="text" class="form-control" placeholder="Type Your Career..." name="careeritemName">
+    </form>
+</template>
+
+<template name="careerItem">	
+    	<input type="text" value="{{career}}" name="careerItem">
+    	[<a href="#" class="delete-careeritem">	Delete </a>]
+</template>
+
+
+<!-- Projects Card -->
+
+<template name="addprojectsItem">
+    <form>
+        Projects Lists:
+        <input type="text" class="form-control" placeholder="Type Your Projects..." name="projectsitemName">
+    </form>
+</template>
+
+<template name="projectsItem">	
+    	<input type="text" value="{{projects}}" name="projectsItem">
+    	[<a href="#" class="delete-projectsitem">	Delete </a>]
+</template>
+
+
+<!-- Todos Card -->
+
+<template name="addtodosItem">
+    <form>
+        Todos Lists:
+        <input type="text" class="form-control" placeholder="Type Your Todos..." name="todositemName">
+    </form>
+</template>
+
+<template name="todosItem">	
+    	<input type="text" value="{{todos}}" name="todosItem" class="col-sm-10">
+    	[<a href="#" class="delete-todositem">	Delete </a>]
+</template>
