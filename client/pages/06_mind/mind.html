@@ -1,36 +1,50 @@
 <template name="mindPage">
 	<h1>Mind Page</h1>
 
-<!-- Todos Card -->
+<!-- Mood Card -->
 
 <div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputTodos">
-	Todos</div>
+	<div class="panel-heading" for="inputMood">
+	Mood</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			
+			{{> addmoodItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTodos" aria-expanded="false" aria-controls="collapseTodos">
-    			Todos Enteries
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMood" aria-expanded="false" aria-controls="collapseMood">
+    			Mood History
   					</button>
 			</p>
-				<div class="collapse" id="collapseTodos">
+				<div class="collapse" id="collapseMood">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						
+  						{{#each agenda}}
+								{{> moodItem}}
+  						{{/each}}
   						</ul>
 					</div>
 				</div>	
 			</ul>
 	</div>
 </div>
-<!-- end of Todos card -->
+<!-- end of Mood card -->
 
 </template>
 
+<!-- Mood 2 -->
 
+<template name="addmoodItem">
+    <form>
+        Current Mood: 
+        <input type="text" class="form-control" placeholder="Type Your Current Mood..." name="mooditemName">
+    </form>
+</template>
+
+<template name="moodItem">	
+    	<input type="text" value="{{mood}}" name="moodItem">
+    	[<a href="#" class="delete-mooditem">	Delete </a>]
+</template>
 
 
 
