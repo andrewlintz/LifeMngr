@@ -1,4 +1,97 @@
 <template name="healthPage">
 	<h1>Health Page</h1>
 
+<!-- Allergies Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputAllergies">
+	Allergies</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addallergiesItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAllergies" aria-expanded="false" aria-controls="collapseAllergies">
+    			Feeling any Allergies:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseAllergies">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> allergiesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Allergies card -->
+
+
+<!-- Symptoms Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputSymptoms">
+	Symptoms</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsymptomsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSymptoms" aria-expanded="false" aria-controls="collapseSymptoms">
+    			Feeling any Symptoms:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseSymptoms">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> symptomsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Symptoms card -->
+
 </template>
+
+
+<!-- Allergies Card -->
+
+<template name="addallergiesItem">
+    <form>
+        Allergies History:
+        <input type="text" class="form-control" placeholder="What allergies are you feeling" name="allergiesitemName">
+    </form>
+</template>
+
+<template name="allergiesItem">	
+    	<input type="text" value="{{allergies}}" name="allergiesItem">
+    	[<a href="#" class="delete-allergiesitem">	Delete </a>]
+</template>
+
+<!-- Symptoms Card -->
+
+
+<template name="addsymptomsItem">
+    <form>
+        Symptoms History:
+        <input type="text" class="form-control" placeholder="What symptoms are you feeling" name="symptomsitemName">
+    </form>
+</template>
+
+<template name="symptomsItem">	
+    	<input type="text" value="{{symptoms}}" name="symptomsItem">
+    	[<a href="#" class="delete-symptomsitem">	Delete </a>]
+</template>
+

@@ -245,9 +245,6 @@ Template.successesItem.events({
 });
 
 
-
-
-
 ///// Failure /////
 
 
@@ -286,6 +283,83 @@ Template.failureItem.events({
         }
     },
 });
+
+
+
+
+////////* Goodhabits Events *//////
+
+Template.addgoodhabitsItem.events({
+    /// events go here
+    'submit form': function(event){
+    event.preventDefault();
+    var goodhabitsitemName = $('[name="goodhabitsitemName"]').val();
+    Agenda.insert({
+        goodhabits: goodhabitsitemName,
+        createdAt: new Date()
+    });
+    $('[name="goodhabitsitemName"]').val('');
+}
+});
+
+Template.goodhabitsItem.events({
+    // events go here
+    'click .delete-goodhabitsitem': function(event){
+    event.preventDefault();
+    var documentId = this._id;
+    var confirm = 
+            Agenda.remove({ _id: documentId });
+    },
+
+    'keyup [name=goodhabitsItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var goodhabitsItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { goodhabits: goodhabitsItem }});
+        }
+    },
+});
+
+
+
+
+////////* Badhabits Events *//////
+
+Template.addbadhabitsItem.events({
+    /// events go here
+    'submit form': function(event){
+    event.preventDefault();
+    var badhabitsitemName = $('[name="badhabitsitemName"]').val();
+    Agenda.insert({
+        badhabits: badhabitsitemName,
+        createdAt: new Date()
+    });
+    $('[name="badhabitsitemName"]').val('');
+}
+});
+
+Template.badhabitsItem.events({
+    // events go here
+    'click .delete-badhabitsitem': function(event){
+    event.preventDefault();
+    var documentId = this._id;
+    var confirm = 
+            Agenda.remove({ _id: documentId });
+    },
+
+    'keyup [name=badhabitsItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var badhabitsItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { badhabits: badhabitsItem }});
+        }
+    },
+});
+
 
 
 ////////* Strengths Events *//////

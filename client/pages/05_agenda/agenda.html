@@ -219,6 +219,68 @@
 </div>
 <!-- end of Failure card -->
 
+<!-- Good Habbits Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputGoodhabits">
+	Good Habbits</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addgoodhabitsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGoodhabits" aria-expanded="false" aria-controls="collapseGoodhabits">
+    			Good Habbits List:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseGoodhabits">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> goodhabitsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Goodhabits card -->
+
+
+<!-- Bad Habbits Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputBadhabits">
+	Bad Habbits</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbadhabitsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBadhabits" aria-expanded="false" aria-controls="collapseBadhabits">
+    			Bad Habbits List:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseBadhabits">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> badhabitsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Badhabits card -->
+
+
 <!-- Strengths Card -->
 
 <div class="panel-primary col-sm-5">
@@ -471,7 +533,6 @@
 <!-- Failures Card) -->
 
 
-
 <template name="currentFailure">
     <form>
         Describe a Failure & Lesson learned:
@@ -485,7 +546,39 @@
 </template>
 
 
+<!-- Goodhabits Ideas Card -->
+
+
+<template name="addgoodhabitsItem">
+    <form>
+        Entreprenuerial Inventions Lists:
+        <input type="text" class="form-control" placeholder="Tell me the latest Joke" name="goodhabitsitemName">
+    </form>
+</template>
+
+<template name="goodhabitsItem">	
+    	<input type="text" value="{{goodhabits}}" name="goodhabitsItem">
+    	[<a href="#" class="delete-goodhabitsitem">	Delete </a>]
+</template>
+
+
+<!-- Badhabits Ideas Card -->
+
+<template name="addbadhabitsItem">
+    <form>
+        Entreprenuerial Inventions Lists:
+        <input type="text" class="form-control" placeholder="Tell me the latest Joke" name="badhabitsitemName">
+    </form>
+</template>
+
+<template name="badhabitsItem">	
+    	<input type="text" value="{{badhabits}}" name="badhabitsItem">
+    	[<a href="#" class="delete-badhabitsitem">	Delete </a>]
+</template>
+
+
 <!-- Strengths Card) -->
+
 
 <template name="addstrengthsItem">
     <form>

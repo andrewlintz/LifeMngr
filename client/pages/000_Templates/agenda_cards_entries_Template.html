@@ -1,33 +1,23 @@
-<!--\
-
-<temaplate name="CopyPaasta">
-<h1>Hello World</h1>
-{{> CopyPasta}}
-</temaplate>
-
-<temaplate name="CopyPasta">
-
-
-<!-- Todos Card --
+<!-- Wisdom Card --
 
 <div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputTodos">
-	Todos</div>
+	<div class="panel-heading" for="inputWisdom">
+	Wisdom</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addtodosItem}}
+			{{> addwisdomItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTodos" aria-expanded="false" aria-controls="collapseTodos">
-    			Todos Enteries
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWisdom" aria-expanded="false" aria-controls="collapseBadhabits">
+    			Wisdoms to share:
   					</button>
 			</p>
-				<div class="collapse" id="collapseTodos">
+				<div class="collapse" id="collapseWisdom">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each agenda}}
-								{{> todosItem}}
+								{{> wisdomItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -35,22 +25,23 @@
 			</ul>
 	</div>
 </div>
-<!-- end of Todos card -->
+
+<!-- end of Wisdom card --
 
 
 
-<!-- Todos Card --
+<!-- Wisdom Ideas Card --
 
-<template name="addtodosItem">
+<template name="addwisdomItem">
     <form>
-        Todos Lists:
-        <input type="text" class="form-control" placeholder="Type Your Todos..." name="todositemName">
+        Wisdoms:
+        <input type="text" class="form-control" placeholder="Impart upon us your wisdom" name="wisdomName">
     </form>
 </template>
 
-<template name="todosItem">	
-    	<input type="text" value="{{todos}}" name="todosItem">
-    	[<a href="#" class="delete-todositem">	Delete </a>]
+<template name="wisdomItem">	
+    	<input type="text" value="{{wisdom}}" name="wisdomItem">
+    	[<a href="#" class="delete-wisdomsitem">	Delete </a>]
 </template>
 
 
