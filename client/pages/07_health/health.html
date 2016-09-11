@@ -1,6 +1,39 @@
 <template name="healthPage">
 	<h1>Health Page</h1>
 
+
+<!-- Biostats Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputBiostats">
+	Biostats</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbiostatsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
+    			Biostats:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseBiostats">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> biostatsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Biostats card -->
+
+
 <!-- Allergies Card -->
 
 <div class="panel-primary col-sm-5">
@@ -13,7 +46,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAllergies" aria-expanded="false" aria-controls="collapseAllergies">
-    			Feeling any Allergies:
+    			Allergies History:
   					</button>
 			</p>
 				<div class="collapse" id="collapseAllergies">
@@ -37,7 +70,7 @@
 
 <div class="panel-primary col-sm-5">
 	<div class="panel-heading" for="inputSymptoms">
-	Symptoms</div>
+	Ills</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -45,7 +78,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSymptoms" aria-expanded="false" aria-controls="collapseSymptoms">
-    			Feeling any Symptoms:
+    			Illness Log
   					</button>
 			</p>
 				<div class="collapse" id="collapseSymptoms">
@@ -63,14 +96,169 @@
 
 <!-- end of Symptoms card -->
 
+
+<!-- Med History Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputMedhistory">
+	Medhistory</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addmedhistoryItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMedhistory" aria-expanded="false" aria-controls="collapseMedhistory">
+    			Medhistory:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseMedhistory">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> medhistoryItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Medhistory card -->
+
+<!-- Dentalhist Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputDentalhist">
+	Dentalhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddentalhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDentalhist" aria-expanded="false" aria-controls="collapseDentalhist">
+    			Dentalhist:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseDentalhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> dentalhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Dentalhist card -->
+
+
+<!-- Visionhist Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputVisionhist">
+	Visionhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addvisionhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVisionhist" aria-expanded="false" aria-controls="collapseVisionhist">
+    			Visionhist:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseVisionhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> visionhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Visionhist card -->
+
+
+<!-- Pooplog Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPooplog">
+	Pooplog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpooplogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePooplog" aria-expanded="false" aria-controls="collapsePooplog">
+    			Pooplog:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePooplog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> pooplogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Pooplog card -->
+
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Biostats Card -->
+
+
+<template name="addbiostatsItem">
+    <form>
+        Bio Stats Log:
+        <input type="text" class="form-control" placeholder="What are your biostats" name="biostatsitemName">
+    </form>
+</template>
+
+<template name="biostatsItem">	
+    	<input type="text" value="{{biostats}}" name="biostatsItem">
+    	[<a href="#" class="delete-biostatsitem">	Delete </a>]
 </template>
 
 
 <!-- Allergies Card -->
 
+
 <template name="addallergiesItem">
     <form>
-        Allergies History:
+        Feeling Allergies Today?
         <input type="text" class="form-control" placeholder="What allergies are you feeling" name="allergiesitemName">
     </form>
 </template>
@@ -85,7 +273,7 @@
 
 <template name="addsymptomsItem">
     <form>
-        Symptoms History:
+        Illness History:
         <input type="text" class="form-control" placeholder="What symptoms are you feeling" name="symptomsitemName">
     </form>
 </template>
@@ -94,4 +282,72 @@
     	<input type="text" value="{{symptoms}}" name="symptomsItem">
     	[<a href="#" class="delete-symptomsitem">	Delete </a>]
 </template>
+
+
+<!-- Medhistory Card -->
+
+
+<template name="addmedhistoryItem">
+    <form>
+        Medhistory History:
+        <input type="text" class="form-control" placeholder="What are your medhistory" name="medhistoryitemName">
+    </form>
+</template>
+
+<template name="medhistoryItem">	
+    	<input type="text" value="{{medhistory}}" name="medhistoryItem">
+    	[<a href="#" class="delete-medhistoryitem">	Delete </a>]
+</template>
+
+
+<!-- Dentalhist Card -->
+
+
+<template name="adddentalhistItem">
+    <form>
+        Dental History:
+        <input type="text" class="form-control" placeholder="What are your dentalhist" name="dentalhistitemName">
+    </form>
+</template>
+
+<template name="dentalhistItem">	
+    	<input type="text" value="{{dentalhist}}" name="dentalhistItem">
+    	[<a href="#" class="delete-dentalhistitem">	Delete </a>]
+</template>
+
+
+<!-- Visionhist Card -->
+
+
+<template name="addvisionhistItem">
+    <form>
+        Vision History:
+        <input type="text" class="form-control" placeholder="What are your visionhist" name="visionhistitemName">
+    </form>
+</template>
+
+<template name="visionhistItem">	
+    	<input type="text" value="{{visionhist}}" name="visionhistItem">
+    	[<a href="#" class="delete-visionhistitem">	Delete </a>]
+</template>
+
+
+
+<!-- Pooplog Card -->
+
+
+<template name="addpooplogItem">
+    <form>
+        Poop History:
+        <input type="text" class="form-control" placeholder="What are your pooplog" name="pooplogitemName">
+    </form>
+</template>
+
+<template name="pooplogItem">	
+    	<input type="text" value="{{pooplog}}" name="pooplogItem">
+    	[<a href="#" class="delete-pooplogitem">	Delete </a>]
+</template>
+
+
+
 

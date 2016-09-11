@@ -1,4 +1,103 @@
 <template name="fitPage">
 	<h1>Fitness Page</h1>
+ <!--  Fitness Card -->
 
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputFitness">
+	Fitness</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addfitnessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFitness" aria-expanded="false" aria-controls="collapseFitness">
+    			Fitness:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseFitness">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> fitnessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Fitness card -->
+
+<!--  Fitness Program Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputFitnessprogram">
+	Fitness Program</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addfitnessprogramItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFitnessprogram" aria-expanded="false" aria-controls="collapseFitnessprogram">
+    			Fitness Program:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseFitnessprogram">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> fitnessprogramItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Fitness Program card -->
+</template>
+
+
+
+
+
+
+
+
+<!-- Fitness Card -->
+
+
+<template name="addfitnessItem">
+    <form>
+        Fitness History:
+        <input type="text" class="form-control" placeholder="What are your fitness" name="fitnessitemName">
+    </form>
+</template>
+
+<template name="fitnessItem">	
+    	<input type="text" value="{{fitness}}" name="fitnessItem">
+    	[<a href="#" class="delete-fitnessitem">	Delete </a>]
+</template>
+
+
+
+<!-- Fitness Program Card -->
+
+
+<template name="addfitnessprogramItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="fitnessprogramitemName">
+    </form>
+</template>
+
+<template name="fitnessprogramItem">	
+    	<input type="text" value="{{fitnessprogram}}" name="fitnessprogramItem">
+    	[<a href="#" class="delete-fitnessprogramitem">	Delete </a>]
 </template>

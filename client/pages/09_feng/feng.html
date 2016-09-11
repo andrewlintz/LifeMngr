@@ -1,0 +1,194 @@
+<template name="fengPage">
+	<h1>Fengshui Page</h1>
+
+<!--  Hometightiness Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputHometightiness">
+	Hometightiness</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addhometightinessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHometightiness" aria-expanded="false" aria-controls="collapseHometightiness">
+    			Hometightiness:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseHometightiness">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> hometightinessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!--  Cartightiness Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputCartightiness">
+	Cartightiness</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addcartightinessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCartightiness" aria-expanded="false" aria-controls="collapseCartightiness">
+    			Cartightiness:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseCartightiness">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> cartightinessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Cartightiness card -->
+
+<!--  Workspacetightiness Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputWorkspacetightiness">
+	Workspacetightiness</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addworkspacetightinessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWorkspacetightiness" aria-expanded="false" aria-controls="collapseWorkspacetightiness">
+    			Workspacetightiness:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseWorkspacetightiness">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> workspacetightinessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Workspacetightiness card -->
+
+<!--  Chores Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputChores">
+	Chores</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addchoresItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChores" aria-expanded="false" aria-controls="collapseChores">
+    			Chores:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseChores">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> choresItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Chores card -->
+
+</template>
+
+
+
+
+
+
+
+<!-- Hometightiness Card -->
+
+
+<template name="addhometightinessItem">
+    <form>
+        Hometightiness History:
+        <input type="text" class="form-control" placeholder="What are your hometightiness" name="hometightinessitemName">
+    </form>
+</template>
+
+<template name="hometightinessItem">	
+    	<input type="text" value="{{hometightiness}}" name="hometightinessItem">
+    	[<a href="#" class="delete-hometightinessitem">	Delete </a>]
+</template>
+
+
+<!-- Cartightiness Card -->
+
+
+<template name="addcartightinessItem">
+    <form>
+        Cartightiness History:
+        <input type="text" class="form-control" placeholder="What are your cartightiness" name="cartightinessitemName">
+    </form>
+</template>
+
+<template name="cartightinessItem">	
+    	<input type="text" value="{{cartightiness}}" name="cartightinessItem">
+    	[<a href="#" class="delete-cartightinessitem">	Delete </a>]
+</template>
+
+
+<!-- Workspacetightiness Card -->
+
+
+<template name="addworkspacetightinessItem">
+    <form>
+        Workspacetightiness History:
+        <input type="text" class="form-control" placeholder="What are your workspacetightiness" name="workspacetightinessitemName">
+    </form>
+</template>
+
+<template name="workspacetightinessItem">	
+    	<input type="text" value="{{workspacetightiness}}" name="workspacetightinessItem">
+    	[<a href="#" class="delete-workspacetightinessitem">	Delete </a>]
+</template>
+
+<!-- Chores Card -->
+
+
+<template name="addchoresItem">
+    <form>
+        Chores History:
+        <input type="text" class="form-control" placeholder="What are your chores" name="choresitemName">
+    </form>
+</template>
+
+<template name="choresItem">	
+    	<input type="text" value="{{chores}}" name="choresItem">
+    	[<a href="#" class="delete-choresitem">	Delete </a>]
+</template>

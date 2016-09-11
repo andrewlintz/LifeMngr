@@ -1,23 +1,24 @@
-<!-- Wisdom Card --
+<!-- Flossed Card --
+
 
 <div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputWisdom">
-	Wisdom</div>
+	<div class="panel-heading" for="inputFlossed">
+	Flossed</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addwisdomItem}}
+			{{> addflossedItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWisdom" aria-expanded="false" aria-controls="collapseBadhabits">
-    			Wisdoms to share:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFlossed" aria-expanded="false" aria-controls="collapseFlossed">
+    			Flossed:
   					</button>
 			</p>
-				<div class="collapse" id="collapseWisdom">
+				<div class="collapse" id="collapseFlossed">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each agenda}}
-								{{> wisdomItem}}
+								{{> flossedItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -26,22 +27,23 @@
 	</div>
 </div>
 
-<!-- end of Wisdom card --
+<!-- end of Flossed card -->
 
 
 
-<!-- Wisdom Ideas Card --
+<!-- Flossed Card --
 
-<template name="addwisdomItem">
+
+<template name="addflossedItem">
     <form>
-        Wisdoms:
-        <input type="text" class="form-control" placeholder="Impart upon us your wisdom" name="wisdomName">
+        Flossed History:
+        <input type="text" class="form-control" placeholder="What are your flossed" name="flosseditemName">
     </form>
 </template>
 
-<template name="wisdomItem">	
-    	<input type="text" value="{{wisdom}}" name="wisdomItem">
-    	[<a href="#" class="delete-wisdomsitem">	Delete </a>]
+<template name="flossedItem">	
+    	<input type="text" value="{{flossed}}" name="flossedItem">
+    	[<a href="#" class="delete-flosseditem">	Delete </a>]
 </template>
 
 

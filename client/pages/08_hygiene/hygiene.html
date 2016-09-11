@@ -1,0 +1,307 @@
+<template name="hygienePage">
+	<h1>Hygiene Page</h1>
+
+
+
+<!-- Teethbrush Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputTeethbrush">
+	Teethbrush</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addteethbrushItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTeethbrush" aria-expanded="false" aria-controls="collapseTeethbrush">
+    			Teethbrush:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseTeethbrush">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> teethbrushItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Teethbrush card -->
+
+
+<!-- Flossed Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputFlossed">
+	Flossed</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addflossedItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFlossed" aria-expanded="false" aria-controls="collapseFlossed">
+    			Flossed:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseFlossed">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> flossedItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Flossed card -->
+
+
+<!-- Washedface Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputWashedface">
+	Washedface</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addwashedfaceItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWashedface" aria-expanded="false" aria-controls="collapseWashedface">
+    			Washedface:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseWashedface">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> washedfaceItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Washedface card -->
+
+
+<!-- Shaved Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputShaved">
+	Shaved</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addshavedItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseShaved" aria-expanded="false" aria-controls="collapseShaved">
+    			Shaved:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseShaved">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> shavedItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Shaved card -->
+
+
+
+<!-- Showered Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputShowered">
+	Showered</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addshoweredItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseShowered" aria-expanded="false" aria-controls="collapseShowered">
+    			Showered:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseShowered">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> showeredItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Showered card -->
+
+<!--  Dressed Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputDressed">
+	Dressed</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddressedItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDressed" aria-expanded="false" aria-controls="collapseDressed">
+    			Dressed:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseDressed">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> dressedItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Dressed card -->
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Teethbrush Card -->
+
+
+<template name="addteethbrushItem">
+    <form>
+        Teeth brushd History:
+        <input type="text" class="form-control" placeholder="What are your teethbrush" name="teethbrushitemName">
+    </form>
+</template>
+
+<template name="teethbrushItem">	
+    	<input type="text" value="{{teethbrush}}" name="teethbrushItem">
+    	[<a href="#" class="delete-teethbrushitem">	Delete </a>]
+</template>
+
+
+
+<!-- Flossed Card -->
+
+
+<template name="addflossedItem">
+    <form>
+        Flossed History:
+        <input type="text" class="form-control" placeholder="What are your flossed" name="flosseditemName">
+    </form>
+</template>
+
+<template name="flossedItem">	
+    	<input type="text" value="{{flossed}}" name="flossedItem">
+    	[<a href="#" class="delete-flosseditem">	Delete </a>]
+</template>
+
+
+<!-- Washedface Card -->
+
+
+<template name="addwashedfaceItem">
+    <form>
+        Washedface History:
+        <input type="text" class="form-control" placeholder="What are your washedface" name="washedfaceitemName">
+    </form>
+</template>
+
+<template name="washedfaceItem">	
+    	<input type="text" value="{{washedface}}" name="washedfaceItem">
+    	[<a href="#" class="delete-washedfaceitem">	Delete </a>]
+</template>
+
+
+
+<!-- Shaved Card -->
+
+
+<template name="addshavedItem">
+    <form>
+        Shaved History:
+        <input type="text" class="form-control" placeholder="What are your shaved" name="shaveditemName">
+    </form>
+</template>
+
+<template name="shavedItem">	
+    	<input type="text" value="{{shaved}}" name="shavedItem">
+    	[<a href="#" class="delete-shaveditem">	Delete </a>]
+</template>
+
+
+<!-- Showered Card -->
+
+
+<template name="addshoweredItem">
+    <form>
+        Showered History:
+        <input type="text" class="form-control" placeholder="What are your showered" name="showereditemName">
+    </form>
+</template>
+
+<template name="showeredItem">	
+    	<input type="text" value="{{showered}}" name="showeredItem">
+    	[<a href="#" class="delete-showereditem">	Delete </a>]
+</template>
+
+
+<!-- Dressed Card -->
+
+
+<template name="adddressedItem">
+    <form>
+        Dressed History:
+        <input type="text" class="form-control" placeholder="What are your dressed" name="dresseditemName">
+    </form>
+</template>
+
+<template name="dressedItem">	
+    	<input type="text" value="{{dressed}}" name="dressedItem">
+    	[<a href="#" class="delete-dresseditem">	Delete </a>]
+</template>
