@@ -50,3 +50,40 @@ Template.allergiesItem.events({
         }
     },
 });
+
+
+////////* Symptoms Events *//////
+
+
+Template.addsymptomsItem.events({
+    /// events go here
+    'submit form': function(event){
+    event.preventDefault();
+    var symptomsitemName = $('[name="symptomsitemName"]').val();
+    Agenda.insert({
+        symptoms: symptomsitemName,
+        createdAt: new Date()
+    });
+    $('[name="symptomsitemName"]').val('');
+}
+});
+
+Template.symptomsItem.events({
+    // events go here
+    'click .delete-symptomsitem': function(event){
+    event.preventDefault();
+    var documentId = this._id;
+    var confirm = 
+            Agenda.remove({ _id: documentId });
+    },
+
+    'keyup [name=symptomsItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var symptomsItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { symptoms: symptomsItem }});
+        }
+    },
+});
