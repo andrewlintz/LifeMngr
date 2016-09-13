@@ -11,41 +11,42 @@ Template.foodPage.helpers({
 });
 
 
-////////* Currentpets Events *//////
+////////* Spirit Events *//////
 
 
 /*
 
-Template.addcurrentpetsItem.events({
+Template.addspiritItem.events({
     /// events go here
     'submit form': function(event){
     event.preventDefault();
-    var currentpetsitemName = $('[name="currentpetsitemName"]').val();
+    var spirititemName = $('[name="spirititemName"]').val();
     Agenda.insert({
-        currentpets: currentpetsitemName,
+        spirit: spirititemName,
         createdAt: new Date()
     });
-    $('[name="currentpetsitemName"]').val('');
+    $('[name="spirititemName"]').val('');
 }
 });
 
-Template.currentpetsItem.events({
+Template.spiritItem.events({
     // events go here
-    'click .delete-currentpetsitem': function(event){
+    'click .delete-spirititem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
             Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=currentpetsItem]': function(event){
+    'keyup [name=spiritItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var currentpetsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { currentpets: currentpetsItem }});
+        var spiritItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { spirit: spiritItem }});
         }
     },
 });
- */
+ 
+*/
