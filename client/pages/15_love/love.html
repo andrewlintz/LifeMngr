@@ -1,4 +1,164 @@
 <template name="lovePage">
 	<h1>Love Page</h1>
+ 
 
+
+
+
+<!--  Dreamso Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputDreamso">
+	Dream so</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddreamsoItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDreamso" aria-expanded="false" aria-controls="collapseDreamso">
+    			Dreamso list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseDreamso">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> dreamsoItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Dreamso card -->
+
+
+<!--  Currentso Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputCurrentso">
+	Current so</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addcurrentsoItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCurrentso" aria-expanded="false" aria-controls="collapseCurrentso">
+    			Currentso list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseCurrentso">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> currentsoItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Currentso card -->
+
+
+
+
+<!--  Lovehist Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputLovehist">
+	Love history</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addlovehistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLovehist" aria-expanded="false" aria-controls="collapseLovehist">
+    			Lovehist list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLovehist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> lovehistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Lovehist card -->
+
+</template>
+
+
+
+
+
+
+
+
+
+
+<!-- Dreamso Program Card -->
+
+
+<template name="adddreamsoItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="dreamsoitemName">
+    </form>
+</template>
+
+<template name="dreamsoItem">	
+    	<input type="text" value="{{dreamso}}" name="dreamsoItem">
+    	[<a href="#" class="delete-dreamsoitem">	Delete </a>]
+</template>
+
+
+
+<!-- Currentso Program Card -->
+
+
+<template name="addcurrentsoItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="currentsoitemName">
+    </form>
+</template>
+
+<template name="currentsoItem">	
+    	<input type="text" value="{{currentso}}" name="currentsoItem">
+    	[<a href="#" class="delete-currentsoitem">	Delete </a>]
+</template>
+
+
+
+
+<!-- Lovehist Program Card -->
+
+
+<template name="addlovehistItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="lovehistitemName">
+    </form>
+</template>
+
+<template name="lovehistItem">	
+    	<input type="text" value="{{lovehist}}" name="lovehistItem">
+    	[<a href="#" class="delete-lovehistitem">	Delete </a>]
 </template>

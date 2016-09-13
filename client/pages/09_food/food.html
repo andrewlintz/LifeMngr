@@ -1,3 +1,252 @@
 <template name="foodPage">
 	<h1>Food Page</h1>
+
+<!--  Eatlog Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputEatlog">
+	Eat Log</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addeatlogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEatlog" aria-expanded="false" aria-controls="collapseEatlog">
+    			Eat Log:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseEatlog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> eatlogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Eatlog card -->
+
+<!--  Ingredientinventory Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputIngredientinventory">
+	Ingredient Inventory List</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addingredientinventoryItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseIngredientinventory" aria-expanded="false" aria-controls="collapseIngredientinventory">
+    			Ingredient Inventory:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseIngredientinventory">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> ingredientinventoryItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Ingredientinventory card -->
+
+
+<!--  Shoppinglist Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputShoppinglist">
+	Shoppinglist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addshoppinglistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseShoppinglist" aria-expanded="false" aria-controls="collapseShoppinglist">
+    			Shoppinglist:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseShoppinglist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> shoppinglistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Shoppinglist card -->
+
+
+<!--  Menu Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputMenu">
+	Menu</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addmenuItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+    			Menu:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseMenu">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> menuItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Menu card -->
+
+
+<!--  Mealplan Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputMealplan">
+	Mealplan</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addmealplanItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMealplan" aria-expanded="false" aria-controls="collapseMealplan">
+    			Mealplan:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseMealplan">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> mealplanItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Mealplan card -->
+</template>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Eatlog Card -->
+
+
+<template name="addeatlogItem">
+    <form>
+        Eat Log History:
+        <input type="text" class="form-control" placeholder="What are your Eat Log" name="eatlogitemName">
+    </form>
+</template>
+
+<template name="eatlogItem">	
+    	<input type="text" value="{{eatlog}}" name="eatlogItem">
+    	[<a href="#" class="delete-eatlogitem">	Delete </a>]
+</template>
+
+
+<!-- Ingredientinventory Program Card -->
+
+
+<template name="addingredientinventoryItem">
+    <form>
+        Ingredient Inventory History:
+        <input type="text" class="form-control" placeholder="What are your Ingredient Inventory" name="ingredientinventoryitemName">
+    </form>
+</template>
+
+<template name="ingredientinventoryItem">	
+    	<input type="text" value="{{ingredientinventory}}" name="ingredientinventoryItem">
+    	[<a href="#" class="delete-ingredientinventoryitem">	Delete </a>]
+</template>
+
+
+
+<!-- Shoppinglist Program Card -->
+
+
+<template name="addshoppinglistItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="shoppinglistitemName">
+    </form>
+</template>
+
+<template name="shoppinglistItem">	
+    	<input type="text" value="{{shoppinglist}}" name="shoppinglistItem">
+    	[<a href="#" class="delete-shoppinglistitem">	Delete </a>]
+</template>
+
+
+
+<!-- Menu Program Card -->
+
+
+<template name="addmenuItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="menuitemName">
+    </form>
+</template>
+
+<template name="menuItem">	
+    	<input type="text" value="{{menu}}" name="menuItem">
+    	[<a href="#" class="delete-menuitem">	Delete </a>]
+</template>
+
+
+<!-- Mealplan Program Card -->
+
+
+<template name="addmealplanItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="mealplanitemName">
+    </form>
+</template>
+
+<template name="mealplanItem">	
+    	<input type="text" value="{{mealplan}}" name="mealplanItem">
+    	[<a href="#" class="delete-mealplanitem">	Delete </a>]
 </template>

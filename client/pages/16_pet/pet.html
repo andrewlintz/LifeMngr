@@ -1,4 +1,152 @@
 <template name="petPage">
 	<h1>Pet Page</h1>
+ 
 
+
+
+<!--  Addpet Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputAddpet">
+	Add Pet</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addaddpetItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAddpet" aria-expanded="false" aria-controls="collapseAddpet">
+    			Addpet Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseAddpet">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> addpetItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Addpet card -->
+
+
+
+<!--  Currentpets Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputCurrentpets">
+	Currentpets</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addcurrentpetsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCurrentpets" aria-expanded="false" aria-controls="collapseCurrentpets">
+    			Current Pets Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseCurrentpets">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> currentpetsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- end of Currentpets card -->
+
+
+<!--  Pastpets Card -->
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPastpets">
+	Past Pets</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpastpetsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePastpets" aria-expanded="false" aria-controls="collapsePastpets">
+    			Past Pets Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePastpets">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> pastpetsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+</template>
+
+
+
+
+
+
+<!-- Addpet Program Card -->
+
+
+<template name="addaddpetItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="addpetitemName">
+    </form>
+</template>
+
+<template name="addpetItem">	
+    	<input type="text" value="{{addpet}}" name="addpetItem">
+    	[<a href="#" class="delete-addpetitem">	Delete </a>]
+</template>
+
+
+<!-- Currentpets Program Card -->
+
+<template name="addcurrentpetsItem">
+    <form>
+        Currentpets:
+        <input type="text" class="form-control" placeholder="What are your currentpets" name="currentpetsitemName">
+    </form>
+</template>
+
+<template name="currentpetsItem">	
+    	<input type="text" value="{{currentpets}}" name="currentpetsItem">
+    	[<a href="#" class="delete-currentpetsitem">	Delete </a>]
+</template>
+
+
+<!-- Pastpets Program Card -->
+
+
+<template name="addpastpetsItem">
+    <form>
+        Pastpets:
+        <input type="text" class="form-control" placeholder="What are your pastpets" name="pastpetsitemName">
+    </form>
+</template>
+
+<template name="pastpetsItem">	
+    	<input type="text" value="{{pastpets}}" name="pastpetsItem">
+    	[<a href="#" class="delete-pastpetsitem">	Delete </a>]
 </template>

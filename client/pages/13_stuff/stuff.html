@@ -1,4 +1,160 @@
 <template name="stuffPage">
 	<h1>Stuff Page</h1>
 
+
+
+<!--  Stuffhave Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputStuffhave">
+	Stuffhave</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addstuffhaveItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStuffhave" aria-expanded="false" aria-controls="collapseStuffhave">
+    			Stuffhave list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseStuffhave">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> stuffhaveItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Stuffhave card -->
+
+
+
+<!--  Stuffwant Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputStuffwant">
+	Stuffwant</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addstuffwantItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStuffwant" aria-expanded="false" aria-controls="collapseStuffwant">
+    			Stuffwant list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseStuffwant">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> stuffwantItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Stuffwant card -->
+
+
+
+<!--  Stuffplanner Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputStuffplanner">
+	Stuffplanner</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addstuffplannerItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStuffplanner" aria-expanded="false" aria-controls="collapseStuffplanner">
+    			Stuffplanner list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseStuffplanner">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> stuffplannerItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Stuffplanner card -->
+</template>
+
+
+
+
+
+
+
+
+
+<!-- Stuffhave Program Card -->
+
+
+<template name="addstuffhaveItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="stuffhaveitemName">
+    </form>
+</template>
+
+<template name="stuffhaveItem">	
+    	<input type="text" value="{{stuffhave}}" name="stuffhaveItem">
+    	[<a href="#" class="delete-stuffhaveitem">	Delete </a>]
+</template>
+
+
+
+
+<!-- Stuffwant Program Card -->
+
+
+<template name="addstuffwantItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="stuffwantitemName">
+    </form>
+</template>
+
+<template name="stuffwantItem">	
+    	<input type="text" value="{{stuffwant}}" name="stuffwantItem">
+    	[<a href="#" class="delete-stuffwantitem">	Delete </a>]
+</template>
+
+
+
+<!-- Stuffplanner Program Card -->
+
+
+<template name="addstuffplannerItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="stuffplanneritemName">
+    </form>
+</template>
+
+<template name="stuffplannerItem">	
+    	<input type="text" value="{{stuffplanner}}" name="stuffplannerItem">
+    	[<a href="#" class="delete-stuffplanneritem">	Delete </a>]
 </template>

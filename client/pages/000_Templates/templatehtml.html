@@ -1,0 +1,54 @@
+
+
+
+<!--  Policies Card --
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPolicies">
+	Policies</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpoliciesItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePolicies" aria-expanded="false" aria-controls="collapsePolicies">
+    			Policies Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePolicies">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> policiesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Policies card -->
+
+
+
+<!-- Policies Card --
+
+
+<template name="addpoliciesItem">
+    <form>
+        Policies:
+        <input type="text" class="form-control" placeholder="What are your Policies" name="policiesitemName">
+    </form>
+</template>
+
+<template name="policiesItem">	
+    	<input type="text" value="{{policies}}" name="policiesItem">
+    	[<a href="#" class="delete-policiesitem">	Delete </a>]
+</template>
+
+
+
+-->

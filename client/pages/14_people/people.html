@@ -1,4 +1,68 @@
 <template name="peoplePage">
 	<h1>People Page</h1>
 
+
+<!--  To Build Card -->
+
+
+<ul>
+	<li> People Network "mind map"</li>
+	<li> People Timeline</li>
+	<li> People contact list</li>
+</ul>
+
+
+
+
+<!--  Peoplenetwork Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPeoplenetwork">
+	Peoplenetwork</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpeoplenetworkItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePeoplenetwork" aria-expanded="false" aria-controls="collapsePeoplenetwork">
+    			Peoplenetwork list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePeoplenetwork">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> peoplenetworkItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Peoplenetwork card -->
+</template>
+
+
+
+
+
+
+
+
+<!-- Peoplenetwork Program Card -->
+
+<template name="addpeoplenetworkItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="peoplenetworkitemName">
+    </form>
+</template>
+
+<template name="peoplenetworkItem">	
+    	<input type="text" value="{{peoplenetwork}}" name="peoplenetworkItem">
+    	[<a href="#" class="delete-peoplenetworkitem">	Delete </a>]
 </template>

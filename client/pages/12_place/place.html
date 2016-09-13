@@ -1,4 +1,164 @@
 <template name="placePage">
 	<h1>Place Page</h1>
+ 
 
+
+<!--  Placesbeen Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPlacesbeen">
+	Placesbeen</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addplacesbeenItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlacesbeen" aria-expanded="false" aria-controls="collapsePlacesbeen">
+    			Placesbeen list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePlacesbeen">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> placesbeenItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Placesbeen card -->
+
+
+
+<!--  Placeswant Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPlaceswant">
+	Placeswant</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addplaceswantItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlaceswant" aria-expanded="false" aria-controls="collapsePlaceswant">
+    			Placeswant list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePlaceswant">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> placeswantItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Placeswant card -->
+
+
+
+<!--  Placesplanner Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputPlacesplanner">
+	Placesplanner</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addplacesplannerItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlacesplanner" aria-expanded="false" aria-controls="collapsePlacesplanner">
+    			Placesplanner list:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsePlacesplanner">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> placesplannerItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Placesplanner card -->
 </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Placesbeen Program Card -->
+
+
+<template name="addplacesbeenItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placesbeenitemName">
+    </form>
+</template>
+
+<template name="placesbeenItem">	
+    	<input type="text" value="{{placesbeen}}" name="placesbeenItem">
+    	[<a href="#" class="delete-placesbeenitem">	Delete </a>]
+</template>
+
+
+<!-- Placeswant Program Card -->
+
+
+<template name="addplaceswantItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placeswantitemName">
+    </form>
+</template>
+
+<template name="placeswantItem">	
+    	<input type="text" value="{{placeswant}}" name="placeswantItem">
+    	[<a href="#" class="delete-placeswantitem">	Delete </a>]
+</template>
+
+
+
+<!-- Placesplanner Program Card -->
+
+
+<template name="addplacesplannerItem">
+    <form>
+        Fitness Program History:
+        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placesplanneritemName">
+    </form>
+</template>
+
+<template name="placesplannerItem">	
+    	<input type="text" value="{{placesplanner}}" name="placesplannerItem">
+    	[<a href="#" class="delete-placesplanneritem">	Delete </a>]
+</template>
+

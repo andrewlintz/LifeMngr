@@ -1,4 +1,62 @@
 <template name="spiritPage">
 	<h1>Spirit Page</h1>
 
+
+
+
+
+<!--  Spirit Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputSpirit">
+	Spirit</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addspiritItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSpirit" aria-expanded="false" aria-controls="collapseSpirit">
+    			Spirit Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseSpirit">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> spiritItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Spirit card -->
+
+</template>
+
+
+
+
+
+
+
+
+
+<!-- Spirit Card -->
+
+
+<template name="addspiritItem">
+    <form>
+        Spirit:
+        <input type="text" class="form-control" placeholder="What are your Spirit" name="spirititemName">
+    </form>
+</template>
+
+<template name="spiritItem">	
+    	<input type="text" value="{{spirit}}" name="spiritItem">
+    	[<a href="#" class="delete-spirititem">	Delete </a>]
 </template>
