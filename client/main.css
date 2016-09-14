@@ -134,11 +134,9 @@
 
 
 
-
-
-
-
-
+H1 {
+    color: white;
+}
 
 
 body {
@@ -147,4 +145,10 @@ body {
   background-image: linear-gradient(to bottom, #315481, #918e82 100%);
   background-attachment: fixed;
  
+}
+
+.headingtext {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
 }

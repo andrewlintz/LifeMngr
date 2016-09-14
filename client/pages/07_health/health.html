@@ -2,37 +2,10 @@
 	<h1>Health Page</h1>
 
 
-<!-- Biostats Card -->
 
-
-<div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputBiostats">
-	Biostats</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addbiostatsItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
-    			Biostats:
-  					</button>
-			</p>
-				<div class="collapse" id="collapseBiostats">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each agenda}}
-								{{> biostatsItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-<!-- end of Biostats card -->
-
+<!-- biostats template card -->
+{{> biostatsCard}}
+<!-- biostats template card -->
 
 <!-- Allergies Card -->
 
@@ -232,7 +205,36 @@
 
 
 
+<!-- Biostats Card -->
 
+<template name="biostatsCard">
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputBiostats">
+	Biostats</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbiostatsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
+    			Biostats:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseBiostats">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each agenda}}
+								{{> biostatsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+</template>
+<!-- end of Biostats card -->
 
 
 

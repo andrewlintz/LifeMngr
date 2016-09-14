@@ -6,7 +6,11 @@ import './mind.html';
 
 Template.mindPage.helpers({
   agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    return Agenda.find({}, {
+            mood: -1,
+            createdAt: -1}
+        );
+      },
 });
 
 

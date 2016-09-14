@@ -1,7 +1,8 @@
 import '../lib/routes.js';
+import '../lib/collections/collections.js';
 import '../lib/collections/testercollection.js';
 import '../lib/collections/dailycollection.js';
-import '../lib/collections/agendacollection.js';
+
 
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';

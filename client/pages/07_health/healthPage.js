@@ -9,6 +9,11 @@ Template.healthPage.helpers({
     return Agenda.find({}, {sort: {createdAt: -1}});  },
 });
 
+Template.biostatsCard.helpers({
+  agenda() {
+    return Agenda.find({}, {sort: {createdAt: -1}}); }
+});
+
 
 
 ///// EVENTS /////
