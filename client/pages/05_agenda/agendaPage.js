@@ -5,8 +5,35 @@ import './agenda.html';
 
 
 Template.agendaPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    visionEach() {
+        return Agenda.find( { vision: {$exists: true}}, {sort: {createdAt: -1}}); },
+    missionEach() {
+        return Agenda.find( { mission: {$exists: true}}, {sort: {createdAt: -1}}); },
+    valuesEach() {
+        return Agenda.find( { values: {$exists: true}}, {sort: {createdAt: -1}}); },
+    goalsEach() {
+        return Agenda.find( { goals: {$exists: true}}, {sort: {createdAt: -1}}); },
+    accomplishmentsEach() {
+        return Agenda.find( { accomplishments: {$exists: true}}, {sort: {createdAt: -1}}); },
+    successesEach() {
+        return Agenda.find( { successes: {$exists: true}}, {sort: {createdAt: -1}}); },
+    failureEach() {
+        return Agenda.find( { failure: {$exists: true}}, {sort: {createdAt: -1}}); },
+    goodhabitsEach() {
+        return Agenda.find( { goodhabits: {$exists: true}}, {sort: {createdAt: -1}}); },
+    badhabitsEach() {
+        return Agenda.find( { badhabits: {$exists: true}}, {sort: {createdAt: -1}}); },
+    strengthsEach() {
+        return Agenda.find( { strengths: {$exists: true}}, {sort: {createdAt: -1}}); },
+    weaknessesEach() {
+        return Agenda.find( { weaknesses: {$exists: true}}, {sort: {createdAt: -1}}); },
+    careerEach() {
+        return Agenda.find( { career: {$exists: true}}, {sort: {createdAt: -1}}); },
+    projectsEach() {
+        return Agenda.find( { projects: {$exists: true}}, {sort: {createdAt: -1}}); },
+    todosEach() {
+        return Agenda.find( { todos: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

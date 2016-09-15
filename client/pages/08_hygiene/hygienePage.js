@@ -5,8 +5,19 @@
 
 
 Template.hygienePage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    teethbrushEach() {
+        return Agenda.find( { teethbrush: {$exists: true}}, {sort: {createdAt: -1}}); },
+    flossedEach() {
+        return Agenda.find( { flossed: {$exists: true}}, {sort: {createdAt: -1}}); },
+    washedfaceEach() {
+        return Agenda.find( { washedface: {$exists: true}}, {sort: {createdAt: -1}}); },
+    shavedEach() {
+        return Agenda.find( { shaved: {$exists: true}}, {sort: {createdAt: -1}}); },
+    showeredEach() {
+        return Agenda.find( { showered: {$exists: true}}, {sort: {createdAt: -1}}); },
+    dressedEach() {
+        return Agenda.find( { dressed: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

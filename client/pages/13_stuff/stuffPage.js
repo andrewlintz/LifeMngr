@@ -5,8 +5,13 @@
 
 
 Template.stuffPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    stuffhaveEach() {
+        return Agenda.find( { stuffhave: {$exists: true}}, {sort: {createdAt: -1}}); },
+    stuffwantEach() {
+        return Agenda.find( { stuffwant: {$exists: true}}, {sort: {createdAt: -1}}); },
+    stuffplannerEach() {
+        return Agenda.find( { stuffplanner: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

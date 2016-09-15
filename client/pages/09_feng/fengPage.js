@@ -5,8 +5,15 @@
 
 
 Template.fengPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    hometightinessEach() {
+        return Agenda.find( { hometightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
+    cartightinessEach() {
+        return Agenda.find( { cartightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
+    workspacetightinessEach() {
+        return Agenda.find( { workspacetightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
+    choresEach() {
+        return Agenda.find( { chores: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

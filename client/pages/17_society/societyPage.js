@@ -5,8 +5,13 @@
 
 
 Template.societyPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    govtEach() {
+        return Agenda.find( { govt: {$exists: true}}, {sort: {createdAt: -1}}); },
+    policiesEach() {
+        return Agenda.find( { policies: {$exists: true}}, {sort: {createdAt: -1}}); },
+    voteEach() {
+        return Agenda.find( { vote: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

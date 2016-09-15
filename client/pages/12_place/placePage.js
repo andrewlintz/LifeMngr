@@ -5,8 +5,13 @@
 
 
 Template.placePage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    placesbeenEach() {
+        return Agenda.find( { placesbeen: {$exists: true}}, {sort: {createdAt: -1}}); },
+    placeswantEach() {
+        return Agenda.find( { placeswant: {$exists: true}}, {sort: {createdAt: -1}}); },
+    placesplannerEach() {
+        return Agenda.find( { placesplanner: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

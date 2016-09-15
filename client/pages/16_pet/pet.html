@@ -23,7 +23,7 @@
 				<div class="collapse" id="collapseAddpet">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each addpetEach}}
 								{{> addpetItem}}
   						{{/each}}
   						</ul>
@@ -56,7 +56,7 @@
 				<div class="collapse" id="collapseCurrentpets">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each currentpetsEach}}
 								{{> currentpetsItem}}
   						{{/each}}
   						</ul>
@@ -88,7 +88,7 @@
 				<div class="collapse" id="collapsePastpets">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each pastpetsEach}}
 								{{> pastpetsItem}}
   						{{/each}}
   						</ul>

@@ -5,12 +5,22 @@ import './mind.html';
 
 
 Template.mindPage.helpers({
-  agenda() {
-    return Agenda.find({}, {
-            mood: -1,
-            createdAt: -1}
-        );
-      },
+  moodEach() {
+    return Mind.find( { mood: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  creativeEach() {
+    return Mind.find( { creative: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  jokesEach() {
+    return Mind.find( { jokes: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  opinionsEach() {
+    return Mind.find( { opinions: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  inventionEach() {
+    return Mind.find( { entreinventions: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  wantEach() {
+    return Mind.find( { want: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  thoughtsEach() {
+    return Mind.find( { thoughts: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  wisdomEach() {
+    return Mind.find( { wisdom: { $exists: true }},{sort: {createdAt: -1}}); }, 
 });
 
 
@@ -26,7 +36,7 @@ Template.addmoodItem.events({
     'submit form': function(event){
     event.preventDefault();
     var mooditemName = $('[name="mooditemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         mood: mooditemName,
         createdAt: new Date()
     });
@@ -40,7 +50,7 @@ Template.moodItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=moodItem]': function(event){
@@ -49,7 +59,7 @@ Template.moodItem.events({
     } else {
         var documentId = this._id;
         var moodItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { mood: moodItem }});
+        Mind.update({ _id: documentId }, {$set: { mood: moodItem }});
         }
     },
 
@@ -64,7 +74,7 @@ Template.addcreativeItem.events({
     'submit form': function(event){
     event.preventDefault();
     var creativeitemName = $('[name="creativeitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         creative: creativeitemName,
         createdAt: new Date()
     });
@@ -78,7 +88,7 @@ Template.creativeItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=creativeItem]': function(event){
@@ -87,7 +97,7 @@ Template.creativeItem.events({
     } else {
         var documentId = this._id;
         var creativeItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { creative: creativeItem }});
+        Mind.update({ _id: documentId }, {$set: { creative: creativeItem }});
         }
     },
 
@@ -102,7 +112,7 @@ Template.addjokesItem.events({
     'submit form': function(event){
     event.preventDefault();
     var jokesitemName = $('[name="jokesitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         jokes: jokesitemName,
         createdAt: new Date()
     });
@@ -116,7 +126,7 @@ Template.jokesItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=jokesItem]': function(event){
@@ -125,7 +135,7 @@ Template.jokesItem.events({
     } else {
         var documentId = this._id;
         var jokesItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { jokes: jokesItem }});
+        Mind.update({ _id: documentId }, {$set: { jokes: jokesItem }});
         }
     },
 });
@@ -139,7 +149,7 @@ Template.addopinionsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var opinionsitemName = $('[name="opinionsitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         opinions: opinionsitemName,
         createdAt: new Date()
     });
@@ -153,7 +163,7 @@ Template.opinionsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=opinionsItem]': function(event){
@@ -162,7 +172,7 @@ Template.opinionsItem.events({
     } else {
         var documentId = this._id;
         var opinionsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { opinions: opinionsItem }});
+        Mind.update({ _id: documentId }, {$set: { opinions: opinionsItem }});
         }
     },
 });
@@ -174,7 +184,7 @@ Template.addentreinventionsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var entreinventionsitemName = $('[name="entreinventionsitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         entreinventions: entreinventionsitemName,
         createdAt: new Date()
     });
@@ -188,7 +198,7 @@ Template.entreinventionsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=entreinventionsItem]': function(event){
@@ -197,7 +207,7 @@ Template.entreinventionsItem.events({
     } else {
         var documentId = this._id;
         var entreinventionsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { entreinventions: entreinventionsItem }});
+        Mind.update({ _id: documentId }, {$set: { entreinventions: entreinventionsItem }});
         }
     },
 });
@@ -212,7 +222,7 @@ Template.addwantItem.events({
     'submit form': function(event){
     event.preventDefault();
     var wantitemName = $('[name="wantitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         want: wantitemName,
         createdAt: new Date()
     });
@@ -226,7 +236,7 @@ Template.wantItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=wantItem]': function(event){
@@ -235,7 +245,7 @@ Template.wantItem.events({
     } else {
         var documentId = this._id;
         var wantItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { want: wantItem }});
+        Mind.update({ _id: documentId }, {$set: { want: wantItem }});
         }
     },
 });
@@ -251,7 +261,7 @@ Template.addthoughtsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var thoughtsitemName = $('[name="thoughtsitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         thoughts: thoughtsitemName,
         createdAt: new Date()
     });
@@ -265,7 +275,7 @@ Template.thoughtsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=thoughtsItem]': function(event){
@@ -274,7 +284,7 @@ Template.thoughtsItem.events({
     } else {
         var documentId = this._id;
         var thoughtsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { thoughts: thoughtsItem }});
+        Mind.update({ _id: documentId }, {$set: { thoughts: thoughtsItem }});
         }
     },
 });
@@ -289,7 +299,7 @@ Template.addwisdomItem.events({
     'submit form': function(event){
     event.preventDefault();
     var wisdomitemName = $('[name="wisdomitemName"]').val();
-    Agenda.insert({
+    Mind.insert({
         wisdom: wisdomitemName,
         createdAt: new Date()
     });
@@ -303,7 +313,7 @@ Template.wisdomItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Agenda.remove({ _id: documentId });
+            Mind.remove({ _id: documentId });
     },
 
     'keyup [name=wisdomItem]': function(event){
@@ -312,7 +322,7 @@ Template.wisdomItem.events({
     } else {
         var documentId = this._id;
         var wisdomItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { wisdom: wisdomItem }});
+        Mind.update({ _id: documentId }, {$set: { wisdom: wisdomItem }});
         }
     },
 });

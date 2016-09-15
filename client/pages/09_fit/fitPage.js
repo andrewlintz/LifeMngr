@@ -5,8 +5,11 @@
 
 
 Template.fitPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    fitnessEach() {
+        return Agenda.find( { fitness: {$exists: true}}, {sort: {createdAt: -1}}); },
+    fitnessprogramEach() {
+        return Agenda.find( { fitnessprogram: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

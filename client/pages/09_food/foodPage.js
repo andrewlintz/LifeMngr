@@ -5,8 +5,17 @@
 
 
 Template.foodPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    eatlogEach() {
+        return Agenda.find( { eatlog: {$exists: true}}, {sort: {createdAt: -1}}); },
+    ingredientinventoryEach() {
+        return Agenda.find( { ingredientinventory: {$exists: true}}, {sort: {createdAt: -1}}); },
+    shoppinglistEach() {
+        return Agenda.find( { shoppinglist: {$exists: true}}, {sort: {createdAt: -1}}); },
+    menuEach() {
+        return Agenda.find( { menu: {$exists: true}}, {sort: {createdAt: -1}}); },
+    mealplanEach() {
+        return Agenda.find( { mealplan: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

@@ -5,8 +5,9 @@
 
 
 Template.peoplePage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    peoplenetworkEach() {
+        return Agenda.find( { peoplenetwork: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

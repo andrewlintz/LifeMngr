@@ -3,9 +3,36 @@
 
 
 
-<!-- biostats template card -->
-{{> biostatsCard}}
-<!-- biostats template card -->
+<!-- Biostats Card -->
+
+
+<div class="panel-primary col-sm-5">
+	<div class="panel-heading" for="inputBiostats">
+	Biostats</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbiostatsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
+    			Biostats:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseBiostats">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each biostatsEach}}
+								{{> biostatsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- end of Biostats card -->
 
 <!-- Allergies Card -->
 
@@ -25,7 +52,7 @@
 				<div class="collapse" id="collapseAllergies">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each allergiesEach}}
 								{{> allergiesItem}}
   						{{/each}}
   						</ul>
@@ -57,7 +84,7 @@
 				<div class="collapse" id="collapseSymptoms">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each symptomsEach}}
 								{{> symptomsItem}}
   						{{/each}}
   						</ul>
@@ -89,7 +116,7 @@
 				<div class="collapse" id="collapseMedhistory">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each medhistoryEach}}
 								{{> medhistoryItem}}
   						{{/each}}
   						</ul>
@@ -120,7 +147,7 @@
 				<div class="collapse" id="collapseDentalhist">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each dentalhistEach}}
 								{{> dentalhistItem}}
   						{{/each}}
   						</ul>
@@ -152,7 +179,7 @@
 				<div class="collapse" id="collapseVisionhist">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each visionhistEach}}
 								{{> visionhistItem}}
   						{{/each}}
   						</ul>
@@ -184,7 +211,7 @@
 				<div class="collapse" id="collapsePooplog">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each pooplogEach}}
 								{{> pooplogItem}}
   						{{/each}}
   						</ul>
@@ -205,36 +232,7 @@
 
 
 
-<!-- Biostats Card -->
 
-<template name="biostatsCard">
-<div class="panel-primary col-sm-5">
-	<div class="panel-heading" for="inputBiostats">
-	Biostats</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addbiostatsItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
-    			Biostats:
-  					</button>
-			</p>
-				<div class="collapse" id="collapseBiostats">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each agenda}}
-								{{> biostatsItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-</template>
-<!-- end of Biostats card -->
 
 
 
@@ -253,7 +251,6 @@
     	<input type="text" value="{{biostats}}" name="biostatsItem">
     	[<a href="#" class="delete-biostatsitem">	Delete </a>]
 </template>
-
 
 <!-- Allergies Card -->
 

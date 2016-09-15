@@ -5,8 +5,9 @@
 
 
 Template.spiritPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    spiritEach() {
+        return Agenda.find( { spirit: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

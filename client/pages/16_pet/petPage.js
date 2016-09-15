@@ -5,8 +5,13 @@
 
 
 Template.petPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    addpetEach() {
+        return Agenda.find( { addpet: {$exists: true}}, {sort: {createdAt: -1}}); },
+    currentpetsEach() {
+        return Agenda.find( { currentpets: {$exists: true}}, {sort: {createdAt: -1}}); },
+    pastpetsEach() {
+        return Agenda.find( { pastpets: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

@@ -20,7 +20,7 @@
 				<div class="collapse" id="collapseEatlog">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each eatlogEach}}
 								{{> eatlogItem}}
   						{{/each}}
   						</ul>
@@ -51,7 +51,7 @@
 				<div class="collapse" id="collapseIngredientinventory">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each ingredientinventoryEach}}
 								{{> ingredientinventoryItem}}
   						{{/each}}
   						</ul>
@@ -83,7 +83,7 @@
 				<div class="collapse" id="collapseShoppinglist">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each shoppinglistEach}}
 								{{> shoppinglistItem}}
   						{{/each}}
   						</ul>
@@ -115,7 +115,7 @@
 				<div class="collapse" id="collapseMenu">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each menuEach}}
 								{{> menuItem}}
   						{{/each}}
   						</ul>
@@ -147,7 +147,7 @@
 				<div class="collapse" id="collapseMealplan">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each agenda}}
+  						{{#each mealplanEach}}
 								{{> mealplanItem}}
   						{{/each}}
   						</ul>

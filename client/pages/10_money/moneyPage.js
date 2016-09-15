@@ -5,8 +5,27 @@
 
 
 Template.moneyPage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    networthEach() {
+        return Agenda.find( { networth: {$exists: true}}, {sort: {createdAt: -1}}); },
+    fireEach() {
+        return Agenda.find( { fire: {$exists: true}}, {sort: {createdAt: -1}}); },
+    earningsEach() {
+        return Agenda.find( { earnings: {$exists: true}}, {sort: {createdAt: -1}}); },
+    spendingEach() {
+        return Agenda.find( { spending: {$exists: true}}, {sort: {createdAt: -1}}); },
+    assetsEach() {
+        return Agenda.find( { assets: {$exists: true}}, {sort: {createdAt: -1}}); },
+    borrowEach() {
+        return Agenda.find( { borrow: {$exists: true}}, {sort: {createdAt: -1}}); },
+    savingsEach() {
+        return Agenda.find( { savings: {$exists: true}}, {sort: {createdAt: -1}}); },
+    runEach() {
+        return Agenda.find( { run: {$exists: true}}, {sort: {createdAt: -1}}); },
+    debttoequityEach() {
+        return Agenda.find( { debttoequity: {$exists: true}}, {sort: {createdAt: -1}}); },
+    budgetEach() {
+        return Agenda.find( { budget: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 

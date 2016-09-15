@@ -5,8 +5,13 @@
 
 
 Template.lovePage.helpers({
-  agenda() {
-    return Agenda.find({}, {sort: {createdAt: -1}});  },
+    dreamsoEach() {
+        return Agenda.find( { dreamso: {$exists: true}}, {sort: {createdAt: -1}}); },
+    currentsoEach() {
+        return Agenda.find( { currentso: {$exists: true}}, {sort: {createdAt: -1}}); },
+    lovehistEach() {
+        return Agenda.find( { lovehist: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 
