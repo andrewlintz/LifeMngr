@@ -1,4 +1,3 @@
-/*
 import './life.html';
 
 
@@ -14,8 +13,25 @@ Template.pastdayslogger.helpers({
 
 ///// EVENTS /////
 
+// submitter //
 
-Template.lifeheadlinerItem.events({
+Template.journalEntry.events({
+    'submit #todaysstory':function(e){
+        e.preventDefault();
+        var headline = $('#dayHeadline').val();
+        var story = $('#dayStory').val();
+    Daily.insert({
+        headline: headline,
+        story: story,
+        createdAt: new Date()
+    });
+   }
+});
+
+
+// past logging ///
+
+Template.lifeheadliner.events({
 	// events go here
     'click .delete-lifeheadlineritem': function(event){
     event.preventDefault();
@@ -36,7 +52,7 @@ Template.lifeheadlinerItem.events({
 
 });
 
-Template.lifestoryItem.events({
+Template.lifestory.events({
 	// events go here
     'click .delete-lifestoryitem': function(event){
     event.preventDefault();
@@ -56,4 +72,4 @@ Template.lifestoryItem.events({
     },
 
 });
-*/
+

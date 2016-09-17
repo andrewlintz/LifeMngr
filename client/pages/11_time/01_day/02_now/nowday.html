@@ -1,23 +1,107 @@
 <template name="nowdayPage">
+  {{> timesifterdn}}
 	{{> Greatdaytobealive}}
 	{{> collapseCity}}
 	{{> tobeMade}}
 </template>
 
-<!--   Below is the Heading Lable  -->
-
-<template name="Greatdaytobealive">
-  <h1>Great Day to be Alive!</h1>
-
-    <a href="/time/daypast">Day's History</a>
+<template name="timesifterdn">
+<br>
+<div class="container">
+  <div class="row col-sm-12" align="center">
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDay" aria-expanded="false" aria-controls="collapseDay">
+    Day
+  </button>
+  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseWeek" aria-expanded="false" aria-controls="collapseWeek">
+    Week
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMonth" aria-expanded="false" aria-controls="collapseMonth">
+    Month
+  </button>
+  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseQuarter" aria-expanded="false" aria-controls="collapseQuarter">
+    Quarter
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSeason" aria-expanded="false" aria-controls="collapseSeason">
+    Season
+  </button>
+  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseYear" aria-expanded="false" aria-controls="collapseYear">
+    Year
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse3year" aria-expanded="false" aria-controls="collapse3year">
+    3 Year
+  </button>
+  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDecade" aria-expanded="false" aria-controls="collapseDecade">
+    Decade
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLife" aria-expanded="false" aria-controls="collapseLife">
+    Big Picture
+  </button>
+</p>
+</div>
+</div>
+<div class="collapse row col-sm-10" id="collapseDay">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/daypast" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseWeek">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseMonth">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseQuarter">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseSeason">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseYear">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapse3year">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseDecade">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
+<div class="collapse row col-sm-10" id="collapseLife">
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+</div>
 </template>
+
+
 
 
 <!--   ////  Collapse City ////  -->
 
-
-
-<!--   ////  Today's Story ////  -->
+<!--   ////  Today's Story ////  --> 
 
 <template name="collapseCity">
 <p>
@@ -25,7 +109,7 @@
     Today's Story
   </button>
 
-<div class="collapse" id="todaysstory">
+<div class="collapse in" id="todaysstory">
   <form class="form-horizontal" id="todaysstory">
   <div class="form-group">
     <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
@@ -55,14 +139,14 @@
 
 <p>
 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="false" aria-controls="lastnightsleep">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="true" aria-controls="lastnightsleep">
     Last Night's Sleep
   </button>
 
-<div class="collapse" id="lastnightsleep">
+<div class="collapse in" id="lastnightsleep">
   <div class="card card-block">
 	
-	<form class="form-horizontal" id="blogForm">
+	<form class="form-horizontal" id="bNowForm">
   		<div class="form-group">
     		<div class="col-sm-10">
       			<input type="text" class="form-control" id="howdidUsleep" placeholder="How did you sleep lastnight?">
@@ -86,10 +170,10 @@
     Morning wake!
   </button>
 
-<div class="collapse" id="morning">
+<div class="collapse in" id="morning">
   <div class="card card-block">
 	
-	<form class="form-horizontal" id="blogForm">
+	<form class="form-horizontal" id="bNowForm">
   		<div class="form-group">
     		<div class="col-sm-10">
       			<input type="text" class="form-control" id="howdidUsleep" placeholder="When did you wake up?">
@@ -113,7 +197,7 @@
     Mind
   </button>
 
-<div class="collapse" id="mind">
+<div class="collapse in" id="mind">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -184,7 +268,7 @@
     Agenda
   </button>
 
-<div class="collapse" id="agenda">
+<div class="collapse in" id="agenda">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -241,7 +325,7 @@
     Health
   </button>
 
-<div class="collapse" id="health">
+<div class="collapse in" id="health">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -271,7 +355,7 @@
     Hygiene
   </button>
 
-<div class="collapse" id="hygiene">
+<div class="collapse in" id="hygiene">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -308,7 +392,7 @@
     Fengshui
   </button>
 
-<div class="collapse" id="fengshui">
+<div class="collapse in" id="fengshui">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -351,7 +435,7 @@
     Exercise
   </button>
 
-<div class="collapse" id="exercies">
+<div class="collapse in" id="exercies">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -377,7 +461,7 @@
     Diet
   </button>
 
-<div class="collapse" id="diet">
+<div class="collapse in" id="diet">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -444,7 +528,7 @@
     Money
   </button>
 
-<div class="collapse" id="money">
+<div class="collapse in" id="money">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -487,20 +571,20 @@
     Time
   </button>
 
-<div class="collapse" id="time">
+<div class="collapse in" id="time">
   <div class="card card-block">
 
   <form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Time log: work | play account balances">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Time Now: work | play account balances">
    		 	</div>
  		 </div>
  	</form>
  	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Time log: media, photo, video, audio journal">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="Time Now: media, photo, video, audio journal">
    		 	</div>
  		 </div>
  	</form>
@@ -537,7 +621,7 @@
     Location
   </button>
 
-<div class="collapse" id="location">
+<div class="collapse in" id="location">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -567,7 +651,7 @@
     Stuff & Things
   </button>
 
-<div class="collapse" id="things">
+<div class="collapse in" id="things">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -603,7 +687,7 @@
     People
   </button>
 
-<div class="collapse" id="people">
+<div class="collapse in" id="people">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -632,7 +716,7 @@
     Love
   </button>
 
-<div class="collapse" id="love">
+<div class="collapse in" id="love">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -680,7 +764,7 @@
  	<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="arguement log, what was it about?">
+      			<input type="text" class="form-control" id="howdidUsleep" placeholder="arguement Now, what was it about?">
    		 	</div>
  		 </div>
  	</form>
@@ -696,7 +780,7 @@
     Companions: Pets & Garden
   </button>
 
-<div class="collapse" id="pets">
+<div class="collapse in" id="pets">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -731,7 +815,7 @@
     Society & Government
   </button>
 
-<div class="collapse" id="society">
+<div class="collapse in" id="society">
   <div class="card card-block">
 	
 	<form class="form-horizontal">
@@ -767,7 +851,7 @@
     Spirit
   </button>
 
-<div class="collapse" id="spirit">
+<div class="collapse in" id="spirit">
   <div class="card card-block">
 	
 	<form class="form-horizontal">

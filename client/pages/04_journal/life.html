@@ -1,4 +1,5 @@
-<!--
+<!-- TOP LEVEL PAGE VIEW -->
+
 <template name="lifePage">
 	<h1>Life Page</h1>
 
@@ -7,61 +8,75 @@
 
 </template>
 
+<!-- End Of TOP LEVEL PAGE VIEW -->
+
+<!-- Journal Entry Temaplate -->
 
 <template name="journalEntry">
 <p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#todaysstory" aria-expanded="false" aria-controls="todaysstory">
-    Today's Story
-  </button>
 
-<div class="collapse" id="todaysstory">
-  <form class="form-horizontal" id="todaysstory">
-  <div class="form-group">
+<div id="todaysstory">
+
+  <div class="container">   
+  <div class="row">
     <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of your day">
     </div>
   </div>
-
-  <div class="form-group">
+  </div>
+<p></p>
+  <div class="container">   
+  <div class="row">    
     <label for="inputStory" class="col-sm-2 control-label">Story</label>
+    
     <div class="col-sm-10">
-      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of the day"></textarea>
+      <textarea id="dayStory" class="form-control" rows="5" placeholder="Story of the day"></textarea>
     </div>
   </div>
-
-  <div class="form-group">
+  </div>
+<p></p>
+  <div class="container">   
+  <div class="row">
     <div class="col-sm-offset-2 col-sm-10">
       <button id="submtPost" type="submit" class="btn btn-default">Submit</button>
     </div>
   </div>
-</form>
+  </div>
 </div>
 </p>
+
+<hr>
 </template>
 
+<!-- End of Journal Entry Temaplate -->
 
+<!-- History Looper Temaplate -->
 
 <template name="pastdayslogger">
   <div class="container">
     <div class="row">
-      <ul>
+      
         {{#each dayoflife}}
           {{> lifeheadliner}}
-          {{> lifestoryItem}}  
+          <p></p>
+          {{> lifestory}}  
         {{/each}} 
-      </ul>
+      
     </div>
   </div>
 </template>
 
+<!-- End of History Looper Temaplate -->
+
+<!-- Life Headline LoaderTemaplate -->
 
 <template name="lifeheadliner">
  <div class="container">   
   <div class="row">
       <br>
         <div>
-        <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>  
+        <label for="inputHeadline" class="col-sm-2 control-label">{{createdAt}} </label>  
         <div class="col-sm-10">
           <textarea class="form-control" rows="1" value="{{headline}}" name="lifeheadlinerItem"></textarea>
         </div>
@@ -71,16 +86,17 @@
  </div>   
 </template>
 
-<template name="lifestoryItem">
+<!-- Life Story LoaderTemaplate -->
+
+<template name="lifestory">
  <div class="container">   
   <div class="row">
-      <li>
-        <label for="inputStory" class="col-sm-2 control-label">The Day's Story <br><a href="" class="delete-lifestoryitem"> Delete </a></label> 
+      
+        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-lifestoryitem"> Delete </a></label> 
         <div class="col-sm-10">
           <textarea class="form-control" rows="5" value="{{story}}" name="lifestoryItem"></textarea>
         </div>
-      </li>
+      
     </div>
  </div>   
 </template>
--->

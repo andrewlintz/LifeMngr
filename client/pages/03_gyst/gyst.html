@@ -1,39 +1,6 @@
 <template name="gystPage">
   <h1>Gyst Dashboard</h1>
 
-	{{> addTesteritem}}
-	<br>
-  <ul>
-  {{#each tester}}
-		{{> testerItem}}
-  {{/each}}
-  </ul>
-  	
-  		{{> testerCount}}
 
 </template>
-
-<template name="addTesteritem">
-    <form>
-        Create an Item:
-        <input type="text" placeholder="Type something to add to items list here..." name="testeritemName">
-    </form>
-</template>
-
-<template name="testerItem">
-    <li class="{{checked}}">
-    	<input type="checkbox" {{checked}}>
-    	<input type="text" value="{{name}}" name="testerItem">
-    	[<a href="#" class="delete-testeritem">	Delete </a>]
-    </li>
-</template>
-
-<template name="testerCount">
-    {{#if totalTester}}
-    <p>
-      You have completed {{completedTester}} out of {{totalTester}} testers 
-    </p>
-    {{/if}}
-</template>
-
 

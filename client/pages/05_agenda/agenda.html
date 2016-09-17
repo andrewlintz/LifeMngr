@@ -5,7 +5,7 @@
 
 <!-- Vision Card -->
 
-<div class="panel-primary col-sm-10">
+<div class="panel-primary col-sm-12">
 	<div class="panel-heading" for="inputVision">
 	Vision</div>
 
@@ -34,7 +34,7 @@
 
 
 <!-- Mission Card -->
-	<div class="panel-primary col-sm-5"> 	
+	<div class="panel-primary col-sm-6"> 	
 	  	<div class="panel-heading" for="inputMission">
 	  	Mission</div>
 
@@ -66,7 +66,7 @@
 
 <!-- Values Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputValues">
 	Values</div>
 
@@ -94,7 +94,7 @@
 <!-- end of Values card -->
 
 <!-- Goals Card -->
-	<div class="panel-primary col-sm-5"> 	
+	<div class="panel-primary col-sm-6"> 	
 	  	<div class="panel-heading" for="inputGoals">
 	  	Goals</div>
 
@@ -128,7 +128,7 @@
 
 <!-- Accomplishments Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputAccomplishments">
 	Accomplishments</div>
 
@@ -159,7 +159,7 @@
 
 <!-- Successes Card -->
 
-	<div class="panel-primary col-sm-5"> 
+	<div class="panel-primary col-sm-6"> 
 	  	<div class="panel-heading" for="inputSuccesses">
 	  	Successes</div>
 
@@ -192,7 +192,7 @@
 
 <!-- Failure Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputFailure">
 	Failure</div>
 
@@ -221,7 +221,7 @@
 
 <!-- Good Habbits Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputGoodhabits">
 	Good Habbits</div>
 
@@ -252,7 +252,7 @@
 
 <!-- Bad Habbits Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputBadhabits">
 	Bad Habbits</div>
 
@@ -283,7 +283,7 @@
 
 <!-- Strengths Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputStrengths">
 	Strengths</div>
 
@@ -312,7 +312,7 @@
 
 <!-- Weaknesses Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputWeaknesses">
 	Weaknesses</div>
 
@@ -341,7 +341,7 @@
 
 <!-- Career Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputCareer">
 	Career</div>
 
@@ -370,7 +370,7 @@
 
 <!-- Projects Card -->
 
-<div class="panel-primary col-sm-5">
+<div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputProjects">
 	Projects</div>
 
@@ -399,7 +399,7 @@
 
 <!-- Todos Card -->
 
-<div class="panel-primary col-sm-10">
+<div class="panel-primary col-sm-12">
 	<div class="panel-heading" for="inputTodos">
 	Todos</div>
 
@@ -449,8 +449,10 @@
 </template>
 
 <template name="visionItem">	
-    	<input type="text" value="{{vision}}" name="visionItem" class="col-sm-10">
+    <li>
+    	<input type="text" value="{{vision}}" name="visionItem" class="col-sm-8"> - 
     	[<a href="#" class="delete-visionitem">	Delete </a>]
+    </li>
 </template>
 
 
@@ -509,8 +511,10 @@
 </template>
 
 <template name="accomplishmentsItem">	
+    <li>
     	<input type="text" value="{{accomplishments}}" name="accomplishmentsItem">
     	[<a href="#" class="delete-accomplishmentsitem">	Delete </a>]
+    </li>
 </template>
 
 
