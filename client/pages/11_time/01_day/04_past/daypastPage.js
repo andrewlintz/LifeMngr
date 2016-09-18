@@ -1,10 +1,10 @@
-import './historyday.html';
+import './daypast.html';
 
 
 ///// HELPERS /////
 
 
-Template.historydayPage.helpers({
+Template.daypastPage.helpers({
   ester() {
     return Daily.find({}, {sort: {createdAt: -1}});  },
 });

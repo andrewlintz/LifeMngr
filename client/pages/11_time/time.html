@@ -1,7 +1,14 @@
 <template name="timePage">
-  <h1 align="center">The Time of Your Life</h1>
+{{> timesifter}}
 
+  <h1 align="center">The Time of Your Life</h1>
 <br>
+
+
+</template>
+
+
+<template name="timesifter">
 <div class="container">
   <div class="row col-sm-12" align="center">
 <p>
@@ -23,7 +30,7 @@
   <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseYear" aria-expanded="false" aria-controls="collapseYear">
     Year
   </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse3year" aria-expanded="false" aria-controls="collapse3year">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsethreeyear" aria-expanded="false" aria-controls="collapsethreeyear">
     3 Year
   </button>
   <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDecade" aria-expanded="false" aria-controls="collapseDecade">
@@ -33,147 +40,61 @@
     Big Picture
   </button>
 </p>
+<br>
 </div>
 <div class="collapse row col-sm-10" id="collapseDay">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/dayplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/daynow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/dayreview" role="button">Review</a>
     <a class="btn btn-lg btn-info" href="/time/daypast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseWeek">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/weekplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/weeknow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/weekreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/weekpast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseMonth">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/monthplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/monthnow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/monthreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/monthpast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseQuarter">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/quarterplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/quarternow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/quarterreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/quarterpast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseSeason">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/seasonplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/seasonnow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/seasonreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/seasonpast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseYear">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/yearplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/yearnow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/yearreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/yearpast" role="button">Past</a>
 </div>
-<div class="collapse row col-sm-10" id="collapse3year">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+<div class="collapse row col-sm-10" id="collapsethreeyear">
+    <a class="btn btn-lg btn-info" href="/time/threeyearplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/threeyearnow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/threeyearreview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/threeyearpast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseDecade">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/decadeplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/decadenow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/decadereview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/decadepast" role="button">Past</a>
 </div>
 <div class="collapse row col-sm-10" id="collapseLife">
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Plan</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Now</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Review</a>
-    <a class="btn btn-lg btn-info" href="/time/day" role="button">Past</a>
+    <a class="btn btn-lg btn-info" href="/time/lifeplan" role="button">Plan</a>
+    <a class="btn btn-lg btn-info" href="/time/lifenow" role="button">Now</a>
+    <a class="btn btn-lg btn-info" href="/time/lifereview" role="button">Review</a>
+    <a class="btn btn-lg btn-info" href="/time/lifepast" role="button">Past</a>
 </div>
 </div>
-
-  
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<!-- Table zone -->
-
- <table  align="center" class="table table-hover">
-  <thead align="center" class="active">
-    <tr>
-      <td align="center" style="font-weight: bold">Past</td>
-      <td align="center" style="font-weight: bold">Now</td>
-      <td align="center" style="font-weight: bold">End Review</td>
-      <td align="center" style="font-weight: bold">Future</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center"><a href="/time/daypast" >Day's History</a></td>
-      <td align="center"><a href="/time/day">Day's Now</a></td>
-      <td align="center"><a href="/time/day" >Today's Plan</a></td>
-      <td align="center"><a href="/time/day" >Plan for Tomorrow</a></td>
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/week" >Week's History</a></td>
-      <td align="center"><a href="/03_time/week" >Week's Now</a></td>
-      <td align="center"><a href="/03_time/week" >Week's Plan</a></td>
-      <td align="center"><a href="/03_time/week" >Next Week's Plan</a></td>
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/Month" >Month's History</a></td>
-      <td align="center"><a href="/03_time/Month" >Month's Now</a></td>
-      <td align="center"><a href="/03_time/Month" >Month's Plan</a></td>
-      <td align="center"><a href="/03_time/Month" >Next Month's Plan</a></td>
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/quarter" >Quarter's History</a></td>
-      <td align="center"><a href="/03_time/quarter" >Quarter's Now</a></td>
-      <td align="center"><a href="/03_time/quarter" >Quarter's Plan</a></td>
-      <td align="center"><a href="/03_time/quarter" >Next Quarter's Plan</a></td>
-
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/season" >Season's History</a></td>
-      <td align="center"><a href="/03_time/season" >Season's Now</a></td>
-      <td align="center"><a href="/03_time/season" >Season's Plan</a></td>
-      <td align="center"><a href="/03_time/season" >Next Season's Plan</a></td>
-
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/year" >Year's History</a></td>
-      <td align="center"><a href="/03_time/year" >Year's Now</a></td>
-      <td align="center"><a href="/03_time/year" >Year's Plan</a></td>
-      <td align="center"><a href="/03_time/year" >Next Year's Plan</a></td>
-
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/3year" >3 Years's History</a></td>
-      <td align="center"><a href="/03_time/3year" >3 Years' Now</a></td>
-      <td align="center"><a href="/03_time/3year" >3 Year Plan</a></td>
-      <td align="center"><a href="/03_time/3year" >5 Years Plan</a></td>
-
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/decade" >Decade's History</a></td>
-      <td align="center"><a href="/03_time/decade" >Decade's Now</a></td>
-      <td align="center"><a href="/03_time/decade" >Decade's Plan</a></td>
-      <td align="center"><a href="/03_time/decade" >Next Decade</a></td>
-
-    </tr>
-    <tr>
-      <td align="center"><a href="/03_time/lifetime" >Life's Big Picture so Far</a></td>
-      <td align="center"><a href="/03_time/lifetime" >Life's Big Picture's Now</a></td>
-      <td align="center"><a href="/03_time/lifetime" >By End of Life's Big Picture</a></td>
-      <td align="center"><a href="/03_time/lifetime" >Next Life</a></td>
-
-    </tr>
-  </tbody>
-</table>
 </template>

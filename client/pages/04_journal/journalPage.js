@@ -15,18 +15,22 @@ Template.pastdayslogger.helpers({
 
 // submitter //
 
+
+
 Template.journalEntry.events({
-    'submit #todaysstory':function(e){
+    'submit #todaysstory1':function(e){
         e.preventDefault();
-        var headline = $('#dayHeadline').val();
-        var story = $('#dayStory').val();
+        var headline1 = $('#dayHeadline1').val();
+        var story1 = $('#dayStory1').val();
     Daily.insert({
-        headline: headline,
-        story: story,
+        headline: headline1,
+        story: story1,
         createdAt: new Date()
     });
+
    }
 });
+
 
 
 // past logging ///

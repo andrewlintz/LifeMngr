@@ -1,0 +1,56 @@
+<template name="daypastPage">
+ {{> timesifter}}
+
+	<h1 align="center">
+		Great Days Lived!
+	</h1>
+
+	<br>
+
+<div class="container">
+	<div class="row">
+  		<ul>
+  			{{#each ester}}
+				{{> esterItem}}
+				{{> storyItem}}
+  			{{/each}}
+  		</ul>
+  	</div>
+</div>  	
+
+</template>
+
+
+
+<!-- template -->
+
+
+
+<template name="esterItem">
+ <div class="container">   
+ 	<div class="row">
+    	<br>
+    		<div>
+    		<label for="inputHeadline" class="col-sm-2 control-label">Headline</label>	
+    		<div class="col-sm-10">
+    			<textarea class="form-control" rows="1" value="{{headline}}" name="esterItem"></textarea>
+    		</div>
+    		</div>
+    
+    </div>
+ </div>   
+</template>
+
+<template name="storyItem">
+ <div class="container">   
+ 	<div class="row">
+    	<li>
+    		<label for="inputStory" class="col-sm-2 control-label">The Day's Story <br><a href="" class="delete-storyitem">	Delete </a></label>	
+    		<div class="col-sm-10">
+    			<textarea class="form-control" rows="5" value="{{story}}" name="storyItem"></textarea>
+    		</div>
+    	</li>
+    </div>
+ </div>   
+</template>
+
