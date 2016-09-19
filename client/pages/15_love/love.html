@@ -1,20 +1,21 @@
 <template name="lovePage">
 	<h1>Love Page</h1>
  
+	{{> currentsocard}}
+	{{> lovehist}}
+	{{> dreamsocard}}
 
-
-
-
+</template>
 <!--  Dreamso Card -->
 
-
+<template name="dreamsocard">
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputDreamso">
 	Dream so</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> adddreamsoItem}}
+			
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDreamso" aria-expanded="false" aria-controls="collapseDreamso">
@@ -24,6 +25,7 @@
 				<div class="collapse" id="collapseDreamso">
 					<div class="list-group">
 							<ul class="list-group-item">
+						{{> adddreamsoItem}}
   						{{#each dreamsoEach}}
 								{{> dreamsoItem}}
   						{{/each}}
@@ -33,31 +35,33 @@
 			</ul>
 	</div>
 </div>
-
+</template>
 <!-- end of Dreamso card -->
 
 
 <!--  Currentso Card -->
 
-
+<template name="currentsocard">
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputCurrentso">
-	Current so</div>
+	<div class="panel-heading">
+	My SO</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addcurrentsoItem}}
+			
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCurrentso" aria-expanded="false" aria-controls="collapseCurrentso">
-    			Currentso list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePeriod" aria-expanded="false" aria-controls="collapsePeriod">
+    			Period Tracker
   					</button>
 			</p>
-				<div class="collapse" id="collapseCurrentso">
+				<div class="collapse" id="collapsePeriod">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each currentsoEach}}
-								{{> currentsoItem}}
+						{{> addperiodItem}}
+						<hr style="width: 98%">
+  						{{#each periodEach}}
+								{{> periodItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -65,14 +69,14 @@
 			</ul>
 	</div>
 </div>
-
+</template>
 <!-- end of Currentso card -->
 
 
 
 
 <!--  Lovehist Card -->
-
+<template name="lovehist">
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputLovehist">
@@ -80,16 +84,17 @@
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addlovehistItem}}
+			
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLovehist" aria-expanded="false" aria-controls="collapseLovehist">
-    			Lovehist list:
+    			Love Record:
   					</button>
 			</p>
 				<div class="collapse" id="collapseLovehist">
 					<div class="list-group">
 							<ul class="list-group-item">
+						{{> addlovehistItem}}
   						{{#each lovehistEach}}
 								{{> lovehistItem}}
   						{{/each}}
@@ -99,10 +104,10 @@
 			</ul>
 	</div>
 </div>
-
+</template>
 <!-- end of Lovehist card -->
 
-</template>
+
 
 
 
@@ -118,8 +123,8 @@
 
 <template name="adddreamsoItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="dreamsoitemName">
+        What Attributes does your ideal mate have?:
+        <input type="text" class="form-control" placeholder="Physical, Mental, Attitudes, Personality, Likes, Dislikes." name="dreamsoitemName">
     </form>
 </template>
 
@@ -133,16 +138,33 @@
 <!-- Currentso Program Card -->
 
 
-<template name="addcurrentsoItem">
+<template name="addperiodItem">
+<form class="form-inline" id="addPeriod">
+
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-warning">Add</button>
+    </div>
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="currentsoitemName">
+        <input type="text" class="form-control" style="width: 80%" name="perioditemName" placeholder="Describe Her Current State">
     </form>
+</form>
 </template>
 
-<template name="currentsoItem">	
-    	<input type="text" value="{{currentso}}" name="currentsoItem">
-    	[<a href="#" class="delete-currentsoitem">	Delete </a>]
+<template name="periodItem">	
+  <div class="container">
+  	<div class="row">
+  	<div class="col-sm-1">
+		<div class="converteddate"> {{formatDate createdAt}} </div>
+  	</div>
+    <div class="col-sm-3">
+    	<input type="text" class="form-control" value="{{period}}" name="periodItem">
+    </div>
+    <div class="col-sm-1">
+    	<button class="btn btn-danger btn-sm delete-perioditem">Delete</button>
+    	
+    </div>
+    </div>
+  </div>
 </template>
 
 
@@ -153,8 +175,8 @@
 
 <template name="addlovehistItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="lovehistitemName">
+        
+        <input type="text" class="form-control" placeholder="Sexual History" name="lovehistitemName">
     </form>
 </template>
 

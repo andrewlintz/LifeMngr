@@ -15,8 +15,6 @@ Template.pastdayslogger.helpers({
 
 // submitter //
 
-
-
 Template.journalEntry.events({
     'submit #todaysstory1':function(e){
         e.preventDefault();

@@ -13,12 +13,7 @@
 <!-- Journal Entry Temaplate -->
 
 <template name="journalEntry">
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#todaysstory1" aria-expanded="false" aria-controls="todaysstory1">
-    Today's Story
-  </button>
-
-<div class="collapse in" id="todaysstory1">
-  <form class="form-horizontal" id="todaysstory1">
+<form class="form-horizontal" id="todaysstory1">
   <div class="form-group">
     <label for="inputHeadline" class="col-sm-2 control-label">Headline</label>
     <div class="col-sm-10">
@@ -39,9 +34,7 @@
     </div>
   </div>
 </form>
-</div>
-
-
+ 
 <hr>
 </template>
 
@@ -72,7 +65,7 @@
   <div class="row">
       <br>
         <div>
-        <label for="inputHeadline" class="col-sm-2 control-label">{{createdAt}} </label>  
+        <label for="inputHeadline" class="col-sm-1 control-label">{{formatDate createdAt}} </label>  
         <div class="col-sm-10">
           <textarea class="form-control" rows="1" value="{{headline}}" name="lifeheadlinerItem"></textarea>
         </div>
@@ -88,7 +81,7 @@
  <div class="container">   
   <div class="row">
       
-        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-lifestoryitem"> Delete </a></label> 
+        <label for="inputStory" class="col-sm-1 control-label"> <br><a href="" class="delete-lifestoryitem"> Delete </a></label> 
         <div class="col-sm-10">
           <textarea class="form-control" rows="5" value="{{story}}" name="lifestoryItem"></textarea>
         </div>

@@ -1,10 +1,59 @@
 <template name="dayreviewPage">
 {{> timesifter}}
 {{> Greatdaytobealivereview}}
+<hr>
+{{> dayreviewheadliner}}
+{{> dayreviewstory}}
 </template>
 
+<!-- Head Liner Template -->
+
 <template name="Greatdaytobealivereview">
+  <div class="col-sm-2">
+    <a class="btn btn btn-info" href="/time/daynow" role="button">Now
+    </a>
+  </div>
+  <div class="col-sm-9">
   <h1 align="center">Great Day to Reflect On!</h1>
+  </div>
+  <div class="col-sm-1">
+    <a class="btn btn btn-info" href="/time/daypast" role="button">Past
+    </a>    
+  </div>
 <br>
 
+</template>
+
+<!-- Day story Template -->
+
+<!-- Life Headline LoaderTemaplate -->
+
+<template name="dayreviewheadliner">
+ <div class="container">   
+  <div class="row">
+      <br>
+        <div>
+        <label for="inputHeadline" class="col-sm-2 control-label">{{createdAt}} </label>  
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="1" value="{{headline}}" name="dayreviewheadlinerItem"></textarea>
+        </div>
+        </div>
+    
+    </div>
+ </div>   
+</template>
+
+<!-- Life Story LoaderTemaplate -->
+
+<template name="dayreviewstory">
+ <div class="container">   
+  <div class="row">
+      
+        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-dayreviewstoryitem"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="5" value="{{story}}" name="dayreviewstoryItem"></textarea>
+        </div>
+      
+    </div>
+ </div>   
 </template>

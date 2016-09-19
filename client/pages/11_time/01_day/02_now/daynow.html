@@ -3,12 +3,26 @@
 <template name="daynowPage">
   {{> timesifter}}
 	{{> Greatdaytobealive}}
+  <br>
+  <hr>
 	{{> collapseCity}}
+  {{> daysStory}}
+  {{> sleepLogger}}
 	{{> tobeMade}}
 </template>
 
 <template name="Greatdaytobealive">
+  <div class="col-sm-2">
+    <a class="btn btn btn-info" href="/time/dayplan" role="button">Plan
+    </a>
+  </div>
+  <div class="col-sm-9">
     <h1 align="center">Great Day to be Alive!</h1>
+  </div>
+  <div class="col-sm-1">
+    <a class="btn btn btn-info" href="/time/dayreview" role="button">Review
+    </a>    
+  </div>
 <br>
 
 
@@ -17,10 +31,15 @@
 
 <!--   ////  Collapse City ////  -->
 
+<template name="collapseCity">
+<br>
+</template>
+
+
 <!--   ////  Today's Story ////  -->
 
-<template name="collapseCity">
-<p>
+<template name="daysStory">
+
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#todaysstory" aria-expanded="false" aria-controls="todaysstory">
     Today's Story
   </button>
@@ -48,11 +67,12 @@
   </div>
 </form>
 </div>
-</p>
+</template>
 
 
 <!-- //// SLEEP //// -->
 
+<template name="sleepLogger">
 <p>
 
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="true" aria-controls="lastnightsleep">
@@ -62,10 +82,10 @@
 <div class="collapse in" id="lastnightsleep">
   
   <div>
-		<form class="form-horizontal" id="bNowForm">
+		<form class="form-horizontal">
   		<div class="form-group">
     		<div class="col-sm-10 col-md-offset-2">
-      			<input type="text" class="form-control" id="howdidUsleep" placeholder="How did you sleep lastnight?">
+      			<textarea class="form-control" rows="1" value="{{howdidUsleep}}" name="howdidUsleepItem" placeholder="How did you sleep lastnight?"></textarea>
    		 	</div>
       </div>
       <div class="form-group">
@@ -78,9 +98,10 @@
 
 </div>
 </p>
+</template>
 
 <!-- //// WAKE //// -->
-
+<template name="wakelogger">
 <p>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
     Morning wake!
