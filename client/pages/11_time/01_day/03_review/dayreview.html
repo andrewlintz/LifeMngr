@@ -2,8 +2,7 @@
 {{> timesifter}}
 {{> Greatdaytobealivereview}}
 <hr>
-{{> dayreviewheadliner}}
-{{> dayreviewstory}}
+{{> drLooper}}
 </template>
 
 <!-- Head Liner Template -->
@@ -14,7 +13,7 @@
     </a>
   </div>
   <div class="col-sm-9">
-  <h1 align="center">Great Day to Reflect On!</h1>
+  <h1 align="center">{{> time}} Great Day to Reflect On! </h1>
   </div>
   <div class="col-sm-1">
     <a class="btn btn btn-info" href="/time/daypast" role="button">Past
@@ -24,36 +23,75 @@
 
 </template>
 
-<!-- Day story Template -->
+<template name="time">
+         {{formatDate time}}
+</template>
 
-<!-- Life Headline LoaderTemaplate -->
+
+<!--////////// TEMPLATES for  Looper //////////-->
+
+<!-- Day Reviewlooper Template -->
+<template name="drLooper">
+  <div class="container">
+    <div class="row">
+      
+        {{#each drDiarylooper}}
+          {{> dayreviewheadliner}}
+          {{> drstory}} 
+        {{/each}}      
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      {{#each drSleeplooper}}
+        {{> drhowdidUsleep}}  
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+
+
+
+<!-- DayReviewHeadlineLoader Temaplate -->
 
 <template name="dayreviewheadliner">
  <div class="container">   
   <div class="row">
       <br>
         <div>
-        <label for="inputHeadline" class="col-sm-2 control-label">{{createdAt}} </label>  
-        <div class="col-sm-8">
+        <label for="inputHeadline" class="col-sm-1 control-label" style="background: white; border-radius: 5px">{{formatDate createdAt}} </label>
+        <label class="col-sm-1 control-label" style="background: white; border-radius: 5px">HighLights</label>
+        <div class="col-sm-8" col-sm-offset-1>
           <textarea class="form-control" rows="1" value="{{headline}}" name="dayreviewheadlinerItem"></textarea>
         </div>
         </div>
-    
+    </div>
+ </div>  
+ <p></p> 
+</template>
+
+<!-- DayReviewStoryLoader Temaplate -->
+
+<template name="drstory">
+ <div class="container">   
+  <div class="row">
+        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-dayreviewstoryitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="5" value="{{story}}" name="dayreviewstoryItem"></textarea>
+        </div>
     </div>
  </div>   
 </template>
 
-<!-- Life Story LoaderTemaplate -->
-
-<template name="dayreviewstory">
+<template name="drhowdidUsleep">
  <div class="container">   
   <div class="row">
-      
-        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-dayreviewstoryitem"> Delete </a></label> 
+        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-drhowdidUsleepitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
-          <textarea class="form-control" rows="5" value="{{story}}" name="dayreviewstoryItem"></textarea>
+          <textarea class="form-control" rows="5" value="{{howdidUsleep}}" name="drhowdidUsleepItem"></textarea>
         </div>
-      
     </div>
  </div>   
 </template>
