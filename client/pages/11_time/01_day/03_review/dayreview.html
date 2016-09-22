@@ -34,9 +34,9 @@
 <template name="drLooper">
   <div class="container">
     <div class="row">
-      
+    <strong>Life Journal</strong>
         {{#each drDiarylooper}}
-          {{> dayreviewheadliner}}
+          {{> drheadliner}}
           {{> drstory}} 
         {{/each}}      
     </div>
@@ -44,9 +44,17 @@
   <hr>
   <div class="container">
     <div class="row">
+    <strong>Sleep Logger</strong>
       {{#each drSleeplooper}}
         {{> drhowdidUsleep}}  
       {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    {{#each drdreamDiarylooper}}
+      {{> drdreamDiaryloader}}
+    {{/each}}
     </div>
   </div>
 </template>
@@ -56,7 +64,7 @@
 
 <!-- DayReviewHeadlineLoader Temaplate -->
 
-<template name="dayreviewheadliner">
+<template name="drheadliner">
  <div class="container">   
   <div class="row">
       <br>
@@ -64,7 +72,7 @@
         <label for="inputHeadline" class="col-sm-1 control-label" style="background: white; border-radius: 5px">{{formatDate createdAt}} </label>
         <label class="col-sm-1 control-label" style="background: white; border-radius: 5px">HighLights</label>
         <div class="col-sm-8" col-sm-offset-1>
-          <textarea class="form-control" rows="1" value="{{headline}}" name="dayreviewheadlinerItem"></textarea>
+          <textarea class="form-control" rows="1" value="{{headline}}" name="drheadlinerItem"></textarea>
         </div>
         </div>
     </div>
@@ -85,12 +93,28 @@
  </div>   
 </template>
 
+<!-- DR Sleep Log Loader Temaplate -->
+
 <template name="drhowdidUsleep">
  <div class="container">   
   <div class="row">
-        <label for="inputStory" class="col-sm-2 control-label"> <br><a href="" class="delete-drhowdidUsleepitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhowdidUsleepitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
-          <textarea class="form-control" rows="5" value="{{howdidUsleep}}" name="drhowdidUsleepItem"></textarea>
+          <textarea class="form-control" rows="2" value="{{howdidUsleep}}" name="drhowdidUsleepItem"></textarea>
+        </div>
+    </div>
+ </div>  
+ <p></p> 
+</template>
+
+<!-- DR Sleep Log Loader Temaplate -->
+
+<template name="drdreamDiaryloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drdreamDiaryitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{dreamDiary}}" name="drdreamDiaryItem"></textarea>
         </div>
     </div>
  </div>   
