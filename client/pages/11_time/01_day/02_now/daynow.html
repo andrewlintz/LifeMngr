@@ -7,9 +7,13 @@
   <hr>
   {{> daysStory}}
   {{> sleepLogger}}
-  <br>
-  <hr>
+  {{> wakeLogger}}
+  {{> mindLogger}}
+  {{> agendaLogger}}
+
+
   
+
 
 </template>
 
@@ -57,11 +61,10 @@
     </label>
 
     <div class="col-sm-9">
-      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of the day"></textarea>
+      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of your day"></textarea>
     </div>
   </div>
-
-
+<hr>
 </form>
 </div>
 </p>
@@ -77,7 +80,7 @@
     Last Night's Sleep
   </button>
 
-<div class="collapse in" id="lastnightsleep">
+<div class="collapse" id="lastnightsleep">
   <p></p>
     <form class="form-horizontal" id="sleepLoggersubmitter">
       <div class="form-group">
@@ -87,133 +90,346 @@
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnhowdidUsleep" class="form-control" rows="3" placeholder="How Did you Sleep?"></textarea>
+          <textarea id="dnhowdidUsleep" class="form-control" rows="3" placeholder="How did you Sleep?"></textarea>
         </div>
       </div>
     </form>
     <form class="form-horizontal" id="dndreamdiarysubmitter">
       <div class="form-group">
-      <label class="col-sm-1 control-label">Dreamstories</label>
+      <label class="col-sm-1 control-label">Dream Stories</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-            <textarea id="dndreamDiary" class="form-control" rows="3" placeholder="Tell me the Story of your Dreams lastnight."></textarea>
+            <textarea id="dndreamDiary" class="form-control" rows="3" placeholder="Tell me the story of your dreams last night."></textarea>
         </div>
        </div>
+Naps and when went to sleep last night
+      <hr>
     </form>
 </div>
 </p>
 </template>
 
-<!-- //// WAKE //// -->
-<template name="wakelogger">
-<p>
+<template name="timepicker">
+    <input id="whatever" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
+</template>
+
+<template name="tempName">
+
+  <div class="input-group datetimepicker">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input class="set-due-date form-control" type="text"/>
+  </div>
+
+</template>
+
+
+
+
+ <!-- //// WAKE //// -->
+
+
+
+
+<template name="wakeLogger">
+<p></p>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
     Morning wake!
   </button>
-
-<div class="collapse in" id="morning">
-  <div class="card card-block">
-  
-  <form class="form-horizontal" id="bNowForm">
-      <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="When did you wake up?">
+<div class="collapse" id="morning">
+  <div class="card card-block">  
+  <form class="form-horizontal" id="dnwakeupSubmitter">
+    <div class="form">
+      <label class="col-sm-3  control-label">When did you Wake Up?</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-2">  
+          <input id="dnwakeuptime" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
         </div>
-     </div>
-     <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="dreamDiary" placeholder="What time did you get out of bed?">
-        </div>
-     </div>
+      </div>
   </form>
-
+  <form class="form-horizontal" id="dnoutofbedSubmitter">
+    <div class="form">
+      <label class="col-sm-2 control-label">When Out of Bed</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-2">  
+          <input id="dnoutofBed" class="timepicker-precise" name="startTime" style="align: center !important;" type="bootstrap-timepicker">
+        </div>
+      </div>      
+<hr>
+  </form> 
   </div>
 </div>
-</p>
+</template>
+
+
+
+
 
 <!-- //// Mind //// -->
 
-  <p>
+
+
+
+
+
+
+<template name="mindLogger">
+  <p></p>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" aria-expanded="false" aria-controls="mind">
     Mind
   </button>
 
-<div class="collapse in" id="mind">
+<!--- Mood LOGGER -->
+<div class="collapse" id="mind">
   <div class="card card-block">
-  
-  <form class="form-horizontal">
-      <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Mood?">
-        </div>
-     </div>
+  <p></p>
+  <form class="form-horizontal" id="dnmoodSubmitter">
+    <div class="form-group">
+      <label class="col-sm-1 control-label">Mood</label>
+      <label class="col-sm-1 control-label" style="bottom: 5px">
+        <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+        Submit</button>
+      </label>
+      <div class="col-sm-9">
+        <textarea id="dnmood" class="form-control" rows="1" placeholder="What's your mood?     How are you Feeling?"></textarea>
+      </div>
+    </div>
   </form>
-  <form class="form-horizontal">
+
+<!--- Why Mood LOGGER -->
+  <p></p>
+    <form class="form-horizontal" id="dnwhymoodSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Psyche?">
+        <label class="col-sm-1 control-label">Why Mood</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnwhymood" class="form-control" rows="3" placeholder="Why are you feeling that way? Or, Why do you think you are feeling that way?"></textarea>
         </div>
-     </div>
-  </form>
-  <form class="form-horizontal">
+      </div>
+    </form>
+  <p></p>
+
+  <!--- Good Habbits LOGGER FORMS -->
+    <form class="form-horizontal" id="dngoodhabbitsSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="What's your creative thoughts?">
+        <label class="col-sm-1 control-label">Good Habbits</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dngoodhabbits" class="form-control" rows="3" placeholder="What Good Habbits are you Proud of doing/started?"></textarea>
         </div>
-     </div>
-  </form>
-  <form class="form-horizontal">
+      </div>
+    </form>
+
+<!--- badhabbits LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnbadhabbitsSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="How's your Opinion?">
+        <label class="col-sm-1 control-label">Bad Habbits</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnbadhabbits" class="form-control" rows="3" placeholder="What Bad Habbits do you want to correct?"></textarea>
         </div>
-     </div>
-  </form>
-  <form class="form-horizontal">
+      </div>
+    </form>
+
+<!--- jokes LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnjokesSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="How's your ideas / Inventions?">
+        <label class="col-sm-1 control-label">Jokes</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnjokes" class="form-control" rows="3" placeholder="Lay your Joke on me bby"></textarea>
         </div>
-     </div>
-  </form>   
-  <form class="form-horizontal">
+      </div>
+    </form>
+
+<!--- creativeartideas LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dncreativeartideasSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="What were the Good habits made today?">
+        <label class="col-sm-1 control-label">Creative Artistic Ideas</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dncreativeartideas" class="form-control" rows="3" placeholder="What's your Creative Art Idea(s)?"></textarea>
         </div>
-     </div>
-  </form> 
-  <form class="form-horizontal">
+      </div>
+    </form>
+<!--- Inventions LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dninventionsSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="What were the Bad habits made today?">
+        <label class="col-sm-1 control-label">Inventions</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dninventions" class="form-control" rows="3" placeholder="What's your Invention Idea(s)?"></textarea>
         </div>
-     </div>
-  </form> 
-  <form class="form-horizontal">
+      </div>
+    </form>
+<!--- entreprenuerialidea LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnentreprenuerialideaSubmitter">
       <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="What wisdoms did you find you'd like to share for the future self & others?">
+        <label class="col-sm-1 control-label">entreprenuerialidea</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnentreprenuerialidea" class="form-control" rows="3" placeholder="What Entreprenuerial Idea(s) do you have?"></textarea>
         </div>
-     </div>
-  </form> 
+      </div>
+    </form>
+
+<!--- jobcareerbizOpp LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnjobcareerbizOppSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">jobcareerbizOpp</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnjobcareerbizOpp" class="form-control" rows="3" placeholder="What Job/Career/Business Opportunity do you envision?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- oppinion LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnoppinionSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">oppinion</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnoppinion" class="form-control" rows="3" placeholder="How's your oppinion?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- wisdom LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnwisdomSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">wisdom</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnwisdom" class="form-control" rows="3" placeholder="What wisdom or philosophy do you wish to bestow upon us?"></textarea>
+        </div>
+      </div>
+<hr>
+    </form>
   </div>
 </div>
-</p>
+</template>
+
+
+
 
 <!-- //// AGENDA //// -->
 
 
-<p>
+
+
+
+<!-- Collapse Buttons -->
+<template name="agendaLogger">
+  <p></p>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" aria-expanded="false" aria-controls="agenda">
     Agenda
   </button>
 
 <div class="collapse in" id="agenda">
   <div class="card card-block">
+
+<!--- mission LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnmissionSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Mission</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnmission" class="form-control" rows="3" placeholder="What is your current Mission?"></textarea>
+        </div>
+      </div>
+    </form>
+
+<!-- between here & /template is junk when completed -->
+  </div>
+</div>
+</template>
+<!-- between here & /template is junk when completed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Everything between EDITING HOLDER to here is junk -->
+<template name="EDITING HOLDER">
+<p>
+<div>
+<div>
+<!-- Everything between EDITING HOLDER to here is junk -->
+
+
   
   <form class="form-horizontal">
       <div class="form-group">

@@ -19,6 +19,14 @@
     <a class="btn btn btn-info" href="/time/daypast" role="button">Past
     </a>    
   </div>
+  <div class="container">
+    <div class="row">
+    <strong>inventions</strong>
+    {{#each drinventionslooper}}
+      {{> drinventionsloader}}
+    {{/each}}
+    </div>
+  </div>
 <br>
 
 </template>
@@ -44,7 +52,7 @@
   <hr>
   <div class="container">
     <div class="row">
-    <strong>Sleep Logger</strong>
+    <strong>Sleep Log</strong>
       {{#each drSleeplooper}}
         {{> drhowdidUsleep}}  
       {{/each}}
@@ -52,8 +60,124 @@
   </div>
   <div class="container">
     <div class="row">
+    <strong>Dream Diary</strong>
     {{#each drdreamDiarylooper}}
       {{> drdreamDiaryloader}}
+    {{/each}}
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+    <strong>Wake Time</strong>
+    {{#each drwakeUplooper}}
+      {{> drwakeUploader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Out of Bed Time</strong>
+    {{#each droutofBedlooper}}
+      {{> droutofBedloader}}
+    {{/each}}
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+    <strong>Mood</strong>
+    {{#each drmoodlooper}}
+      {{> drmoodloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>whyMood</strong>
+    {{#each drwhymoodlooper}}
+      {{> drwhymoodloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Good Habbits</strong>
+    {{#each drgoodhabbitslooper}}
+      {{> drgoodhabbitsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Bad Habbits</strong>
+    {{#each drbadhabbitslooper}}
+      {{> drbadhabbitsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Jokes</strong>
+    {{#each drjokeslooper}}
+      {{> drjokesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Creative Artistic Ideas</strong>
+    {{#each drcreativeartideaslooper}}
+      {{> drcreativeartideasloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Inventions</strong>
+    {{#each drinventionslooper}}
+      {{> drinventionsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>entreprenuerialidea</strong>
+    {{#each drentreprenuerialidealooper}}
+      {{> drentreprenuerialidealoader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>Job Career Business Opportunities</strong>
+    {{#each drjobcareerbizOpplooper}}
+      {{> drjobcareerbizOpploader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>oppinion</strong>
+    {{#each droppinionlooper}}
+      {{> droppinionloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>wisdom</strong>
+    {{#each drwisdomlooper}}
+      {{> drwisdomloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+  <div class="container">
+    <div class="row">
+    <strong>mission</strong>
+    {{#each drmissionlooper}}
+      {{> drmissionloader}}
     {{/each}}
     </div>
   </div>
@@ -107,7 +231,7 @@
  <p></p> 
 </template>
 
-<!-- DR Sleep Log Loader Temaplate -->
+<!-- DR dream diary Log Loader Temaplate -->
 
 <template name="drdreamDiaryloader">
  <div class="container">   
@@ -115,6 +239,186 @@
         <label class="col-sm-2 control-label"> <br><a href="" class="delete-drdreamDiaryitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
           <textarea class="form-control" rows="2" value="{{dreamDiary}}" name="drdreamDiaryItem"></textarea>
+        </div>
+    </div>
+ </div>   
+<p></p>
+</template>
+
+  <!-- DR Wake UP Log Loader Temaplate -->
+
+<template name="drwakeUploader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drwakeUpitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{wakeuptime}}" name="drwakeUpItem"></textarea>
+        </div>
+    </div>
+ </div>  
+ <p></p> 
+</template>
+
+<!-- DR Out of Bed Log Loader Temaplate -->
+
+<template name="droutofBedloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-droutofBeditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{outofBed}}" name="droutofBedItem"></textarea>
+        </div>
+    </div>
+ </div> 
+ <p></p>  
+</template>
+
+<!-- DR Mood Log Loader Temaplate -->
+
+<template name="drmoodloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drmooditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="1" value="{{mood}}" name="drmoodItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+<template name="drwhymoodloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drwhymooditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{whymood}}" name="drwhymoodItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR goodhabbits Log Loader Temaplate -->
+
+<template name="drgoodhabbitsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drgoodhabbitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{goodhabbits}}" name="drgoodhabbitsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR badhabbits Log Loader Temaplate -->
+
+<template name="drbadhabbitsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drbadhabbitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{badhabbits}}" name="drbadhabbitsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+  <!-- DR jokes Log Loader Temaplate -->
+
+<template name="drjokesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drjokesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{jokes}}" name="drjokesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR creativeartideas Log Loader Temaplate -->
+
+<template name="drcreativeartideasloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drcreativeartideasitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{creativeartideas}}" name="drcreativeartideasItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR inventions Log Loader Temaplate -->
+
+<template name="drinventionsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drinventionsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{inventions}}" name="drinventionsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR entreprenuerialidea Log Loader Temaplate -->
+
+<template name="drentreprenuerialidealoader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drentreprenuerialideaitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{entreprenuerialidea}}" name="drentreprenuerialideaItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR jobcareerbizOpp Log Loader Temaplate -->
+
+<template name="drjobcareerbizOpploader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drjobcareerbizOppitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{jobcareerbizOpp}}" name="drjobcareerbizOppItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR oppinion Log Loader Temaplate -->
+
+<template name="droppinionloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-droppinionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{oppinion}}" name="droppinionItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+  <!-- DR wisdom Log Loader Temaplate -->
+
+<template name="drwisdomloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drwisdomitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{wisdom}}" name="drwisdomItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR mission Log Loader Temaplate -->
+
+<template name="drmissionloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drmissionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{mission}}" name="drmissionItem"></textarea>
         </div>
     </div>
  </div>   
