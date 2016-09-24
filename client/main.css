@@ -132,8 +132,6 @@
 
 
 
-
-
 H1 {
     color: white;
 }
@@ -144,8 +142,18 @@ body {
   background-color: #315481;
   background-image: linear-gradient(to bottom, #315481, #918e82 100%);
   background-attachment: fixed;
- 
+  height: 100%;
+  min-height: 600px;
 }
+
+.fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+ 
+
 
 .headingtext {
     font-family: sans-serif;
