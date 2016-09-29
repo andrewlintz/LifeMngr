@@ -6,21 +6,21 @@ import './mind.html';
 
 Template.mindPage.helpers({
   moodEach() {
-    return Mind.find( { mood: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  creativeEach() {
-    return Mind.find( { creative: { $exists: true }},{sort: {createdAt: -1}}); }, 
+    return Agenda.find( { mood: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  creativeartideasEach() {
+    return Agenda.find( { creativeartideas: { $exists: true }},{sort: {createdAt: -1}}); }, 
   jokesEach() {
-    return Mind.find( { jokes: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  opinionsEach() {
-    return Mind.find( { opinions: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  inventionEach() {
-    return Mind.find( { entreinventions: { $exists: true }},{sort: {createdAt: -1}}); }, 
+    return Agenda.find( { jokes: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  opinionEach() {
+    return Agenda.find( { opinion: { $exists: true }},{sort: {createdAt: -1}}); }, 
+  entreprenuerialideaEach() {
+    return Agenda.find( { entreprenuerialidea: { $exists: true }},{sort: {createdAt: -1}}); }, 
   wantEach() {
-    return Mind.find( { want: { $exists: true }},{sort: {createdAt: -1}}); }, 
+    return Agenda.find( { want: { $exists: true }},{sort: {createdAt: -1}}); }, 
   thoughtsEach() {
-    return Mind.find( { thoughts: { $exists: true }},{sort: {createdAt: -1}}); }, 
+    return Agenda.find( { thoughts: { $exists: true }},{sort: {createdAt: -1}}); }, 
   wisdomEach() {
-    return Mind.find( { wisdom: { $exists: true }},{sort: {createdAt: -1}}); }, 
+    return Agenda.find( { wisdom: { $exists: true }},{sort: {createdAt: -1}}); }, 
 });
 
 
@@ -36,7 +36,7 @@ Template.addmoodItem.events({
     'submit form': function(event){
     event.preventDefault();
     var mooditemName = $('[name="mooditemName"]').val();
-    Mind.insert({
+    Agenda.insert({
         mood: mooditemName,
         createdAt: new Date()
     });
@@ -50,7 +50,7 @@ Template.moodItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=moodItem]': function(event){
@@ -59,7 +59,7 @@ Template.moodItem.events({
     } else {
         var documentId = this._id;
         var moodItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { mood: moodItem }});
+        Agenda.update({ _id: documentId }, {$set: { mood: moodItem }});
         }
     },
 
@@ -67,37 +67,37 @@ Template.moodItem.events({
 
 
 
-////////* Creative Arts Ideas Projects Events *//////
+////////* creativeartideas Arts Ideas Projects Events *//////
 
-Template.addcreativeItem.events({
+Template.addcreativeartideasItem.events({
     /// events go here
     'submit form': function(event){
     event.preventDefault();
-    var creativeitemName = $('[name="creativeitemName"]').val();
-    Mind.insert({
-        creative: creativeitemName,
+    var creativeartideasitemName = $('[name="creativeartideasitemName"]').val();
+    Agenda.insert({
+        creativeartideas: creativeartideasitemName,
         createdAt: new Date()
     });
-    $('[name="creativeitemName"]').val('');
+    $('[name="creativeartideasitemName"]').val('');
 }
 });
 
-Template.creativeItem.events({
+Template.creativeartideasItem.events({
     // events go here
-    'click .delete-creativeitem': function(event){
+    'click .delete-creativeartideasitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=creativeItem]': function(event){
+    'keyup [name=creativeartideasItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var creativeItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { creative: creativeItem }});
+        var creativeartideasItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { creativeartideas: creativeartideasItem }});
         }
     },
 
@@ -112,7 +112,7 @@ Template.addjokesItem.events({
     'submit form': function(event){
     event.preventDefault();
     var jokesitemName = $('[name="jokesitemName"]').val();
-    Mind.insert({
+    Agenda.insert({
         jokes: jokesitemName,
         createdAt: new Date()
     });
@@ -126,7 +126,7 @@ Template.jokesItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=jokesItem]': function(event){
@@ -135,79 +135,79 @@ Template.jokesItem.events({
     } else {
         var documentId = this._id;
         var jokesItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { jokes: jokesItem }});
+        Agenda.update({ _id: documentId }, {$set: { jokes: jokesItem }});
         }
     },
 });
 
 
 
-////////* Opinions Events *//////
+////////* Opinion Events *//////
 
-Template.addopinionsItem.events({
+Template.addopinionItem.events({
     /// events go here
     'submit form': function(event){
     event.preventDefault();
-    var opinionsitemName = $('[name="opinionsitemName"]').val();
-    Mind.insert({
-        opinions: opinionsitemName,
+    var opinionitemName = $('[name="opinionitemName"]').val();
+    Agenda.insert({
+        opinion: opinionitemName,
         createdAt: new Date()
     });
-    $('[name="opinionsitemName"]').val('');
+    $('[name="opinionitemName"]').val('');
 }
 });
 
-Template.opinionsItem.events({
+Template.opinionItem.events({
     // events go here
-    'click .delete-opinionsitem': function(event){
+    'click .delete-opinionitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=opinionsItem]': function(event){
+    'keyup [name=opinionItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var opinionsItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { opinions: opinionsItem }});
+        var opinionItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { opinion: opinionItem }});
         }
     },
 });
 
 ////////* Entreprenurial Invention Events *//////
 
-Template.addentreinventionsItem.events({
+Template.addentreprenuerialideaItem.events({
     /// events go here
     'submit form': function(event){
     event.preventDefault();
-    var entreinventionsitemName = $('[name="entreinventionsitemName"]').val();
-    Mind.insert({
-        entreinventions: entreinventionsitemName,
+    var entreprenuerialideaitemName = $('[name="entreprenuerialideaitemName"]').val();
+    Agenda.insert({
+        entreprenuerialidea: entreprenuerialideaitemName,
         createdAt: new Date()
     });
-    $('[name="entreinventionsitemName"]').val('');
+    $('[name="entreprenuerialideaitemName"]').val('');
 }
 });
 
-Template.entreinventionsItem.events({
+Template.entreprenuerialideaItem.events({
     // events go here
-    'click .delete-entreinventionsitem': function(event){
+    'click .delete-entreprenuerialideaitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=entreinventionsItem]': function(event){
+    'keyup [name=entreprenuerialideaItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var entreinventionsItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { entreinventions: entreinventionsItem }});
+        var entreprenuerialideaItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { entreprenuerialidea: entreprenuerialideaItem }});
         }
     },
 });
@@ -222,7 +222,7 @@ Template.addwantItem.events({
     'submit form': function(event){
     event.preventDefault();
     var wantitemName = $('[name="wantitemName"]').val();
-    Mind.insert({
+    Agenda.insert({
         want: wantitemName,
         createdAt: new Date()
     });
@@ -236,7 +236,7 @@ Template.wantItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=wantItem]': function(event){
@@ -245,7 +245,7 @@ Template.wantItem.events({
     } else {
         var documentId = this._id;
         var wantItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { want: wantItem }});
+        Agenda.update({ _id: documentId }, {$set: { want: wantItem }});
         }
     },
 });
@@ -261,7 +261,7 @@ Template.addthoughtsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var thoughtsitemName = $('[name="thoughtsitemName"]').val();
-    Mind.insert({
+    Agenda.insert({
         thoughts: thoughtsitemName,
         createdAt: new Date()
     });
@@ -275,7 +275,7 @@ Template.thoughtsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=thoughtsItem]': function(event){
@@ -284,7 +284,7 @@ Template.thoughtsItem.events({
     } else {
         var documentId = this._id;
         var thoughtsItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { thoughts: thoughtsItem }});
+        Agenda.update({ _id: documentId }, {$set: { thoughts: thoughtsItem }});
         }
     },
 });
@@ -299,7 +299,7 @@ Template.addwisdomItem.events({
     'submit form': function(event){
     event.preventDefault();
     var wisdomitemName = $('[name="wisdomitemName"]').val();
-    Mind.insert({
+    Agenda.insert({
         wisdom: wisdomitemName,
         createdAt: new Date()
     });
@@ -313,7 +313,7 @@ Template.wisdomItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Mind.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=wisdomItem]': function(event){
@@ -322,7 +322,7 @@ Template.wisdomItem.events({
     } else {
         var documentId = this._id;
         var wisdomItem = $(event.target).val();
-        Mind.update({ _id: documentId }, {$set: { wisdom: wisdomItem }});
+        Agenda.update({ _id: documentId }, {$set: { wisdom: wisdomItem }});
         }
     },
 });

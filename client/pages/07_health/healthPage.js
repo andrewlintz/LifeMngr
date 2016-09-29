@@ -6,19 +6,19 @@
 
 Template.healthPage.helpers({
   biostatsEach() {
-    return Health.find( { biostats: { $exists: true }},{sort: {createdAt: -1}}); },  
+    return Agenda.find( { biostats: { $exists: true }},{sort: {createdAt: -1}}); },  
   allergiesEach() {
-    return Health.find( { allergies: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { allergies: {$exists: true}}, {sort: {createdAt: -1}}); },
   symptomsEach() {
-    return Health.find( { symptoms: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { symptoms: {$exists: true}}, {sort: {createdAt: -1}}); },
   medhistoryEach() {
-    return Health.find( { medhistory: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { medhistory: {$exists: true}}, {sort: {createdAt: -1}}); },
   dentalhistEach() {
-    return Health.find( { dentalhist: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { dentalhist: {$exists: true}}, {sort: {createdAt: -1}}); },
   visionhistEach() {
-    return Health.find( { visionhist: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { visionhist: {$exists: true}}, {sort: {createdAt: -1}}); },
   pooplogEach() {
-    return Health.find( { pooplog: {$exists: true}}, {sort: {createdAt: -1}}); },
+    return Agenda.find( { pooplog: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -33,7 +33,7 @@ Template.addbiostatsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var biostatsitemName = $('[name="biostatsitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         biostats: biostatsitemName,
         createdAt: new Date()
     });
@@ -47,7 +47,7 @@ Template.biostatsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=biostatsItem]': function(event){
@@ -56,7 +56,7 @@ Template.biostatsItem.events({
     } else {
         var documentId = this._id;
         var biostatsItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { biostats: biostatsItem }});
+        Agenda.update({ _id: documentId }, {$set: { biostats: biostatsItem }});
         }
     },
 });
@@ -74,7 +74,7 @@ Template.addallergiesItem.events({
     'submit form': function(event){
     event.preventDefault();
     var allergiesitemName = $('[name="allergiesitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         allergies: allergiesitemName,
         createdAt: new Date()
     });
@@ -88,7 +88,7 @@ Template.allergiesItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=allergiesItem]': function(event){
@@ -97,7 +97,7 @@ Template.allergiesItem.events({
     } else {
         var documentId = this._id;
         var allergiesItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { allergies: allergiesItem }});
+        Agenda.update({ _id: documentId }, {$set: { allergies: allergiesItem }});
         }
     },
 });
@@ -112,7 +112,7 @@ Template.addsymptomsItem.events({
     'submit form': function(event){
     event.preventDefault();
     var symptomsitemName = $('[name="symptomsitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         symptoms: symptomsitemName,
         createdAt: new Date()
     });
@@ -126,7 +126,7 @@ Template.symptomsItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=symptomsItem]': function(event){
@@ -135,7 +135,7 @@ Template.symptomsItem.events({
     } else {
         var documentId = this._id;
         var symptomsItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { symptoms: symptomsItem }});
+        Agenda.update({ _id: documentId }, {$set: { symptoms: symptomsItem }});
         }
     },
 });
@@ -150,7 +150,7 @@ Template.addmedhistoryItem.events({
     'submit form': function(event){
     event.preventDefault();
     var medhistoryitemName = $('[name="medhistoryitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         medhistory: medhistoryitemName,
         createdAt: new Date()
     });
@@ -164,7 +164,7 @@ Template.medhistoryItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=medhistoryItem]': function(event){
@@ -173,7 +173,7 @@ Template.medhistoryItem.events({
     } else {
         var documentId = this._id;
         var medhistoryItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { medhistory: medhistoryItem }});
+        Agenda.update({ _id: documentId }, {$set: { medhistory: medhistoryItem }});
         }
     },
 });
@@ -188,7 +188,7 @@ Template.adddentalhistItem.events({
     'submit form': function(event){
     event.preventDefault();
     var dentalhistitemName = $('[name="dentalhistitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         dentalhist: dentalhistitemName,
         createdAt: new Date()
     });
@@ -202,7 +202,7 @@ Template.dentalhistItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=dentalhistItem]': function(event){
@@ -211,7 +211,7 @@ Template.dentalhistItem.events({
     } else {
         var documentId = this._id;
         var dentalhistItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { dentalhist: dentalhistItem }});
+        Agenda.update({ _id: documentId }, {$set: { dentalhist: dentalhistItem }});
         }
     },
 });
@@ -228,7 +228,7 @@ Template.addvisionhistItem.events({
     'submit form': function(event){
     event.preventDefault();
     var visionhistitemName = $('[name="visionhistitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         visionhist: visionhistitemName,
         createdAt: new Date()
     });
@@ -242,7 +242,7 @@ Template.visionhistItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=visionhistItem]': function(event){
@@ -251,7 +251,7 @@ Template.visionhistItem.events({
     } else {
         var documentId = this._id;
         var visionhistItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { visionhist: visionhistItem }});
+        Agenda.update({ _id: documentId }, {$set: { visionhist: visionhistItem }});
         }
     },
 });
@@ -266,7 +266,7 @@ Template.addpooplogItem.events({
     'submit form': function(event){
     event.preventDefault();
     var pooplogitemName = $('[name="pooplogitemName"]').val();
-    Health.insert({
+    Agenda.insert({
         pooplog: pooplogitemName,
         createdAt: new Date()
     });
@@ -280,7 +280,7 @@ Template.pooplogItem.events({
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
-            Health.remove({ _id: documentId });
+            Agenda.remove({ _id: documentId });
     },
 
     'keyup [name=pooplogItem]': function(event){
@@ -289,7 +289,7 @@ Template.pooplogItem.events({
     } else {
         var documentId = this._id;
         var pooplogItem = $(event.target).val();
-        Health.update({ _id: documentId }, {$set: { pooplog: pooplogItem }});
+        Agenda.update({ _id: documentId }, {$set: { pooplog: pooplogItem }});
         }
     },
 });

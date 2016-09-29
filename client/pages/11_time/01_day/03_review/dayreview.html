@@ -102,17 +102,17 @@
   </div>
   <div class="container">
     <div class="row">
-    <strong>Good Habbits</strong>
-    {{#each drgoodhabbitslooper}}
-      {{> drgoodhabbitsloader}}
+    <strong>Good Habits</strong>
+    {{#each drgoodhabitslooper}}
+      {{> drgoodhabitsloader}}
     {{/each}}
     </div>
   </div>
   <div class="container">
     <div class="row">
-    <strong>Bad Habbits</strong>
-    {{#each drbadhabbitslooper}}
-      {{> drbadhabbitsloader}}
+    <strong>Bad Habits</strong>
+    {{#each drbadhabitslooper}}
+      {{> drbadhabitsloader}}
     {{/each}}
     </div>
   </div>
@@ -158,9 +158,9 @@
   </div>
   <div class="container">
     <div class="row">
-    <strong>oppinion</strong>
-    {{#each droppinionlooper}}
-      {{> droppinionloader}}
+    <strong>opinion</strong>
+    {{#each dropinionlooper}}
+      {{> dropinionloader}}
     {{/each}}
     </div>
   </div>
@@ -296,27 +296,27 @@
  </div>   
 </template>
 
-  <!-- DR goodhabbits Log Loader Temaplate -->
+  <!-- DR goodhabits Log Loader Temaplate -->
 
-<template name="drgoodhabbitsloader">
+<template name="drgoodhabitsloader">
  <div class="container">   
   <div class="row">
-        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drgoodhabbitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drgoodhabitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
-          <textarea class="form-control" rows="2" value="{{goodhabbits}}" name="drgoodhabbitsItem"></textarea>
+          <textarea class="form-control" rows="2" value="{{goodhabits}}" name="drgoodhabitsItem"></textarea>
         </div>
     </div>
  </div>   
 </template>
 
-  <!-- DR badhabbits Log Loader Temaplate -->
+  <!-- DR badhabits Log Loader Temaplate -->
 
-<template name="drbadhabbitsloader">
+<template name="drbadhabitsloader">
  <div class="container">   
   <div class="row">
-        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drbadhabbitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drbadhabitsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
-          <textarea class="form-control" rows="2" value="{{badhabbits}}" name="drbadhabbitsItem"></textarea>
+          <textarea class="form-control" rows="2" value="{{badhabits}}" name="drbadhabitsItem"></textarea>
         </div>
     </div>
  </div>   
@@ -386,14 +386,14 @@
  </div>   
 </template>
 
-  <!-- DR oppinion Log Loader Temaplate -->
+  <!-- DR opinion Log Loader Temaplate -->
 
-<template name="droppinionloader">
+<template name="dropinionloader">
  <div class="container">   
   <div class="row">
-        <label class="col-sm-2 control-label"> <br><a href="" class="delete-droppinionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-dropinionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
-          <textarea class="form-control" rows="2" value="{{oppinion}}" name="droppinionItem"></textarea>
+          <textarea class="form-control" rows="2" value="{{opinion}}" name="dropinionItem"></textarea>
         </div>
     </div>
  </div>   

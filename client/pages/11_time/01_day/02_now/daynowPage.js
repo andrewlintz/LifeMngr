@@ -82,19 +82,19 @@ Template.mindLogger.events({
             createdAt: new Date()
         });
     },
-    'submit #dngoodhabbitsSubmitter':function(e){
+    'submit #dngoodhabitsSubmitter':function(e){
         e.preventDefault();
-        var goodhabbits = $('#dngoodhabbits').val();
+        var goodhabits = $('#dngoodhabits').val();
         Agenda.insert({
-            goodhabbits: goodhabbits,
+            goodhabits: goodhabits,
             createdAt: new Date()
         });
     },
-    'submit #dnbadhabbitsSubmitter':function(e){
+    'submit #dnbadhabitsSubmitter':function(e){
         e.preventDefault();
-        var badhabbits = $('#dnbadhabbits').val();
+        var badhabits = $('#dnbadhabits').val();
         Agenda.insert({
-            badhabbits: badhabbits,
+            badhabits: badhabits,
             createdAt: new Date()
         });
     },
@@ -138,11 +138,11 @@ Template.mindLogger.events({
             createdAt: new Date()
         });
     },
-    'submit #dnoppinionSubmitter':function(e){
+    'submit #dnopinionSubmitter':function(e){
         e.preventDefault();
-        var oppinion = $('#dnoppinion').val();
+        var opinion = $('#dnopinion').val();
         Agenda.insert({
-            oppinion: oppinion,
+            opinion: opinion,
             createdAt: new Date()
         });
     },

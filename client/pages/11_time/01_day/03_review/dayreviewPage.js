@@ -56,19 +56,19 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {whymood: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-    drgoodhabbitslooper() {
+    drgoodhabitslooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
-        return Agenda.find( {goodhabbits: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+        return Agenda.find( {goodhabits: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-    drbadhabbitslooper() {
+    drbadhabitslooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
-        return Agenda.find( {badhabbits: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+        return Agenda.find( {badhabits: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
     drjokeslooper() {
         var start = new Date();
@@ -105,12 +105,12 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {jobcareerbizOpp: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-    droppinionlooper() {
+    dropinionlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
-        return Agenda.find( {oppinion: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+        return Agenda.find( {opinion: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
     drwisdomlooper() {
         var start = new Date();
@@ -296,42 +296,42 @@ Template.drwhymoodloader.events({
     },
 });
 
-Template.drgoodhabbitsloader.events({
+Template.drgoodhabitsloader.events({
     // events go here
-    'click .delete-drgoodhabbitsitem': function(event){
+    'click .delete-drgoodhabitsitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
             Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=drgoodhabbitsItem]': function(event){
+    'keyup [name=drgoodhabitsItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var drgoodhabbitsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { goodhabbits: drgoodhabbitsItem }});
+        var drgoodhabitsItem = $(event.target).val();
+       Agenda.update({ _id: documentId }, {$set: { goodhabbits: drgoodhabbitsItem }});
         }
     },
 });
 
-Template.drbadhabbitsloader.events({
+Template.drbadhabitsloader.events({
     // events go here
-    'click .delete-drbadhabbitsitem': function(event){
+    'click .delete-drbadhabitsitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
             Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=drbadhabbitsItem]': function(event){
+    'keyup [name=drbadhabitsItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var drbadhabbitsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { badhabbits: drbadhabbitsItem }});
+        var drbadhabitsItem = $(event.target).val();
+       Agenda.update({ _id: documentId }, {$set: { badhabbits: drbadhabbitsItem }});
         }
     },
 });
@@ -430,22 +430,22 @@ Template.drjobcareerbizOpploader.events({
         }
     },
 });
-Template.droppinionloader.events({
+Template.dropinionloader.events({
     // events go here
-    'click .delete-droppinionitem': function(event){
+    'click .delete-dropinionitem': function(event){
     event.preventDefault();
     var documentId = this._id;
     var confirm = 
             Agenda.remove({ _id: documentId });
     },
 
-    'keyup [name=droppinionItem]': function(event){
+    'keyup [name=dropinionItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var droppinionItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { oppinion: droppinionItem }});
+        var dropinionItem = $(event.target).val();
+        Agenda.update({ _id: documentId }, {$set: { opinion: dropinionItem }});
         }
     },
 });
