@@ -3,6 +3,22 @@
 {{> Greatdaytobealivereview}}
 <hr>
 {{> drLooper}}
+{{> drSleepRecord}}
+{{> drMindRecord}}
+{{> drAgendaRecord}}
+{{> drHealthRecord}}
+{{> drHygieneRecord}}
+{{> drFoodRecord}}
+{{> drFitRecord}}
+{{> drMoneyRecord}}
+{{> drThingsRecord}}
+{{> drPlacesRecord}}
+{{> drFengshuiRecord}}
+{{> drPeopleRecord}}
+{{> drLoveRecord}}
+{{> drCompanionRecord}}
+{{> drSocietyRecord}}
+{{> drSpiritRecord}}
 </template>
 
 <!-- Head Liner Template -->
@@ -50,6 +66,18 @@
     </div>
   </div>
   <hr>
+</template>
+
+<!-- //// SLEEP //// -->
+<!-- Collapse Buttons -->
+<template name="drSleepRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Sleep" aria-expanded="false" aria-controls="Sleep">
+    Sleep
+  </button>
+
+<div class="collapse" id="Sleep">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>Sleep Log</strong>
@@ -84,6 +112,21 @@
     </div>
   </div>
   <hr>
+</div>
+</div>
+</template>
+
+<!-- //// Mind //// -->
+<!-- Collapse Buttons -->
+<template name="drMindRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Mind" aria-expanded="false" aria-controls="Mind">
+    Mind
+  </button>
+
+<div class="collapse" id="Mind">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>Mood</strong>
@@ -158,6 +201,30 @@
   </div>
   <div class="container">
     <div class="row">
+    <strong>thoughts</strong>
+    {{#each drthoughtslooper}}
+      {{> drthoughtsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>wants</strong>
+    {{#each drwantslooper}}
+      {{> drwantsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>problems</strong>
+    {{#each drproblemslooper}}
+      {{> drproblemsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
     <strong>opinion</strong>
     {{#each dropinionlooper}}
       {{> dropinionloader}}
@@ -173,32 +240,25 @@
     </div>
   </div>
 <hr>
+</div>
+</div>
+</template>
+
+<!-- //// Agenda //// -->
+<!-- Collapse Buttons -->
+<template name="drAgendaRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Agenda" aria-expanded="false" aria-controls="Agenda">
+    Agenda
+  </button>
+
+<div class="collapse" id="Agenda">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>mission</strong>
     {{#each drmissionlooper}}
       {{> drmissionloader}}
-    {{/each}}
-    </div>
-  </div>
-
-
-
-
-
-  <div class="container">
-    <div class="row">
-    <strong>eventsiwantohappen</strong>
-    {{#each dreventsiwantohappenlooper}}
-      {{> dreventsiwantohappenloader}}
-    {{/each}}
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-    <strong>activitiesiwanttodo</strong>
-    {{#each dractivitiesiwanttodolooper}}
-      {{> dractivitiesiwanttodoloader}}
     {{/each}}
     </div>
   </div>
@@ -284,30 +344,6 @@
   </div>
   <div class="container">
     <div class="row">
-    <strong>thoughts</strong>
-    {{#each drthoughtslooper}}
-      {{> drthoughtsloader}}
-    {{/each}}
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-    <strong>wants</strong>
-    {{#each drwantslooper}}
-      {{> drwantsloader}}
-    {{/each}}
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-    <strong>problems</strong>
-    {{#each drproblemslooper}}
-      {{> drproblemsloader}}
-    {{/each}}
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
     <strong>career</strong>
     {{#each drcareerlooper}}
       {{> drcareerloader}}
@@ -330,6 +366,21 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+  <!-- //// Health //// -->
+<!-- Collapse Buttons -->
+<template name="drHealthRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" aria-expanded="false" aria-controls="Health">
+    Health
+  </button>
+
+<div class="collapse" id="Health">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>symptoms</strong>
@@ -378,6 +429,22 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Hygiene //// -->
+<!-- Collapse Buttons -->
+<template name="drHygieneRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" aria-expanded="false" aria-controls="Hygiene">
+    Hygiene
+  </button>
+
+<div class="collapse" id="Hygiene">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>howshygiene</strong>
@@ -410,6 +477,22 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Food //// -->
+<!-- Collapse Buttons -->
+<template name="drFoodRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" aria-expanded="false" aria-controls="Food">
+    Food
+  </button>
+
+<div class="collapse" id="Food">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>eatlog</strong>
@@ -418,6 +501,22 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Fit //// -->
+<!-- Collapse Buttons -->
+<template name="drFitRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" aria-expanded="false" aria-controls="Fit">
+    Fit
+  </button>
+
+<div class="collapse" id="Fit">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>fitnesslog</strong>
@@ -426,6 +525,39 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Money //// -->
+<!-- Collapse Buttons -->
+<template name="drMoneyRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" aria-expanded="false" aria-controls="Money">
+    Money
+  </button>
+
+<div class="collapse" id="Money">
+  <div class="card card-block">
+
+
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Things //// -->
+<!-- Collapse Buttons -->
+<template name="drThingsRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" aria-expanded="false" aria-controls="Things">
+    Things
+  </button>
+
+<div class="collapse" id="Things">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>stuffhave</strong>
@@ -466,6 +598,21 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Places //// -->
+<!-- Collapse Buttons -->
+<template name="drPlacesRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Places" aria-expanded="false" aria-controls="Places">
+    Places
+  </button>
+
+<div class="collapse" id="Places">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>placesbeen</strong>
@@ -479,6 +626,30 @@
     <strong>placeswant</strong>
     {{#each drplaceswantlooper}}
       {{> drplaceswantloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Fengshui //// -->
+<!-- Collapse Buttons -->
+<template name="drFengshuiRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" aria-expanded="false" aria-controls="Fengshui">
+    Fengshui
+  </button>
+
+<div class="collapse" id="Fengshui">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>choreslog</strong>
+    {{#each drchoresloglooper}}
+      {{> drchoreslogloader}}
     {{/each}}
     </div>
   </div>
@@ -530,14 +701,23 @@
     {{/each}}
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-    <strong>choreslog</strong>
-    {{#each drchoresloglooper}}
-      {{> drchoreslogloader}}
-    {{/each}}
-    </div>
-  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// People //// -->
+<!-- Collapse Buttons -->
+<template name="drPeopleRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" aria-expanded="false" aria-controls="People">
+    People
+  </button>
+
+<div class="collapse" id="People">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>pplengagedwith</strong>
@@ -554,6 +734,23 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Love //// -->
+<!-- Collapse Buttons -->
+<template name="drLoveRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" aria-expanded="false" aria-controls="Love">
+    Love
+  </button>
+
+<div class="collapse" id="Love">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>howsodoing</strong>
@@ -618,6 +815,23 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Companion //// -->
+<!-- Collapse Buttons -->
+<template name="drCompanionRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" aria-expanded="false" aria-controls="Companion">
+    Companion
+  </button>
+
+<div class="collapse" id="Companion">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>petdoing</strong>
@@ -634,6 +848,39 @@
     {{/each}}
     </div>
   </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Society //// -->
+<!-- Collapse Buttons -->
+<template name="drSocietyRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" aria-expanded="false" aria-controls="Society">
+    Society
+  </button>
+
+<div class="collapse" id="Society">
+  <div class="card card-block">
+
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Spirit //// -->
+<!-- Collapse Buttons -->
+<template name="drSpiritRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" aria-expanded="false" aria-controls="Spirit">
+    Spirit
+  </button>
+
+<div class="collapse" id="Spirit">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>meditated</strong>
@@ -642,6 +889,9 @@
     {{/each}}
     </div>
   </div>
+  <hr>
+</div>
+</div>
 </template>
 
 

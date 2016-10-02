@@ -261,6 +261,9 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+
+
+
     'submit #dnthoughtsSubmitter':function(e){
         e.preventDefault();
         var thoughts = $('#dnthoughts').val();
@@ -285,6 +288,9 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+
+
+
     'submit #dncareerSubmitter':function(e){
         e.preventDefault();
         var career = $('#dncareer').val();
@@ -309,6 +315,11 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.HealthLogger.events({
+    // individual submitters
     'submit #dnsymptomsSubmitter':function(e){
         e.preventDefault();
         var symptoms = $('#dnsymptoms').val();
@@ -357,6 +368,11 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.HygieneLogger.events({
+    // individual submitters
     'submit #dnhowshygieneSubmitter':function(e){
         e.preventDefault();
         var howshygiene = $('#dnhowshygiene').val();
@@ -389,6 +405,11 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.FoodLogger.events({
+    // individual submitters
     'submit #dneatlogSubmitter':function(e){
         e.preventDefault();
         var eatlog = $('#dneatlog').val();
@@ -397,6 +418,11 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.FitLogger.events({
+    // individual submitters
     'submit #dnfitnesslogSubmitter':function(e){
         e.preventDefault();
         var fitnesslog = $('#dnfitnesslog').val();
@@ -405,6 +431,17 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.MoneyLogger.events({
+    // individual submitters
+
+});
+
+
+Template.ThingsLogger.events({
+    // individual submitters
     'submit #dnstuffhaveSubmitter':function(e){
         e.preventDefault();
         var stuffhave = $('#dnstuffhave').val();
@@ -445,6 +482,10 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+Template.PlacesLogger.events({
+    // individual submitters
     'submit #dnplacesbeenSubmitter':function(e){
         e.preventDefault();
         var placesbeen = $('#dnplacesbeen').val();
@@ -458,6 +499,18 @@ Template.agendaLogger.events({
         var placeswant = $('#dnplaceswant').val();
         Agenda.insert({
             placeswant: placeswant,
+            createdAt: new Date()
+        });
+    },
+});
+
+Template.FengshuiLogger.events({
+    // individual submitters
+    'submit #dnchoreslogSubmitter':function(e){
+        e.preventDefault();
+        var choreslog = $('#dnchoreslog').val();
+        Agenda.insert({
+            choreslog: choreslog,
             createdAt: new Date()
         });
     },
@@ -509,14 +562,10 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
-    'submit #dnchoreslogSubmitter':function(e){
-        e.preventDefault();
-        var choreslog = $('#dnchoreslog').val();
-        Agenda.insert({
-            choreslog: choreslog,
-            createdAt: new Date()
-        });
-    },
+});
+
+Template.PeopleLogger.events({
+    // individual submitters
     'submit #dnpplengagedwithSubmitter':function(e){
         e.preventDefault();
         var pplengagedwith = $('#dnpplengagedwith').val();
@@ -533,6 +582,10 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+Template.LoveLogger.events({
+    // individual submitters
     'submit #dnhowsodoingSubmitter':function(e){
         e.preventDefault();
         var howsodoing = $('#dnhowsodoing').val();
@@ -597,6 +650,11 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.CompanionLogger.events({
+    // individual submitters
     'submit #dnpetdoingSubmitter':function(e){
         e.preventDefault();
         var petdoing = $('#dnpetdoing').val();
@@ -613,6 +671,17 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
+});
+
+
+Template.SocietyLogger.events({
+    // individual submitters
+
+});
+
+
+Template.SpiritLogger.events({
+    // individual submitters
     'submit #dnmeditatedSubmitter':function(e){
         e.preventDefault();
         var meditated = $('#dnmeditated').val();
@@ -621,7 +690,4 @@ Template.agendaLogger.events({
             createdAt: new Date()
         });
     },
-
-
-
 });

@@ -14,6 +14,8 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {headline: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drSleepRecord.helpers({
     drSleeplooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -42,6 +44,9 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {outofBed: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+
+Template.drMindRecord.helpers({
     drmoodlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -105,6 +110,27 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {jobcareerbizOpp: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+    drthoughtslooper() {
+        var start = new Date();
+        start.setHours(0,0,0,0);
+        var end = new Date();
+        end.setHours(23,59,59,999);
+        return Agenda.find( {thoughts: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+    },
+    drwantslooper() {
+        var start = new Date();
+        start.setHours(0,0,0,0);
+        var end = new Date();
+        end.setHours(23,59,59,999);
+        return Agenda.find( {wants: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+    },
+    drproblemslooper() {
+        var start = new Date();
+        start.setHours(0,0,0,0);
+        var end = new Date();
+        end.setHours(23,59,59,999);
+        return Agenda.find( {problems: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+    },
     dropinionlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -119,26 +145,14 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {wisdom: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drAgendaRecord.helpers({
     drmissionlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {mission: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
-    dreventsiwantohappenlooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {eventsiwantohappen: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
-    dractivitiesiwanttodolooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {activitiesiwanttodo: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
     drtodoslooper() {
         var start = new Date();
@@ -210,27 +224,6 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {weaknesses: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-    drthoughtslooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {thoughts: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
-    drwantslooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {wants: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
-    drproblemslooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {problems: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
     drcareerlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -252,6 +245,8 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {hobby: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drHealthRecord.helpers({
     drsymptomslooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -266,34 +261,36 @@ Template.drLooper.helpers({
         end.setHours(23,59,59,999);
         return Agenda.find( {whyhealthissue: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-drallergieslooper() {
+    drallergieslooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {allergies: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-drpooploglooper() {
+    drpooploglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {pooplog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-drpeeloglooper() {
+    drpeeloglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {peelog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-drvisionhistlooper() {
+    drvisionhistlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {visionhist: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drHygieneRecord.helpers({
 drhowshygienelooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -322,6 +319,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {dressed: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drFoodRecord.helpers({
     dreatloglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -329,6 +328,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {eatlog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drFitRecord.helpers({
     drfitnessloglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -336,6 +337,12 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {fitnesslog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drMoneyRecord.helpers({
+    
+
+});
+Template.drThingsRecord.helpers({
     drstuffhavelooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -371,6 +378,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {stuffborrowed: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drPlacesRecord.helpers({
     drplacesbeenlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -384,6 +393,15 @@ drhowshygienelooper() {
         var end = new Date();
         end.setHours(23,59,59,999);
         return Agenda.find( {placeswant: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
+    },
+});
+Template.drFengshuiRecord.helpers({
+    drchoresloglooper() {
+        var start = new Date();
+        start.setHours(0,0,0,0);
+        var end = new Date();
+        end.setHours(23,59,59,999);
+        return Agenda.find( {choreslog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
     drhomemesslooper() {
         var start = new Date();
@@ -427,13 +445,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {workspacetightiness: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
-    drchoresloglooper() {
-        var start = new Date();
-        start.setHours(0,0,0,0);
-        var end = new Date();
-        end.setHours(23,59,59,999);
-        return Agenda.find( {choreslog: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
-    },
+});
+Template.drPeopleRecord.helpers({
     drpplengagedwithlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -448,6 +461,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {pplgiftideas: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drLoveRecord.helpers({
     drhowsodoinglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -504,6 +519,8 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {sexualactivity: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drCompanionRecord.helpers({
     drpetdoinglooper() {
         var start = new Date();
         start.setHours(0,0,0,0);
@@ -518,6 +535,12 @@ drhowshygienelooper() {
         end.setHours(23,59,59,999);
         return Agenda.find( {petmed: {$exists: true}}, {createdAt: {$gte: start, $lt: end}}, {sort: {createdAt: -1}});
     },
+});
+Template.drSocietyRecord.helpers({
+    
+
+});
+Template.drSpiritRecord.helpers({
     drmeditatedlooper() {
         var start = new Date();
         start.setHours(0,0,0,0);

@@ -10,8 +10,19 @@
   {{> wakeLogger}}
   {{> mindLogger}}
   {{> agendaLogger}}
-
-
+  {{> HealthLogger}}
+  {{> HygieneLogger}}
+  {{> FoodLogger}}
+  {{> FitLogger}}
+  {{> MoneyLogger}}
+  {{> ThingsLogger}}
+  {{> PlacesLogger}}
+  {{> FengshuiLogger}}
+  {{> PeopleLogger}}
+  {{> LoveLogger}}
+  {{> CompanionLogger}}
+  {{> SocietyLogger}}
+  {{> SpiritLogger}}
   
 
 
@@ -77,7 +88,7 @@
 <p>
 
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="true" aria-controls="lastnightsleep">
-    Last Night's Sleep
+    Sleep
   </button>
 
 <div class="collapse" id="lastnightsleep">
@@ -370,7 +381,7 @@ Naps and when went to sleep last night
     Agenda
   </button>
 
-<div class="collapse in" id="agenda">
+<div class="collapse" id="agenda">
   <div class="card card-block">
 
 <!--- mission LOGGER FORMS -->
@@ -384,36 +395,6 @@ Naps and when went to sleep last night
         </label>
         <div class="col-sm-9">
           <textarea id="dnmission" class="form-control" rows="3" placeholder="What is your current Mission?"></textarea>
-        </div>
-      </div>
-    </form>
-
-    
-<!--- eventsiwantohappen LOGGER FORMS -->
-  <p></p>
-    <form class="form-horizontal" id="dneventsiwantohappenSubmitter">
-      <div class="form-group">
-        <label class="col-sm-1 control-label">eventsiwantohappen</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-          <textarea id="dneventsiwantohappen" class="form-control" rows="3" placeholder="How's your eventsiwantohappen?"></textarea>
-        </div>
-      </div>
-    </form>
-<!--- activitiesiwanttodo LOGGER FORMS -->
-  <p></p>
-    <form class="form-horizontal" id="dnactivitiesiwanttodoSubmitter">
-      <div class="form-group">
-        <label class="col-sm-1 control-label">activitiesiwanttodo</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-          <textarea id="dnactivitiesiwanttodo" class="form-control" rows="3" placeholder="How's your activitiesiwanttodo?"></textarea>
         </div>
       </div>
     </form>
@@ -557,6 +538,11 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+
+
+
+
+
 <!--- thoughts LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnthoughtsSubmitter">
@@ -599,6 +585,15 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+
+
+
+
+
+
+
+
+
 <!--- career LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dncareerSubmitter">
@@ -641,6 +636,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// HEALTH //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="HealthLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" aria-expanded="false" aria-controls="Health">
+    Health
+  </button>
+
+<div class="collapse" id="Health">
+  <div class="card card-block">
+
+
 <!--- symptoms LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnsymptomsSubmitter">
@@ -725,6 +741,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// HYGIENE //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="HygieneLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" aria-expanded="false" aria-controls="Hygiene">
+    Hygiene
+  </button>
+
+<div class="collapse" id="Hygiene">
+  <div class="card card-block">
+
+
 <!--- howshygiene LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnhowshygieneSubmitter">
@@ -781,6 +818,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Food //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FoodLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" aria-expanded="false" aria-controls="Food">
+    Food
+  </button>
+
+<div class="collapse" id="Food">
+  <div class="card card-block">
+
+
+
 <!--- eatlog LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dneatlogSubmitter">
@@ -795,6 +853,26 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Fit //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FitLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" aria-expanded="false" aria-controls="Fit">
+    Fit
+  </button>
+
+<div class="collapse" id="Fit">
+  <div class="card card-block">
+
+
 <!--- fitnesslog LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnfitnesslogSubmitter">
@@ -809,6 +887,51 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+
+<!-- //// Money //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="MoneyLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" aria-expanded="false" aria-controls="Money">
+    Money
+  </button>
+
+<div class="collapse in" id="Money">
+  <div class="card card-block">
+
+
+
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Things //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="ThingsLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" aria-expanded="false" aria-controls="Things">
+    Things
+  </button>
+
+<div class="collapse" id="Things">
+  <div class="card card-block">
+
+
+
 <!--- stuffhave LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnstuffhaveSubmitter">
@@ -879,6 +1002,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Places //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="PlacesLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Places" aria-expanded="false" aria-controls="Places">
+    Places
+  </button>
+
+<div class="collapse" id="Places">
+  <div class="card card-block">
+
+
 <!--- placesbeen LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnplacesbeenSubmitter">
@@ -907,6 +1051,41 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Fengshui //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FengshuiLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" aria-expanded="false" aria-controls="Fengshui">
+    Fengshui
+  </button>
+
+<div class="collapse" id="Fengshui">
+  <div class="card card-block">
+
+<!--- choreslog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnchoreslogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">choreslog</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnchoreslog" class="form-control" rows="3" placeholder="How's your choreslog?"></textarea>
+        </div>
+      </div>
+    </form>
+
 <!--- homemess LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnhomemessSubmitter">
@@ -991,20 +1170,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
-<!--- choreslog LOGGER FORMS -->
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// People //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="PeopleLogger">
   <p></p>
-    <form class="form-horizontal" id="dnchoreslogSubmitter">
-      <div class="form-group">
-        <label class="col-sm-1 control-label">choreslog</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-          <textarea id="dnchoreslog" class="form-control" rows="3" placeholder="How's your choreslog?"></textarea>
-        </div>
-      </div>
-    </form>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" aria-expanded="false" aria-controls="People">
+    People
+  </button>
+
+<div class="collapse" id="People">
+  <div class="card card-block">
+
+
 <!--- pplengagedwith LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnpplengagedwithSubmitter">
@@ -1033,6 +1219,25 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Love //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="LoveLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" aria-expanded="false" aria-controls="Love">
+    Love
+  </button>
+
+<div class="collapse" id="Love">
+  <div class="card card-block">
+
 <!--- howsodoing LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnhowsodoingSubmitter">
@@ -1145,6 +1350,27 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Companion //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="CompanionLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" aria-expanded="false" aria-controls="Companion">
+    Companion
+  </button>
+
+<div class="collapse" id="Companion">
+  <div class="card card-block">
+
+
 <!--- petdoing LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnpetdoingSubmitter">
@@ -1173,6 +1399,45 @@ Naps and when went to sleep last night
         </div>
       </div>
     </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Society //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="SocietyLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" aria-expanded="false" aria-controls="Society">
+    Society
+  </button>
+
+<div class="collapse" id="Society">
+  <div class="card card-block">
+
+
+  </div>
+</div>
+</template>
+
+
+<!-- //// Spirit //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="SpiritLogger">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" aria-expanded="false" aria-controls="Spirit">
+    Spirit
+  </button>
+
+<div class="collapse" id="Spirit">
+  <div class="card card-block">
+
 <!--- meditated LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dnmeditatedSubmitter">
