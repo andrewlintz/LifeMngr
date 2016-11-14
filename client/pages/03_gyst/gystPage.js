@@ -75,15 +75,15 @@ Template.test4a.events({
     	const obj = {};
     	obj[event.currentTarget.name] = event.currentTarget.checked;
     	Agenda.update(this._id, { 
-    		$set: obj, } );
+    		$set: {checked: ! this.checked} 
+    		});
     	Agenda.insert({
-      		test4: 'test4',
+      		test4: 'test4A',
+      		test4b: 'test4B',
       		checked: 0,
         	createdAt: new Date()
     	});
-    	Agenda.update(this._id, { 
-    		$set: {checked: 0} 
-    	});
+
    	},
 });
 
@@ -91,6 +91,7 @@ Template.test4a.events({
 
 ///// EVENTS /////
 Template.test4checkboxes.events({
+/*
 	'click input'(event) {
     	const obj = {};
     	obj[event.currentTarget.name] = event.currentTarget.checked;
@@ -101,14 +102,14 @@ Template.test4checkboxes.events({
         	createdAt: new Date()
     	}); 
 },
-/*
+*/
     'click .toggle-checked'() {
 		Agenda.update(this._id, {
   	    	$set: { checked: ! this.checked },
   	  	});
     }
 
-*/
+
 		/*
     'click #test4Submitter':function(e){
   	//'click .toggle-checked'() {
@@ -125,3 +126,40 @@ Template.test4checkboxes.events({
   	},
   	*/
  });
+
+Template.taskst.helpers({
+  taskst() {
+    return Agenda.find({});
+  },
+});
+
+
+Template.tasksubmit.events({
+  'submit .new-task'(event) {
+    event.preventDefault();
+    // Get value from form element
+    const target = event.target;
+    const text = target.text.value;
+ 
+    // Insert a task into the collection
+    Agenda.insert({
+      text,
+      createdAt: new Date(), // current time
+    });
+ 
+    // Clear form
+    target.text.value = '';
+  },
+});
+
+Template.taskst.events({
+  'click .toggle-checked'() {
+    // Set the checked property to the opposite of its current value
+    Agenda.update(this._id, {
+      $set: { checked: ! this.checked },
+    });
+  },
+  'click .delete'() {
+    Agenda.remove(this._id);
+  },
+});

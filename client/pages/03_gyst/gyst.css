@@ -84,3 +84,24 @@
 .checked [name=testerItem]:focus{
     background-color:#f0f0f0;
 }
+
+
+
+
+
+
+
+li.checked{
+    background-color:#f0f0f0;
+    color:#666;
+}
+
+li.checked [name=testerItem]{
+    text-decoration: line-through;
+}
+
+li.checked [name=testerItem],
+li.checked [name=testerItem]:hover,
+li.checked [name=testerItem]:focus{
+    background-color:#f0f0f0;
+}

@@ -1,6 +1,10 @@
 <template name="gystPage">
   <h1>Gyst Dashboard</h1>
 
+<a href="./gysts/gysts">GYST2</a> 
+
+<hr>
+
 {{> test}}
 <hr>
 {{> test2}}
@@ -10,6 +14,16 @@
 {{> test4a}}
 <hr>
 {{> test4b}}
+<hr> 
+
+{{> tasksubmit}}
+<br>
+
+    <ul>
+      {{#each tasks}}
+{{> taskst}}
+      {{/each}}
+    </ul>
 </template>
 
 <template name="test">
@@ -90,6 +104,22 @@
   		<label for="test4Submitter"><span class="ui"></span></label>
   	</div>
   </p>
+</template>
+
+<template name="tasksubmit">
+	<form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new poer" />
+    </form>
+</template>
+
+<template name="taskst">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times; delete</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{text}}</span>
+  </li>
 </template>
 
 
