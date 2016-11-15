@@ -3,7 +3,7 @@ import './gysts.html';
 
 Template.gystsPage.helpers({
    tester() {
-     return Agenda.find({}, {sort: {createdAt: -1}});  },
+     return Agenda.find({completed: {$exists: true}}, {sort: {createdAt: -1}});  },
  });
   
   
@@ -18,34 +18,33 @@ Template.gystsPage.helpers({
          	}
      }
  });
- 
- Template.testerCount.helpers({
-     // helpers go here
-     'totalTester': function(){
-         // code goes here
-         return Agenda.find().count();
-     },
-     'completedTester': function(){
-         // code goes here
-         return Agenda.find({ completed: true }).count();
-     }
- });
- 
   
   ///// EVENTS /////
   
  Template.addTesteritem.events({
      /// events go here
-     'submit form': function(event){
+     'change [type=checkbox]': function(){
      event.preventDefault();
-     var testeritemName = $('[name="testeritemName"]').val();
-     Agenda.insert({
-         name: testeritemName,
+     var testeritemName2 = $('[name="testeritemName"]').val();
+     Agenda.insert({ 
+         name: testeritemName2,
          completed: false,
+         hist: true, 
          createdAt: new Date()
      });
      $('[name="testeritemName"]').val('');
- }
+ 	},
+     'submit form': function(event){
+     event.preventDefault();
+     var testeritemName = $('[name="testeritemName"]').val();
+     Agenda.insert({ 
+         name: testeritemName,
+         completed: false,
+         hist: true, 
+         createdAt: new Date()
+     });
+     $('[name="testeritemName"]').val('');
+ 	}
  });
  
  Template.testerItem.events({
@@ -72,20 +71,26 @@ Template.gystsPage.helpers({
      	var documentId = this._id;
      	var isCompleted = this.completed;
      	if(isCompleted){
-         	Agenda.update({ _id: documentId }, {$set: { completed: false }});
+         	Agenda.update({ _id: documentId }, {$set: { completed: false, hist: true }});
          	console.log("Task marked as incomplete.");
      	} else {
-         	Agenda.update({ _id: documentId }, {$set: { completed: true }});
+         	Agenda.update({ _id: documentId }, {$set: { completed: true, hist: false }});
          	console.log("Task marked as complete.");
-     }
- 	}
+    	};
+    	var isCompleted2 = this.hist;
+    	Agenda.insert({
+    	 name: "hist",
+         completed2: isCompleted2,
+         createdAt: new Date()
+     	})
+ 		},
  });
 
  Template.testerhist.helpers({
   testerhistlooper() {
     return Agenda.find({
             $and: [
-            {test4: {$exists: true}}, 
+            {completed2: {$exists: true}}, 
             {createdAt: {$gte: new Date(new Date().setDate(new Date().getDate()-1))}}
             ]    
         },{sort: {createdAt: -1}});
