@@ -1,0 +1,45 @@
+<template name="gysts2">
+<h1>Gyst Dashboard</h1>
+	<br>
+
+		{{> checkboxItem}}
+
+	<p> &nbsp;</p>
+	<hr>
+
+    	{{> acheckboxhist}}
+
+</template>
+
+<!--template name="acheckbox">
+     <form>
+         <p><input type="checkbox" id="test2" /><label for="test2"><span class="ui"></span></label></p>
+     </form>
+</template-->
+
+
+ <template name="checkboxItem">
+      <form >
+        <p><input type="checkbox" id="test2"/><label for="test2"><span class="ui"></span></label></p>
+      </form>
+ </template>
+
+
+
+
+
+
+ <template name="acheckboxhist">
+  {{#each acheckboxhistlooper}}
+    {{> acheckboxhisttag}}
+  {{/each}}
+ </template>
+
+ <template name="acheckboxhisttag">
+  <p>
+  <div>   
+      <input type="checkbox" checked="{{checkbox2}}"/>
+      <label for="BLANK"><span class="ui"></span></label>
+    </div>
+  </p>
+</template>
