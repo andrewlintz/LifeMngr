@@ -1,6 +1,6 @@
 import './cal.html';
 
-Template.calPage.rendered = function () {
+Template.body.rendered = function () {
     var fc = this.$('.fc');
     this.autorun(function () {
         Agenda.find();
@@ -53,7 +53,7 @@ Template.calendarEdit.helpers({
             events: function (start, end, timezone, callback) {
                 callback(Agenda.find({}).fetch());
             },
-            defaultView: 'agendaWeek'
+            defaultView: 'month'
         };
     }
 });
@@ -86,6 +86,7 @@ Template.calPage.events({
         event.target.description.value = "";
         $("#createEvent").modal("hide");
     },
+
 
     'click .refresh': function (e, template) {
         //template.$('#myid2').fullCalendar('refetchEvents');
