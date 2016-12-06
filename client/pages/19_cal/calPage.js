@@ -50,6 +50,63 @@ Template.calendarEdit.helpers({
             firstHour: 7,
             editable: true,
             eventLimit: false,
+
+        //START from https://usingfullcalendar.wordpress.com/2016/03/31/creating-a-fullcalendar-event-interactively/
+
+            selectable: true,
+       	// My tweaking over what is below
+
+       		select: function(e) {
+       			
+        		$("#createEvent").modal("show");
+    		},
+        /* 
+            select: function(start, end, jsEvent, view) {
+ 
+     			// Ask for a title. If empty it will default to "New event"
+     			var title = prompt("Enter a title for this event", "New event");
+ 
+     			// If did not pressed Cancel button
+     			if (title != null) {
+      				// Create event
+      				var event = {
+    				   title: title.trim() != "" ? title : "New event",
+    				   start: start,
+    				   end: end
+    				  };
+ 
+    				  // Push event into fullCalendar's array of events
+    				  // and displays it. The last argument is the
+    				  // "stick" value. If set to true the event
+    				  // will "stick" even after you move to other
+    				  // year, month, day or week.
+ 				
+    				  $calendar.fullCalendar("renderEvent", event, true);
+    				 };
+    				 // Whatever happens, unselect selection
+    				 $calendar.fullCalendar("unselect");
+ 				
+    				}, // End select callback
+
+    				// Callback triggered when we click on an event
+ 
+    		eventClick: function(event, jsEvent, view){
+    		 // Ask for a title. If empty it will default to "New event"
+    		 var newTitle = prompt("Enter a new title for this event", event.title);
+ 
+    		 // If did not pressed Cancel button
+    		 if (newTitle != null) {
+    		      // Update event
+    		      event.title = newTitle.trim() != "" ? newTitle : event.title;
+ 
+    		      // Call the "updateEvent" method
+    		      $calendar.fullCalendar("updateEvent", event);
+ 
+    		    }
+    		}, // End callback eventClick
+	*/
+    	//END of Web Tutorial
+
             events: function (start, end, timezone, callback) {
                 callback(Agenda.find({}).fetch());
             },
