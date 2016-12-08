@@ -35,12 +35,13 @@ Template.calendarEdit.helpers({
             id: 'myid2',
             class: 'myCalendars',
             lang: 'en',
-            allDaySlot: false,
+            allDaySlot: true,
             header: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
+            height: 600,
             axisFormat: 'h:mm a',
             timeFormat: {
                 agenda: 'h:mm a',
@@ -49,68 +50,42 @@ Template.calendarEdit.helpers({
             },
             firstHour: 7,
             editable: true,
-            eventLimit: false,
-
+            eventLimit: true,
+            slotDuration: '00:15:00',
+            forceEventDuration: true, 
+            defaultTimedEventDuration: '00:15:00', 
         //START from https://usingfullcalendar.wordpress.com/2016/03/31/creating-a-fullcalendar-event-interactively/
 
             selectable: true,
+            selectHelper: true,
+
        	// My tweaking over what is below
-
-       		select: function(e) {
+       		select: function(start, end, jsEvent, view) {
+       	// Ties Click time/date to the DateTimePicker Input Field	
+       	// Specifically helped by http://jsfiddle.net/mccannf/AzmJv/16/	
        			
-        		$("#createEvent").modal("show");
+          			$('#createEvent #startTime').val(start);
+          			$('#createEvent #endTime').val(end);
+        			$("#createEvent").modal("show");
+        		
     		},
-        /* 
-            select: function(start, end, jsEvent, view) {
- 
-     			// Ask for a title. If empty it will default to "New event"
-     			var title = prompt("Enter a title for this event", "New event");
- 
-     			// If did not pressed Cancel button
-     			if (title != null) {
-      				// Create event
-      				var event = {
-    				   title: title.trim() != "" ? title : "New event",
-    				   start: start,
-    				   end: end
-    				  };
- 
-    				  // Push event into fullCalendar's array of events
-    				  // and displays it. The last argument is the
-    				  // "stick" value. If set to true the event
-    				  // will "stick" even after you move to other
-    				  // year, month, day or week.
- 				
-    				  $calendar.fullCalendar("renderEvent", event, true);
-    				 };
-    				 // Whatever happens, unselect selection
-    				 $calendar.fullCalendar("unselect");
- 				
-    				}, // End select callback
-
-    				// Callback triggered when we click on an event
- 
-    		eventClick: function(event, jsEvent, view){
-    		 // Ask for a title. If empty it will default to "New event"
-    		 var newTitle = prompt("Enter a new title for this event", event.title);
- 
-    		 // If did not pressed Cancel button
-    		 if (newTitle != null) {
-    		      // Update event
-    		      event.title = newTitle.trim() != "" ? newTitle : event.title;
- 
-    		      // Call the "updateEvent" method
-    		      $calendar.fullCalendar("updateEvent", event);
- 
-    		    }
-    		}, // End callback eventClick
-	*/
-    	//END of Web Tutorial
-
             events: function (start, end, timezone, callback) {
                 callback(Agenda.find({}).fetch());
             },
-            defaultView: 'month'
+            defaultView: 'agendaDay', 
+            nowIndicator: true,
+
+            dayClick: function(date, jsEvent, view) {
+            	if (view.name === "month") {
+                $('#calendar').fullCalendar('gotoDate', date);
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
+            	}
+    		},
+    		eventClick: function(event, element) {
+        		$(".updateModal").show();
+        		$('#calendar').fullCalendar('updateEvent', event);
+
+    		}
         };
     }
 });
@@ -172,6 +147,23 @@ Template.eventList.events({
     'click .update': function(e){
         e.preventDefault();
         $(".updateModal").show();
-        //Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
+        Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
     }
+});
+
+Template.calPage.events({
+    'submit #update-event': function(event){
+        event.preventDefault();
+        var title = event.target.title.value;
+        var start = event.target.start.value;
+        var end = event.target.end.value;
+        var description = event.target.description.value;
+
+        Meteor.call("updateEvent", title, start, end, description);
+        event.target.title.value = "";
+        event.target.start.value = "";
+        event.target.end.value = "";
+        event.target.description.value = "";
+        $("#uModal").modal("hide");
+    },
 });

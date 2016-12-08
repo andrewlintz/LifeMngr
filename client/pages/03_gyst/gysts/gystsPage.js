@@ -26,7 +26,12 @@ Template.gystsPage.helpers({
      'change [type=checkbox]': function(){
      event.preventDefault();
      var testeritemName2 = $('[name="testeritemName"]').val();
+     var Now = new Date()
      Agenda.insert({ 
+     	 title: "checkbox clicked",
+     	 start: Now,
+     	 end: Now,
+     	 description: "",
          name: testeritemName2,
          completed: false,
          hist: true, 
