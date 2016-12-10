@@ -40,6 +40,8 @@ Template.sleepLogger.events({
             start: Now,
             end: Now,
             description: howdidUsleep,
+            howdidUsleep: howdidUsleep,
+            createdAt: new Date(),
         });
    },
    'submit #dndreamdiarysubmitter':function(e){
