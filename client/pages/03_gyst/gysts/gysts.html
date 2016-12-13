@@ -1,0 +1,84 @@
+<template name="gystsPage">
+<h1>Gyst Dashboard</h1>
+<br>
+
+ 
+   
+  {{> addTesteritem}}
+
+<br>
+<p>&nbsp;</p>
+<hr>
+
+<div class="panel-primary col-sm-12">
+ <div class="list-group"> 
+   <ul>
+   {{#each tester}}
+    {{> testerItem}}
+   {{/each}}
+   </ul>
+ </div>
+</div>
+<p> &nbsp;</p>
+
+    <hr>
+
+    {{> testerhist}}
+  
+  </template>
+  
+ <template name="addTesteritem">
+ <div class="panel-primary col-sm-12">
+     <div class="list-group"> 
+     <form>
+         <div class="col-sm-2">
+         <p><input type="checkbox" id="test1b" /><label for="test1b"><span class="ui"></span></label></p>
+         </div>
+         <div class="col-sm-9">
+         <input type="text" placeholder="Type something to add to items list here..." name="testeritemName" class="form-control col-sm-3">
+         </div>
+     </form>
+     </div>
+ </div>
+ </template>
+ 
+ <template name="testerItem">
+ <div class="panel-primary col-sm-12">
+     <div class="{{checked}} col-sm-12">
+    <div class="form-group">
+    <label class="col-sm-1 control-label">
+    <form >
+        <p><input type="checkbox" id="{{_id}}" {{checked}}/><label for="{{_id}}"><span class="ui"></span></label></p>
+    </form>
+    </label>
+    <div class="col-sm-1">
+      <a href="#" class="delete-testeritem">  Delete </a>
+      </div>
+    
+    <div class="col-sm-6">
+      <input type="text" value="{{name}}" name="testerItem" class="form-control">
+      </div>
+
+    </div>
+     </div>
+ </div>
+ </template>
+ 
+
+
+ <template name="testerhist">
+  {{#each testerhistlooper}}
+    {{> testerhisttag}}
+  {{/each}}
+ </template>
+
+ <template name="testerhisttag">
+  <p>
+  <div> 
+      
+      <input type="checkbox" checked="{{completed2}}"/>
+
+      <label for="test4Submitter"><span class="ui"></span></label>
+    </div>
+  </p>
+</template>

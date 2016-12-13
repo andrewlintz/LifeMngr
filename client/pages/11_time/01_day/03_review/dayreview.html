@@ -3,6 +3,22 @@
 {{> Greatdaytobealivereview}}
 <hr>
 {{> drLooper}}
+{{> drSleepRecord}}
+{{> drMindRecord}}
+{{> drAgendaRecord}}
+{{> drHealthRecord}}
+{{> drHygieneRecord}}
+{{> drFoodRecord}}
+{{> drFitRecord}}
+{{> drMoneyRecord}}
+{{> drThingsRecord}}
+{{> drPlacesRecord}}
+{{> drFengshuiRecord}}
+{{> drPeopleRecord}}
+{{> drLoveRecord}}
+{{> drCompanionRecord}}
+{{> drSocietyRecord}}
+{{> drSpiritRecord}}
 </template>
 
 <!-- Head Liner Template -->
@@ -18,14 +34,6 @@
   <div class="col-sm-1">
     <a class="btn btn btn-info" href="/time/daypast" role="button">Past
     </a>    
-  </div>
-  <div class="container">
-    <div class="row">
-    <strong>inventions</strong>
-    {{#each drinventionslooper}}
-      {{> drinventionsloader}}
-    {{/each}}
-    </div>
   </div>
 <br>
 
@@ -50,6 +58,18 @@
     </div>
   </div>
   <hr>
+</template>
+
+<!-- //// SLEEP //// -->
+<!-- Collapse Buttons -->
+<template name="drSleepRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Sleep" aria-expanded="false" aria-controls="Sleep">
+    Sleep
+  </button>
+
+<div class="collapse" id="Sleep">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>Sleep Log</strong>
@@ -84,6 +104,21 @@
     </div>
   </div>
   <hr>
+</div>
+</div>
+</template>
+
+<!-- //// Mind //// -->
+<!-- Collapse Buttons -->
+<template name="drMindRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Mind" aria-expanded="false" aria-controls="Mind">
+    Mind
+  </button>
+
+<div class="collapse" id="Mind">
+  <div class="card card-block">
+
   <div class="container">
     <div class="row">
     <strong>Mood</strong>
@@ -158,6 +193,30 @@
   </div>
   <div class="container">
     <div class="row">
+    <strong>thoughts</strong>
+    {{#each drthoughtslooper}}
+      {{> drthoughtsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>wants</strong>
+    {{#each drwantslooper}}
+      {{> drwantsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>problems</strong>
+    {{#each drproblemslooper}}
+      {{> drproblemsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
     <strong>opinion</strong>
     {{#each dropinionlooper}}
       {{> dropinionloader}}
@@ -173,6 +232,20 @@
     </div>
   </div>
 <hr>
+</div>
+</div>
+</template>
+
+<!-- //// Agenda //// -->
+<!-- Collapse Buttons -->
+<template name="drAgendaRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Agenda" aria-expanded="false" aria-controls="Agenda">
+    Agenda
+  </button>
+
+<div class="collapse" id="Agenda">
+  <div class="card card-block">
   <div class="container">
     <div class="row">
     <strong>mission</strong>
@@ -181,7 +254,658 @@
     {{/each}}
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+    <strong>todos</strong>
+    {{#each drtodoslooper}}
+      {{> drtodosloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>values</strong>
+    {{#each drvalueslooper}}
+      {{> drvaluesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>vision</strong>
+    {{#each drvisionlooper}}
+      {{> drvisionloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>goals</strong>
+    {{#each drgoalslooper}}
+      {{> drgoalsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>strategy</strong>
+    {{#each drstrategylooper}}
+      {{> drstrategyloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>accomplishments</strong>
+    {{#each draccomplishmentslooper}}
+      {{> draccomplishmentsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>successes</strong>
+    {{#each drsuccesseslooper}}
+      {{> drsuccessesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>failure</strong>
+    {{#each drfailurelooper}}
+      {{> drfailureloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>strengths</strong>
+    {{#each drstrengthslooper}}
+      {{> drstrengthsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>weaknesses</strong>
+    {{#each drweaknesseslooper}}
+      {{> drweaknessesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>career</strong>
+    {{#each drcareerlooper}}
+      {{> drcareerloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>projects</strong>
+    {{#each drprojectslooper}}
+      {{> drprojectsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>hobby</strong>
+    {{#each drhobbylooper}}
+      {{> drhobbyloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
 </template>
+
+  <!-- //// Health //// -->
+<!-- Collapse Buttons -->
+<template name="drHealthRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" aria-expanded="false" aria-controls="Health">
+    Health
+  </button>
+
+<div class="collapse" id="Health">
+  <div class="card card-block">
+  <div class="container">
+    <div class="row">
+    <strong>symptoms</strong>
+    {{#each drsymptomslooper}}
+      {{> drsymptomsloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>whyhealthissue</strong>
+    {{#each drwhyhealthissuelooper}}
+      {{> drwhyhealthissueloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>allergies</strong>
+    {{#each drallergieslooper}}
+      {{> drallergiesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>pooplog</strong>
+    {{#each drpooploglooper}}
+      {{> drpooplogloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>peelog</strong>
+    {{#each drpeeloglooper}}
+      {{> drpeelogloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>visionhist</strong>
+    {{#each drvisionhistlooper}}
+      {{> drvisionhistloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Hygiene //// -->
+<!-- Collapse Buttons -->
+<template name="drHygieneRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" aria-expanded="false" aria-controls="Hygiene">
+    Hygiene
+  </button>
+
+<div class="collapse" id="Hygiene">
+  <div class="card card-block">
+  <div class="container">
+    <div class="row">
+    <strong>howshygiene</strong>
+    {{#each drhowshygienelooper}}
+      {{> drhowshygieneloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>haircodition</strong>
+    {{#each drhaircoditionlooper}}
+      {{> drhaircoditionloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>nailscondition</strong>
+    {{#each drnailsconditionlooper}}
+      {{> drnailsconditionloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>dressed</strong>
+    {{#each drdressedlooper}}
+      {{> drdressedloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Food //// -->
+<!-- Collapse Buttons -->
+<template name="drFoodRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" aria-expanded="false" aria-controls="Food">
+    Food
+  </button>
+
+<div class="collapse" id="Food">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>eatlog</strong>
+    {{#each dreatloglooper}}
+      {{> dreatlogloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Fit //// -->
+<!-- Collapse Buttons -->
+<template name="drFitRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" aria-expanded="false" aria-controls="Fit">
+    Fit
+  </button>
+
+<div class="collapse" id="Fit">
+  <div class="card card-block">
+  <div class="container">
+    <div class="row">
+    <strong>fitnesslog</strong>
+    {{#each drfitnessloglooper}}
+      {{> drfitnesslogloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Money //// -->
+<!-- Collapse Buttons -->
+<template name="drMoneyRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" aria-expanded="false" aria-controls="Money">
+    Money
+  </button>
+
+<div class="collapse" id="Money">
+  <div class="card card-block">
+
+
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Things //// -->
+<!-- Collapse Buttons -->
+<template name="drThingsRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" aria-expanded="false" aria-controls="Things">
+    Things
+  </button>
+
+<div class="collapse" id="Things">
+  <div class="card card-block">
+  <div class="container">
+    <div class="row">
+    <strong>stuffhave</strong>
+    {{#each drstuffhavelooper}}
+      {{> drstuffhaveloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>stuffwant</strong>
+    {{#each drstuffwantlooper}}
+      {{> drstuffwantloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>stufflost</strong>
+    {{#each drstufflostlooper}}
+      {{> drstufflostloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>stufflent</strong>
+    {{#each drstufflentlooper}}
+      {{> drstufflentloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>stuffborrowed</strong>
+    {{#each drstuffborrowedlooper}}
+      {{> drstuffborrowedloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Places //// -->
+<!-- Collapse Buttons -->
+<template name="drPlacesRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Places" aria-expanded="false" aria-controls="Places">
+    Places
+  </button>
+
+<div class="collapse" id="Places">
+  <div class="card card-block">
+  <div class="container">
+    <div class="row">
+    <strong>placesbeen</strong>
+    {{#each drplacesbeenlooper}}
+      {{> drplacesbeenloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>placeswant</strong>
+    {{#each drplaceswantlooper}}
+      {{> drplaceswantloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Fengshui //// -->
+<!-- Collapse Buttons -->
+<template name="drFengshuiRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" aria-expanded="false" aria-controls="Fengshui">
+    Fengshui
+  </button>
+
+<div class="collapse" id="Fengshui">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>choreslog</strong>
+    {{#each drchoresloglooper}}
+      {{> drchoreslogloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>homemess</strong>
+    {{#each drhomemesslooper}}
+      {{> drhomemessloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>hometightiness</strong>
+    {{#each drhometightinesslooper}}
+      {{> drhometightinessloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>carmess</strong>
+    {{#each drcarmesslooper}}
+      {{> drcarmessloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>cartightiness</strong>
+    {{#each drcartightinesslooper}}
+      {{> drcartightinessloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>workspacemess</strong>
+    {{#each drworkspacemesslooper}}
+      {{> drworkspacemessloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>workspacetightiness</strong>
+    {{#each drworkspacetightinesslooper}}
+      {{> drworkspacetightinessloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// People //// -->
+<!-- Collapse Buttons -->
+<template name="drPeopleRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" aria-expanded="false" aria-controls="People">
+    People
+  </button>
+
+<div class="collapse" id="People">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>pplengagedwith</strong>
+    {{#each drpplengagedwithlooper}}
+      {{> drpplengagedwithloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>pplgiftideas</strong>
+    {{#each drpplgiftideaslooper}}
+      {{> drpplgiftideasloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Love //// -->
+<!-- Collapse Buttons -->
+<template name="drLoveRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" aria-expanded="false" aria-controls="Love">
+    Love
+  </button>
+
+<div class="collapse" id="Love">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>howsodoing</strong>
+    {{#each drhowsodoinglooper}}
+      {{> drhowsodoingloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>solikes</strong>
+    {{#each drsolikeslooper}}
+      {{> drsolikesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>sodislikes</strong>
+    {{#each drsodislikeslooper}}
+      {{> drsodislikesloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>sogiftideas</strong>
+    {{#each drsogiftideaslooper}}
+      {{> drsogiftideasloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>somood</strong>
+    {{#each drsomoodlooper}}
+      {{> drsomoodloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>sogarguement</strong>
+    {{#each drsogarguementlooper}}
+      {{> drsogarguementloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>period</strong>
+    {{#each drperiodlooper}}
+      {{> drperiodloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>sexualactivity</strong>
+    {{#each drsexualactivitylooper}}
+      {{> drsexualactivityloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Companion //// -->
+<!-- Collapse Buttons -->
+<template name="drCompanionRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" aria-expanded="false" aria-controls="Companion">
+    Companion
+  </button>
+
+<div class="collapse" id="Companion">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>petdoing</strong>
+    {{#each drpetdoinglooper}}
+      {{> drpetdoingloader}}
+    {{/each}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+    <strong>petmed</strong>
+    {{#each drpetmedlooper}}
+      {{> drpetmedloader}}
+    {{/each}}
+    </div>
+  </div>
+<hr>
+</div>
+</div>
+</template>
+
+<!-- //// Society //// -->
+<!-- Collapse Buttons -->
+<template name="drSocietyRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" aria-expanded="false" aria-controls="Society">
+    Society
+  </button>
+
+<div class="collapse" id="Society">
+  <div class="card card-block">
+
+<hr>
+</div>
+</div>
+</template>
+
+
+<!-- //// Spirit //// -->
+<!-- Collapse Buttons -->
+<template name="drSpiritRecord">
+  <p></p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" aria-expanded="false" aria-controls="Spirit">
+    Spirit
+  </button>
+
+<div class="collapse" id="Spirit">
+  <div class="card card-block">
+
+  <div class="container">
+    <div class="row">
+    <strong>meditated</strong>
+    {{#each drmeditatedlooper}}
+      {{> drmeditatedloader}}
+    {{/each}}
+    </div>
+  </div>
+  <hr>
+</div>
+</div>
+</template>
+
+
+
+
+
+<!-- //////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+////////////////////////////////// -->
+
+
+
+
+
 
 
 
@@ -419,6 +1143,747 @@
         <label class="col-sm-2 control-label"> <br><a href="" class="delete-drmissionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
         <div class="col-sm-8">
           <textarea class="form-control" rows="2" value="{{mission}}" name="drmissionItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR eventsiwantohappen Log Loader Temaplate -->
+
+<template name="dreventsiwantohappenloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-dreventsiwantohappenitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{eventsiwantohappen}}" name="dreventsiwantohappenItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR activitiesiwanttodo Log Loader Temaplate -->
+
+<template name="dractivitiesiwanttodoloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-dractivitiesiwanttodoitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{activitiesiwanttodo}}" name="dractivitiesiwanttodoItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR todos Log Loader Temaplate -->
+
+<template name="drtodosloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drtodositem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{todos}}" name="drtodosItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR values Log Loader Temaplate -->
+
+<template name="drvaluesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drvaluesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{values}}" name="drvaluesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR vision Log Loader Temaplate -->
+
+<template name="drvisionloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drvisionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{vision}}" name="drvisionItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR goals Log Loader Temaplate -->
+
+<template name="drgoalsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drgoalsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{goals}}" name="drgoalsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR strategy Log Loader Temaplate -->
+
+<template name="drstrategyloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstrategyitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{strategy}}" name="drstrategyItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR accomplishments Log Loader Temaplate -->
+
+<template name="draccomplishmentsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-draccomplishmentsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{accomplishments}}" name="draccomplishmentsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR successes Log Loader Temaplate -->
+
+<template name="drsuccessesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsuccessesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{successes}}" name="drsuccessesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR failure Log Loader Temaplate -->
+
+<template name="drfailureloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drfailureitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{failure}}" name="drfailureItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR strengths Log Loader Temaplate -->
+
+<template name="drstrengthsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstrengthsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{strengths}}" name="drstrengthsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR weaknesses Log Loader Temaplate -->
+
+<template name="drweaknessesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drweaknessesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{weaknesses}}" name="drweaknessesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR thoughts Log Loader Temaplate -->
+
+<template name="drthoughtsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drthoughtsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{thoughts}}" name="drthoughtsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR wants Log Loader Temaplate -->
+
+<template name="drwantsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drwantsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{wants}}" name="drwantsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR problems Log Loader Temaplate -->
+
+<template name="drproblemsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drproblemsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{problems}}" name="drproblemsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR career Log Loader Temaplate -->
+
+<template name="drcareerloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drcareeritem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{career}}" name="drcareerItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR projects Log Loader Temaplate -->
+
+<template name="drprojectsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drprojectsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{projects}}" name="drprojectsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR hobby Log Loader Temaplate -->
+
+<template name="drhobbyloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhobbyitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{hobby}}" name="drhobbyItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR symptoms Log Loader Temaplate -->
+
+<template name="drsymptomsloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsymptomsitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{symptoms}}" name="drsymptomsItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR whyhealthissue Log Loader Temaplate -->
+
+<template name="drwhyhealthissueloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drwhyhealthissueitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{whyhealthissue}}" name="drwhyhealthissueItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR allergies Log Loader Temaplate -->
+
+<template name="drallergiesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drallergiesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{allergies}}" name="drallergiesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR pooplog Log Loader Temaplate -->
+
+<template name="drpooplogloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpooplogitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{pooplog}}" name="drpooplogItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR peelog Log Loader Temaplate -->
+
+<template name="drpeelogloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpeelogitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{peelog}}" name="drpeelogItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR visionhist Log Loader Temaplate -->
+
+<template name="drvisionhistloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drvisionhistitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{visionhist}}" name="drvisionhistItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR howshygiene Log Loader Temaplate -->
+
+<template name="drhowshygieneloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhowshygieneitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{howshygiene}}" name="drhowshygieneItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR haircodition Log Loader Temaplate -->
+
+<template name="drhaircoditionloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhaircoditionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{haircodition}}" name="drhaircoditionItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR nailscondition Log Loader Temaplate -->
+
+<template name="drnailsconditionloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drnailsconditionitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{nailscondition}}" name="drnailsconditionItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR dressed Log Loader Temaplate -->
+
+<template name="drdressedloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drdresseditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{dressed}}" name="drdressedItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR eatlog Log Loader Temaplate -->
+
+<template name="dreatlogloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-dreatlogitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{eatlog}}" name="dreatlogItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR fitnesslog Log Loader Temaplate -->
+
+<template name="drfitnesslogloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drfitnesslogitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{fitnesslog}}" name="drfitnesslogItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR stuffhave Log Loader Temaplate -->
+
+<template name="drstuffhaveloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstuffhaveitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{stuffhave}}" name="drstuffhaveItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR stuffwant Log Loader Temaplate -->
+
+<template name="drstuffwantloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstuffwantitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{stuffwant}}" name="drstuffwantItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR stufflost Log Loader Temaplate -->
+
+<template name="drstufflostloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstufflostitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{stufflost}}" name="drstufflostItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR stufflent Log Loader Temaplate -->
+
+<template name="drstufflentloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstufflentitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{stufflent}}" name="drstufflentItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR stuffborrowed Log Loader Temaplate -->
+
+<template name="drstuffborrowedloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drstuffborroweditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{stuffborrowed}}" name="drstuffborrowedItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR placesbeen Log Loader Temaplate -->
+
+<template name="drplacesbeenloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drplacesbeenitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{placesbeen}}" name="drplacesbeenItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR placeswant Log Loader Temaplate -->
+
+<template name="drplaceswantloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drplaceswantitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{placeswant}}" name="drplaceswantItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR homemess Log Loader Temaplate -->
+
+<template name="drhomemessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhomemessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{homemess}}" name="drhomemessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR hometightiness Log Loader Temaplate -->
+
+<template name="drhometightinessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhometightinessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{hometightiness}}" name="drhometightinessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR carmess Log Loader Temaplate -->
+
+<template name="drcarmessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drcarmessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{carmess}}" name="drcarmessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR cartightiness Log Loader Temaplate -->
+
+<template name="drcartightinessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drcartightinessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{cartightiness}}" name="drcartightinessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR workspacemess Log Loader Temaplate -->
+
+<template name="drworkspacemessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drworkspacemessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{workspacemess}}" name="drworkspacemessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR workspacetightiness Log Loader Temaplate -->
+
+<template name="drworkspacetightinessloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drworkspacetightinessitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{workspacetightiness}}" name="drworkspacetightinessItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR choreslog Log Loader Temaplate -->
+
+<template name="drchoreslogloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drchoreslogitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{choreslog}}" name="drchoreslogItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR pplengagedwith Log Loader Temaplate -->
+
+<template name="drpplengagedwithloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpplengagedwithitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{pplengagedwith}}" name="drpplengagedwithItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR pplgiftideas Log Loader Temaplate -->
+
+<template name="drpplgiftideasloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpplgiftideasitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{pplgiftideas}}" name="drpplgiftideasItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR howsodoing Log Loader Temaplate -->
+
+<template name="drhowsodoingloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drhowsodoingitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{howsodoing}}" name="drhowsodoingItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR solikes Log Loader Temaplate -->
+
+<template name="drsolikesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsolikesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{solikes}}" name="drsolikesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR sodislikes Log Loader Temaplate -->
+
+<template name="drsodislikesloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsodislikesitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{sodislikes}}" name="drsodislikesItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR sogiftideas Log Loader Temaplate -->
+
+<template name="drsogiftideasloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsogiftideasitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{sogiftideas}}" name="drsogiftideasItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR somood Log Loader Temaplate -->
+
+<template name="drsomoodloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsomooditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{somood}}" name="drsomoodItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR sogarguement Log Loader Temaplate -->
+
+<template name="drsogarguementloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsogarguementitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{sogarguement}}" name="drsogarguementItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR period Log Loader Temaplate -->
+
+<template name="drperiodloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drperioditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{period}}" name="drperiodItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR sexualactivity Log Loader Temaplate -->
+
+<template name="drsexualactivityloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drsexualactivityitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{sexualactivity}}" name="drsexualactivityItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR petdoing Log Loader Temaplate -->
+
+<template name="drpetdoingloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpetdoingitem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{petdoing}}" name="drpetdoingItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR petmed Log Loader Temaplate -->
+
+<template name="drpetmedloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drpetmeditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{petmed}}" name="drpetmedItem"></textarea>
+        </div>
+    </div>
+ </div>   
+</template>
+
+  <!-- DR meditated Log Loader Temaplate -->
+
+<template name="drmeditatedloader">
+ <div class="container">   
+  <div class="row">
+        <label class="col-sm-2 control-label"> <br><a href="" class="delete-drmeditateditem" style="background: white; border-radius: 5px;"> Delete </a></label> 
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="2" value="{{meditated}}" name="drmeditatedItem"></textarea>
         </div>
     </div>
  </div>   

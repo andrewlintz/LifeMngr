@@ -9,3 +9,4 @@ Meteor.methods({
 	'submitsPost': function(headline, story){
 	}
 });
+

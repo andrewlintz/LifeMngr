@@ -1,19 +1,32 @@
 
 
 <template name="daynowPage">
+
+<div style="overflow-x: scroll;">
   {{> timesifter}}
-  {{> Greatdaytobealive}}
-  <br>
+</div>
+  
   <hr>
   {{> daysStory}}
+  {{> greatButtoNator}}
   {{> sleepLogger}}
   {{> wakeLogger}}
   {{> mindLogger}}
   {{> agendaLogger}}
-
-
+  {{> HealthLogger}}
+  {{> HygieneLogger}}
+  {{> FoodLogger}}
+  {{> FitLogger}}
+  {{> MoneyLogger}}
+  {{> ThingsLogger}}
+  {{> PlacesLogger}}
+  {{> FengshuiLogger}}
+  {{> PeopleLogger}}
+  {{> LoveLogger}}
+  {{> CompanionLogger}}
+  {{> SocietyLogger}}
+  {{> SpiritLogger}}
   
-
 
 </template>
 
@@ -40,28 +53,25 @@
 
 <template name="daysStory">
 <p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#todaysstory" aria-expanded="false" aria-controls="todaysstory">
-    Today's Story
-  </button>
 
-<div class="collapse in" id="todaysstory">
+<div id="todaysstory">
   <p></p>
   <form class="form-horizontal" id="todaysstory2">
   <div class="form-group">
-    <label for="inputHeadline" class="col-sm-1 control-label">Headline</label>
-    <div class="col-sm-9 col-sm-offset-1">
-      <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of your day">
+    
+    <div class="col-sm-12">
+      <input type="text" class="form-control" id="dayHeadline" placeholder="Highlights of Your Day!">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-sm-1 control-label">Story</label>
-    <label class="col-sm-1 control-label" style="bottom: 5px">
+    <div class="col-sm-12">
+      <textarea id="dayStory" class="form-control" rows="3" placeholder="The Story of Your Day!"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-1 control-label" style="bottom: 5px">
         <button id="submtPost" type="submit" class="btn btn-sm btn-default">Submit</button>
-    </label>
-
-    <div class="col-sm-9">
-      <textarea id="dayStory" class="form-control" rows="3" placeholder="Story of your day"></textarea>
     </div>
   </div>
 <hr>
@@ -71,44 +81,60 @@
 </template>
 
 
-<!-- //// SLEEP //// -->
 
-<template name="sleepLogger">
+
+
+<!-- //// BUTTONS //// -->
+<template name="greatButtoNator">
 <p>
-
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="true" aria-controls="lastnightsleep">
-    Last Night's Sleep
+    Sleep
   </button>
-
-<div class="collapse" id="lastnightsleep">
-  <p></p>
-    <form class="form-horizontal" id="sleepLoggersubmitter">
-      <div class="form-group">
-        <label class="col-sm-1 control-label">HowUSleep</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-          <textarea id="dnhowdidUsleep" class="form-control" rows="3" placeholder="How did you Sleep?"></textarea>
-        </div>
-      </div>
-    </form>
-    <form class="form-horizontal" id="dndreamdiarysubmitter">
-      <div class="form-group">
-      <label class="col-sm-1 control-label">Dream Stories</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-            <textarea id="dndreamDiary" class="form-control" rows="3" placeholder="Tell me the story of your dreams last night."></textarea>
-        </div>
-       </div>
-Naps and when went to sleep last night
-      <hr>
-    </form>
-</div>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
+    Wake
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" aria-expanded="false" aria-controls="agenda">
+    Agenda
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" aria-expanded="false" aria-controls="mind">
+    Mind
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" aria-expanded="false" aria-controls="Hygiene">
+    Hygiene
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" aria-expanded="false" aria-controls="Health">
+    Health
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" aria-expanded="false" aria-controls="Food">
+    Food
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" aria-expanded="false" aria-controls="Fit">
+    Fit
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" aria-expanded="false" aria-controls="Money">
+    Money
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" aria-expanded="false" aria-controls="Things">
+    Things
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" aria-expanded="false" aria-controls="People">
+    People
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" aria-expanded="false" aria-controls="Fengshui">
+    Fengshui
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" aria-expanded="false" aria-controls="Love">
+    Love
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" aria-expanded="false" aria-controls="Companion">
+    Companion
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" aria-expanded="false" aria-controls="Society">
+    Society
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" aria-expanded="false" aria-controls="Spirit">
+    Spirit
+  </button>
 </p>
 </template>
 
@@ -126,6 +152,41 @@ Naps and when went to sleep last night
 </template>
 
 
+<!-- //// SLEEP //// -->
+
+<template name="sleepLogger">
+<p>
+<div class="collapse" id="lastnightsleep">
+  <p></p>
+    <form class="form-horizontal" id="sleepLoggersubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">How Did You Sleep?</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhowdidUsleep" class="form-control" rows="3" placeholder="How Did You Sleep?"></textarea>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal" id="dndreamdiarysubmitter">
+      <div class="form-group">
+      <label class="col-sm-1 control-label">Dream Naratives</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+            <textarea id="dndreamDiary" class="form-control" rows="3" placeholder="Tell Me About Your Dreams Last Night."></textarea>
+        </div>
+       </div>
+Naps and when went to sleep last night
+      <hr>
+    </form>
+</div>
+</p>
+</template>
 
 
  <!-- //// WAKE //// -->
@@ -135,34 +196,31 @@ Naps and when went to sleep last night
 
 <template name="wakeLogger">
 <p></p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
-    Morning wake!
-  </button>
 <div class="collapse" id="morning">
   <div class="card card-block">  
   <form class="form-horizontal" id="dnwakeupSubmitter">
-    <div class="form">
+    <div class="form-group">
       <label class="col-sm-3  control-label">When did you Wake Up?</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
         <div class="col-sm-2">  
           <input id="dnwakeuptime" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
         </div>
-      </div>
-  </form>
-  <form class="form-horizontal" id="dnoutofbedSubmitter">
-    <div class="form">
-      <label class="col-sm-2 control-label">When Out of Bed</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
+      <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
-        </label>
+      </label>
+    </div>
+  </form>
+  <form class="form-group" id="dnoutofbedSubmitter">
+    <div class="form">
+      <label class="col-sm-3 control-label" style="align: left;">What Time Did You Get Out of Bed?</label>
         <div class="col-sm-2">  
           <input id="dnoutofBed" class="timepicker-precise" name="startTime" style="align: center !important;" type="bootstrap-timepicker">
         </div>
-      </div>      
+      <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+      </label>
+    </div>      
 <hr>
   </form> 
   </div>
@@ -172,54 +230,158 @@ Naps and when went to sleep last night
 
 
 
-
-<!-- //// Mind //// -->
-
+<!-- //// AGENDA //// -->
 
 
 
 
 
-
-<template name="mindLogger">
+<!-- Collapse Buttons -->
+<template name="agendaLogger">
   <p></p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" aria-expanded="false" aria-controls="mind">
-    Mind
-  </button>
-
-<!--- Mood LOGGER -->
-<div class="collapse" id="mind">
+<div class="collapse" id="agenda">
   <div class="card card-block">
-  <p></p>
-  <form class="form-horizontal" id="dnmoodSubmitter">
-    <div class="form-group">
-      <label class="col-sm-1 control-label">Mood</label>
-      <label class="col-sm-1 control-label" style="bottom: 5px">
-        <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-        Submit</button>
-      </label>
-      <div class="col-sm-9">
-        <textarea id="dnmood" class="form-control" rows="1" placeholder="What's your mood?     How are you Feeling?"></textarea>
-      </div>
-    </div>
-  </form>
 
-<!--- Why Mood LOGGER -->
+<!--- mission LOGGER FORMS -->
   <p></p>
-    <form class="form-horizontal" id="dnwhymoodSubmitter">
+    <form class="form-horizontal" id="dnmissionSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">Why Mood</label>
+        <label class="col-sm-1 control-label">Mission</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnwhymood" class="form-control" rows="3" placeholder="Why are you feeling that way? Or, Why do you think you are feeling that way?"></textarea>
+          <textarea id="dnmission" class="form-control" rows="3" placeholder="What is Your Mission?"></textarea>
         </div>
       </div>
     </form>
+<!--- vision LOGGER FORMS -->
   <p></p>
-
+    <form class="form-horizontal" id="dnvisionSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Vision</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnvision" class="form-control" rows="3" placeholder="How Do You Envision Your Life and the World To Be?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- goals LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dngoalsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Goals</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dngoals" class="form-control" rows="3" placeholder="What Are Your Goals?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- strategy LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstrategySubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Strategy</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstrategy" class="form-control" rows="3" placeholder="What is Your Strategy?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- todos LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dntodosSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Todos</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dntodos" class="form-control" rows="3" placeholder="What Must You Do?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- accomplishments LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnaccomplishmentsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Accomplishments</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnaccomplishments" class="form-control" rows="3" placeholder="What Have You Accomplished?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- successes LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsuccessesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Successes</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsuccesses" class="form-control" rows="3" placeholder="What Are Your Successes?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- failure LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnfailureSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Failure</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnfailure" class="form-control" rows="3" placeholder="What Are Your Failures?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- strengths LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstrengthsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Strengths</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstrengths" class="form-control" rows="3" placeholder="What Are Your Strengths?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- weaknesses LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnweaknessesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Weaknesses</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnweaknesses" class="form-control" rows="3" placeholder="What Are Your Weaknesses?"></textarea>
+        </div>
+      </div>
+    </form>
   <!--- Good Habits LOGGER FORMS -->
     <form class="form-horizontal" id="dngoodhabitsSubmitter">
       <div class="form-group">
@@ -229,7 +391,7 @@ Naps and when went to sleep last night
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dngoodhabits" class="form-control" rows="3" placeholder="What Good Habits are you Proud of doing/started?"></textarea>
+          <textarea id="dngoodhabits" class="form-control" rows="3" placeholder="What Are Your Good Habits You Are Proud of Doing | Started Today?"></textarea>
         </div>
       </div>
     </form>
@@ -244,10 +406,143 @@ Naps and when went to sleep last night
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnbadhabits" class="form-control" rows="3" placeholder="What Bad Habits do you want to correct?"></textarea>
+          <textarea id="dnbadhabits" class="form-control" rows="3" placeholder="What Bad Habits Do You Want to Correct?"></textarea>
         </div>
       </div>
     </form>
+<!--- values LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnvaluesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Values</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnvalues" class="form-control" rows="3" placeholder="What Do You Value? | What Are Your Values?"></textarea>
+        </div>
+      </div>
+    </form>
+
+<!--- wants LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnwantsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Wants</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnwants" class="form-control" rows="3" placeholder="What Do You Want? What Drives & Motivates You?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- problems LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnproblemsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Problems</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnproblems" class="form-control" rows="3" placeholder="What Are The Your Problems In Your Life, In The World?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- career LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dncareerSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Career</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dncareer" class="form-control" rows="3" placeholder="What's Up With Your Career?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- projects LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnprojectsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Projects</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnprojects" class="form-control" rows="3" placeholder="What Are Your Projects?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- hobby LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnhobbySubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Hobby</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhobby" class="form-control" rows="3" placeholder="What Are Your hobbies?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+
+<!-- //// Mind //// -->
+
+
+
+
+<template name="mindLogger">
+  <p></p>
+
+
+<!--- Mood LOGGER -->
+<div class="collapse" id="mind">
+  <div class="card card-block">
+  <p></p>
+  <form class="form-horizontal" id="dnmoodSubmitter">
+    <div class="form-group">
+      <label class="col-sm-1 control-label">Mood</label>
+      <label class="col-sm-1 control-label" style="bottom: 5px">
+        <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+        Submit</button>
+      </label>
+      <div class="col-sm-9">
+        <textarea id="dnmood" class="form-control" rows="1" placeholder="What Is Your Mood? | How Are You Feeling?"></textarea>
+      </div>
+    </div>
+  </form>
+
+<!--- Why Mood LOGGER -->
+  <p></p>
+    <form class="form-horizontal" id="dnwhymoodSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Why</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnwhymood" class="form-control" rows="3" placeholder="Why are you feeling that way? Or, Why do you think you are feeling that way?"></textarea>
+        </div>
+      </div>
+    </form>
+  <p></p>
 
 <!--- jokes LOGGER FORMS -->
   <p></p>
@@ -288,7 +583,7 @@ Naps and when went to sleep last night
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dninventions" class="form-control" rows="3" placeholder="What's your Invention Idea(s)?"></textarea>
+          <textarea id="dninventions" class="form-control" rows="3" placeholder="What Invention or Idea(s) Do You Have?"></textarea>
         </div>
       </div>
     </form>
@@ -296,13 +591,13 @@ Naps and when went to sleep last night
   <p></p>
     <form class="form-horizontal" id="dnentreprenuerialideaSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">entreprenuerialidea</label>
+        <label class="col-sm-1 control-label">Entreprenuerial Idea</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnentreprenuerialidea" class="form-control" rows="3" placeholder="What Entreprenuerial Idea(s) do you have?"></textarea>
+          <textarea id="dnentreprenuerialidea" class="form-control" rows="3" placeholder="What Entreprenuerial Idea(s) Do You Have?"></textarea>
         </div>
       </div>
     </form>
@@ -311,13 +606,28 @@ Naps and when went to sleep last night
   <p></p>
     <form class="form-horizontal" id="dnjobcareerbizOppSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">jobcareerbizOpp</label>
+        <label class="col-sm-1 control-label">Job Career Biz Opp</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnjobcareerbizOpp" class="form-control" rows="3" placeholder="What Job/Career/Business Opportunity do you envision?"></textarea>
+          <textarea id="dnjobcareerbizOpp" class="form-control" rows="3" placeholder="What Job/Career/Business Opportunity Do You Envision?"></textarea>
+        </div>
+What did You Learn Today?
+      </div>
+    </form>
+<!--- thoughts LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnthoughtsSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Thoughts</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnthoughts" class="form-control" rows="3" placeholder="What Are Your Thoughts? | What Are You Thinking?"></textarea>
         </div>
       </div>
     </form>
@@ -325,13 +635,13 @@ Naps and when went to sleep last night
   <p></p>
     <form class="form-horizontal" id="dnopinionSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">opinion</label>
+        <label class="col-sm-1 control-label">Opinion</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnopinion" class="form-control" rows="3" placeholder="How's your opinion?"></textarea>
+          <textarea id="dnopinion" class="form-control" rows="3" placeholder="What Opinions Have You Formed?"></textarea>
         </div>
       </div>
     </form>
@@ -339,13 +649,13 @@ Naps and when went to sleep last night
   <p></p>
     <form class="form-horizontal" id="dnwisdomSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">wisdom</label>
+        <label class="col-sm-1 control-label">Wisdom</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnwisdom" class="form-control" rows="3" placeholder="What wisdom or philosophy do you wish to bestow upon us?"></textarea>
+          <textarea id="dnwisdom" class="form-control" rows="3" placeholder="What Wisdom or Philosophy Did You Learn, Realize and Wish To Bestow Upon Reality?"></textarea>
         </div>
       </div>
 <hr>
@@ -357,36 +667,763 @@ Naps and when went to sleep last night
 
 
 
-<!-- //// AGENDA //// -->
-
-
+<!-- //// HEALTH //// -->
 
 
 
 <!-- Collapse Buttons -->
-<template name="agendaLogger">
+<template name="HealthLogger">
   <p></p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" aria-expanded="false" aria-controls="agenda">
-    Agenda
-  </button>
-
-<div class="collapse in" id="agenda">
+<div class="collapse" id="Health">
   <div class="card card-block">
 
-<!--- mission LOGGER FORMS -->
+
+<!--- symptoms LOGGER FORMS -->
   <p></p>
-    <form class="form-horizontal" id="dnmissionSubmitter">
+    <form class="form-horizontal" id="dnsymptomsSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">Mission</label>
+        <label class="col-sm-1 control-label">Symptoms</label>
         <label class="col-sm-1 control-label" style="bottom: 5px">
           <button id="submtPost" type="submit" class="btn btn-sm btn-default">
           Submit</button>
         </label>
         <div class="col-sm-9">
-          <textarea id="dnmission" class="form-control" rows="3" placeholder="What is your current Mission?"></textarea>
+          <textarea id="dnsymptoms" class="form-control" rows="3" placeholder="What Symptoms Do You Feel?"></textarea>
         </div>
       </div>
     </form>
+<!--- whyhealthissue LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnwhyhealthissueSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Why</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnwhyhealthissue" class="form-control" rows="3" placeholder="What Do You Think is Causing This Health Issue?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- allergies LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnallergiesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Allergies</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnallergies" class="form-control" rows="3" placeholder="Are You Experiencing Any Allergies?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- pooplog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpooplogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Poop Log</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpooplog" class="form-control" rows="3" placeholder="How's Your Poop?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- peelog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpeelogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Pee Log</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpeelog" class="form-control" rows="3" placeholder="How's Your Urine?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- visionhist LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnvisionhistSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Vision</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnvisionhist" class="form-control" rows="3" placeholder="How's your Vision?"></textarea>
+        </div>
+      </div>
+    </form>
+    Medial History, Dental, Family Medical History, Pill/Medicine Regiment 
+  </div>
+</div>
+
+
+</template>
+
+
+
+<!-- //// HYGIENE //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="HygieneLogger">
+  <p></p>
+<div class="collapse" id="Hygiene">
+  <div class="card card-block">
+<!--- howshygiene LOGGER FORMS -->
+Did you Shower, Wash Face, Ears, Teeth, Floss, Deoderant
+  <p></p>
+    <form class="form-horizontal" id="dnhowshygieneSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Hygiene</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhowshygiene" class="form-control" rows="3" placeholder="How's your Hygiene?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- haircodition LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnhaircoditionSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Hair Codition</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhaircodition" class="form-control" rows="3" placeholder="How's your Hair Codition?"></textarea>
+        </div>
+      </div>
+    </form>
+
+Skin
+
+<!--- nailscondition LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnnailsconditionSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Nails</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnnailscondition" class="form-control" rows="3" placeholder="What Condition Are Your Nails Condition?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- dressed LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dndressedSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Dressed</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dndressed" class="form-control" rows="3" placeholder="How Are You Dressed?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Food //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FoodLogger">
+  <p></p>
+<div class="collapse" id="Food">
+  <div class="card card-block">
+<!--- eatlog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dneatlogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Diet Log</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dneatlog" class="form-control" rows="3" placeholder="What Did You Eat Today?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Fit //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FitLogger">
+  <p></p>
+<div class="collapse" id="Fit">
+  <div class="card card-block">
+
+
+<!--- fitnesslog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnfitnesslogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Fitness Log</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnfitnesslog" class="form-control" rows="3" placeholder="What Did You Do Today?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+
+<!-- //// Money //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="MoneyLogger">
+  <p></p>
+<div class="collapse in" id="Money">
+  <div class="card card-block">
+
+
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Things //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="ThingsLogger">
+  <p></p>
+<div class="collapse" id="Things">
+  <div class="card card-block">
+<!--- stuffhave LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstuffhaveSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Stuff Inventory</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstuffhave" class="form-control" rows="3" placeholder="Add to the List of Things You Have"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- stuffwant LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstuffwantSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Stuff I Want</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstuffwant" class="form-control" rows="3" placeholder="What Do You Want"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- stufflost LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstufflostSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Stuff I Lost</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstufflost" class="form-control" rows="3" placeholder="What Did You Lose?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- stufflent LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstufflentSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Stuff I Lent</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstufflent" class="form-control" rows="3" placeholder="What Did You Lend?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- stuffborrowed LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnstuffborrowedSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Stuff I Borrowed</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnstuffborrowed" class="form-control" rows="3" placeholder="What Did You Borrowed?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Places //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="PlacesLogger">
+  <p></p>
+<div class="collapse" id="Places">
+  <div class="card card-block">
+<!--- placesbeen LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnplacesbeenSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Places I Been</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnplacesbeen" class="form-control" rows="3" placeholder="Where Did You Go?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- placeswant LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnplaceswantSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Places I Want To Go</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnplaceswant" class="form-control" rows="3" placeholder="Where Do you Want To Go?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Fengshui //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="FengshuiLogger">
+  <p></p>
+<div class="collapse" id="Fengshui">
+  <div class="card card-block">
+
+<!--- choreslog LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnchoreslogSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Chores Log</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnchoreslog" class="form-control" rows="3" placeholder="What Chores Did you Do?"></textarea>
+        </div>
+      </div>
+    </form>
+
+<!--- homemess LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnhomemessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Home Mess</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhomemess" class="form-control" rows="3" placeholder="What is a Mess Around the House?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- hometightiness LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnhometightinessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Home Tiddiness</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhometightiness" class="form-control" rows="3" placeholder="What is Tiddy?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- carmess LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dncarmessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Car Mess</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dncarmess" class="form-control" rows="3" placeholder="Is the Car a Mess?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- cartightiness LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dncartightinessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Car Tiddiness</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dncartightiness" class="form-control" rows="3" placeholder="How's Tiddy is Your Car?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- workspacemess LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnworkspacemessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Work Space Mess</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnworkspacemess" class="form-control" rows="3" placeholder="What's a Mess Around Your Work Space?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- workspacetightiness LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnworkspacetightinessSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Work Space Tiddiness</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnworkspacetightiness" class="form-control" rows="3" placeholder="How Tiddy is Your Work Space?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// People //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="PeopleLogger">
+  <p></p>
+<div class="collapse" id="People">
+  <div class="card card-block">
+
+
+<!--- pplengagedwith LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpplengagedwithSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">People Engaged With</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpplengagedwith" class="form-control" rows="3" placeholder="Who Did You Engage With Today?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- pplgiftideas LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpplgiftideasSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">People Gift Ideas</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpplgiftideas" class="form-control" rows="3" placeholder="Got an Idea For a Gift for Someone? And Who?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Love //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="LoveLogger">
+  <p></p>
+
+
+<div class="collapse" id="Love">
+  <div class="card card-block">
+
+<!--- howsodoing LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnhowsodoingSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">How SO Doing</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnhowsodoing" class="form-control" rows="3" placeholder="How's your SO Doing?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- solikes LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsolikesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">SO Likes</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsolikes" class="form-control" rows="3" placeholder="What Does Your  SO Likes?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- sodislikes LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsodislikesSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">SO Dislikes</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsodislikes" class="form-control" rows="3" placeholder="What does Your SO Dislikes?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- sogiftideas LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsogiftideasSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">SO Gift Ideas</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsogiftideas" class="form-control" rows="3" placeholder="Got an Idea for a Gift for Your SO?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- somood LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsomoodSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">SO Mood</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsomood" class="form-control" rows="3" placeholder="What Mood is Your SO In?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- sogarguement LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsogarguementSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">SO arguement</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsogarguement" class="form-control" rows="3" placeholder="Did you get into an Arguement with your SO? What was it about? WHY did you find yourself in the Arguement? What can you take Responsibility over? What did you Learn? What can you do better next?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- period LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnperiodSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Period Tracker</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnperiod" class="form-control" rows="3" placeholder="Is Your SO on Her Period?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- sexualactivity LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnsexualactivitySubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Sexual Activity</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnsexualactivity" class="form-control" rows="3" placeholder="Been Doing Sexy Stuff?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+
+<!-- //// Companion //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="CompanionLogger">
+  <p></p>
+<div class="collapse" id="Companion">
+  <div class="card card-block">
+
+
+<!--- petdoing LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpetdoingSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Pet List</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpetdoing" class="form-control" rows="3" placeholder="How's your Pet's Doing?"></textarea>
+        </div>
+      </div>
+    </form>
+<!--- petmed LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnpetmedSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Pet Med</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnpetmed" class="form-control" rows="3" placeholder="Pet Medical Log?"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</template>
+
+
+<!-- //// Society //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="SocietyLogger">
+  <p></p>
+<div class="collapse" id="Society">
+  <div class="card card-block">
+
+
+  </div>
+</div>
+</template>
+
+
+<!-- //// Spirit //// -->
+
+
+
+<!-- Collapse Buttons -->
+<template name="SpiritLogger">
+  <p></p>
+<div class="collapse" id="Spirit">
+  <div class="card card-block">
+
+<!--- meditated LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal" id="dnmeditatedSubmitter">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">Meditation</label>
+        <label class="col-sm-1 control-label" style="bottom: 5px">
+          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
+          Submit</button>
+        </label>
+        <div class="col-sm-9">
+          <textarea id="dnmeditated" class="form-control" rows="3" placeholder="Meditation Log"></textarea>
+        </div>
+      </div>
+    </form>
+
 
 <!-- between here & /template is junk when completed -->
   </div>

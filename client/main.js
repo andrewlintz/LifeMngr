@@ -14,3 +14,5 @@ Template.registerHelper('formatDate', function(date, format) {
   // Example: {{formatDate createdAt 'MM/DD/YYYY'}}
   return moment(new Date(date)).format('MM/DD/YYYY');
 }); 
+
+Now = new Date();

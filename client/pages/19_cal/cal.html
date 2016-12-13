@@ -1,0 +1,32 @@
+<template name="calPage">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				{{> calendarEdit}}
+			</div>
+			<div class="col-md-6 col-sm-12" style="height: 600px; overflow: scroll;">
+				{{> daynowPage}}
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-6 col-sm-12">
+                <h3>Events App <a href="#" id="add-Event" class="create btn btn-danger pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></h3>
+
+                <ul class="list-group">
+   
+                        {{#each event}}
+                            {{> eventList}}
+                        {{/each}}
+                 
+                </ul>
+            </div>
+		</div>
+	</div>
+    {{> createEvent}}
+    {{> updateModal}}
+</template>
+
