@@ -1,5 +1,6 @@
 import '../lib/routes.js';
 import '../lib/collections/collections.js';
+import '../imports/startup/accounts-config.js';
 
 
 
@@ -16,3 +17,6 @@ Template.registerHelper('formatDate', function(date, format) {
 }); 
 
 Now = new Date();
+
+import { Accounts } from 'meteor/accounts-base';
+
