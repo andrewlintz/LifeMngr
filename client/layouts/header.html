@@ -2,13 +2,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<H1>Life Management App 0.0.296 </H1>
+				<H1>Life Management App 0.0.299 </H1>
 			</div>
-			<div class="col-md-2">	
-				<button type="button" class="btn btn-default btn-xs"> {{> loginButtons}}</button>
-			</div>
-			<div class="col-md-2">
-			</div>
+			{{#if currentUser}}
+				<div class="col-md-2">	
+					<button type="button" class="btn btn-default btn-xs"> <a href="#" class="logout">Logout</a> </button>
+				</div>
+			{{else}}
+			{{/if}}
 		</div>
 	</div>
 </template>

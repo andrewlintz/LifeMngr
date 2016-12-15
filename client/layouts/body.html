@@ -1,12 +1,37 @@
 <template name="bodylayout">
 <body>
 	<div class="container">
-		
-		{{> yield }}			
-		
+	
+	{{#if currentUser}}
+        {{> yield }}
+    {{else}}
+    <!--
+        {{> register}}
+        {{> login}}
+    -->
+    	{{loginButtons}}
+    {{/if}}
+				
 	</div>
 </body>
 
+</template>
+
+
+<template name="register">
+    <form>
+        <input type="email" name="registerEmail">
+        <input type="password" name="registerPassword">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+<template name="login">
+    <form>
+        <input type="email" name="loginEmail">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form>
 </template>
 
 
