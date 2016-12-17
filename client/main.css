@@ -39,6 +39,30 @@
     position: absolute;
     margin-right: -250px;
 }
+
+/* Top Navbar Styles */
+.navbar {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    border-radius: 0px;
+    padding: -15px;
+}
+.navbar-brand {
+  float: left;
+  padding-top: 25px;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 30px;
+  color: #ffffff;
+  line-height: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
  
 /* Sidebar Styles */
  
@@ -130,20 +154,28 @@
 
 
 
-
+.logox {
+    font-size: 30px;
+    color: #FFFFFF;
+}
 
 H1 {
-    color: white;
+    color: #315481;
 }
 
 
 body {
   font-family: sans-serif;
   background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-image: linear-gradient(to bottom, #ffffff, #315481 200%);
   background-attachment: fixed;
   height: 100%;
   min-height: 600px;
+}
+
+header {
+  background-color: #337ab7; 
+  max-height: 50px;
 }
 
 .fill-height {
@@ -151,8 +183,6 @@ body {
     height:auto !important; /* cross-browser */
     height: 100%; /* cross-browser */
 }
-
- 
 
 
 .headingtext {
@@ -184,7 +214,32 @@ hr {
 
 
 
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
 
+.Absolute-Center.is-Responsive {
+  width: 50%; 
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+  min-height: 200px;
+  max-height: 200px;
+  border: 3px;
+  border-color: #315481;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+#logo-container{
+  margin: auto;
+  margin-bottom: 10px;
+  width:200px;
+  height:30px;
+  background-image:url('http://placehold.it/200x30/000000/ffffff/&text=BRAND+LOGO');
+}
 
 
 
