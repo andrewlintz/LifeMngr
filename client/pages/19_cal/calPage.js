@@ -49,6 +49,7 @@ Template.calendarEdit.helpers({
                 agendaWeek: 'h:mm a'
             },
             firstHour: 7,
+            theme: false,
             editable: true,
             eventLimit: true,
             slotDuration: '00:15:00',
@@ -72,7 +73,7 @@ Template.calendarEdit.helpers({
             events: function (start, end, timezone, callback) {
                 callback(Agenda.find({}).fetch());
             },
-            defaultView: 'agendaDay', 
+            defaultView: 'agendaDay',
             nowIndicator: true,
 
             dayClick: function(date, jsEvent, view) {
