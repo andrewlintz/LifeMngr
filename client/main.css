@@ -248,6 +248,22 @@ hr {
 
 
 
+/*correcting Fullcalendar HR dividing bar that lacks a defined witdth of 100% */
+hr.fc-divider {
+  height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 2px;
+  /* height is unreliable across browsers, so use padding */
+  border-width: 1px 0;
+}
+
+/*Correting Fullcandar "today's" Background color*/
+.fc-unthemed .fc-today {
+  background: #ffffff;
+}
+
+
 
 
 
