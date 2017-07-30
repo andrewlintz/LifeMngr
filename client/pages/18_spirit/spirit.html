@@ -5,12 +5,12 @@
 
 
 
-<!--  Spirit Card -->
+<!--  Spirit Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading" for="inputSpirit">
-	Spirit</div>
+	Starter</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -34,7 +34,8 @@
 	</div>
 </div>
 
-<!-- end of Spirit card -->
+
+<!-- end of Spirit card #1 -->
 
 </template>
 
@@ -46,8 +47,7 @@
 
 
 
-<!-- Spirit Card -->
-
+<!-- Start of Add Spirit Item #2 -->
 
 <template name="addspiritItem">
     <form>
@@ -56,7 +56,13 @@
     </form>
 </template>
 
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve Spirit Item #3 -->
 <template name="spiritItem">	
-    	<input type="text" value="{{spirit}}" name="spiritItem">
+
+    	<input type="text" value="{{spirititemName}}" name="spiritItem">
     	[<a href="#" class="delete-spirititem">	Delete </a>]
 </template>
+
+<!-- End of Spirit Item #3 -->

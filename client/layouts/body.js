@@ -2,6 +2,7 @@
 https://www.sitepoint.com/creating-custom-login-registration-form-with-meteor/
 */
 
+
 Template.loginButtons.rendered = function()
 {
     Accounts._loginButtonsSession.set('dropdownVisible', true);
@@ -34,3 +35,7 @@ if (Meteor.isClient) {
     }
   });
 }
+
+Template.body.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('agenda');
+});

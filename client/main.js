@@ -1,6 +1,9 @@
 import '../lib/routes.js';
-import '../lib/collections/collections.js';
+import '../imports/api/methods.js'
 import '../imports/startup/accounts-config.js';
+
+import { Agenda } from '../lib/collections/collections.js';
+
 
 
 

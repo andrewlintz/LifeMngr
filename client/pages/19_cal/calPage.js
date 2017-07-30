@@ -1,3 +1,5 @@
+import { Agenda } from '../../../lib/collections/collections.js';
+
 import './cal.html';
 
 Template.body.rendered = function () {

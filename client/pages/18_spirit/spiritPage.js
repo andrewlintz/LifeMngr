@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './spirit.html'
 
 
@@ -6,8 +10,7 @@
 
 Template.spiritPage.helpers({
     spiritEach() {
-        return Agenda.find( { spirit: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { spirititemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -15,28 +18,28 @@ Template.spiritPage.helpers({
 ////////* Spirit Events *//////
 
 
-
-
 Template.addspiritItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var spirititemName = $('[name="spirititemName"]').val();
-    Agenda.insert({
-        spirit: spirititemName,
-        createdAt: new Date()
-    });
-    $('[name="spirititemName"]').val('');
-}
+    console.log('yo');
+
+    // Get value from form element
+    const target = event.target;
+    const spirititemName = target.spirititemName.value;
+    
+    // Insert a spirit item into the collection
+    Meteor.call('spirititemName.insert', spirititemName);
+
+    // Clear form
+    target.spirititemName.value = '';
+    },
 });
 
 Template.spiritItem.events({
     // events go here
-    'click .delete-spirititem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-spirititem'(){
+     Meteor.call('agenda.remove', this._id);
     },
 
     'keyup [name=spiritItem]': function(event){
@@ -45,8 +48,7 @@ Template.spiritItem.events({
     } else {
         var documentId = this._id;
         var spiritItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { spirit: spiritItem }});
+        Meteor.call('updateListItem', documentId, spiritItem);
         }
     },
 });
- 
