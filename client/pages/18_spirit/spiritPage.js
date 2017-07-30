@@ -39,7 +39,7 @@ Template.addspiritItem.events({
 Template.spiritItem.events({
     // events go here
     'click .delete-spirititem'(){
-     Meteor.call('agenda.remove', this._id);
+     Meteor.call('spirititemName.remove', this._id);
     },
 
     'keyup [name=spiritItem]': function(event){
