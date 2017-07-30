@@ -13,8 +13,6 @@ Template.spiritPage.helpers({
         return Agenda.find( { spirititemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
-
-
 ////////* Spirit Events *//////
 
 
