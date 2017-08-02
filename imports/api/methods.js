@@ -2,7 +2,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
-import '../../lib/collections/collections.js';
+
+export const Agenda = new Mongo.Collection('agenda');
+Daily = new Mongo.Collection('daily');
 
 
 if (Meteor.isServer) {
@@ -10,21 +12,20 @@ if (Meteor.isServer) {
   // Only publish tasks that are public or belong to the current user
   Meteor.publish('agenda', function agendaPublication() {
     return Agenda.find({
-      $or: [
-        { private: { $ne: true } },
-        { owner: this.userId },
+        $or: [
+            { private: { $ne: true } },
+            { owner: this.userId },
       ],
     });
   });
 }
 
+// below is task methods from tutorial //
 
 Meteor.methods({
-
 // Spirited //
-
   'spirititemName.insert'(spirititemName) {
-
+   check(spirititemName, String);
     console.log('yo2');
  
     // Make sure the user is logged in before inserting a Spirit item.
@@ -33,22 +34,31 @@ Meteor.methods({
     }
 
     Agenda.insert({
+      title: spirititemName,
+      description: spirititemName,
       spirititemName: spirititemName,
+      start: new Date(),
+      end: new Date(),
+      allDay: false,
       createdAt: new Date(),
+      editedAt: new Date(),
+      private: true,
       owner: Meteor.userId(),
       username: Meteor.user().username,
     });
   }, 
-  'spirititemName.remove'(taskId) {
-    check(taskId, String);
 
-    const spirt = Agenda.findOne(taskId);
+
+  'spirititemName.remove'(documentId) {
+    check(documentId, String);
+
+    const spirit = Agenda.findOne(documentId);
     if (spirit.private && spirit.owner !== Meteor.userId()) {
       // If the spirit item is private, make sure only the owner can delete it
       throw new Meteor.Error('not-authorized');
     }
  
-    Agenda.remove(taskId);
+    Agenda.remove(documentId);
   },
   'updateListItem': function(documentId, spiritItem){
     check(spiritItem, String); 
@@ -58,11 +68,12 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    Agenda.update({ _id: documentId }, {$set: { spirititemName : spiritItem }});
+    Agenda.update({ _id: documentId }, {$set: { spirititemName : spiritItem, title : spiritItem, description : spiritItem }});
   },
+
+
 
 // - End of Spirited - //
 
 });
-
 */

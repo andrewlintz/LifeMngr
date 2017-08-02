@@ -42,27 +42,47 @@
 
 /* Top Navbar Styles */
 .navbar {
-    background-color: #5091ca;
-    border-color: #5091ca;
-    border-radius: 0px;
+    background-color: #183647;
+    border-color: #183647;
     padding: -15px;
+    border-radius: 0px;
 }
 .navbar-brand {
   float: left;
   padding-top: 25px;
+  padding-left: 10px;
   height: 50px;
-  padding: 15px 15px;
-  font-size: 30px;
+  padding: 10px 0px;
+  font-size: 25px;
   color: #ffffff;
   line-height: 20px;
 }
-
+.navbar-brandVersion {
+  float: left;
+  height: 50px;
+  padding-left: 10px;
+  padding: 10px 5px;
+  font-size: 10px;
+  color: #aabbdd;
+  line-height: 5px;
+}
+.navbar-user {
+  float: right;
+  padding-top: 25px;
+  padding-left: 10px;
+  height: 50px;
+  padding: 10px 0px;
+  font-size: 25px;
+  color: #ffffff;
+  line-height: 20px;
+}
 .navbar-inverse .navbar-nav > li > a {
   color: #ffffff;
 }
 .navbar-inverse .navbar-brand {
     color: #ffffff;
 }
+
  
 /* Sidebar Styles */
  
@@ -142,9 +162,32 @@
 
 
 
+/*  panel  */ 
 
+.panel-heading2 {
+  color: #fff;
+  background-color: #255b7a;
+  border-color: #255b7a;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding: 10px 20px;
+}
 
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #f2f7fb;
+}
 
+.btn-primary {
+  color: #fff;
+  background-color: #3c7596;
+  border-color: #3c7596
+}
 
 
 

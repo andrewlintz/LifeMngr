@@ -6,8 +6,8 @@
 <!-- Vision Card -->
 
 <div class="panel-primary col-sm-12">
-	<div class="panel-heading" for="inputVision">
-	Vision</div>
+	<div class="panel-heading2" for="inputVision">
+	Future Vision</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -15,7 +15,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseVision">
-    			Vision Log
+    			Future Vision
   					</button>
 			</p>
 				<div class="collapse" id="collapseVision">
@@ -32,42 +32,43 @@
 </div>
 <!-- end of Vision card -->
 
+<!--  mission2 Card #1 -->
 
-<!-- Mission Card -->
-	<div class="panel-primary col-sm-6"> 	
-	  	<div class="panel-heading" for="inputMission">
-	  	Mission</div>
 
-		<div class="list-group">
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputmission2">
+	Your mission</div>
+
+<div class="list-group">
 			<ul class="list-group-item">
-	  			
-	  				{{> addmissionItem}}
-
-<p></p>	  	
-
-	  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMission" aria-expanded="false" aria-controls="collapseMission">
-    			Past Missions
+			{{> addmission2Item}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemission2" aria-expanded="false" aria-controls="collapsemission2">
+    			Mission:
   					</button>
-				</p>
-				<div class="collapse" id="collapseMission">
+			</p>
+				<div class="collapse" id="collapsemission2">
 					<div class="list-group">
 							<ul class="list-group-item">
-					  			{{#each missionEach}}
-					  				{{> missionItem}}
-					  			{{/each}}
-					  		</ul>
+  						{{#each mission2Each}}
+								{{> mission2Item}}
+  						{{/each}}
+  						</ul>
 					</div>
 				</div>	
-	  			
 			</ul>
-	  	</div>
 	</div>
+</div>
+
+
+<!-- end of mission2 card #1 -->
+
 
 <!-- Values Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputValues">
+	<div class="panel-heading2" for="inputValues">
 	Values</div>
 
 <div class="list-group">
@@ -95,7 +96,7 @@
 
 <!-- Goals Card -->
 	<div class="panel-primary col-sm-6"> 	
-	  	<div class="panel-heading" for="inputGoals">
+	  	<div class="panel-heading2" for="inputGoals">
 	  	Goals</div>
 
 		<div class="list-group">
@@ -129,7 +130,7 @@
 <!-- Accomplishments Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputAccomplishments">
+	<div class="panel-heading2" for="inputAccomplishments">
 	Accomplishments</div>
 
 <div class="list-group">
@@ -160,7 +161,7 @@
 <!-- Successes Card -->
 
 	<div class="panel-primary col-sm-6"> 
-	  	<div class="panel-heading" for="inputSuccesses">
+	  	<div class="panel-heading2" for="inputSuccesses">
 	  	Successes</div>
 
 		<div class="list-group">
@@ -193,7 +194,7 @@
 <!-- Failure Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputFailure">
+	<div class="panel-heading2" for="inputFailure">
 	Failure</div>
 
 <div class="list-group">
@@ -222,7 +223,7 @@
 <!-- Good Habbits Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputGoodhabits">
+	<div class="panel-heading2" for="inputGoodhabits">
 	Good Habbits</div>
 
 <div class="list-group">
@@ -253,7 +254,7 @@
 <!-- Bad Habbits Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputBadhabits">
+	<div class="panel-heading2" for="inputBadhabits">
 	Bad Habbits</div>
 
 <div class="list-group">
@@ -284,7 +285,7 @@
 <!-- Strengths Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputStrengths">
+	<div class="panel-heading2" for="inputStrengths">
 	Strengths</div>
 
 <div class="list-group">
@@ -313,7 +314,7 @@
 <!-- Weaknesses Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputWeaknesses">
+	<div class="panel-heading2" for="inputWeaknesses">
 	Weaknesses</div>
 
 <div class="list-group">
@@ -342,7 +343,7 @@
 <!-- Career Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputCareer">
+	<div class="panel-heading2" for="inputCareer">
 	Career</div>
 
 <div class="list-group">
@@ -371,7 +372,7 @@
 <!-- Projects Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputProjects">
+	<div class="panel-heading2" for="inputProjects">
 	Projects</div>
 
 <div class="list-group">
@@ -400,7 +401,7 @@
 <!-- Todos Card -->
 
 <div class="panel-primary col-sm-12">
-	<div class="panel-heading" for="inputTodos">
+	<div class="panel-heading2" for="inputTodos">
 	Todos</div>
 
 <div class="list-group">
@@ -439,22 +440,43 @@
 
 
 
-<!-- Vision Card) -->
+<!-- Start of Add vision Item #2 -->
 
 <template name="addvisionItem">
     <form>
-        Create a Vision:
-        <input type="text" class="form-control" placeholder="Type Your Vision..." name="visionitemName">
+        Future Vision:
+        <input type="text" class="form-control" placeholder="How Do You Envision Your Life and the World To Be?" name="visionitemName">
     </form>
 </template>
 
+<!-- End of Add vision Item #2 -->
+
+<!-- Start of Retrieve vision Item #3 -->
 <template name="visionItem">	
-    <li>
-    	<input type="text" value="{{vision}}" name="visionItem" class="col-sm-8"> - 
+
+    	<input type="text" value="{{visionitemName}}" name="visionItem">
     	[<a href="#" class="delete-visionitem">	Delete </a>]
-    </li>
 </template>
 
+<!-- End of vision Item #3 -->
+
+<template name="addmission2Item">
+    <form>
+        mission:
+        <input type="text" class="form-control" placeholder="What is your mission in life?" name="mission2itemName">
+    </form>
+</template>
+
+<!-- End of Add mission2 Item #2 -->
+
+<!-- Start of Retrieve mission2 Item #3 -->
+<template name="mission2Item">	
+
+    	<input type="text" value="{{mission2itemName}}" name="mission2Item">
+    	[<a href="#" class="delete-mission2item">	Delete </a>]
+</template>
+
+<!-- End of mission2 Item #3 -->
 
 <!-- Mission Card -->
 

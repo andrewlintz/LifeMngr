@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 import './agenda.html';
 
 
@@ -6,7 +10,9 @@ import './agenda.html';
 
 Template.agendaPage.helpers({
     visionEach() {
-        return Agenda.find( { vision: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { visionitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    mission2Each() {
+        return Agenda.find( { mission2itemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     missionEach() {
         return Agenda.find( { mission: {$exists: true}}, {sort: {createdAt: -1}}); },
     valuesEach() {
@@ -49,28 +55,31 @@ Template.agendaPage.helpers({
 /////// cards //////
 
 
-////////* Vision Events *//////
+////////* vision Events *//////
+
 
 Template.addvisionItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var visionitemName = $('[name="visionitemName"]').val();
-    Agenda.insert({
-        vision: visionitemName,
-        createdAt: new Date()
-    });
-    $('[name="visionitemName"]').val('');
-}
+    console.log('yo');
+
+    // Get value from form element
+    const target = event.target;
+    const visionitemName = target.visionitemName.value;
+    
+    // Insert a vision item into the collection
+    Meteor.call('visionitemName.insert', visionitemName);
+
+    // Clear form
+    target.visionitemName.value = '';
+    },
 });
 
 Template.visionItem.events({
     // events go here
-    'click .delete-visionitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-visionitem'(){
+     Meteor.call('visionitemName.remove', this._id);
     },
 
     'keyup [name=visionItem]': function(event){
@@ -79,10 +88,48 @@ Template.visionItem.events({
     } else {
         var documentId = this._id;
         var visionItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { vision: visionItem }});
+        Meteor.call('updateListItem', documentId, visionItem);
         }
     },
+});
 
+
+////////* mission2 Events *//////
+
+
+Template.addmission2Item.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    console.log('yo');
+
+    // Get value from form element
+    const target = event.target;
+    const mission2itemName = target.mission2itemName.value;
+    
+    // Insert a mission2 item into the collection
+    Meteor.call('mission2itemName.insert', mission2itemName);
+
+    // Clear form
+    target.mission2itemName.value = '';
+    },
+});
+
+Template.mission2Item.events({
+    // events go here
+    'click .delete-mission2item'(){
+     Meteor.call('mission2itemName.remove', this._id);
+    },
+
+    'keyup [name=mission2Item]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var mission2Item = $(event.target).val();
+        Meteor.call('updateListItem', documentId, mission2Item);
+        }
+    },
 });
 
 

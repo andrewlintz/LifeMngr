@@ -5,59 +5,60 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                 </button>
-                <a class="navbar-brand" href="/">Life OS 0.0.333 </a>
+                <a class="navbar-brand" href="/">oS.elf</a><a class="navbar-brandVersion" href="/">v0.0.342 </a>
                 
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">Inputter</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Future Self<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/">Inputter</a></li>
+                    <li><a href="/gyst">Gyst Dashboard</a></li>
+                </ul>
                     </li>
-                    <li>
-                        <a href="/cal">Journal</a>
-                    </li>
-                    <li>
-                        <a href="/gysts/gysts">Gysts</a>
-                    </li>
-                    <li>
-                        <a href="/life">Life-og</a>
-                    </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Life<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="/time/daynow">Time</a></li>
-                <li><a href="/agenda">Agenda</a></li>         
-                <li><a href="/mind">Mind</a></li>
-                <li><a href="/health">Health</a></li>
-                <li><a href="/hygiene">Hygiene</a></li>
-                <li><a href="/food">Food</a></li>
-                <li><a href="/fit">Fit</a></li>
-                <li><a href="/money">Money</a></li>
-                <li><a href="/stuff">Stuff | Things</a></li>
-                <li><a href="/place">Space | Place</a></li>
-                <li><a href="/feng">Feng</a></li>
-                <li><a href="/people">People</a></li>
-                <li><a href="/love">Love</a></li>
-                <li><a href="/pet">Pet</a></li>
-                <li><a href="/society">Society</a></li>
-                <li><a href="/spirit">Spirit</a></li>
-            </ul>
-          </li>
 
-                <li>
-                <a>
-                {{#if currentUser}}
+                    <li><a href="/cal">Journal</a></li>
+                    <li><a href="/agenda">Agenda</a></li> 
                     
-                        <button type="button" class="btn btn-default btn-xs"> <a href="#" class="logout">Sign Out</a> </button>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Life<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/life">Life Story</a></li>
+                    <li><a href="/time/daynow">Time</a></li>
+                    <li><a href="/agenda">Agenda</a></li>         
+                    <li><a href="/mind">Mind</a></li>
+                    <li><a href="/health">Health</a></li>
+                    <li><a href="/hygiene">Hygiene</a></li>
+                    <li><a href="/food">Food</a></li>
+                    <li><a href="/fit">Fit</a></li>
+                    <li><a href="/money">Money</a></li>
+                    <li><a href="/stuff">Stuff | Things</a></li>
+                    <li><a href="/place">Space | Place</a></li>
+                    <li><a href="/feng">Feng</a></li>
+                    <li><a href="/people">People</a></li>
+                    <li><a href="/love">Love</a></li>
+                    <li><a href="/pet">Pet</a></li>
+                    <li><a href="/society">Society</a></li>
+                    <li><a href="/spirit">Spirit</a></li>
+                </ul>
+                    </li>
+                    <li>
+                        <a>
+                            {{#if currentUser}}
+                    
+                                <button type="button" class="btn btn-default btn-xs"> <a href="#" class="logout">Sign Out</a> </button>
                 
-                {{else}}
-                {{/if}}
-                </a>
-                </li>
-        </ul>
+                            {{else}}
+                            {{/if}}
+                        </a>
+                    </li>
+                </ul>
             </div>
 
         </div>
     </nav>
+    
     
 </template>

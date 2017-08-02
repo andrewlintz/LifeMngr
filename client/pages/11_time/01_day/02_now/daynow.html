@@ -242,34 +242,28 @@ Naps and when went to sleep last night
 <div class="collapse" id="agenda">
   <div class="card card-block">
 
+
+<!--- Future vision of self LOGGER FORMS -->
+
+  <p></p>
+    <form class="form-horizontal" id="dnmission2Submitter">
+      <div class="form-group">
+        <div class="col-sm-9">
+          {{> addvisionItem}}
+        </div>
+      </div>
+    </form>
+
 <!--- mission LOGGER FORMS -->
   <p></p>
-    <form class="form-horizontal" id="dnmissionSubmitter">
+    <form class="form-horizontal" id="dnmission2Submitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">Mission</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
         <div class="col-sm-9">
-          <textarea id="dnmission" class="form-control" rows="3" placeholder="What is Your Mission?"></textarea>
+          {{> addmission2Item}}
         </div>
       </div>
     </form>
-<!--- vision LOGGER FORMS -->
-  <p></p>
-    <form class="form-horizontal" id="dnvisionSubmitter">
-      <div class="form-group">
-        <label class="col-sm-1 control-label">Vision</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
-        <div class="col-sm-9">
-          <textarea id="dnvision" class="form-control" rows="3" placeholder="How Do You Envision Your Life and the World To Be?"></textarea>
-        </div>
-      </div>
-    </form>
+
 <!--- goals LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal" id="dngoalsSubmitter">
@@ -1413,13 +1407,8 @@ Skin
   <p></p>
     <form class="form-horizontal" id="dnmeditatedSubmitter">
       <div class="form-group">
-        <label class="col-sm-1 control-label">Meditation</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
         <div class="col-sm-9">
-          <textarea id="dnmeditated" class="form-control" rows="3" placeholder="Meditation Log"></textarea>
+          {{> addspiritItem}}
         </div>
       </div>
     </form>
@@ -2040,29 +2029,6 @@ Skin
   </div>
 </div>
 </p>
-
-<!-- //// SPIRT //// -->
-
-<p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#spirit" aria-expanded="false" aria-controls="spirit">
-    Spirit
-  </button>
-
-<div class="collapse in" id="spirit">
-  <div class="card card-block">
-  
-  <form class="form-horizontal">
-      <div class="form-group">
-        <div class="col-sm-10 col-md-offset-2">
-            <input type="text" class="form-control" id="howdidUsleep" placeholder="The God within me acknowldges the god within you?">
-        </div>
-     </div>
-  </form>
-
-  </div>
-</div>
-</p>
-
 
 </template>
 

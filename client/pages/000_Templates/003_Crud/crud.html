@@ -1,0 +1,65 @@
+<template name="keywordPage">
+	<h1>keyword Page</h1>
+
+
+<!--  keyword Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading" for="inputkeyword">
+	keyword</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addkeywordItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsekeyword" aria-expanded="false" aria-controls="collapsekeyword">
+    			keyword Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsekeyword">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each keywordEach}}
+								{{> keywordItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- end of keyword card #1 -->
+
+</template>
+
+
+
+
+
+
+
+
+
+<!-- Start of Add keyword Item #2 -->
+
+<template name="addkeywordItem">
+    <form>
+        keyword:
+        <input type="text" class="form-control" placeholder="What are your keyword" name="keyworditemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve keyword Item #3 -->
+<template name="keywordItem">	
+
+    	<input type="text" value="{{keyworditemName}}" name="keywordItem">
+    	[<a href="#" class="delete-keyworditem">	Delete </a>]
+</template>
+
+<!-- End of keyword Item #3 -->

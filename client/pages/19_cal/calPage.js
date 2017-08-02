@@ -50,7 +50,7 @@ Template.calendarEdit.helpers({
                 month: 'h:mm a',
                 agendaWeek: 'h:mm a'
             },
-            firstHour: 7,
+            scrollTime: '12:00:00',
             theme: false,
             editable: true,
             eventLimit: true,

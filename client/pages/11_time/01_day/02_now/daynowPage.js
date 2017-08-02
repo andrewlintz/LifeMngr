@@ -222,18 +222,6 @@ Template.mindLogger.events({
 });
 
 Template.agendaLogger.events({
-    'submit #dnmissionSubmitter':function(e){
-        e.preventDefault();
-        var mission = $('#dnmission').val();
-        Agenda.insert({
-            title: "Mission: ",
-            start: Now,
-            end: Now,
-            description: mission,
-            mission: mission,
-            createdAt: new Date()
-        });
-    },
     'submit #dneventsiwantohappenSubmitter':function(e){
         e.preventDefault();
         var eventsiwantohappen = $('#dneventsiwantohappen').val();
@@ -973,17 +961,19 @@ Template.SocietyLogger.events({
 
 
 Template.SpiritLogger.events({
-    // individual submitters
-    'submit #dnmeditatedSubmitter':function(e){
-        e.preventDefault();
-        var meditated = $('#dnmeditated').val();
-        Agenda.insert({
-            title: "Meditation: ",
-            start: Now,
-            end: Now,
-            description: meditated,
-            meditated: meditated,
-            createdAt: new Date()
-        });
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    console.log('yo');
+
+    // Get value from form element
+    const target = event.target;
+    const spirititemName = target.spirititemName.value;
+    
+    // Insert a spirit item into the collection
+    Meteor.call('spirititemName.insert', spirititemName);
+
+    // Clear form
+    target.spirititemName.value = '';
     },
 });
