@@ -5,79 +5,81 @@
 
 
 Template.fitPage.helpers({
-    fitnessEach() {
-        return Agenda.find( { fitness: {$exists: true}}, {sort: {createdAt: -1}}); },
+    fitnesslogEach() {
+        return Agenda.find( { fitnesslogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     fitnessprogramEach() {
-        return Agenda.find( { fitnessprogram: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { fitnessprogramitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveFitpageEach() {
+        return Agenda.find( { improveFitpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 
 
 
-////////* Fitness Events *//////
+////////* Start of fitnesslog Events *//////
 
 
-Template.addfitnessItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addfitnesslogItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var fitnessitemName = $('[name="fitnessitemName"]').val();
-    Agenda.insert({
-        fitness: fitnessitemName,
-        createdAt: new Date()
-    });
-    $('[name="fitnessitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const fitnesslogitemName = target.fitnesslogitemName.value;
+    
+    // Insert a fitnesslog item into the collection
+    Meteor.call('fitnesslogitemName.insert', fitnesslogitemName);
+
+    // Clear form
+    target.fitnesslogitemName.value = '';
+    },
 });
 
-Template.fitnessItem.events({
+Template.fitnesslogItem.events({
     // events go here
-    'click .delete-fitnessitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-fitnesslogitem'(){
+     Meteor.call('fitnesslogitemName.remove', this._id);
     },
 
-    'keyup [name=fitnessItem]': function(event){
+    'keyup [name=fitnesslogItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var fitnessItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { fitness: fitnessItem }});
+        var fitnesslogItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, fitnesslogItem);
         }
     },
 });
 
+////////* End of fitnesslog Events *//////
 
-
-
-////////* Fitness Program Events *//////
+////////* Start of fitnessprogram Events *//////
 
 
 Template.addfitnessprogramItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var fitnessprogramitemName = $('[name="fitnessprogramitemName"]').val();
-    Agenda.insert({
-        fitnessprogram: fitnessprogramitemName,
-        createdAt: new Date()
-    });
-    $('[name="fitnessprogramitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const fitnessprogramitemName = target.fitnessprogramitemName.value;
+    
+    // Insert a fitnessprogram item into the collection
+    Meteor.call('fitnessprogramitemName.insert', fitnessprogramitemName);
+
+    // Clear form
+    target.fitnessprogramitemName.value = '';
+    },
 });
 
 Template.fitnessprogramItem.events({
     // events go here
-    'click .delete-fitnessprogramitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-fitnessprogramitem'(){
+     Meteor.call('fitnessprogramitemName.remove', this._id);
     },
 
     'keyup [name=fitnessprogramItem]': function(event){
@@ -86,8 +88,51 @@ Template.fitnessprogramItem.events({
     } else {
         var documentId = this._id;
         var fitnessprogramItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { fitnessprogram: fitnessprogramItem }});
+        Meteor.call('updateListItem', documentId, fitnessprogramItem);
         }
     },
 });
+
+////////* End of fitnessprogram Events *//////
+
+////////* Start of improveFitpage Events *//////
+
+
+Template.addimproveFitpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveFitpageitemName = target.improveFitpageitemName.value;
+    
+    // Insert a improveFitpage item into the collection
+    Meteor.call('improveFitpageitemName.insert', improveFitpageitemName);
+
+    // Clear form
+    target.improveFitpageitemName.value = '';
+    },
+});
+
+Template.improveFitpageItem.events({
+    // events go here
+    'click .delete-improveFitpageitem'(){
+     Meteor.call('improveFitpageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveFitpageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveFitpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveFitpageItem);
+        }
+    },
+});
+
+////////* End of improveFitpage Events *//////
+
+
 

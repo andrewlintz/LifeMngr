@@ -1,23 +1,23 @@
 <template name="moneyPage">
 	<h1>Money Page</h1>
 
-<!--  Networth Card -->
+<!-- Start of networth Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputNetworth">
-	Networth</div>
+	<div class="panel-heading2" for="inputnetworth">
+	networth</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addnetworthItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseNetworth" aria-expanded="false" aria-controls="collapseNetworth">
-    			Networth:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsenetworth" aria-expanded="false" aria-controls="collapsenetworth">
+    			networth Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseNetworth">
+				<div class="collapse" id="collapsenetworth">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each networthEach}}
@@ -30,29 +30,30 @@
 	</div>
 </div>
 
-<!-- end of Networth card -->
 
-<!--  FIRE Card -->
+<!-- End of networth card #1 -->
+
+<!-- Start of fireplan Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputFire">
-	FIRE Plan</div>
+	<div class="panel-heading2" for="inputfireplan">
+	fireplan</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addfireItem}}
+			{{> addfireplanItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFire" aria-expanded="false" aria-controls="collapseFire">
-    			Fire Rate:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefireplan" aria-expanded="false" aria-controls="collapsefireplan">
+    			fireplan Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseFire">
+				<div class="collapse" id="collapsefireplan">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each fireEach}}
-								{{> fireItem}}
+  						{{#each fireplanEach}}
+								{{> fireplanItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -61,30 +62,30 @@
 	</div>
 </div>
 
-<!-- end of Fire card -->
 
+<!-- End of fireplan card #1 -->
 
-<!--  Earnings Card -->
+<!-- Start of earningsrate Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputEarnings">
-	Earnings Rate</div>
+	<div class="panel-heading2" for="inputearningsrate">
+	earningsrate</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addearningsItem}}
+			{{> addearningsrateItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEarnings" aria-expanded="false" aria-controls="collapseEarnings">
-    			Earnings:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseearningsrate" aria-expanded="false" aria-controls="collapseearningsrate">
+    			earningsrate Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseEarnings">
+				<div class="collapse" id="collapseearningsrate">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each earningsEach}}
-								{{> earningsItem}}
+  						{{#each earningsrateEach}}
+								{{> earningsrateItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -93,29 +94,30 @@
 	</div>
 </div>
 
-<!-- end of Earnings card -->
 
-<!--  Spending Card -->
+<!-- End of earningsrate card #1 -->
+
+<!-- Start of spendingrate Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputSpending">
-	Spending Rate</div>
+	<div class="panel-heading2" for="inputspendingrate">
+	spendingrate</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addspendingItem}}
+			{{> addspendingrateItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSpending" aria-expanded="false" aria-controls="collapseSpending">
-    			Spending:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsespendingrate" aria-expanded="false" aria-controls="collapsespendingrate">
+    			spendingrate Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseSpending">
+				<div class="collapse" id="collapsespendingrate">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each spendingEach}}
-								{{> spendingItem}}
+  						{{#each spendingrateEach}}
+								{{> spendingrateItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -124,27 +126,26 @@
 	</div>
 </div>
 
-<!-- end of Spending card -->
 
+<!-- End of spendingrate card #1 -->
 
-
-<!--  Assets Card -->
+<!-- Start of assets Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputAssets">
-	Assets</div>
+	<div class="panel-heading2" for="inputassets">
+	assets</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addassetsItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAssets" aria-expanded="false" aria-controls="collapseAssets">
-    			Assets list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseassets" aria-expanded="false" aria-controls="collapseassets">
+    			assets Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseAssets">
+				<div class="collapse" id="collapseassets">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each assetsEach}}
@@ -157,30 +158,30 @@
 	</div>
 </div>
 
-<!-- end of Assets card -->
 
+<!-- End of assets card #1 -->
 
-<!--  Borrow Card -->
+<!-- Start of borrowdebt Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputBorrow">
-	Borrow Debt</div>
+	<div class="panel-heading2" for="inputborrowdebt">
+	borrowdebt</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addborrowItem}}
+			{{> addborrowdebtItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBorrow" aria-expanded="false" aria-controls="collapseBorrow">
-    			Borrow:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseborrowdebt" aria-expanded="false" aria-controls="collapseborrowdebt">
+    			borrowdebt Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseBorrow">
+				<div class="collapse" id="collapseborrowdebt">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each borrowEach}}
-								{{> borrowItem}}
+  						{{#each borrowdebtEach}}
+								{{> borrowdebtItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -189,30 +190,30 @@
 	</div>
 </div>
 
-<!-- end of Borrow card -->
 
+<!-- End of borrowdebt card #1 -->
 
-<!--  Savings Rate Card -->
+<!-- Start of savingsrate Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputSavings">
-	Savings Rate</div>
+	<div class="panel-heading2" for="inputsavingsrate">
+	savingsrate</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addsavingsItem}}
+			{{> addsavingsrateItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSavings" aria-expanded="false" aria-controls="collapseSavings">
-    			Savings:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesavingsrate" aria-expanded="false" aria-controls="collapsesavingsrate">
+    			savingsrate Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseSavings">
+				<div class="collapse" id="collapsesavingsrate">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each savingsEach}}
-								{{> savingsItem}}
+  						{{#each savingsrateEach}}
+								{{> savingsrateItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -221,30 +222,30 @@
 	</div>
 </div>
 
-<!-- end of Savings card -->
 
+<!-- End of savingsrate card #1 -->
 
-<!--  Run Rate Card -->
+<!-- Start of runrate Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputRun">
-	Run Rate</div>
+	<div class="panel-heading2" for="inputrunrate">
+	runrate</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addrunItem}}
+			{{> addrunrateItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRun" aria-expanded="false" aria-controls="collapseRun">
-    			Run Rate:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapserunrate" aria-expanded="false" aria-controls="collapserunrate">
+    			runrate Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseRun">
+				<div class="collapse" id="collapserunrate">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each runEach}}
-								{{> runItem}}
+  						{{#each runrateEach}}
+								{{> runrateItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -253,26 +254,26 @@
 	</div>
 </div>
 
-<!-- end of Run card -->
 
+<!-- End of runrate card #1 -->
 
-<!--  Debttoequity Card -->
+<!-- Start of debttoequity Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputDebttoequity">
-	Debttoequity</div>
+	<div class="panel-heading2" for="inputdebttoequity">
+	debttoequity</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> adddebttoequityItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDebttoequity" aria-expanded="false" aria-controls="collapseDebttoequity">
-    			Debttoequity Rate:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedebttoequity" aria-expanded="false" aria-controls="collapsedebttoequity">
+    			debttoequity Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseDebttoequity">
+				<div class="collapse" id="collapsedebttoequity">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each debttoequityEach}}
@@ -285,26 +286,26 @@
 	</div>
 </div>
 
-<!-- end of Debttoequity card -->
 
+<!-- End of debttoequity card #1 -->
 
-<!--  Budget Card -->
+<!-- Start of budget Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputBudget">
-	Budget</div>
+	<div class="panel-heading2" for="inputbudget">
+	budget</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addbudgetItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBudget" aria-expanded="false" aria-controls="collapseBudget">
-    			Budget Rate:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebudget" aria-expanded="false" aria-controls="collapsebudget">
+    			budget Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseBudget">
+				<div class="collapse" id="collapsebudget">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each budgetEach}}
@@ -317,7 +318,42 @@
 	</div>
 </div>
 
-<!-- end of Budget card -->
+
+<!-- End of budget card #1 -->
+
+<!-- Start of improveMoneypage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveMoneypage">
+	improveMoneypage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveMoneypageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveMoneypage" aria-expanded="false" aria-controls="collapseimproveMoneypage">
+    			improveMoneypage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveMoneypage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveMoneypageEach}}
+								{{> improveMoneypageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveMoneypage card #1 -->
+
+
 
 
 </template>
@@ -328,167 +364,226 @@
 
 
 
-<!-- Networth Program Card -->
-
+<!-- Start of Add networth Item #2 -->
 
 <template name="addnetworthItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="networthitemName">
+        networth:
+        <input type="text" class="form-control" placeholder="What are your networth" name="networthitemName">
     </form>
 </template>
 
-<template name="networthItem">	
-    	<input type="text" value="{{networth}}" name="networthItem">
-    	[<a href="#" class="delete-networthitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve networth Item #3 -->
+<template name="networthItem"> 
+
+      <input type="text" value="{{networthitemName}}" name="networthItem">
+      [<a href="#" class="delete-networthitem">  Delete </a>]
 </template>
 
+<!-- End of networth Item #3 -->
 
-<!-- Fire Program Card -->
+<!-- Start of Add fireplan Item #2 -->
 
-
-<template name="addfireItem">
+<template name="addfireplanItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="fireitemName">
+        fireplan:
+        <input type="text" class="form-control" placeholder="What are your fireplan" name="fireplanitemName">
     </form>
 </template>
 
-<template name="fireItem">	
-    	<input type="text" value="{{fire}}" name="fireItem">
-    	[<a href="#" class="delete-fireitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve fireplan Item #3 -->
+<template name="fireplanItem"> 
+
+      <input type="text" value="{{fireplanitemName}}" name="fireplanItem">
+      [<a href="#" class="delete-fireplanitem">  Delete </a>]
 </template>
 
+<!-- End of fireplan Item #3 -->
 
-<!-- Earnings Program Card -->
+<!-- Start of Add earningsrate Item #2 -->
 
-
-<template name="addearningsItem">
+<template name="addearningsrateItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="earningsitemName">
+        earningsrate:
+        <input type="text" class="form-control" placeholder="What are your earningsrate" name="earningsrateitemName">
     </form>
 </template>
 
-<template name="earningsItem">	
-    	<input type="text" value="{{earnings}}" name="earningsItem">
-    	[<a href="#" class="delete-earningsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve earningsrate Item #3 -->
+<template name="earningsrateItem"> 
+
+      <input type="text" value="{{earningsrateitemName}}" name="earningsrateItem">
+      [<a href="#" class="delete-earningsrateitem">  Delete </a>]
 </template>
 
+<!-- End of earningsrate Item #3 -->
 
-<!-- Spending Program Card -->
+<!-- Start of Add spendingrate Item #2 -->
 
-
-<template name="addspendingItem">
+<template name="addspendingrateItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="spendingitemName">
+        spendingrate:
+        <input type="text" class="form-control" placeholder="What are your spendingrate" name="spendingrateitemName">
     </form>
 </template>
 
-<template name="spendingItem">	
-    	<input type="text" value="{{spending}}" name="spendingItem">
-    	[<a href="#" class="delete-spendingitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve spendingrate Item #3 -->
+<template name="spendingrateItem"> 
+
+      <input type="text" value="{{spendingrateitemName}}" name="spendingrateItem">
+      [<a href="#" class="delete-spendingrateitem">  Delete </a>]
 </template>
 
+<!-- End of spendingrate Item #3 -->
 
-<!-- Assets Program Card -->
-
+<!-- Start of Add assets Item #2 -->
 
 <template name="addassetsItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="assetsitemName">
+        assets:
+        <input type="text" class="form-control" placeholder="What are your assets" name="assetsitemName">
     </form>
 </template>
 
-<template name="assetsItem">	
-    	<input type="text" value="{{assets}}" name="assetsItem">
-    	[<a href="#" class="delete-assetsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve assets Item #3 -->
+<template name="assetsItem"> 
+
+      <input type="text" value="{{assetsitemName}}" name="assetsItem">
+      [<a href="#" class="delete-assetsitem">  Delete </a>]
 </template>
 
+<!-- End of assets Item #3 -->
 
-<!-- Borrow Program Card -->
+<!-- Start of Add borrowdebt Item #2 -->
 
-
-<template name="addborrowItem">
+<template name="addborrowdebtItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="borrowitemName">
+        borrowdebt:
+        <input type="text" class="form-control" placeholder="What are your borrowdebt" name="borrowdebtitemName">
     </form>
 </template>
 
-<template name="borrowItem">	
-    	<input type="text" value="{{borrow}}" name="borrowItem">
-    	[<a href="#" class="delete-borrowitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve borrowdebt Item #3 -->
+<template name="borrowdebtItem"> 
+
+      <input type="text" value="{{borrowdebtitemName}}" name="borrowdebtItem">
+      [<a href="#" class="delete-borrowdebtitem">  Delete </a>]
 </template>
 
+<!-- End of borrowdebt Item #3 -->
 
-<!-- Savings Program Card -->
+<!-- Start of Add savingsrate Item #2 -->
 
-
-<template name="addsavingsItem">
+<template name="addsavingsrateItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="savingsitemName">
+        savingsrate:
+        <input type="text" class="form-control" placeholder="What are your savingsrate" name="savingsrateitemName">
     </form>
 </template>
 
-<template name="savingsItem">	
-    	<input type="text" value="{{savings}}" name="savingsItem">
-    	[<a href="#" class="delete-savingsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve savingsrate Item #3 -->
+<template name="savingsrateItem"> 
+
+      <input type="text" value="{{savingsrateitemName}}" name="savingsrateItem">
+      [<a href="#" class="delete-savingsrateitem">  Delete </a>]
 </template>
 
+<!-- End of savingsrate Item #3 -->
 
+<!-- Start of Add runrate Item #2 -->
 
-<!-- Run Program Card -->
-
-
-<template name="addrunItem">
+<template name="addrunrateItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="runitemName">
+        runrate:
+        <input type="text" class="form-control" placeholder="What are your runrate" name="runrateitemName">
     </form>
 </template>
 
-<template name="runItem">	
-    	<input type="text" value="{{run}}" name="runItem">
-    	[<a href="#" class="delete-runitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve runrate Item #3 -->
+<template name="runrateItem"> 
+
+      <input type="text" value="{{runrateitemName}}" name="runrateItem">
+      [<a href="#" class="delete-runrateitem">  Delete </a>]
 </template>
 
+<!-- End of runrate Item #3 -->
 
-
-
-<!-- Debttoequity Program Card -->
-
+<!-- Start of Add debttoequity Item #2 -->
 
 <template name="adddebttoequityItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="debttoequityitemName">
+        debttoequity:
+        <input type="text" class="form-control" placeholder="What are your debttoequity" name="debttoequityitemName">
     </form>
 </template>
 
-<template name="debttoequityItem">	
-    	<input type="text" value="{{debttoequity}}" name="debttoequityItem">
-    	[<a href="#" class="delete-debttoequityitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve debttoequity Item #3 -->
+<template name="debttoequityItem"> 
+
+      <input type="text" value="{{debttoequityitemName}}" name="debttoequityItem">
+      [<a href="#" class="delete-debttoequityitem">  Delete </a>]
 </template>
 
+<!-- End of debttoequity Item #3 -->
 
-<!-- Budget Program Card -->
-
+<!-- Start of Add budget Item #2 -->
 
 <template name="addbudgetItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="budgetitemName">
+        budget:
+        <input type="text" class="form-control" placeholder="What are your budget" name="budgetitemName">
     </form>
 </template>
 
-<template name="budgetItem">	
-    	<input type="text" value="{{budget}}" name="budgetItem">
-    	[<a href="#" class="delete-budgetitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve budget Item #3 -->
+<template name="budgetItem"> 
+
+      <input type="text" value="{{budgetitemName}}" name="budgetItem">
+      [<a href="#" class="delete-budgetitem">  Delete </a>]
 </template>
+
+<!-- End of budget Item #3 -->
+
+<!-- Start of Add improveMoneypage Item #2 -->
+
+<template name="addimproveMoneypageItem">
+    <form>
+        improveMoneypage:
+        <input type="text" class="form-control" placeholder="What are your improveMoneypage" name="improveMoneypageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveMoneypage Item #3 -->
+<template name="improveMoneypageItem"> 
+
+      <input type="text" value="{{improveMoneypageitemName}}" name="improveMoneypageItem">
+      [<a href="#" class="delete-improveMoneypageitem">  Delete </a>]
+</template>
+
+<!-- End of improveMoneypage Item #3 -->
+
 
 
 

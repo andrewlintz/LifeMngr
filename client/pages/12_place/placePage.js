@@ -6,42 +6,42 @@
 
 Template.placePage.helpers({
     placesbeenEach() {
-        return Agenda.find( { placesbeen: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { placesbeenitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     placeswantEach() {
-        return Agenda.find( { placeswant: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { placeswantitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     placesplannerEach() {
-        return Agenda.find( { placesplanner: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { placesplanneritemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveSpacepageEach() {
+        return Agenda.find( { improveSpacepageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 
 
-////////* Placesbeen Events *//////
-
-
+////////* Start of placesbeen Events *//////
 
 
 Template.addplacesbeenItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var placesbeenitemName = $('[name="placesbeenitemName"]').val();
-    Agenda.insert({
-        placesbeen: placesbeenitemName,
-        createdAt: new Date()
-    });
-    $('[name="placesbeenitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const placesbeenitemName = target.placesbeenitemName.value;
+    
+    // Insert a placesbeen item into the collection
+    Meteor.call('placesbeenitemName.insert', placesbeenitemName);
+
+    // Clear form
+    target.placesbeenitemName.value = '';
+    },
 });
 
 Template.placesbeenItem.events({
     // events go here
-    'click .delete-placesbeenitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-placesbeenitem'(){
+     Meteor.call('placesbeenitemName.remove', this._id);
     },
 
     'keyup [name=placesbeenItem]': function(event){
@@ -50,37 +50,37 @@ Template.placesbeenItem.events({
     } else {
         var documentId = this._id;
         var placesbeenItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { placesbeen: placesbeenItem }});
+        Meteor.call('updateListItem', documentId, placesbeenItem);
         }
     },
 });
 
+////////* End of placesbeen Events *//////
 
-////////* Placeswant Events *//////
-
-
+////////* Start of placeswant Events *//////
 
 
 Template.addplaceswantItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var placeswantitemName = $('[name="placeswantitemName"]').val();
-    Agenda.insert({
-        placeswant: placeswantitemName,
-        createdAt: new Date()
-    });
-    $('[name="placeswantitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const placeswantitemName = target.placeswantitemName.value;
+    
+    // Insert a placeswant item into the collection
+    Meteor.call('placeswantitemName.insert', placeswantitemName);
+
+    // Clear form
+    target.placeswantitemName.value = '';
+    },
 });
 
 Template.placeswantItem.events({
     // events go here
-    'click .delete-placeswantitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-placeswantitem'(){
+     Meteor.call('placeswantitemName.remove', this._id);
     },
 
     'keyup [name=placeswantItem]': function(event){
@@ -89,37 +89,37 @@ Template.placeswantItem.events({
     } else {
         var documentId = this._id;
         var placeswantItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { placeswant: placeswantItem }});
+        Meteor.call('updateListItem', documentId, placeswantItem);
         }
     },
 });
 
+////////* End of placeswant Events *//////
 
-////////* Placesplanner Events *//////
-
-
+////////* Start of placesplanner Events *//////
 
 
 Template.addplacesplannerItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var placesplanneritemName = $('[name="placesplanneritemName"]').val();
-    Agenda.insert({
-        placesplanner: placesplanneritemName,
-        createdAt: new Date()
-    });
-    $('[name="placesplanneritemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const placesplanneritemName = target.placesplanneritemName.value;
+    
+    // Insert a placesplanner item into the collection
+    Meteor.call('placesplanneritemName.insert', placesplanneritemName);
+
+    // Clear form
+    target.placesplanneritemName.value = '';
+    },
 });
 
 Template.placesplannerItem.events({
     // events go here
-    'click .delete-placesplanneritem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-placesplanneritem'(){
+     Meteor.call('placesplanneritemName.remove', this._id);
     },
 
     'keyup [name=placesplannerItem]': function(event){
@@ -128,7 +128,50 @@ Template.placesplannerItem.events({
     } else {
         var documentId = this._id;
         var placesplannerItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { placesplanner: placesplannerItem }});
+        Meteor.call('updateListItem', documentId, placesplannerItem);
         }
     },
 });
+
+////////* End of placesplanner Events *//////
+
+////////* Start of improveSpacepage Events *//////
+
+
+Template.addimproveSpacepageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveSpacepageitemName = target.improveSpacepageitemName.value;
+    
+    // Insert a improveSpacepage item into the collection
+    Meteor.call('improveSpacepageitemName.insert', improveSpacepageitemName);
+
+    // Clear form
+    target.improveSpacepageitemName.value = '';
+    },
+});
+
+Template.improveSpacepageItem.events({
+    // events go here
+    'click .delete-improveSpacepageitem'(){
+     Meteor.call('improveSpacepageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveSpacepageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveSpacepageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveSpacepageItem);
+        }
+    },
+});
+
+////////* End of improveSpacepage Events *//////
+
+

@@ -1,26 +1,26 @@
 <template name="fitPage">
 	<h1>Fitness Page</h1>
- <!--  Fitness Card -->
+<!-- Start of fitnesslog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputFitness">
-	Fitness</div>
+	<div class="panel-heading2" for="inputfitnesslog">
+	fitnesslog</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addfitnessItem}}
+			{{> addfitnesslogItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFitness" aria-expanded="false" aria-controls="collapseFitness">
-    			Fitness:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefitnesslog" aria-expanded="false" aria-controls="collapsefitnesslog">
+    			fitnesslog Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseFitness">
+				<div class="collapse" id="collapsefitnesslog">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each fitnessEach}}
-								{{> fitnessItem}}
+  						{{#each fitnesslogEach}}
+								{{> fitnesslogItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -29,25 +29,26 @@
 	</div>
 </div>
 
-<!-- end of Fitness card -->
 
-<!--  Fitness Program Card -->
+<!-- End of fitnesslog card #1 -->
+
+<!-- Start of fitnessprogram Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputFitnessprogram">
-	Fitness Program</div>
+	<div class="panel-heading2" for="inputfitnessprogram">
+	fitnessprogram</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addfitnessprogramItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFitnessprogram" aria-expanded="false" aria-controls="collapseFitnessprogram">
-    			Fitness Program:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefitnessprogram" aria-expanded="false" aria-controls="collapsefitnessprogram">
+    			fitnessprogram Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseFitnessprogram">
+				<div class="collapse" id="collapsefitnessprogram">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each fitnessprogramEach}}
@@ -60,7 +61,42 @@
 	</div>
 </div>
 
-<!-- end of Fitness Program card -->
+
+<!-- End of fitnessprogram card #1 -->
+
+<!-- Start of improveFitpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveFitpage">
+	improveFitpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveFitpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveFitpage" aria-expanded="false" aria-controls="collapseimproveFitpage">
+    			improveFitpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveFitpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveFitpageEach}}
+								{{> improveFitpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveFitpage card #1 -->
+
+
 </template>
 
 
@@ -70,34 +106,63 @@
 
 
 
-<!-- Fitness Card -->
+<!-- Start of Add fitnesslog Item #2 -->
 
-
-<template name="addfitnessItem">
+<template name="addfitnesslogItem">
     <form>
-        Fitness History:
-        <input type="text" class="form-control" placeholder="What are your fitness" name="fitnessitemName">
+        fitnesslog:
+        <input type="text" class="form-control" placeholder="What are your fitnesslog" name="fitnesslogitemName">
     </form>
 </template>
 
-<template name="fitnessItem">	
-    	<input type="text" value="{{fitness}}" name="fitnessItem">
-    	[<a href="#" class="delete-fitnessitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve fitnesslog Item #3 -->
+<template name="fitnesslogItem"> 
+
+      <input type="text" value="{{fitnesslogitemName}}" name="fitnesslogItem">
+      [<a href="#" class="delete-fitnesslogitem">  Delete </a>]
 </template>
 
+<!-- End of fitnesslog Item #3 -->
 
-
-<!-- Fitness Program Card -->
-
+<!-- Start of Add fitnessprogram Item #2 -->
 
 <template name="addfitnessprogramItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="fitnessprogramitemName">
+        fitnessprogram:
+        <input type="text" class="form-control" placeholder="What are your fitnessprogram" name="fitnessprogramitemName">
     </form>
 </template>
 
-<template name="fitnessprogramItem">	
-    	<input type="text" value="{{fitnessprogram}}" name="fitnessprogramItem">
-    	[<a href="#" class="delete-fitnessprogramitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve fitnessprogram Item #3 -->
+<template name="fitnessprogramItem"> 
+
+      <input type="text" value="{{fitnessprogramitemName}}" name="fitnessprogramItem">
+      [<a href="#" class="delete-fitnessprogramitem">  Delete </a>]
 </template>
+
+<!-- End of fitnessprogram Item #3 -->
+
+<!-- Start of Add improveFitpage Item #2 -->
+
+<template name="addimproveFitpageItem">
+    <form>
+        improveFitpage:
+        <input type="text" class="form-control" placeholder="What are your improveFitpage" name="improveFitpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveFitpage Item #3 -->
+<template name="improveFitpageItem"> 
+
+      <input type="text" value="{{improveFitpageitemName}}" name="improveFitpageItem">
+      [<a href="#" class="delete-improveFitpageitem">  Delete </a>]
+</template>
+
+<!-- End of improveFitpage Item #3 -->
+

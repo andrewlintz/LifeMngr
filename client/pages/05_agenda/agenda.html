@@ -32,11 +32,43 @@
 </div>
 <!-- end of Vision card -->
 
+<!-- Start of opportunity Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputopportunity">
+	opportunity</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addopportunityItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseopportunity" aria-expanded="false" aria-controls="collapseopportunity">
+    			opportunity Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseopportunity">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each opportunityEach}}
+								{{> opportunityItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of opportunity card #1 -->
+
 <!-- Start of mission Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputmission">
+	<div class="panel-heading2" for="inputmission">
 	mission</div>
 
 <div class="list-group">
@@ -64,27 +96,27 @@
 
 <!-- End of mission card #1 -->
 
-<!-- Start of values Card #1-->
+<!-- Start of goal Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputvalues">
-	values</div>
+	<div class="panel-heading2" for="inputgoal">
+	goal</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addvaluesItem}}
+			{{> addgoalItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsevalues" aria-expanded="false" aria-controls="collapsevalues">
-    			values Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsegoal" aria-expanded="false" aria-controls="collapsegoal">
+    			goal Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsevalues">
+				<div class="collapse" id="collapsegoal">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each valuesEach}}
-								{{> valuesItem}}
+  						{{#each goalEach}}
+								{{> goalItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -94,29 +126,29 @@
 </div>
 
 
-<!-- End of values card #1 -->
+<!-- End of goal card #1 -->
 
-<!-- Start of goals Card #1-->
+<!-- Start of strategy Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputgoals">
-	goals</div>
+	<div class="panel-heading2" for="inputstrategy">
+	strategy</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addgoalsItem}}
+			{{> addstrategyItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsegoals" aria-expanded="false" aria-controls="collapsegoals">
-    			goals Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsestrategy" aria-expanded="false" aria-controls="collapsestrategy">
+    			strategy Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsegoals">
+				<div class="collapse" id="collapsestrategy">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each goalsEach}}
-								{{> goalsItem}}
+  						{{#each strategyEach}}
+								{{> strategyItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -126,13 +158,45 @@
 </div>
 
 
-<!-- End of goals card #1 -->
+<!-- End of strategy card #1 -->
+
+<!-- Start of todos Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputtodos">
+	todos</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addtodosItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsetodos" aria-expanded="false" aria-controls="collapsetodos">
+    			todos Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsetodos">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each todosEach}}
+								{{> todosItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of todos card #1 -->
 
 <!-- Start of accomplishments Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputaccomplishments">
+	<div class="panel-heading2" for="inputaccomplishments">
 	accomplishments</div>
 
 <div class="list-group">
@@ -164,7 +228,7 @@
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputsuccesses">
+	<div class="panel-heading2" for="inputsuccesses">
 	successes</div>
 
 <div class="list-group">
@@ -196,7 +260,7 @@
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputfailure">
+	<div class="panel-heading2" for="inputfailure">
 	failure</div>
 
 <div class="list-group">
@@ -224,75 +288,11 @@
 
 <!-- End of failure card #1 -->
 
-<!-- Start of goodhabits Card #1-->
-
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputgoodhabits">
-	goodhabits</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addgoodhabitsItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsegoodhabits" aria-expanded="false" aria-controls="collapsegoodhabits">
-    			goodhabits Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapsegoodhabits">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each goodhabitsEach}}
-								{{> goodhabitsItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-
-<!-- End of goodhabits card #1 -->
-
-<!-- Start of badhabits Card #1-->
-
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputbadhabits">
-	badhabits</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addbadhabitsItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebadhabits" aria-expanded="false" aria-controls="collapsebadhabits">
-    			badhabits Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapsebadhabits">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each badhabitsEach}}
-								{{> badhabitsItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-
-<!-- End of badhabits card #1 -->
-
 <!-- Start of strengths Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputstrengths">
+	<div class="panel-heading2" for="inputstrengths">
 	strengths</div>
 
 <div class="list-group">
@@ -324,7 +324,7 @@
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputweaknesses">
+	<div class="panel-heading2" for="inputweaknesses">
 	weaknesses</div>
 
 <div class="list-group">
@@ -352,11 +352,171 @@
 
 <!-- End of weaknesses card #1 -->
 
+<!-- Start of goodhabits Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputgoodhabits">
+	goodhabits</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addgoodhabitsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsegoodhabits" aria-expanded="false" aria-controls="collapsegoodhabits">
+    			goodhabits Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsegoodhabits">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each goodhabitsEach}}
+								{{> goodhabitsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of goodhabits card #1 -->
+
+<!-- Start of badhabits Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputbadhabits">
+	badhabits</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbadhabitsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebadhabits" aria-expanded="false" aria-controls="collapsebadhabits">
+    			badhabits Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsebadhabits">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each badhabitsEach}}
+								{{> badhabitsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of badhabits card #1 -->
+
+<!-- Start of values Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputvalues">
+	values</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addvaluesItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsevalues" aria-expanded="false" aria-controls="collapsevalues">
+    			values Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsevalues">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each valuesEach}}
+								{{> valuesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of values card #1 -->
+
+<!-- Start of wants Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputwants">
+	wants</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addwantsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsewants" aria-expanded="false" aria-controls="collapsewants">
+    			wants Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsewants">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each wantsEach}}
+								{{> wantsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of wants card #1 -->
+
+<!-- Start of problems Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputproblems">
+	problems</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addproblemsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseproblems" aria-expanded="false" aria-controls="collapseproblems">
+    			problems Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseproblems">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each problemsEach}}
+								{{> problemsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of problems card #1 -->
+
 <!-- Start of career Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputcareer">
+	<div class="panel-heading2" for="inputcareer">
 	career</div>
 
 <div class="list-group">
@@ -388,7 +548,7 @@
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputprojects">
+	<div class="panel-heading2" for="inputprojects">
 	projects</div>
 
 <div class="list-group">
@@ -416,27 +576,27 @@
 
 <!-- End of projects card #1 -->
 
-<!-- Start of todos Card #1-->
+<!-- Start of improveAgendapage Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputtodos">
-	todos</div>
+	<div class="panel-heading2" for="inputimproveAgendapage">
+	improveAgendapage</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addtodosItem}}
+			{{> addimproveAgendapageItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsetodos" aria-expanded="false" aria-controls="collapsetodos">
-    			todos Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveAgendapage" aria-expanded="false" aria-controls="collapseimproveAgendapage">
+    			improveAgendapage Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsetodos">
+				<div class="collapse" id="collapseimproveAgendapage">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each todosEach}}
-								{{> todosItem}}
+  						{{#each improveAgendapageEach}}
+								{{> improveAgendapageItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -446,7 +606,8 @@
 </div>
 
 
-<!-- End of todos card #1 -->
+<!-- End of improveAgendapage card #1 -->
+
 
 
 
@@ -481,6 +642,26 @@
 
 <!-- End of vision Item #3 -->
 
+<!-- Start of Add opportunity Item #2 -->
+
+<template name="addopportunityItem">
+    <form>
+        opportunity:
+        <input type="text" class="form-control" placeholder="What are your opportunity" name="opportunityitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve opportunity Item #3 -->
+<template name="opportunityItem"> 
+
+      <input type="text" value="{{opportunityitemName}}" name="opportunityItem">
+      [<a href="#" class="delete-opportunityitem">  Delete </a>]
+</template>
+
+<!-- End of opportunity Item #3 -->
+
 <!-- Start of Add mission Item #2 -->
 
 <template name="addmissionItem">
@@ -501,45 +682,65 @@
 
 <!-- End of mission Item #3 -->
 
-<!-- Start of Add values Item #2 -->
+<!-- Start of Add goal Item #2 -->
 
-<template name="addvaluesItem">
+<template name="addgoalItem">
     <form>
-        values:
-        <input type="text" class="form-control" placeholder="What are your values" name="valuesitemName">
+        goal:
+        <input type="text" class="form-control" placeholder="What are your goal" name="goalitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve values Item #3 -->
-<template name="valuesItem"> 
+<!-- Start of Retrieve goal Item #3 -->
+<template name="goalItem"> 
 
-      <input type="text" value="{{valuesitemName}}" name="valuesItem">
-      [<a href="#" class="delete-valuesitem">  Delete </a>]
+      <input type="text" value="{{goalitemName}}" name="goalItem">
+      [<a href="#" class="delete-goalitem">  Delete </a>]
 </template>
 
-<!-- End of values Item #3 -->
+<!-- End of goal Item #3 -->
 
-<!-- Start of Add goals Item #2 -->
+<!-- Start of Add strategy Item #2 -->
 
-<template name="addgoalsItem">
+<template name="addstrategyItem">
     <form>
-        goals:
-        <input type="text" class="form-control" placeholder="What are your goals" name="goalsitemName">
+        strategy:
+        <input type="text" class="form-control" placeholder="What are your strategy" name="strategyitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve goals Item #3 -->
-<template name="goalsItem"> 
+<!-- Start of Retrieve strategy Item #3 -->
+<template name="strategyItem"> 
 
-      <input type="text" value="{{goalsitemName}}" name="goalsItem">
-      [<a href="#" class="delete-goalsitem">  Delete </a>]
+      <input type="text" value="{{strategyitemName}}" name="strategyItem">
+      [<a href="#" class="delete-strategyitem">  Delete </a>]
 </template>
 
-<!-- End of goals Item #3 -->
+<!-- End of strategy Item #3 -->
+
+<!-- Start of Add todos Item #2 -->
+
+<template name="addtodosItem">
+    <form>
+        todos:
+        <input type="text" class="form-control" placeholder="What are your todos" name="todositemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve todos Item #3 -->
+<template name="todosItem"> 
+
+      <input type="text" value="{{todositemName}}" name="todosItem">
+      [<a href="#" class="delete-todositem">  Delete </a>]
+</template>
+
+<!-- End of todos Item #3 -->
 
 <!-- Start of Add accomplishments Item #2 -->
 
@@ -601,6 +802,46 @@
 
 <!-- End of failure Item #3 -->
 
+<!-- Start of Add strengths Item #2 -->
+
+<template name="addstrengthsItem">
+    <form>
+        strengths:
+        <input type="text" class="form-control" placeholder="What are your strengths" name="strengthsitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve strengths Item #3 -->
+<template name="strengthsItem"> 
+
+      <input type="text" value="{{strengthsitemName}}" name="strengthsItem">
+      [<a href="#" class="delete-strengthsitem">  Delete </a>]
+</template>
+
+<!-- End of strengths Item #3 -->
+
+<!-- Start of Add weaknesses Item #2 -->
+
+<template name="addweaknessesItem">
+    <form>
+        weaknesses:
+        <input type="text" class="form-control" placeholder="What are your weaknesses" name="weaknessesitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve weaknesses Item #3 -->
+<template name="weaknessesItem"> 
+
+      <input type="text" value="{{weaknessesitemName}}" name="weaknessesItem">
+      [<a href="#" class="delete-weaknessesitem">  Delete </a>]
+</template>
+
+<!-- End of weaknesses Item #3 -->
+
 <!-- Start of Add goodhabits Item #2 -->
 
 <template name="addgoodhabitsItem">
@@ -641,45 +882,65 @@
 
 <!-- End of badhabits Item #3 -->
 
-<!-- Start of Add strengths Item #2 -->
+<!-- Start of Add values Item #2 -->
 
-<template name="addstrengthsItem">
+<template name="addvaluesItem">
     <form>
-        strengths:
-        <input type="text" class="form-control" placeholder="What are your strengths" name="strengthsitemName">
+        values:
+        <input type="text" class="form-control" placeholder="What are your values" name="valuesitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve strengths Item #3 -->
-<template name="strengthsItem"> 
+<!-- Start of Retrieve values Item #3 -->
+<template name="valuesItem"> 
 
-      <input type="text" value="{{strengthsitemName}}" name="strengthsItem">
-      [<a href="#" class="delete-strengthsitem">  Delete </a>]
+      <input type="text" value="{{valuesitemName}}" name="valuesItem">
+      [<a href="#" class="delete-valuesitem">  Delete </a>]
 </template>
 
-<!-- End of strengths Item #3 -->
+<!-- End of values Item #3 -->
 
-<!-- Start of Add weaknesses Item #2 -->
+<!-- Start of Add wants Item #2 -->
 
-<template name="addweaknessesItem">
+<template name="addwantsItem">
     <form>
-        weaknesses:
-        <input type="text" class="form-control" placeholder="What are your weaknesses" name="weaknessesitemName">
+        wants:
+        <input type="text" class="form-control" placeholder="What are your wants" name="wantsitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve weaknesses Item #3 -->
-<template name="weaknessesItem"> 
+<!-- Start of Retrieve wants Item #3 -->
+<template name="wantsItem"> 
 
-      <input type="text" value="{{weaknessesitemName}}" name="weaknessesItem">
-      [<a href="#" class="delete-weaknessesitem">  Delete </a>]
+      <input type="text" value="{{wantsitemName}}" name="wantsItem">
+      [<a href="#" class="delete-wantsitem">  Delete </a>]
 </template>
 
-<!-- End of weaknesses Item #3 -->
+<!-- End of wants Item #3 -->
+
+<!-- Start of Add problems Item #2 -->
+
+<template name="addproblemsItem">
+    <form>
+        problems:
+        <input type="text" class="form-control" placeholder="What are your problems" name="problemsitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve problems Item #3 -->
+<template name="problemsItem"> 
+
+      <input type="text" value="{{problemsitemName}}" name="problemsItem">
+      [<a href="#" class="delete-problemsitem">  Delete </a>]
+</template>
+
+<!-- End of problems Item #3 -->
 
 <!-- Start of Add career Item #2 -->
 
@@ -721,23 +982,25 @@
 
 <!-- End of projects Item #3 -->
 
-<!-- Start of Add todos Item #2 -->
+<!-- Start of Add improveAgendapage Item #2 -->
 
-<template name="addtodosItem">
+<template name="addimproveAgendapageItem">
     <form>
-        todos:
-        <input type="text" class="form-control" placeholder="What are your todos" name="todositemName">
+        improveAgendapage:
+        <input type="text" class="form-control" placeholder="What are your improveAgendapage" name="improveAgendapageitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve todos Item #3 -->
-<template name="todosItem"> 
+<!-- Start of Retrieve improveAgendapage Item #3 -->
+<template name="improveAgendapageItem"> 
 
-      <input type="text" value="{{todositemName}}" name="todosItem">
-      [<a href="#" class="delete-todositem">  Delete </a>]
+      <input type="text" value="{{improveAgendapageitemName}}" name="improveAgendapageItem">
+      [<a href="#" class="delete-improveAgendapageitem">  Delete </a>]
 </template>
 
-<!-- End of todos Item #3 -->
+<!-- End of improveAgendapage Item #3 -->
+
+
 

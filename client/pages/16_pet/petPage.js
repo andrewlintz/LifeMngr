@@ -5,130 +5,172 @@
 
 
 Template.petPage.helpers({
-    addpetEach() {
-        return Agenda.find( { addpet: {$exists: true}}, {sort: {createdAt: -1}}); },
-    currentpetsEach() {
-        return Agenda.find( { currentpets: {$exists: true}}, {sort: {createdAt: -1}}); },
-    pastpetsEach() {
-        return Agenda.find( { pastpets: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+    petlogEach() {
+        return Agenda.find( { petlogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    petbiometricsEach() {
+        return Agenda.find( { petbiometricsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    petMedhistEach() {
+        return Agenda.find( { petMedhistitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improvePetpageEach() {
+        return Agenda.find( { improvePetpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
-////////* Addpet Events *//////
+////////* Start of petlog Events *//////
 
 
-
-
-Template.addaddpetItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addpetlogItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var addpetitemName = $('[name="addpetitemName"]').val();
-    Agenda.insert({
-        addpet: addpetitemName,
-        createdAt: new Date()
-    });
-    $('[name="addpetitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const petlogitemName = target.petlogitemName.value;
+    
+    // Insert a petlog item into the collection
+    Meteor.call('petlogitemName.insert', petlogitemName);
+
+    // Clear form
+    target.petlogitemName.value = '';
+    },
 });
 
-Template.addpetItem.events({
+Template.petlogItem.events({
     // events go here
-    'click .delete-addpetitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-petlogitem'(){
+     Meteor.call('petlogitemName.remove', this._id);
     },
 
-    'keyup [name=addpetItem]': function(event){
+    'keyup [name=petlogItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var addpetItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { addpet: addpetItem }});
+        var petlogItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, petlogItem);
         }
     },
 });
 
+////////* End of petlog Events *//////
 
-////////* Currentpets Events *//////
+////////* Start of petbiometrics Events *//////
 
 
-
-
-Template.addcurrentpetsItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addpetbiometricsItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var currentpetsitemName = $('[name="currentpetsitemName"]').val();
-    Agenda.insert({
-        currentpets: currentpetsitemName,
-        createdAt: new Date()
-    });
-    $('[name="currentpetsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const petbiometricsitemName = target.petbiometricsitemName.value;
+    
+    // Insert a petbiometrics item into the collection
+    Meteor.call('petbiometricsitemName.insert', petbiometricsitemName);
+
+    // Clear form
+    target.petbiometricsitemName.value = '';
+    },
 });
 
-Template.currentpetsItem.events({
+Template.petbiometricsItem.events({
     // events go here
-    'click .delete-currentpetsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-petbiometricsitem'(){
+     Meteor.call('petbiometricsitemName.remove', this._id);
     },
 
-    'keyup [name=currentpetsItem]': function(event){
+    'keyup [name=petbiometricsItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var currentpetsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { currentpets: currentpetsItem }});
+        var petbiometricsItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, petbiometricsItem);
         }
     },
 });
 
+////////* End of petbiometrics Events *//////
+
+////////* Start of petMedhist Events *//////
 
 
-////////* Pastpets Events *//////
-
-
-
-
-Template.addpastpetsItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addpetMedhistItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var pastpetsitemName = $('[name="pastpetsitemName"]').val();
-    Agenda.insert({
-        pastpets: pastpetsitemName,
-        createdAt: new Date()
-    });
-    $('[name="pastpetsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const petMedhistitemName = target.petMedhistitemName.value;
+    
+    // Insert a petMedhist item into the collection
+    Meteor.call('petMedhistitemName.insert', petMedhistitemName);
+
+    // Clear form
+    target.petMedhistitemName.value = '';
+    },
 });
 
-Template.pastpetsItem.events({
+Template.petMedhistItem.events({
     // events go here
-    'click .delete-pastpetsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-petMedhistitem'(){
+     Meteor.call('petMedhistitemName.remove', this._id);
     },
 
-    'keyup [name=pastpetsItem]': function(event){
+    'keyup [name=petMedhistItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var pastpetsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { pastpets: pastpetsItem }});
+        var petMedhistItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, petMedhistItem);
         }
     },
 });
+
+////////* End of petMedhist Events *//////
+
+////////* Start of improvePetpage Events *//////
+
+
+Template.addimprovePetpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improvePetpageitemName = target.improvePetpageitemName.value;
+    
+    // Insert a improvePetpage item into the collection
+    Meteor.call('improvePetpageitemName.insert', improvePetpageitemName);
+
+    // Clear form
+    target.improvePetpageitemName.value = '';
+    },
+});
+
+Template.improvePetpageItem.events({
+    // events go here
+    'click .delete-improvePetpageitem'(){
+     Meteor.call('improvePetpageitemName.remove', this._id);
+    },
+
+    'keyup [name=improvePetpageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improvePetpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improvePetpageItem);
+        }
+    },
+});
+
+////////* End of improvePetpage Events *//////
+
+
  

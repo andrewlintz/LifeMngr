@@ -5,44 +5,171 @@
 
 
 Template.fengPage.helpers({
+    choreslogEach() {
+        return Agenda.find( { choreslogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    chorestodoEach() {
+        return Agenda.find( { chorestodoitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    homemessEach() {
+        return Agenda.find( { homemessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     hometightinessEach() {
-        return Agenda.find( { hometightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { hometightinessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    carmessEach() {
+        return Agenda.find( { carmessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     cartightinessEach() {
-        return Agenda.find( { cartightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
-    workspacetightinessEach() {
-        return Agenda.find( { workspacetightiness: {$exists: true}}, {sort: {createdAt: -1}}); },
-    choresEach() {
-        return Agenda.find( { chores: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { cartightinessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    workmessEach() {
+        return Agenda.find( { workmessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    workspacetightinesEach() {
+        return Agenda.find( { workspacetightinesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveFengpageEach() {
+        return Agenda.find( { improveFengpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 
 
 
-////////* Hometightiness Events *//////
+////////* Start of choreslog Events *//////
+
+
+Template.addchoreslogItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const choreslogitemName = target.choreslogitemName.value;
+    
+    // Insert a choreslog item into the collection
+    Meteor.call('choreslogitemName.insert', choreslogitemName);
+
+    // Clear form
+    target.choreslogitemName.value = '';
+    },
+});
+
+Template.choreslogItem.events({
+    // events go here
+    'click .delete-choreslogitem'(){
+     Meteor.call('choreslogitemName.remove', this._id);
+    },
+
+    'keyup [name=choreslogItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var choreslogItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, choreslogItem);
+        }
+    },
+});
+
+////////* End of choreslog Events *//////
+
+////////* Start of chorestodo Events *//////
+
+
+Template.addchorestodoItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const chorestodoitemName = target.chorestodoitemName.value;
+    
+    // Insert a chorestodo item into the collection
+    Meteor.call('chorestodoitemName.insert', chorestodoitemName);
+
+    // Clear form
+    target.chorestodoitemName.value = '';
+    },
+});
+
+Template.chorestodoItem.events({
+    // events go here
+    'click .delete-chorestodoitem'(){
+     Meteor.call('chorestodoitemName.remove', this._id);
+    },
+
+    'keyup [name=chorestodoItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var chorestodoItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, chorestodoItem);
+        }
+    },
+});
+
+////////* End of chorestodo Events *//////
+
+////////* Start of homemess Events *//////
+
+
+Template.addhomemessItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const homemessitemName = target.homemessitemName.value;
+    
+    // Insert a homemess item into the collection
+    Meteor.call('homemessitemName.insert', homemessitemName);
+
+    // Clear form
+    target.homemessitemName.value = '';
+    },
+});
+
+Template.homemessItem.events({
+    // events go here
+    'click .delete-homemessitem'(){
+     Meteor.call('homemessitemName.remove', this._id);
+    },
+
+    'keyup [name=homemessItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var homemessItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, homemessItem);
+        }
+    },
+});
+
+////////* End of homemess Events *//////
+
+////////* Start of hometightiness Events *//////
 
 
 Template.addhometightinessItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var hometightinessitemName = $('[name="hometightinessitemName"]').val();
-    Agenda.insert({
-        hometightiness: hometightinessitemName,
-        createdAt: new Date()
-    });
-    $('[name="hometightinessitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const hometightinessitemName = target.hometightinessitemName.value;
+    
+    // Insert a hometightiness item into the collection
+    Meteor.call('hometightinessitemName.insert', hometightinessitemName);
+
+    // Clear form
+    target.hometightinessitemName.value = '';
+    },
 });
 
 Template.hometightinessItem.events({
     // events go here
-    'click .delete-hometightinessitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-hometightinessitem'(){
+     Meteor.call('hometightinessitemName.remove', this._id);
     },
 
     'keyup [name=hometightinessItem]': function(event){
@@ -51,36 +178,76 @@ Template.hometightinessItem.events({
     } else {
         var documentId = this._id;
         var hometightinessItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { hometightiness: hometightinessItem }});
+        Meteor.call('updateListItem', documentId, hometightinessItem);
         }
     },
 });
 
+////////* End of hometightiness Events *//////
+
+////////* Start of carmess Events *//////
 
 
-////////* Cartightiness Events *//////
+Template.addcarmessItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const carmessitemName = target.carmessitemName.value;
+    
+    // Insert a carmess item into the collection
+    Meteor.call('carmessitemName.insert', carmessitemName);
+
+    // Clear form
+    target.carmessitemName.value = '';
+    },
+});
+
+Template.carmessItem.events({
+    // events go here
+    'click .delete-carmessitem'(){
+     Meteor.call('carmessitemName.remove', this._id);
+    },
+
+    'keyup [name=carmessItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var carmessItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, carmessItem);
+        }
+    },
+});
+
+////////* End of carmess Events *//////
+
+////////* Start of cartightiness Events *//////
 
 
 Template.addcartightinessItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var cartightinessitemName = $('[name="cartightinessitemName"]').val();
-    Agenda.insert({
-        cartightiness: cartightinessitemName,
-        createdAt: new Date()
-    });
-    $('[name="cartightinessitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const cartightinessitemName = target.cartightinessitemName.value;
+    
+    // Insert a cartightiness item into the collection
+    Meteor.call('cartightinessitemName.insert', cartightinessitemName);
+
+    // Clear form
+    target.cartightinessitemName.value = '';
+    },
 });
 
 Template.cartightinessItem.events({
     // events go here
-    'click .delete-cartightinessitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-cartightinessitem'(){
+     Meteor.call('cartightinessitemName.remove', this._id);
     },
 
     'keyup [name=cartightinessItem]': function(event){
@@ -89,85 +256,127 @@ Template.cartightinessItem.events({
     } else {
         var documentId = this._id;
         var cartightinessItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { cartightiness: cartightinessItem }});
+        Meteor.call('updateListItem', documentId, cartightinessItem);
         }
     },
 });
 
+////////* End of cartightiness Events *//////
+
+////////* Start of workmess Events *//////
 
 
-
-////////* Workspacetightiness Events *//////
-
-
-Template.addworkspacetightinessItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addworkmessItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var workspacetightinessitemName = $('[name="workspacetightinessitemName"]').val();
-    Agenda.insert({
-        workspacetightiness: workspacetightinessitemName,
-        createdAt: new Date()
-    });
-    $('[name="workspacetightinessitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const workmessitemName = target.workmessitemName.value;
+    
+    // Insert a workmess item into the collection
+    Meteor.call('workmessitemName.insert', workmessitemName);
+
+    // Clear form
+    target.workmessitemName.value = '';
+    },
 });
 
-Template.workspacetightinessItem.events({
+Template.workmessItem.events({
     // events go here
-    'click .delete-workspacetightinessitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-workmessitem'(){
+     Meteor.call('workmessitemName.remove', this._id);
     },
 
-    'keyup [name=workspacetightinessItem]': function(event){
+    'keyup [name=workmessItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var workspacetightinessItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { workspacetightiness: workspacetightinessItem }});
+        var workmessItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, workmessItem);
         }
     },
 });
 
+////////* End of workmess Events *//////
+
+////////* Start of workspacetightines Events *//////
 
 
-
-////////* Chores Events *//////
-
-
-Template.addchoresItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addworkspacetightinesItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var choresitemName = $('[name="choresitemName"]').val();
-    Agenda.insert({
-        chores: choresitemName,
-        createdAt: new Date()
-    });
-    $('[name="choresitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const workspacetightinesitemName = target.workspacetightinesitemName.value;
+    
+    // Insert a workspacetightines item into the collection
+    Meteor.call('workspacetightinesitemName.insert', workspacetightinesitemName);
+
+    // Clear form
+    target.workspacetightinesitemName.value = '';
+    },
 });
 
-Template.choresItem.events({
+Template.workspacetightinesItem.events({
     // events go here
-    'click .delete-choresitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-workspacetightinesitem'(){
+     Meteor.call('workspacetightinesitemName.remove', this._id);
     },
 
-    'keyup [name=choresItem]': function(event){
+    'keyup [name=workspacetightinesItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var choresItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { chores: choresItem }});
+        var workspacetightinesItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, workspacetightinesItem);
         }
     },
 });
+
+////////* End of workspacetightines Events *//////
+
+////////* Start of improveFengpage Events *//////
+
+
+Template.addimproveFengpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveFengpageitemName = target.improveFengpageitemName.value;
+    
+    // Insert a improveFengpage item into the collection
+    Meteor.call('improveFengpageitemName.insert', improveFengpageitemName);
+
+    // Clear form
+    target.improveFengpageitemName.value = '';
+    },
+});
+
+Template.improveFengpageItem.events({
+    // events go here
+    'click .delete-improveFengpageitem'(){
+     Meteor.call('improveFengpageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveFengpageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveFengpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveFengpageItem);
+        }
+    },
+});
+
+////////* End of improveFengpage Events *//////
+

@@ -11,32 +11,43 @@ import './agenda.html';
 Template.agendaPage.helpers({
     visionEach() {
         return Agenda.find( { visionitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    opportunityEach() {
+        return Agenda.find( { opportunityitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     missionEach() {
         return Agenda.find( { missionitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    valuesEach() {
-        return Agenda.find( { valuesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    goalsEach() {
-        return Agenda.find( { goalsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    goalEach() {
+        return Agenda.find( { goalitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    strategyEach() {
+        return Agenda.find( { strategyitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    todosEach() {
+        return Agenda.find( { todositemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     accomplishmentsEach() {
         return Agenda.find( { accomplishmentsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     successesEach() {
         return Agenda.find( { successesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     failureEach() {
         return Agenda.find( { failureitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    goodhabitsEach() {
-        return Agenda.find( { goodhabitsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    badhabitsEach() {
-        return Agenda.find( { badhabitsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     strengthsEach() {
         return Agenda.find( { strengthsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     weaknessesEach() {
         return Agenda.find( { weaknessesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    goodhabitsEach() {
+        return Agenda.find( { goodhabitsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    badhabitsEach() {
+        return Agenda.find( { badhabitsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    valuesEach() {
+        return Agenda.find( { valuesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    wantsEach() {
+        return Agenda.find( { wantsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    problemsEach() {
+        return Agenda.find( { problemsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     careerEach() {
         return Agenda.find( { careeritemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     projectsEach() {
         return Agenda.find( { projectsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    todosEach() {
-        return Agenda.find( { todositemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveAgendapageEach() {
+        return Agenda.find( { improveAgendapageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+
 });
 
 
@@ -91,6 +102,45 @@ Template.visionItem.events({
 });
 ////////* End of Vision Events *//////
 
+////////* Start of opportunity Events *//////
+
+
+Template.addopportunityItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const opportunityitemName = target.opportunityitemName.value;
+    
+    // Insert a opportunity item into the collection
+    Meteor.call('opportunityitemName.insert', opportunityitemName);
+
+    // Clear form
+    target.opportunityitemName.value = '';
+    },
+});
+
+Template.opportunityItem.events({
+    // events go here
+    'click .delete-opportunityitem'(){
+     Meteor.call('opportunityitemName.remove', this._id);
+    },
+
+    'keyup [name=opportunityItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var opportunityItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, opportunityItem);
+        }
+    },
+});
+
+////////* End of opportunity Events *//////
+
 ////////* Start of mission Events *//////
 
 
@@ -130,83 +180,122 @@ Template.missionItem.events({
 
 ////////* End of mission Events *//////
 
-////////* Start of values Events *//////
+////////* Start of goal Events *//////
 
 
-Template.addvaluesItem.events({
+Template.addgoalItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const valuesitemName = target.valuesitemName.value;
+    const goalitemName = target.goalitemName.value;
     
-    // Insert a values item into the collection
-    Meteor.call('valuesitemName.insert', valuesitemName);
+    // Insert a goal item into the collection
+    Meteor.call('goalitemName.insert', goalitemName);
 
     // Clear form
-    target.valuesitemName.value = '';
+    target.goalitemName.value = '';
     },
 });
 
-Template.valuesItem.events({
+Template.goalItem.events({
     // events go here
-    'click .delete-valuesitem'(){
-     Meteor.call('valuesitemName.remove', this._id);
+    'click .delete-goalitem'(){
+     Meteor.call('goalitemName.remove', this._id);
     },
 
-    'keyup [name=valuesItem]': function(event){
+    'keyup [name=goalItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var valuesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, valuesItem);
+        var goalItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, goalItem);
         }
     },
 });
 
-////////* End of values Events *//////
+////////* End of goal Events *//////
 
-////////* Start of goals Events *//////
+////////* Start of strategy Events *//////
 
 
-Template.addgoalsItem.events({
+Template.addstrategyItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const goalsitemName = target.goalsitemName.value;
+    const strategyitemName = target.strategyitemName.value;
     
-    // Insert a goals item into the collection
-    Meteor.call('goalsitemName.insert', goalsitemName);
+    // Insert a strategy item into the collection
+    Meteor.call('strategyitemName.insert', strategyitemName);
 
     // Clear form
-    target.goalsitemName.value = '';
+    target.strategyitemName.value = '';
     },
 });
 
-Template.goalsItem.events({
+Template.strategyItem.events({
     // events go here
-    'click .delete-goalsitem'(){
-     Meteor.call('goalsitemName.remove', this._id);
+    'click .delete-strategyitem'(){
+     Meteor.call('strategyitemName.remove', this._id);
     },
 
-    'keyup [name=goalsItem]': function(event){
+    'keyup [name=strategyItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var goalsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, goalsItem);
+        var strategyItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, strategyItem);
         }
     },
 });
 
-////////* End of goals Events *//////
+////////* End of strategy Events *//////
+
+////////* Start of todos Events *//////
+
+
+Template.addtodosItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const todositemName = target.todositemName.value;
+    
+    // Insert a todos item into the collection
+    Meteor.call('todositemName.insert', todositemName);
+
+    // Clear form
+    target.todositemName.value = '';
+    },
+});
+
+Template.todosItem.events({
+    // events go here
+    'click .delete-todositem'(){
+     Meteor.call('todositemName.remove', this._id);
+    },
+
+    'keyup [name=todosItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var todosItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, todosItem);
+        }
+    },
+});
+
+////////* End of todos Events *//////
 
 ////////* Start of accomplishments Events *//////
 
@@ -325,6 +414,84 @@ Template.failureItem.events({
 
 ////////* End of failure Events *//////
 
+////////* Start of strengths Events *//////
+
+
+Template.addstrengthsItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const strengthsitemName = target.strengthsitemName.value;
+    
+    // Insert a strengths item into the collection
+    Meteor.call('strengthsitemName.insert', strengthsitemName);
+
+    // Clear form
+    target.strengthsitemName.value = '';
+    },
+});
+
+Template.strengthsItem.events({
+    // events go here
+    'click .delete-strengthsitem'(){
+     Meteor.call('strengthsitemName.remove', this._id);
+    },
+
+    'keyup [name=strengthsItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var strengthsItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, strengthsItem);
+        }
+    },
+});
+
+////////* End of strengths Events *//////
+
+////////* Start of weaknesses Events *//////
+
+
+Template.addweaknessesItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const weaknessesitemName = target.weaknessesitemName.value;
+    
+    // Insert a weaknesses item into the collection
+    Meteor.call('weaknessesitemName.insert', weaknessesitemName);
+
+    // Clear form
+    target.weaknessesitemName.value = '';
+    },
+});
+
+Template.weaknessesItem.events({
+    // events go here
+    'click .delete-weaknessesitem'(){
+     Meteor.call('weaknessesitemName.remove', this._id);
+    },
+
+    'keyup [name=weaknessesItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var weaknessesItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, weaknessesItem);
+        }
+    },
+});
+
+////////* End of weaknesses Events *//////
+
 ////////* Start of goodhabits Events *//////
 
 
@@ -403,83 +570,122 @@ Template.badhabitsItem.events({
 
 ////////* End of badhabits Events *//////
 
-////////* Start of strengths Events *//////
+////////* Start of values Events *//////
 
 
-Template.addstrengthsItem.events({
+Template.addvaluesItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const strengthsitemName = target.strengthsitemName.value;
+    const valuesitemName = target.valuesitemName.value;
     
-    // Insert a strengths item into the collection
-    Meteor.call('strengthsitemName.insert', strengthsitemName);
+    // Insert a values item into the collection
+    Meteor.call('valuesitemName.insert', valuesitemName);
 
     // Clear form
-    target.strengthsitemName.value = '';
+    target.valuesitemName.value = '';
     },
 });
 
-Template.strengthsItem.events({
+Template.valuesItem.events({
     // events go here
-    'click .delete-strengthsitem'(){
-     Meteor.call('strengthsitemName.remove', this._id);
+    'click .delete-valuesitem'(){
+     Meteor.call('valuesitemName.remove', this._id);
     },
 
-    'keyup [name=strengthsItem]': function(event){
+    'keyup [name=valuesItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var strengthsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, strengthsItem);
+        var valuesItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, valuesItem);
         }
     },
 });
 
-////////* End of strengths Events *//////
+////////* End of values Events *//////
 
-////////* Start of weaknesses Events *//////
+////////* Start of wants Events *//////
 
 
-Template.addweaknessesItem.events({
+Template.addwantsItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const weaknessesitemName = target.weaknessesitemName.value;
+    const wantsitemName = target.wantsitemName.value;
     
-    // Insert a weaknesses item into the collection
-    Meteor.call('weaknessesitemName.insert', weaknessesitemName);
+    // Insert a wants item into the collection
+    Meteor.call('wantsitemName.insert', wantsitemName);
 
     // Clear form
-    target.weaknessesitemName.value = '';
+    target.wantsitemName.value = '';
     },
 });
 
-Template.weaknessesItem.events({
+Template.wantsItem.events({
     // events go here
-    'click .delete-weaknessesitem'(){
-     Meteor.call('weaknessesitemName.remove', this._id);
+    'click .delete-wantsitem'(){
+     Meteor.call('wantsitemName.remove', this._id);
     },
 
-    'keyup [name=weaknessesItem]': function(event){
+    'keyup [name=wantsItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var weaknessesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, weaknessesItem);
+        var wantsItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, wantsItem);
         }
     },
 });
 
-////////* End of weaknesses Events *//////
+////////* End of wants Events *//////
+
+////////* Start of problems Events *//////
+
+
+Template.addproblemsItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const problemsitemName = target.problemsitemName.value;
+    
+    // Insert a problems item into the collection
+    Meteor.call('problemsitemName.insert', problemsitemName);
+
+    // Clear form
+    target.problemsitemName.value = '';
+    },
+});
+
+Template.problemsItem.events({
+    // events go here
+    'click .delete-problemsitem'(){
+     Meteor.call('problemsitemName.remove', this._id);
+    },
+
+    'keyup [name=problemsItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var problemsItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, problemsItem);
+        }
+    },
+});
+
+////////* End of problems Events *//////
 
 ////////* Start of career Events *//////
 
@@ -559,43 +765,45 @@ Template.projectsItem.events({
 
 ////////* End of projects Events *//////
 
-////////* Start of todos Events *//////
+////////* Start of improveAgendapage Events *//////
 
 
-Template.addtodosItem.events({
+Template.addimproveAgendapageItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const todositemName = target.todositemName.value;
+    const improveAgendapageitemName = target.improveAgendapageitemName.value;
     
-    // Insert a todos item into the collection
-    Meteor.call('todositemName.insert', todositemName);
+    // Insert a improveAgendapage item into the collection
+    Meteor.call('improveAgendapageitemName.insert', improveAgendapageitemName);
 
     // Clear form
-    target.todositemName.value = '';
+    target.improveAgendapageitemName.value = '';
     },
 });
 
-Template.todosItem.events({
+Template.improveAgendapageItem.events({
     // events go here
-    'click .delete-todositem'(){
-     Meteor.call('todositemName.remove', this._id);
+    'click .delete-improveAgendapageitem'(){
+     Meteor.call('improveAgendapageitemName.remove', this._id);
     },
 
-    'keyup [name=todosItem]': function(event){
+    'keyup [name=improveAgendapageItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var todosItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, todosItem);
+        var improveAgendapageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveAgendapageItem);
         }
     },
 });
 
-////////* End of todos Events *//////
+////////* End of improveAgendapage Events *//////
+
+
 
 

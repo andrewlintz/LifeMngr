@@ -6,42 +6,48 @@
 
 Template.stuffPage.helpers({
     stuffhaveEach() {
-        return Agenda.find( { stuffhave: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { stuffhaveitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    stufflostEach() {
+        return Agenda.find( { stufflostitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    stufflentEach() {
+        return Agenda.find( { stufflentitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    stuffborrowedEach() {
+        return Agenda.find( { stuffborroweditemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     stuffwantEach() {
-        return Agenda.find( { stuffwant: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { stuffwantitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     stuffplannerEach() {
-        return Agenda.find( { stuffplanner: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { stuffplanneritemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveStuffpageEach() {
+        return Agenda.find( { improveStuffpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 
 
-////////* Stuffhave Events *//////
-
-
+////////* Start of stuffhave Events *//////
 
 
 Template.addstuffhaveItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var stuffhaveitemName = $('[name="stuffhaveitemName"]').val();
-    Agenda.insert({
-        stuffhave: stuffhaveitemName,
-        createdAt: new Date()
-    });
-    $('[name="stuffhaveitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const stuffhaveitemName = target.stuffhaveitemName.value;
+    
+    // Insert a stuffhave item into the collection
+    Meteor.call('stuffhaveitemName.insert', stuffhaveitemName);
+
+    // Clear form
+    target.stuffhaveitemName.value = '';
+    },
 });
 
 Template.stuffhaveItem.events({
     // events go here
-    'click .delete-stuffhaveitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-stuffhaveitem'(){
+     Meteor.call('stuffhaveitemName.remove', this._id);
     },
 
     'keyup [name=stuffhaveItem]': function(event){
@@ -50,38 +56,154 @@ Template.stuffhaveItem.events({
     } else {
         var documentId = this._id;
         var stuffhaveItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { stuffhave: stuffhaveItem }});
+        Meteor.call('updateListItem', documentId, stuffhaveItem);
         }
     },
 });
 
+////////* End of stuffhave Events *//////
+
+////////* Start of stufflost Events *//////
 
 
-////////* Stuffwant Events *//////
+Template.addstufflostItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const stufflostitemName = target.stufflostitemName.value;
+    
+    // Insert a stufflost item into the collection
+    Meteor.call('stufflostitemName.insert', stufflostitemName);
+
+    // Clear form
+    target.stufflostitemName.value = '';
+    },
+});
+
+Template.stufflostItem.events({
+    // events go here
+    'click .delete-stufflostitem'(){
+     Meteor.call('stufflostitemName.remove', this._id);
+    },
+
+    'keyup [name=stufflostItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var stufflostItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, stufflostItem);
+        }
+    },
+});
+
+////////* End of stufflost Events *//////
+
+////////* Start of stufflent Events *//////
 
 
+Template.addstufflentItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const stufflentitemName = target.stufflentitemName.value;
+    
+    // Insert a stufflent item into the collection
+    Meteor.call('stufflentitemName.insert', stufflentitemName);
+
+    // Clear form
+    target.stufflentitemName.value = '';
+    },
+});
+
+Template.stufflentItem.events({
+    // events go here
+    'click .delete-stufflentitem'(){
+     Meteor.call('stufflentitemName.remove', this._id);
+    },
+
+    'keyup [name=stufflentItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var stufflentItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, stufflentItem);
+        }
+    },
+});
+
+////////* End of stufflent Events *//////
+
+////////* Start of stuffborrowed Events *//////
+
+
+Template.addstuffborrowedItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const stuffborroweditemName = target.stuffborroweditemName.value;
+    
+    // Insert a stuffborrowed item into the collection
+    Meteor.call('stuffborroweditemName.insert', stuffborroweditemName);
+
+    // Clear form
+    target.stuffborroweditemName.value = '';
+    },
+});
+
+Template.stuffborrowedItem.events({
+    // events go here
+    'click .delete-stuffborroweditem'(){
+     Meteor.call('stuffborroweditemName.remove', this._id);
+    },
+
+    'keyup [name=stuffborrowedItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var stuffborrowedItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, stuffborrowedItem);
+        }
+    },
+});
+
+////////* End of stuffborrowed Events *//////
+
+////////* Start of stuffwant Events *//////
 
 
 Template.addstuffwantItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var stuffwantitemName = $('[name="stuffwantitemName"]').val();
-    Agenda.insert({
-        stuffwant: stuffwantitemName,
-        createdAt: new Date()
-    });
-    $('[name="stuffwantitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const stuffwantitemName = target.stuffwantitemName.value;
+    
+    // Insert a stuffwant item into the collection
+    Meteor.call('stuffwantitemName.insert', stuffwantitemName);
+
+    // Clear form
+    target.stuffwantitemName.value = '';
+    },
 });
 
 Template.stuffwantItem.events({
     // events go here
-    'click .delete-stuffwantitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-stuffwantitem'(){
+     Meteor.call('stuffwantitemName.remove', this._id);
     },
 
     'keyup [name=stuffwantItem]': function(event){
@@ -90,38 +212,37 @@ Template.stuffwantItem.events({
     } else {
         var documentId = this._id;
         var stuffwantItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { stuffwant: stuffwantItem }});
+        Meteor.call('updateListItem', documentId, stuffwantItem);
         }
     },
 });
 
+////////* End of stuffwant Events *//////
 
-
-////////* Stuffplanner Events *//////
-
-
+////////* Start of stuffplanner Events *//////
 
 
 Template.addstuffplannerItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var stuffplanneritemName = $('[name="stuffplanneritemName"]').val();
-    Agenda.insert({
-        stuffplanner: stuffplanneritemName,
-        createdAt: new Date()
-    });
-    $('[name="stuffplanneritemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const stuffplanneritemName = target.stuffplanneritemName.value;
+    
+    // Insert a stuffplanner item into the collection
+    Meteor.call('stuffplanneritemName.insert', stuffplanneritemName);
+
+    // Clear form
+    target.stuffplanneritemName.value = '';
+    },
 });
 
 Template.stuffplannerItem.events({
     // events go here
-    'click .delete-stuffplanneritem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-stuffplanneritem'(){
+     Meteor.call('stuffplanneritemName.remove', this._id);
     },
 
     'keyup [name=stuffplannerItem]': function(event){
@@ -130,7 +251,50 @@ Template.stuffplannerItem.events({
     } else {
         var documentId = this._id;
         var stuffplannerItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { stuffplanner: stuffplannerItem }});
+        Meteor.call('updateListItem', documentId, stuffplannerItem);
         }
     },
 });
+
+////////* End of stuffplanner Events *//////
+
+////////* Start of improveStuffpage Events *//////
+
+
+Template.addimproveStuffpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveStuffpageitemName = target.improveStuffpageitemName.value;
+    
+    // Insert a improveStuffpage item into the collection
+    Meteor.call('improveStuffpageitemName.insert', improveStuffpageitemName);
+
+    // Clear form
+    target.improveStuffpageitemName.value = '';
+    },
+});
+
+Template.improveStuffpageItem.events({
+    // events go here
+    'click .delete-improveStuffpageitem'(){
+     Meteor.call('improveStuffpageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveStuffpageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveStuffpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveStuffpageItem);
+        }
+    },
+});
+
+////////* End of improveStuffpage Events *//////
+
+

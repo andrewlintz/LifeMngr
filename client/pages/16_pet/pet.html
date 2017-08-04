@@ -4,60 +4,27 @@
 
 
 
-<!--  Addpet Card -->
+<!-- Start of petlog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputAddpet">
-	Add Pet</div>
+	<div class="panel-heading2" for="inputpetlog">
+	petlog</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addaddpetItem}}
+			{{> addpetlogItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAddpet" aria-expanded="false" aria-controls="collapseAddpet">
-    			Addpet Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepetlog" aria-expanded="false" aria-controls="collapsepetlog">
+    			petlog Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseAddpet">
+				<div class="collapse" id="collapsepetlog">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each addpetEach}}
-								{{> addpetItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-<!-- end of Addpet card -->
-
-
-
-<!--  Currentpets Card -->
-
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputCurrentpets">
-	Currentpets</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addcurrentpetsItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCurrentpets" aria-expanded="false" aria-controls="collapseCurrentpets">
-    			Current Pets Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapseCurrentpets">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each currentpetsEach}}
-								{{> currentpetsItem}}
+  						{{#each petlogEach}}
+								{{> petlogItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -67,29 +34,29 @@
 </div>
 
 
-<!-- end of Currentpets card -->
+<!-- End of petlog card #1 -->
 
+<!-- Start of petbiometrics Card #1-->
 
-<!--  Pastpets Card -->
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPastpets">
-	Past Pets</div>
+	<div class="panel-heading2" for="inputpetbiometrics">
+	petbiometrics</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addpastpetsItem}}
+			{{> addpetbiometricsItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePastpets" aria-expanded="false" aria-controls="collapsePastpets">
-    			Past Pets Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepetbiometrics" aria-expanded="false" aria-controls="collapsepetbiometrics">
+    			petbiometrics Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePastpets">
+				<div class="collapse" id="collapsepetbiometrics">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each pastpetsEach}}
-								{{> pastpetsItem}}
+  						{{#each petbiometricsEach}}
+								{{> petbiometricsItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -98,6 +65,73 @@
 	</div>
 </div>
 
+
+<!-- End of petbiometrics card #1 -->
+
+<!-- Start of petMedhist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputpetMedhist">
+	petMedhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpetMedhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepetMedhist" aria-expanded="false" aria-controls="collapsepetMedhist">
+    			petMedhist Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsepetMedhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each petMedhistEach}}
+								{{> petMedhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of petMedhist card #1 -->
+
+<!-- Start of improvePetpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimprovePetpage">
+	improvePetpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimprovePetpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimprovePetpage" aria-expanded="false" aria-controls="collapseimprovePetpage">
+    			improvePetpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimprovePetpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improvePetpageEach}}
+								{{> improvePetpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improvePetpage card #1 -->
+
 </template>
 
 
@@ -105,48 +139,84 @@
 
 
 
-<!-- Addpet Program Card -->
+<!-- Start of Add petlog Item #2 -->
 
-
-<template name="addaddpetItem">
+<template name="addpetlogItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="addpetitemName">
+        petlog:
+        <input type="text" class="form-control" placeholder="What are your petlog" name="petlogitemName">
     </form>
 </template>
 
-<template name="addpetItem">	
-    	<input type="text" value="{{addpet}}" name="addpetItem">
-    	[<a href="#" class="delete-addpetitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve petlog Item #3 -->
+<template name="petlogItem"> 
+
+      <input type="text" value="{{petlogitemName}}" name="petlogItem">
+      [<a href="#" class="delete-petlogitem">  Delete </a>]
 </template>
 
+<!-- End of petlog Item #3 -->
 
-<!-- Currentpets Program Card -->
+<!-- Start of Add petbiometrics Item #2 -->
 
-<template name="addcurrentpetsItem">
+<template name="addpetbiometricsItem">
     <form>
-        Currentpets:
-        <input type="text" class="form-control" placeholder="What are your currentpets" name="currentpetsitemName">
+        petbiometrics:
+        <input type="text" class="form-control" placeholder="What are your petbiometrics" name="petbiometricsitemName">
     </form>
 </template>
 
-<template name="currentpetsItem">	
-    	<input type="text" value="{{currentpets}}" name="currentpetsItem">
-    	[<a href="#" class="delete-currentpetsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve petbiometrics Item #3 -->
+<template name="petbiometricsItem"> 
+
+      <input type="text" value="{{petbiometricsitemName}}" name="petbiometricsItem">
+      [<a href="#" class="delete-petbiometricsitem">  Delete </a>]
 </template>
 
+<!-- End of petbiometrics Item #3 -->
 
-<!-- Pastpets Program Card -->
+<!-- Start of Add petMedhist Item #2 -->
 
-
-<template name="addpastpetsItem">
+<template name="addpetMedhistItem">
     <form>
-        Pastpets:
-        <input type="text" class="form-control" placeholder="What are your pastpets" name="pastpetsitemName">
+        petMedhist:
+        <input type="text" class="form-control" placeholder="What are your petMedhist" name="petMedhistitemName">
     </form>
 </template>
 
-<template name="pastpetsItem">	
-    	<input type="text" value="{{pastpets}}" name="pastpetsItem">
-    	[<a href="#" class="delete-pastpetsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve petMedhist Item #3 -->
+<template name="petMedhistItem"> 
+
+      <input type="text" value="{{petMedhistitemName}}" name="petMedhistItem">
+      [<a href="#" class="delete-petMedhistitem">  Delete </a>]
 </template>
+
+<!-- End of petMedhist Item #3 -->
+
+<!-- Start of Add improvePetpage Item #2 -->
+
+<template name="addimprovePetpageItem">
+    <form>
+        improvePetpage:
+        <input type="text" class="form-control" placeholder="What are your improvePetpage" name="improvePetpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improvePetpage Item #3 -->
+<template name="improvePetpageItem"> 
+
+      <input type="text" value="{{improvePetpageitemName}}" name="improvePetpageItem">
+      [<a href="#" class="delete-improvePetpageitem">  Delete </a>]
+</template>
+
+<!-- End of improvePetpage Item #3 -->
+
+

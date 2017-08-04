@@ -4,23 +4,23 @@
 
 
 
-<!--  Govt Card -->
+<!-- Start of govt Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputGovt">
-	Govt</div>
+	<div class="panel-heading2" for="inputgovt">
+	govt</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addgovtItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGovt" aria-expanded="false" aria-controls="collapseGovt">
-    			Govt Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsegovt" aria-expanded="false" aria-controls="collapsegovt">
+    			govt Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseGovt">
+				<div class="collapse" id="collapsegovt">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each govtEach}}
@@ -33,29 +33,26 @@
 	</div>
 </div>
 
-<!-- end of Govt card -->
 
+<!-- End of govt card #1 -->
 
-
-
-
-<!--  Policies Card -->
+<!-- Start of policies Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPolicies">
-	Policies</div>
+	<div class="panel-heading2" for="inputpolicies">
+	policies</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addpoliciesItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePolicies" aria-expanded="false" aria-controls="collapsePolicies">
-    			Policies Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepolicies" aria-expanded="false" aria-controls="collapsepolicies">
+    			policies Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePolicies">
+				<div class="collapse" id="collapsepolicies">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each policiesEach}}
@@ -68,28 +65,26 @@
 	</div>
 </div>
 
-<!-- end of Policies card -->
 
+<!-- End of policies card #1 -->
 
-
-
-<!--  Vote Card -->
+<!-- Start of vote Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputVote">
-	Vote</div>
+	<div class="panel-heading2" for="inputvote">
+	vote</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addvoteItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVote" aria-expanded="false" aria-controls="collapseVote">
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsevote" aria-expanded="false" aria-controls="collapsevote">
     			vote Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseVote">
+				<div class="collapse" id="collapsevote">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each voteEach}}
@@ -102,7 +97,42 @@
 	</div>
 </div>
 
-<!-- end of Vote card -->
+
+<!-- End of vote card #1 -->
+
+<!-- Start of improveSocietypage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveSocietypage">
+	improveSocietypage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveSocietypageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveSocietypage" aria-expanded="false" aria-controls="collapseimproveSocietypage">
+    			improveSocietypage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveSocietypage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveSocietypageEach}}
+								{{> improveSocietypageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveSocietypage card #1 -->
+
+
 
 </template>
 
@@ -118,50 +148,83 @@
 
 
 
-<!-- Govt Card -->
-
+<!-- Start of Add govt Item #2 -->
 
 <template name="addgovtItem">
     <form>
-        Govt:
-        <input type="text" class="form-control" placeholder="What are your Govt" name="govtitemName">
+        govt:
+        <input type="text" class="form-control" placeholder="What are your govt" name="govtitemName">
     </form>
 </template>
 
-<template name="govtItem">	
-    	<input type="text" value="{{govt}}" name="govtItem">
-    	[<a href="#" class="delete-govtitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve govt Item #3 -->
+<template name="govtItem"> 
+
+      <input type="text" value="{{govtitemName}}" name="govtItem">
+      [<a href="#" class="delete-govtitem">  Delete </a>]
 </template>
 
+<!-- End of govt Item #3 -->
 
-
-<!-- Policies Card -->
-
+<!-- Start of Add policies Item #2 -->
 
 <template name="addpoliciesItem">
     <form>
-        Policies:
-        <input type="text" class="form-control" placeholder="What are your Policies" name="policiesitemName">
+        policies:
+        <input type="text" class="form-control" placeholder="What are your policies" name="policiesitemName">
     </form>
 </template>
 
-<template name="policiesItem">	
-    	<input type="text" value="{{policies}}" name="policiesItem">
-    	[<a href="#" class="delete-policiesitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve policies Item #3 -->
+<template name="policiesItem"> 
+
+      <input type="text" value="{{policiesitemName}}" name="policiesItem">
+      [<a href="#" class="delete-policiesitem">  Delete </a>]
 </template>
 
+<!-- End of policies Item #3 -->
 
-<!-- Vote Card -->
-
+<!-- Start of Add vote Item #2 -->
 
 <template name="addvoteItem">
     <form>
-        Vote:
-        <input type="text" class="form-control" placeholder="What are your Vote" name="voteitemName">
+        vote:
+        <input type="text" class="form-control" placeholder="What are your vote" name="voteitemName">
     </form>
 </template>
 
-<template name="voteItem">	
-    	<input type="text" value="{{vote}}" name="voteItem">
-    	[<a href="#" class="delete-voteitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve vote Item #3 -->
+<template name="voteItem"> 
+
+      <input type="text" value="{{voteitemName}}" name="voteItem">
+      [<a href="#" class="delete-voteitem">  Delete </a>]
 </template>
+
+<!-- End of vote Item #3 -->
+
+<!-- Start of Add improveSocietypage Item #2 -->
+
+<template name="addimproveSocietypageItem">
+    <form>
+        improveSocietypage:
+        <input type="text" class="form-control" placeholder="What are your improveSocietypage" name="improveSocietypageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveSocietypage Item #3 -->
+<template name="improveSocietypageItem"> 
+
+      <input type="text" value="{{improveSocietypageitemName}}" name="improveSocietypageItem">
+      [<a href="#" class="delete-improveSocietypageitem">  Delete </a>]
+</template>
+
+<!-- End of improveSocietypage Item #3 -->
+

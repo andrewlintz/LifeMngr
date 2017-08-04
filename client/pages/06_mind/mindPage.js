@@ -6,21 +6,19 @@ import './mind.html';
 
 Template.mindPage.helpers({
   moodEach() {
-    return Agenda.find( { mood: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  creativeartideasEach() {
-    return Agenda.find( { creativeartideas: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  jokesEach() {
-    return Agenda.find( { jokes: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  opinionEach() {
-    return Agenda.find( { opinion: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  entreprenuerialideaEach() {
-    return Agenda.find( { entreprenuerialidea: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  wantEach() {
-    return Agenda.find( { want: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  thoughtsEach() {
-    return Agenda.find( { thoughts: { $exists: true }},{sort: {createdAt: -1}}); }, 
-  wisdomEach() {
-    return Agenda.find( { wisdom: { $exists: true }},{sort: {createdAt: -1}}); }, 
+        return Agenda.find( { mooditemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    creativeartideasEach() {
+        return Agenda.find( { creativeartideasitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    jokesEach() {
+        return Agenda.find( { jokesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    inventionEach() {
+        return Agenda.find( { inventionitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    entreprenuerialideaEach() {
+        return Agenda.find( { entreprenuerialideaitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    opinionEach() {
+        return Agenda.find( { opinionitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveMindpageEach() {
+        return Agenda.find( { improveMindpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -29,28 +27,30 @@ Template.mindPage.helpers({
 
 
 
-////////* Mood Events *//////
+////////* Start of mood Events *//////
+
 
 Template.addmoodItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var mooditemName = $('[name="mooditemName"]').val();
-    Agenda.insert({
-        mood: mooditemName,
-        createdAt: new Date()
-    });
-    $('[name="mooditemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const mooditemName = target.mooditemName.value;
+    
+    // Insert a mood item into the collection
+    Meteor.call('mooditemName.insert', mooditemName);
+
+    // Clear form
+    target.mooditemName.value = '';
+    },
 });
 
 Template.moodItem.events({
     // events go here
-    'click .delete-mooditem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-mooditem'(){
+     Meteor.call('mooditemName.remove', this._id);
     },
 
     'keyup [name=moodItem]': function(event){
@@ -59,36 +59,37 @@ Template.moodItem.events({
     } else {
         var documentId = this._id;
         var moodItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { mood: moodItem }});
+        Meteor.call('updateListItem', documentId, moodItem);
         }
     },
-
 });
 
+////////* End of mood Events *//////
 
+////////* Start of creativeartideas Events *//////
 
-////////* creativeartideas Arts Ideas Projects Events *//////
 
 Template.addcreativeartideasItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var creativeartideasitemName = $('[name="creativeartideasitemName"]').val();
-    Agenda.insert({
-        creativeartideas: creativeartideasitemName,
-        createdAt: new Date()
-    });
-    $('[name="creativeartideasitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const creativeartideasitemName = target.creativeartideasitemName.value;
+    
+    // Insert a creativeartideas item into the collection
+    Meteor.call('creativeartideasitemName.insert', creativeartideasitemName);
+
+    // Clear form
+    target.creativeartideasitemName.value = '';
+    },
 });
 
 Template.creativeartideasItem.events({
     // events go here
-    'click .delete-creativeartideasitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-creativeartideasitem'(){
+     Meteor.call('creativeartideasitemName.remove', this._id);
     },
 
     'keyup [name=creativeartideasItem]': function(event){
@@ -97,36 +98,37 @@ Template.creativeartideasItem.events({
     } else {
         var documentId = this._id;
         var creativeartideasItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { creativeartideas: creativeartideasItem }});
+        Meteor.call('updateListItem', documentId, creativeartideasItem);
         }
     },
-
 });
 
+////////* End of creativeartideas Events *//////
 
+////////* Start of jokes Events *//////
 
-////////* Jokes Events *//////
 
 Template.addjokesItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var jokesitemName = $('[name="jokesitemName"]').val();
-    Agenda.insert({
-        jokes: jokesitemName,
-        createdAt: new Date()
-    });
-    $('[name="jokesitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const jokesitemName = target.jokesitemName.value;
+    
+    // Insert a jokes item into the collection
+    Meteor.call('jokesitemName.insert', jokesitemName);
+
+    // Clear form
+    target.jokesitemName.value = '';
+    },
 });
 
 Template.jokesItem.events({
     // events go here
-    'click .delete-jokesitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-jokesitem'(){
+     Meteor.call('jokesitemName.remove', this._id);
     },
 
     'keyup [name=jokesItem]': function(event){
@@ -135,70 +137,76 @@ Template.jokesItem.events({
     } else {
         var documentId = this._id;
         var jokesItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { jokes: jokesItem }});
+        Meteor.call('updateListItem', documentId, jokesItem);
         }
     },
 });
 
+////////* End of jokes Events *//////
+
+////////* Start of invention Events *//////
 
 
-////////* Opinion Events *//////
-
-Template.addopinionItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addinventionItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var opinionitemName = $('[name="opinionitemName"]').val();
-    Agenda.insert({
-        opinion: opinionitemName,
-        createdAt: new Date()
-    });
-    $('[name="opinionitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const inventionitemName = target.inventionitemName.value;
+    
+    // Insert a invention item into the collection
+    Meteor.call('inventionitemName.insert', inventionitemName);
+
+    // Clear form
+    target.inventionitemName.value = '';
+    },
 });
 
-Template.opinionItem.events({
+Template.inventionItem.events({
     // events go here
-    'click .delete-opinionitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-inventionitem'(){
+     Meteor.call('inventionitemName.remove', this._id);
     },
 
-    'keyup [name=opinionItem]': function(event){
+    'keyup [name=inventionItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var opinionItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { opinion: opinionItem }});
+        var inventionItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, inventionItem);
         }
     },
 });
 
-////////* Entreprenurial Invention Events *//////
+////////* End of invention Events *//////
+
+////////* Start of entreprenuerialidea Events *//////
+
 
 Template.addentreprenuerialideaItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var entreprenuerialideaitemName = $('[name="entreprenuerialideaitemName"]').val();
-    Agenda.insert({
-        entreprenuerialidea: entreprenuerialideaitemName,
-        createdAt: new Date()
-    });
-    $('[name="entreprenuerialideaitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const entreprenuerialideaitemName = target.entreprenuerialideaitemName.value;
+    
+    // Insert a entreprenuerialidea item into the collection
+    Meteor.call('entreprenuerialideaitemName.insert', entreprenuerialideaitemName);
+
+    // Clear form
+    target.entreprenuerialideaitemName.value = '';
+    },
 });
 
 Template.entreprenuerialideaItem.events({
     // events go here
-    'click .delete-entreprenuerialideaitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-entreprenuerialideaitem'(){
+     Meteor.call('entreprenuerialideaitemName.remove', this._id);
     },
 
     'keyup [name=entreprenuerialideaItem]': function(event){
@@ -207,124 +215,90 @@ Template.entreprenuerialideaItem.events({
     } else {
         var documentId = this._id;
         var entreprenuerialideaItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { entreprenuerialidea: entreprenuerialideaItem }});
+        Meteor.call('updateListItem', documentId, entreprenuerialideaItem);
         }
     },
 });
 
+////////* End of entreprenuerialidea Events *//////
+
+////////* Start of opinion Events *//////
 
 
-
-////////* Wants Events *//////
-
-Template.addwantItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addopinionItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var wantitemName = $('[name="wantitemName"]').val();
-    Agenda.insert({
-        want: wantitemName,
-        createdAt: new Date()
-    });
-    $('[name="wantitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const opinionitemName = target.opinionitemName.value;
+    
+    // Insert a opinion item into the collection
+    Meteor.call('opinionitemName.insert', opinionitemName);
+
+    // Clear form
+    target.opinionitemName.value = '';
+    },
 });
 
-Template.wantItem.events({
+Template.opinionItem.events({
     // events go here
-    'click .delete-wantitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-opinionitem'(){
+     Meteor.call('opinionitemName.remove', this._id);
     },
 
-    'keyup [name=wantItem]': function(event){
+    'keyup [name=opinionItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var wantItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { want: wantItem }});
+        var opinionItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, opinionItem);
         }
     },
 });
 
+////////* End of opinion Events *//////
+
+////////* Start of improveMindpage Events *//////
 
 
-
-////////* Thoughts Events *//////
-
-
-Template.addthoughtsItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addimproveMindpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var thoughtsitemName = $('[name="thoughtsitemName"]').val();
-    Agenda.insert({
-        thoughts: thoughtsitemName,
-        createdAt: new Date()
-    });
-    $('[name="thoughtsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const improveMindpageitemName = target.improveMindpageitemName.value;
+    
+    // Insert a improveMindpage item into the collection
+    Meteor.call('improveMindpageitemName.insert', improveMindpageitemName);
+
+    // Clear form
+    target.improveMindpageitemName.value = '';
+    },
 });
 
-Template.thoughtsItem.events({
+Template.improveMindpageItem.events({
     // events go here
-    'click .delete-thoughtsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-improveMindpageitem'(){
+     Meteor.call('improveMindpageitemName.remove', this._id);
     },
 
-    'keyup [name=thoughtsItem]': function(event){
+    'keyup [name=improveMindpageItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var thoughtsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { thoughts: thoughtsItem }});
+        var improveMindpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveMindpageItem);
         }
     },
 });
 
+////////* End of improveMindpage Events *//////
 
-
-////////* Wisdom Events *//////
-
-
-Template.addwisdomItem.events({
-    /// events go here
-    'submit form': function(event){
-    event.preventDefault();
-    var wisdomitemName = $('[name="wisdomitemName"]').val();
-    Agenda.insert({
-        wisdom: wisdomitemName,
-        createdAt: new Date()
-    });
-    $('[name="wisdomitemName"]').val('');
-}
-});
-
-Template.wisdomItem.events({
-    // events go here
-    'click .delete-wisdomitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
-    },
-
-    'keyup [name=wisdomItem]': function(event){
-    if(event.which == 13 || event.which == 27){
-        $(event.target).blur();
-    } else {
-        var documentId = this._id;
-        var wisdomItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { wisdom: wisdomItem }});
-        }
-    },
-});
 
 

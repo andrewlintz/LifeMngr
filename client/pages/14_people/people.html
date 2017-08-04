@@ -2,39 +2,27 @@
 	<h1>People Page</h1>
 
 
-<!--  To Build Card -->
-
-
-<ul>
-	<li> People Network "mind map"</li>
-	<li> People Timeline</li>
-	<li> People contact list</li>
-</ul>
-
-
-
-
-<!--  Peoplenetwork Card -->
+<!-- Start of pplengagedwith Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPeoplenetwork">
-	Peoplenetwork</div>
+	<div class="panel-heading2" for="inputpplengagedwith">
+	pplengagedwith</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addpeoplenetworkItem}}
+			{{> addpplengagedwithItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePeoplenetwork" aria-expanded="false" aria-controls="collapsePeoplenetwork">
-    			Peoplenetwork list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplengagedwith" aria-expanded="false" aria-controls="collapsepplengagedwith">
+    			pplengagedwith Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePeoplenetwork">
+				<div class="collapse" id="collapsepplengagedwith">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each peoplenetworkEach}}
-								{{> peoplenetworkItem}}
+  						{{#each pplengagedwithEach}}
+								{{> pplengagedwithItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -43,7 +31,106 @@
 	</div>
 </div>
 
-<!-- end of Peoplenetwork card -->
+
+<!-- End of pplengagedwith card #1 -->
+
+<!-- Start of pplconstact Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputpplconstact">
+	pplconstact</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpplconstactItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplconstact" aria-expanded="false" aria-controls="collapsepplconstact">
+    			pplconstact Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsepplconstact">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each pplconstactEach}}
+								{{> pplconstactItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of pplconstact card #1 -->
+
+<!-- Start of pplGiftideas Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputpplGiftideas">
+	pplGiftideas</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpplGiftideasItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplGiftideas" aria-expanded="false" aria-controls="collapsepplGiftideas">
+    			pplGiftideas Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsepplGiftideas">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each pplGiftideasEach}}
+								{{> pplGiftideasItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of pplGiftideas card #1 -->
+
+<!-- Start of improvePeoplepage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimprovePeoplepage">
+	improvePeoplepage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimprovePeoplepageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimprovePeoplepage" aria-expanded="false" aria-controls="collapseimprovePeoplepage">
+    			improvePeoplepage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimprovePeoplepage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improvePeoplepageEach}}
+								{{> improvePeoplepageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improvePeoplepage card #1 -->
+
+
 </template>
 
 
@@ -53,16 +140,83 @@
 
 
 
-<!-- Peoplenetwork Program Card -->
+<!-- Start of Add pplengagedwith Item #2 -->
 
-<template name="addpeoplenetworkItem">
+<template name="addpplengagedwithItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="peoplenetworkitemName">
+        pplengagedwith:
+        <input type="text" class="form-control" placeholder="What are your pplengagedwith" name="pplengagedwithitemName">
     </form>
 </template>
 
-<template name="peoplenetworkItem">	
-    	<input type="text" value="{{peoplenetwork}}" name="peoplenetworkItem">
-    	[<a href="#" class="delete-peoplenetworkitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve pplengagedwith Item #3 -->
+<template name="pplengagedwithItem"> 
+
+      <input type="text" value="{{pplengagedwithitemName}}" name="pplengagedwithItem">
+      [<a href="#" class="delete-pplengagedwithitem">  Delete </a>]
 </template>
+
+<!-- End of pplengagedwith Item #3 -->
+
+<!-- Start of Add pplconstact Item #2 -->
+
+<template name="addpplconstactItem">
+    <form>
+        pplconstact:
+        <input type="text" class="form-control" placeholder="What are your pplconstact" name="pplconstactitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve pplconstact Item #3 -->
+<template name="pplconstactItem"> 
+
+      <input type="text" value="{{pplconstactitemName}}" name="pplconstactItem">
+      [<a href="#" class="delete-pplconstactitem">  Delete </a>]
+</template>
+
+<!-- End of pplconstact Item #3 -->
+
+<!-- Start of Add pplGiftideas Item #2 -->
+
+<template name="addpplGiftideasItem">
+    <form>
+        pplGiftideas:
+        <input type="text" class="form-control" placeholder="What are your pplGiftideas" name="pplGiftideasitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve pplGiftideas Item #3 -->
+<template name="pplGiftideasItem"> 
+
+      <input type="text" value="{{pplGiftideasitemName}}" name="pplGiftideasItem">
+      [<a href="#" class="delete-pplGiftideasitem">  Delete </a>]
+</template>
+
+<!-- End of pplGiftideas Item #3 -->
+
+<!-- Start of Add improvePeoplepage Item #2 -->
+
+<template name="addimprovePeoplepageItem">
+    <form>
+        improvePeoplepage:
+        <input type="text" class="form-control" placeholder="What are your improvePeoplepage" name="improvePeoplepageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improvePeoplepage Item #3 -->
+<template name="improvePeoplepageItem"> 
+
+      <input type="text" value="{{improvePeoplepageitemName}}" name="improvePeoplepageItem">
+      [<a href="#" class="delete-improvePeoplepageitem">  Delete </a>]
+</template>
+
+<!-- End of improvePeoplepage Item #3 -->
+

@@ -3,23 +3,23 @@
 
 
 
-<!-- Biostats Card -->
+<!-- Start of biostats Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputBiostats">
-	Biostats</div>
+	<div class="panel-heading2" for="inputbiostats">
+	biostats</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addbiostatsItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBiostats" aria-expanded="false" aria-controls="collapseBiostats">
-    			Biostats:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebiostats" aria-expanded="false" aria-controls="collapsebiostats">
+    			biostats Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseBiostats">
+				<div class="collapse" id="collapsebiostats">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each biostatsEach}}
@@ -32,24 +32,58 @@
 	</div>
 </div>
 
-<!-- end of Biostats card -->
 
-<!-- Allergies Card -->
+<!-- End of biostats card #1 -->
+
+<!-- Start of familyMedhist Card #1-->
+
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputAllergies">
-	Allergies</div>
+	<div class="panel-heading2" for="inputfamilyMedhist">
+	familyMedhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addfamilyMedhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefamilyMedhist" aria-expanded="false" aria-controls="collapsefamilyMedhist">
+    			familyMedhist Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsefamilyMedhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each familyMedhistEach}}
+								{{> familyMedhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of familyMedhist card #1 -->
+
+<!-- Start of allergies Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputallergies">
+	allergies</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addallergiesItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAllergies" aria-expanded="false" aria-controls="collapseAllergies">
-    			Allergies History:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseallergies" aria-expanded="false" aria-controls="collapseallergies">
+    			allergies Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseAllergies">
+				<div class="collapse" id="collapseallergies">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each allergiesEach}}
@@ -62,26 +96,26 @@
 	</div>
 </div>
 
-<!-- end of Allergies card -->
 
+<!-- End of allergies card #1 -->
 
-<!-- Symptoms Card -->
+<!-- Start of symptoms Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputSymptoms">
-	Ills</div>
+	<div class="panel-heading2" for="inputsymptoms">
+	symptoms</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addsymptomsItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSymptoms" aria-expanded="false" aria-controls="collapseSymptoms">
-    			Illness Log
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesymptoms" aria-expanded="false" aria-controls="collapsesymptoms">
+    			symptoms Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseSymptoms">
+				<div class="collapse" id="collapsesymptoms">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each symptomsEach}}
@@ -94,26 +128,90 @@
 	</div>
 </div>
 
-<!-- end of Symptoms card -->
 
+<!-- End of symptoms card #1 -->
 
-<!-- Med History Card -->
+<!-- Start of bodyachelog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputMedhistory">
-	Medhistory</div>
+	<div class="panel-heading2" for="inputbodyachelog">
+	bodyachelog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addbodyachelogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebodyachelog" aria-expanded="false" aria-controls="collapsebodyachelog">
+    			bodyachelog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsebodyachelog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each bodyachelogEach}}
+								{{> bodyachelogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of bodyachelog card #1 -->
+
+<!-- Start of sicklog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsicklog">
+	sicklog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsicklogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesicklog" aria-expanded="false" aria-controls="collapsesicklog">
+    			sicklog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesicklog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each sicklogEach}}
+								{{> sicklogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of sicklog card #1 -->
+
+<!-- Start of medhistory Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputmedhistory">
+	medhistory</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addmedhistoryItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMedhistory" aria-expanded="false" aria-controls="collapseMedhistory">
-    			Medhistory:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemedhistory" aria-expanded="false" aria-controls="collapsemedhistory">
+    			medhistory Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseMedhistory">
+				<div class="collapse" id="collapsemedhistory">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each medhistoryEach}}
@@ -126,29 +224,30 @@
 	</div>
 </div>
 
-<!-- end of Medhistory card -->
 
-<!-- Dentalhist Card -->
+<!-- End of medhistory card #1 -->
+
+<!-- Start of medicine Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputDentalhist">
-	Dentalhist</div>
+	<div class="panel-heading2" for="inputmedicine">
+	medicine</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> adddentalhistItem}}
+			{{> addmedicineItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDentalhist" aria-expanded="false" aria-controls="collapseDentalhist">
-    			Dentalhist:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemedicine" aria-expanded="false" aria-controls="collapsemedicine">
+    			medicine Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseDentalhist">
+				<div class="collapse" id="collapsemedicine">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each dentalhistEach}}
-								{{> dentalhistItem}}
+  						{{#each medicineEach}}
+								{{> medicineItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -157,26 +256,90 @@
 	</div>
 </div>
 
-<!-- end of Dentalhist card -->
 
+<!-- End of medicine card #1 -->
 
-<!-- Visionhist Card -->
+<!-- Start of dentallog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputVisionhist">
-	Visionhist</div>
+	<div class="panel-heading2" for="inputdentallog">
+	dentallog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddentallogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedentallog" aria-expanded="false" aria-controls="collapsedentallog">
+    			dentallog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedentallog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each dentallogEach}}
+								{{> dentallogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of dentallog card #1 -->
+
+<!-- Start of dentistryhist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputdentistryhist">
+	dentistryhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddentistryhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedentistryhist" aria-expanded="false" aria-controls="collapsedentistryhist">
+    			dentistryhist Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedentistryhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each dentistryhistEach}}
+								{{> dentistryhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of dentistryhist card #1 -->
+
+<!-- Start of visionhist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputvisionhist">
+	visionhist</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addvisionhistItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVisionhist" aria-expanded="false" aria-controls="collapseVisionhist">
-    			Visionhist:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsevisionhist" aria-expanded="false" aria-controls="collapsevisionhist">
+    			visionhist Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseVisionhist">
+				<div class="collapse" id="collapsevisionhist">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each visionhistEach}}
@@ -189,26 +352,26 @@
 	</div>
 </div>
 
-<!-- end of Visionhist card -->
 
+<!-- End of visionhist card #1 -->
 
-<!-- Pooplog Card -->
+<!-- Start of pooplog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPooplog">
-	Pooplog</div>
+	<div class="panel-heading2" for="inputpooplog">
+	pooplog</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addpooplogItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePooplog" aria-expanded="false" aria-controls="collapsePooplog">
-    			Pooplog:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepooplog" aria-expanded="false" aria-controls="collapsepooplog">
+    			pooplog Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePooplog">
+				<div class="collapse" id="collapsepooplog">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each pooplogEach}}
@@ -221,7 +384,74 @@
 	</div>
 </div>
 
-<!-- end of Pooplog card -->
+
+<!-- End of pooplog card #1 -->
+
+<!-- Start of peelog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputpeelog">
+	peelog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addpeelogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepeelog" aria-expanded="false" aria-controls="collapsepeelog">
+    			peelog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsepeelog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each peelogEach}}
+								{{> peelogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of peelog card #1 -->
+
+<!-- Start of improveHealthpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveHealthpage">
+	improveHealthpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveHealthpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveHealthpage" aria-expanded="false" aria-controls="collapseimproveHealthpage">
+    			improveHealthpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveHealthpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveHealthpageEach}}
+								{{> improveHealthpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveHealthpage card #1 -->
+
+
 
 
 </template>
@@ -237,115 +467,287 @@
 
 
 
-<!-- Biostats Card -->
-
+<!-- Start of Add biostats Item #2 -->
 
 <template name="addbiostatsItem">
     <form>
-        Bio Stats Log:
+        biostats:
         <input type="text" class="form-control" placeholder="What are your biostats" name="biostatsitemName">
     </form>
 </template>
 
-<template name="biostatsItem">	
-    	<input type="text" value="{{biostats}}" name="biostatsItem">
-    	[<a href="#" class="delete-biostatsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve biostats Item #3 -->
+<template name="biostatsItem"> 
+
+      <input type="text" value="{{biostatsitemName}}" name="biostatsItem">
+      [<a href="#" class="delete-biostatsitem">  Delete </a>]
 </template>
 
-<!-- Allergies Card -->
+<!-- End of biostats Item #3 -->
 
+<!-- Start of Add familyMedhist Item #2 -->
+
+<template name="addfamilyMedhistItem">
+    <form>
+        familyMedhist:
+        <input type="text" class="form-control" placeholder="What are your familyMedhist" name="familyMedhistitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve familyMedhist Item #3 -->
+<template name="familyMedhistItem"> 
+
+      <input type="text" value="{{familyMedhistitemName}}" name="familyMedhistItem">
+      [<a href="#" class="delete-familyMedhistitem">  Delete </a>]
+</template>
+
+<!-- End of familyMedhist Item #3 -->
+
+<!-- Start of Add allergies Item #2 -->
 
 <template name="addallergiesItem">
     <form>
-        Feeling Allergies Today?
-        <input type="text" class="form-control" placeholder="What allergies are you feeling" name="allergiesitemName">
+        allergies:
+        <input type="text" class="form-control" placeholder="What are your allergies" name="allergiesitemName">
     </form>
 </template>
 
-<template name="allergiesItem">	
-    	<input type="text" value="{{allergies}}" name="allergiesItem">
-    	[<a href="#" class="delete-allergiesitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve allergies Item #3 -->
+<template name="allergiesItem"> 
+
+      <input type="text" value="{{allergiesitemName}}" name="allergiesItem">
+      [<a href="#" class="delete-allergiesitem">  Delete </a>]
 </template>
 
-<!-- Symptoms Card -->
+<!-- End of allergies Item #3 -->
 
+<!-- Start of Add symptoms Item #2 -->
 
 <template name="addsymptomsItem">
     <form>
-        Illness History:
-        <input type="text" class="form-control" placeholder="What symptoms are you feeling" name="symptomsitemName">
+        symptoms:
+        <input type="text" class="form-control" placeholder="What are your symptoms" name="symptomsitemName">
     </form>
 </template>
 
-<template name="symptomsItem">	
-    	<input type="text" value="{{symptoms}}" name="symptomsItem">
-    	[<a href="#" class="delete-symptomsitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve symptoms Item #3 -->
+<template name="symptomsItem"> 
+
+      <input type="text" value="{{symptomsitemName}}" name="symptomsItem">
+      [<a href="#" class="delete-symptomsitem">  Delete </a>]
 </template>
 
+<!-- End of symptoms Item #3 -->
 
-<!-- Medhistory Card -->
+<!-- Start of Add bodyachelog Item #2 -->
 
+<template name="addbodyachelogItem">
+    <form>
+        bodyachelog:
+        <input type="text" class="form-control" placeholder="What are your bodyachelog" name="bodyachelogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve bodyachelog Item #3 -->
+<template name="bodyachelogItem"> 
+
+      <input type="text" value="{{bodyachelogitemName}}" name="bodyachelogItem">
+      [<a href="#" class="delete-bodyachelogitem">  Delete </a>]
+</template>
+
+<!-- End of bodyachelog Item #3 -->
+
+<!-- Start of Add sicklog Item #2 -->
+
+<template name="addsicklogItem">
+    <form>
+        sicklog:
+        <input type="text" class="form-control" placeholder="What are your sicklog" name="sicklogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve sicklog Item #3 -->
+<template name="sicklogItem"> 
+
+      <input type="text" value="{{sicklogitemName}}" name="sicklogItem">
+      [<a href="#" class="delete-sicklogitem">  Delete </a>]
+</template>
+
+<!-- End of sicklog Item #3 -->
+
+<!-- Start of Add medhistory Item #2 -->
 
 <template name="addmedhistoryItem">
     <form>
-        Medhistory History:
+        medhistory:
         <input type="text" class="form-control" placeholder="What are your medhistory" name="medhistoryitemName">
     </form>
 </template>
 
-<template name="medhistoryItem">	
-    	<input type="text" value="{{medhistory}}" name="medhistoryItem">
-    	[<a href="#" class="delete-medhistoryitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve medhistory Item #3 -->
+<template name="medhistoryItem"> 
+
+      <input type="text" value="{{medhistoryitemName}}" name="medhistoryItem">
+      [<a href="#" class="delete-medhistoryitem">  Delete </a>]
 </template>
 
+<!-- End of medhistory Item #3 -->
 
-<!-- Dentalhist Card -->
+<!-- Start of Add medicine Item #2 -->
 
-
-<template name="adddentalhistItem">
+<template name="addmedicineItem">
     <form>
-        Dental History:
-        <input type="text" class="form-control" placeholder="What are your dentalhist" name="dentalhistitemName">
+        medicine:
+        <input type="text" class="form-control" placeholder="What are your medicine" name="medicineitemName">
     </form>
 </template>
 
-<template name="dentalhistItem">	
-    	<input type="text" value="{{dentalhist}}" name="dentalhistItem">
-    	[<a href="#" class="delete-dentalhistitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve medicine Item #3 -->
+<template name="medicineItem"> 
+
+      <input type="text" value="{{medicineitemName}}" name="medicineItem">
+      [<a href="#" class="delete-medicineitem">  Delete </a>]
 </template>
 
+<!-- End of medicine Item #3 -->
 
-<!-- Visionhist Card -->
+<!-- Start of Add dentallog Item #2 -->
 
+<template name="adddentallogItem">
+    <form>
+        dentallog:
+        <input type="text" class="form-control" placeholder="What are your dentallog" name="dentallogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve dentallog Item #3 -->
+<template name="dentallogItem"> 
+
+      <input type="text" value="{{dentallogitemName}}" name="dentallogItem">
+      [<a href="#" class="delete-dentallogitem">  Delete </a>]
+</template>
+
+<!-- End of dentallog Item #3 -->
+
+<!-- Start of Add dentistryhist Item #2 -->
+
+<template name="adddentistryhistItem">
+    <form>
+        dentistryhist:
+        <input type="text" class="form-control" placeholder="What are your dentistryhist" name="dentistryhistitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve dentistryhist Item #3 -->
+<template name="dentistryhistItem"> 
+
+      <input type="text" value="{{dentistryhistitemName}}" name="dentistryhistItem">
+      [<a href="#" class="delete-dentistryhistitem">  Delete </a>]
+</template>
+
+<!-- End of dentistryhist Item #3 -->
+
+<!-- Start of Add visionhist Item #2 -->
 
 <template name="addvisionhistItem">
     <form>
-        Vision History:
+        visionhist:
         <input type="text" class="form-control" placeholder="What are your visionhist" name="visionhistitemName">
     </form>
 </template>
 
-<template name="visionhistItem">	
-    	<input type="text" value="{{visionhist}}" name="visionhistItem">
-    	[<a href="#" class="delete-visionhistitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve visionhist Item #3 -->
+<template name="visionhistItem"> 
+
+      <input type="text" value="{{visionhistitemName}}" name="visionhistItem">
+      [<a href="#" class="delete-visionhistitem">  Delete </a>]
 </template>
 
+<!-- End of visionhist Item #3 -->
 
-
-<!-- Pooplog Card -->
-
+<!-- Start of Add pooplog Item #2 -->
 
 <template name="addpooplogItem">
     <form>
-        Poop History:
+        pooplog:
         <input type="text" class="form-control" placeholder="What are your pooplog" name="pooplogitemName">
     </form>
 </template>
 
-<template name="pooplogItem">	
-    	<input type="text" value="{{pooplog}}" name="pooplogItem">
-    	[<a href="#" class="delete-pooplogitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve pooplog Item #3 -->
+<template name="pooplogItem"> 
+
+      <input type="text" value="{{pooplogitemName}}" name="pooplogItem">
+      [<a href="#" class="delete-pooplogitem">  Delete </a>]
 </template>
+
+<!-- End of pooplog Item #3 -->
+
+<!-- Start of Add peelog Item #2 -->
+
+<template name="addpeelogItem">
+    <form>
+        peelog:
+        <input type="text" class="form-control" placeholder="What are your peelog" name="peelogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve peelog Item #3 -->
+<template name="peelogItem"> 
+
+      <input type="text" value="{{peelogitemName}}" name="peelogItem">
+      [<a href="#" class="delete-peelogitem">  Delete </a>]
+</template>
+
+<!-- End of peelog Item #3 -->
+
+<!-- Start of Add improveHealthpage Item #2 -->
+
+<template name="addimproveHealthpageItem">
+    <form>
+        improveHealthpage:
+        <input type="text" class="form-control" placeholder="What are your improveHealthpage" name="improveHealthpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveHealthpage Item #3 -->
+<template name="improveHealthpageItem"> 
+
+      <input type="text" value="{{improveHealthpageitemName}}" name="improveHealthpageItem">
+      [<a href="#" class="delete-improveHealthpageitem">  Delete </a>]
+</template>
+
+<!-- End of improveHealthpage Item #3 -->
+
+
 
 
 

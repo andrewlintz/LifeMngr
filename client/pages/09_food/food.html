@@ -1,27 +1,27 @@
 <template name="foodPage">
 	<h1>Food Page</h1>
 
-<!--  Eatlog Card -->
+<!-- Start of eathistory Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputEatlog">
-	Eat Log</div>
+	<div class="panel-heading2" for="inputeathistory">
+	eathistory</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addeatlogItem}}
+			{{> addeathistoryItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseEatlog" aria-expanded="false" aria-controls="collapseEatlog">
-    			Eat Log:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseeathistory" aria-expanded="false" aria-controls="collapseeathistory">
+    			eathistory Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseEatlog">
+				<div class="collapse" id="collapseeathistory">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each eatlogEach}}
-								{{> eatlogItem}}
+  						{{#each eathistoryEach}}
+								{{> eathistoryItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -30,25 +30,122 @@
 	</div>
 </div>
 
-<!-- end of Eatlog card -->
 
-<!--  Ingredientinventory Card -->
+<!-- End of eathistory card #1 -->
+
+<!-- Start of drinkhistory Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputIngredientinventory">
-	Ingredient Inventory List</div>
+	<div class="panel-heading2" for="inputdrinkhistory">
+	drinkhistory</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddrinkhistoryItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedrinkhistory" aria-expanded="false" aria-controls="collapsedrinkhistory">
+    			drinkhistory Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedrinkhistory">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each drinkhistoryEach}}
+								{{> drinkhistoryItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of drinkhistory card #1 -->
+
+<!-- Start of alcohollog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputalcohollog">
+	alcohollog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addalcohollogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsealcohollog" aria-expanded="false" aria-controls="collapsealcohollog">
+    			alcohollog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsealcohollog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each alcohollogEach}}
+								{{> alcohollogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of alcohollog card #1 -->
+
+<!-- Start of druglog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputdruglog">
+	druglog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddruglogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedruglog" aria-expanded="false" aria-controls="collapsedruglog">
+    			druglog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedruglog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each druglogEach}}
+								{{> druglogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of druglog card #1 -->
+
+<!-- Start of ingredientinventory Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputingredientinventory">
+	ingredientinventory</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addingredientinventoryItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseIngredientinventory" aria-expanded="false" aria-controls="collapseIngredientinventory">
-    			Ingredient Inventory:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseingredientinventory" aria-expanded="false" aria-controls="collapseingredientinventory">
+    			ingredientinventory Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseIngredientinventory">
+				<div class="collapse" id="collapseingredientinventory">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each ingredientinventoryEach}}
@@ -61,26 +158,26 @@
 	</div>
 </div>
 
-<!-- end of Ingredientinventory card -->
 
+<!-- End of ingredientinventory card #1 -->
 
-<!--  Shoppinglist Card -->
+<!-- Start of shoppinglist Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputShoppinglist">
-	Shoppinglist</div>
+	<div class="panel-heading2" for="inputshoppinglist">
+	shoppinglist</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addshoppinglistItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseShoppinglist" aria-expanded="false" aria-controls="collapseShoppinglist">
-    			Shoppinglist:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseshoppinglist" aria-expanded="false" aria-controls="collapseshoppinglist">
+    			shoppinglist Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseShoppinglist">
+				<div class="collapse" id="collapseshoppinglist">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each shoppinglistEach}}
@@ -93,26 +190,26 @@
 	</div>
 </div>
 
-<!-- end of Shoppinglist card -->
 
+<!-- End of shoppinglist card #1 -->
 
-<!--  Menu Card -->
+<!-- Start of menu Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputMenu">
-	Menu</div>
+	<div class="panel-heading2" for="inputmenu">
+	menu</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addmenuItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
-    			Menu:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false" aria-controls="collapsemenu">
+    			menu Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseMenu">
+				<div class="collapse" id="collapsemenu">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each menuEach}}
@@ -125,30 +222,30 @@
 	</div>
 </div>
 
-<!-- end of Menu card -->
 
+<!-- End of menu card #1 -->
 
-<!--  Mealplan Card -->
+<!-- Start of menuplan Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputMealplan">
-	Mealplan</div>
+	<div class="panel-heading2" for="inputmenuplan">
+	menuplan</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addmealplanItem}}
+			{{> addmenuplanItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMealplan" aria-expanded="false" aria-controls="collapseMealplan">
-    			Mealplan:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemenuplan" aria-expanded="false" aria-controls="collapsemenuplan">
+    			menuplan Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseMealplan">
+				<div class="collapse" id="collapsemenuplan">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each mealplanEach}}
-								{{> mealplanItem}}
+  						{{#each menuplanEach}}
+								{{> menuplanItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -157,7 +254,42 @@
 	</div>
 </div>
 
-<!-- end of Mealplan card -->
+
+<!-- End of menuplan card #1 -->
+
+<!-- Start of improveFoodpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveFoodpage">
+	improveFoodpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveFoodpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveFoodpage" aria-expanded="false" aria-controls="collapseimproveFoodpage">
+    			improveFoodpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveFoodpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveFoodpageEach}}
+								{{> improveFoodpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveFoodpage card #1 -->
+
+
 </template>
 
 
@@ -170,83 +302,183 @@
 
 
 
-<!-- Eatlog Card -->
+<!-- Start of Add eathistory Item #2 -->
 
-
-<template name="addeatlogItem">
+<template name="addeathistoryItem">
     <form>
-        Eat Log History:
-        <input type="text" class="form-control" placeholder="What are your Eat Log" name="eatlogitemName">
+        eathistory:
+        <input type="text" class="form-control" placeholder="What are your eathistory" name="eathistoryitemName">
     </form>
 </template>
 
-<template name="eatlogItem">	
-    	<input type="text" value="{{eatlog}}" name="eatlogItem">
-    	[<a href="#" class="delete-eatlogitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve eathistory Item #3 -->
+<template name="eathistoryItem"> 
+
+      <input type="text" value="{{eathistoryitemName}}" name="eathistoryItem">
+      [<a href="#" class="delete-eathistoryitem">  Delete </a>]
 </template>
 
+<!-- End of eathistory Item #3 -->
 
-<!-- Ingredientinventory Program Card -->
+<!-- Start of Add drinkhistory Item #2 -->
 
+<template name="adddrinkhistoryItem">
+    <form>
+        drinkhistory:
+        <input type="text" class="form-control" placeholder="What are your drinkhistory" name="drinkhistoryitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve drinkhistory Item #3 -->
+<template name="drinkhistoryItem"> 
+
+      <input type="text" value="{{drinkhistoryitemName}}" name="drinkhistoryItem">
+      [<a href="#" class="delete-drinkhistoryitem">  Delete </a>]
+</template>
+
+<!-- End of drinkhistory Item #3 -->
+
+<!-- Start of Add alcohollog Item #2 -->
+
+<template name="addalcohollogItem">
+    <form>
+        alcohollog:
+        <input type="text" class="form-control" placeholder="What are your alcohollog" name="alcohollogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve alcohollog Item #3 -->
+<template name="alcohollogItem"> 
+
+      <input type="text" value="{{alcohollogitemName}}" name="alcohollogItem">
+      [<a href="#" class="delete-alcohollogitem">  Delete </a>]
+</template>
+
+<!-- End of alcohollog Item #3 -->
+
+<!-- Start of Add druglog Item #2 -->
+
+<template name="adddruglogItem">
+    <form>
+        druglog:
+        <input type="text" class="form-control" placeholder="What are your druglog" name="druglogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve druglog Item #3 -->
+<template name="druglogItem"> 
+
+      <input type="text" value="{{druglogitemName}}" name="druglogItem">
+      [<a href="#" class="delete-druglogitem">  Delete </a>]
+</template>
+
+<!-- End of druglog Item #3 -->
+
+<!-- Start of Add ingredientinventory Item #2 -->
 
 <template name="addingredientinventoryItem">
     <form>
-        Ingredient Inventory History:
-        <input type="text" class="form-control" placeholder="What are your Ingredient Inventory" name="ingredientinventoryitemName">
+        ingredientinventory:
+        <input type="text" class="form-control" placeholder="What are your ingredientinventory" name="ingredientinventoryitemName">
     </form>
 </template>
 
-<template name="ingredientinventoryItem">	
-    	<input type="text" value="{{ingredientinventory}}" name="ingredientinventoryItem">
-    	[<a href="#" class="delete-ingredientinventoryitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve ingredientinventory Item #3 -->
+<template name="ingredientinventoryItem"> 
+
+      <input type="text" value="{{ingredientinventoryitemName}}" name="ingredientinventoryItem">
+      [<a href="#" class="delete-ingredientinventoryitem">  Delete </a>]
 </template>
 
+<!-- End of ingredientinventory Item #3 -->
 
-
-<!-- Shoppinglist Program Card -->
-
+<!-- Start of Add shoppinglist Item #2 -->
 
 <template name="addshoppinglistItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="shoppinglistitemName">
+        shoppinglist:
+        <input type="text" class="form-control" placeholder="What are your shoppinglist" name="shoppinglistitemName">
     </form>
 </template>
 
-<template name="shoppinglistItem">	
-    	<input type="text" value="{{shoppinglist}}" name="shoppinglistItem">
-    	[<a href="#" class="delete-shoppinglistitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve shoppinglist Item #3 -->
+<template name="shoppinglistItem"> 
+
+      <input type="text" value="{{shoppinglistitemName}}" name="shoppinglistItem">
+      [<a href="#" class="delete-shoppinglistitem">  Delete </a>]
 </template>
 
+<!-- End of shoppinglist Item #3 -->
 
-
-<!-- Menu Program Card -->
-
+<!-- Start of Add menu Item #2 -->
 
 <template name="addmenuItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="menuitemName">
+        menu:
+        <input type="text" class="form-control" placeholder="What are your menu" name="menuitemName">
     </form>
 </template>
 
-<template name="menuItem">	
-    	<input type="text" value="{{menu}}" name="menuItem">
-    	[<a href="#" class="delete-menuitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve menu Item #3 -->
+<template name="menuItem"> 
+
+      <input type="text" value="{{menuitemName}}" name="menuItem">
+      [<a href="#" class="delete-menuitem">  Delete </a>]
 </template>
 
+<!-- End of menu Item #3 -->
 
-<!-- Mealplan Program Card -->
+<!-- Start of Add menuplan Item #2 -->
 
-
-<template name="addmealplanItem">
+<template name="addmenuplanItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="mealplanitemName">
+        menuplan:
+        <input type="text" class="form-control" placeholder="What are your menuplan" name="menuplanitemName">
     </form>
 </template>
 
-<template name="mealplanItem">	
-    	<input type="text" value="{{mealplan}}" name="mealplanItem">
-    	[<a href="#" class="delete-mealplanitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve menuplan Item #3 -->
+<template name="menuplanItem"> 
+
+      <input type="text" value="{{menuplanitemName}}" name="menuplanItem">
+      [<a href="#" class="delete-menuplanitem">  Delete </a>]
 </template>
+
+<!-- End of menuplan Item #3 -->
+
+<!-- Start of Add improveFoodpage Item #2 -->
+
+<template name="addimproveFoodpageItem">
+    <form>
+        improveFoodpage:
+        <input type="text" class="form-control" placeholder="What are your improveFoodpage" name="improveFoodpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveFoodpage Item #3 -->
+<template name="improveFoodpageItem"> 
+
+      <input type="text" value="{{improveFoodpageitemName}}" name="improveFoodpageItem">
+      [<a href="#" class="delete-improveFoodpageitem">  Delete </a>]
+</template>
+
+<!-- End of improveFoodpage Item #3 -->
+

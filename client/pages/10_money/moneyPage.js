@@ -6,26 +6,27 @@
 
 Template.moneyPage.helpers({
     networthEach() {
-        return Agenda.find( { networth: {$exists: true}}, {sort: {createdAt: -1}}); },
-    fireEach() {
-        return Agenda.find( { fire: {$exists: true}}, {sort: {createdAt: -1}}); },
-    earningsEach() {
-        return Agenda.find( { earnings: {$exists: true}}, {sort: {createdAt: -1}}); },
-    spendingEach() {
-        return Agenda.find( { spending: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { networthitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    fireplanEach() {
+        return Agenda.find( { fireplanitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    earningsrateEach() {
+        return Agenda.find( { earningsrateitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    spendingrateEach() {
+        return Agenda.find( { spendingrateitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     assetsEach() {
-        return Agenda.find( { assets: {$exists: true}}, {sort: {createdAt: -1}}); },
-    borrowEach() {
-        return Agenda.find( { borrow: {$exists: true}}, {sort: {createdAt: -1}}); },
-    savingsEach() {
-        return Agenda.find( { savings: {$exists: true}}, {sort: {createdAt: -1}}); },
-    runEach() {
-        return Agenda.find( { run: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { assetsitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    borrowdebtEach() {
+        return Agenda.find( { borrowdebtitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    savingsrateEach() {
+        return Agenda.find( { savingsrateitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    runrateEach() {
+        return Agenda.find( { runrateitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     debttoequityEach() {
-        return Agenda.find( { debttoequity: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { debttoequityitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     budgetEach() {
-        return Agenda.find( { budget: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { budgetitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveMoneypageEach() {
+        return Agenda.find( { improveMoneypageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -33,29 +34,30 @@ Template.moneyPage.helpers({
 
 
 
-////////* Networth Events *//////
+////////* Start of networth Events *//////
 
 
 Template.addnetworthItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var networthitemName = $('[name="networthitemName"]').val();
-    Agenda.insert({
-        networth: networthitemName,
-        createdAt: new Date()
-    });
-    $('[name="networthitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const networthitemName = target.networthitemName.value;
+    
+    // Insert a networth item into the collection
+    Meteor.call('networthitemName.insert', networthitemName);
+
+    // Clear form
+    target.networthitemName.value = '';
+    },
 });
 
 Template.networthItem.events({
     // events go here
-    'click .delete-networthitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-networthitem'(){
+     Meteor.call('networthitemName.remove', this._id);
     },
 
     'keyup [name=networthItem]': function(event){
@@ -64,149 +66,154 @@ Template.networthItem.events({
     } else {
         var documentId = this._id;
         var networthItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { networth: networthItem }});
+        Meteor.call('updateListItem', documentId, networthItem);
         }
     },
 });
 
-////////* FIRE Events *//////
+////////* End of networth Events *//////
+
+////////* Start of fireplan Events *//////
 
 
-
-
-Template.addfireItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addfireplanItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var fireitemName = $('[name="fireitemName"]').val();
-    Agenda.insert({
-        fire: fireitemName,
-        createdAt: new Date()
-    });
-    $('[name="fireitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const fireplanitemName = target.fireplanitemName.value;
+    
+    // Insert a fireplan item into the collection
+    Meteor.call('fireplanitemName.insert', fireplanitemName);
+
+    // Clear form
+    target.fireplanitemName.value = '';
+    },
 });
 
-Template.fireItem.events({
+Template.fireplanItem.events({
     // events go here
-    'click .delete-fireitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-fireplanitem'(){
+     Meteor.call('fireplanitemName.remove', this._id);
     },
 
-    'keyup [name=fireItem]': function(event){
+    'keyup [name=fireplanItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var fireItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { fire: fireItem }});
+        var fireplanItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, fireplanItem);
         }
     },
 });
 
+////////* End of fireplan Events *//////
 
-////////* Earnings Events *//////
+////////* Start of earningsrate Events *//////
 
 
-Template.addearningsItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addearningsrateItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var earningsitemName = $('[name="earningsitemName"]').val();
-    Agenda.insert({
-        earnings: earningsitemName,
-        createdAt: new Date()
-    });
-    $('[name="earningsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const earningsrateitemName = target.earningsrateitemName.value;
+    
+    // Insert a earningsrate item into the collection
+    Meteor.call('earningsrateitemName.insert', earningsrateitemName);
+
+    // Clear form
+    target.earningsrateitemName.value = '';
+    },
 });
 
-Template.earningsItem.events({
+Template.earningsrateItem.events({
     // events go here
-    'click .delete-earningsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-earningsrateitem'(){
+     Meteor.call('earningsrateitemName.remove', this._id);
     },
 
-    'keyup [name=earningsItem]': function(event){
+    'keyup [name=earningsrateItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var earningsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { earnings: earningsItem }});
+        var earningsrateItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, earningsrateItem);
         }
     },
 });
 
+////////* End of earningsrate Events *//////
 
-////////* Spending Events *//////
+////////* Start of spendingrate Events *//////
 
 
-Template.addspendingItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addspendingrateItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var spendingitemName = $('[name="spendingitemName"]').val();
-    Agenda.insert({
-        spending: spendingitemName,
-        createdAt: new Date()
-    });
-    $('[name="spendingitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const spendingrateitemName = target.spendingrateitemName.value;
+    
+    // Insert a spendingrate item into the collection
+    Meteor.call('spendingrateitemName.insert', spendingrateitemName);
+
+    // Clear form
+    target.spendingrateitemName.value = '';
+    },
 });
 
-Template.spendingItem.events({
+Template.spendingrateItem.events({
     // events go here
-    'click .delete-spendingitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-spendingrateitem'(){
+     Meteor.call('spendingrateitemName.remove', this._id);
     },
 
-    'keyup [name=spendingItem]': function(event){
+    'keyup [name=spendingrateItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var spendingItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { spending: spendingItem }});
+        var spendingrateItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, spendingrateItem);
         }
     },
 });
 
+////////* End of spendingrate Events *//////
 
-////////* Assets Events *//////
-
-
+////////* Start of assets Events *//////
 
 
 Template.addassetsItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var assetsitemName = $('[name="assetsitemName"]').val();
-    Agenda.insert({
-        assets: assetsitemName,
-        createdAt: new Date()
-    });
-    $('[name="assetsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const assetsitemName = target.assetsitemName.value;
+    
+    // Insert a assets item into the collection
+    Meteor.call('assetsitemName.insert', assetsitemName);
+
+    // Clear form
+    target.assetsitemName.value = '';
+    },
 });
 
 Template.assetsItem.events({
     // events go here
-    'click .delete-assetsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-assetsitem'(){
+     Meteor.call('assetsitemName.remove', this._id);
     },
 
     'keyup [name=assetsItem]': function(event){
@@ -215,156 +222,154 @@ Template.assetsItem.events({
     } else {
         var documentId = this._id;
         var assetsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { assets: assetsItem }});
+        Meteor.call('updateListItem', documentId, assetsItem);
         }
     },
 });
 
+////////* End of assets Events *//////
 
-////////* Borrow Events *//////
+////////* Start of borrowdebt Events *//////
 
 
-
-
-Template.addborrowItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addborrowdebtItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var borrowitemName = $('[name="borrowitemName"]').val();
-    Agenda.insert({
-        borrow: borrowitemName,
-        createdAt: new Date()
-    });
-    $('[name="borrowitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const borrowdebtitemName = target.borrowdebtitemName.value;
+    
+    // Insert a borrowdebt item into the collection
+    Meteor.call('borrowdebtitemName.insert', borrowdebtitemName);
+
+    // Clear form
+    target.borrowdebtitemName.value = '';
+    },
 });
 
-Template.borrowItem.events({
+Template.borrowdebtItem.events({
     // events go here
-    'click .delete-borrowitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-borrowdebtitem'(){
+     Meteor.call('borrowdebtitemName.remove', this._id);
     },
 
-    'keyup [name=borrowItem]': function(event){
+    'keyup [name=borrowdebtItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var borrowItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { borrow: borrowItem }});
+        var borrowdebtItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, borrowdebtItem);
         }
     },
 });
 
+////////* End of borrowdebt Events *//////
+
+////////* Start of savingsrate Events *//////
 
 
-
-////////* Savings Events *//////
-
-
-
-
-Template.addsavingsItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addsavingsrateItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var savingsitemName = $('[name="savingsitemName"]').val();
-    Agenda.insert({
-        savings: savingsitemName,
-        createdAt: new Date()
-    });
-    $('[name="savingsitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const savingsrateitemName = target.savingsrateitemName.value;
+    
+    // Insert a savingsrate item into the collection
+    Meteor.call('savingsrateitemName.insert', savingsrateitemName);
+
+    // Clear form
+    target.savingsrateitemName.value = '';
+    },
 });
 
-Template.savingsItem.events({
+Template.savingsrateItem.events({
     // events go here
-    'click .delete-savingsitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-savingsrateitem'(){
+     Meteor.call('savingsrateitemName.remove', this._id);
     },
 
-    'keyup [name=savingsItem]': function(event){
+    'keyup [name=savingsrateItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var savingsItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { savings: savingsItem }});
+        var savingsrateItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, savingsrateItem);
         }
     },
 });
 
+////////* End of savingsrate Events *//////
 
-////////* Run Rate Events *//////
+////////* Start of runrate Events *//////
 
 
-
-
-Template.addrunItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addrunrateItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var runitemName = $('[name="runitemName"]').val();
-    Agenda.insert({
-        run: runitemName,
-        createdAt: new Date()
-    });
-    $('[name="runitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const runrateitemName = target.runrateitemName.value;
+    
+    // Insert a runrate item into the collection
+    Meteor.call('runrateitemName.insert', runrateitemName);
+
+    // Clear form
+    target.runrateitemName.value = '';
+    },
 });
 
-Template.runItem.events({
+Template.runrateItem.events({
     // events go here
-    'click .delete-runitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-runrateitem'(){
+     Meteor.call('runrateitemName.remove', this._id);
     },
 
-    'keyup [name=runItem]': function(event){
+    'keyup [name=runrateItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var runItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { run: runItem }});
+        var runrateItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, runrateItem);
         }
     },
 });
 
+////////* End of runrate Events *//////
 
-////////* Debttoequity Events *//////
-
-
+////////* Start of debttoequity Events *//////
 
 
 Template.adddebttoequityItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var debttoequityitemName = $('[name="debttoequityitemName"]').val();
-    Agenda.insert({
-        debttoequity: debttoequityitemName,
-        createdAt: new Date()
-    });
-    $('[name="debttoequityitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const debttoequityitemName = target.debttoequityitemName.value;
+    
+    // Insert a debttoequity item into the collection
+    Meteor.call('debttoequityitemName.insert', debttoequityitemName);
+
+    // Clear form
+    target.debttoequityitemName.value = '';
+    },
 });
 
 Template.debttoequityItem.events({
     // events go here
-    'click .delete-debttoequityitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-debttoequityitem'(){
+     Meteor.call('debttoequityitemName.remove', this._id);
     },
 
     'keyup [name=debttoequityItem]': function(event){
@@ -373,37 +378,37 @@ Template.debttoequityItem.events({
     } else {
         var documentId = this._id;
         var debttoequityItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { debttoequity: debttoequityItem }});
+        Meteor.call('updateListItem', documentId, debttoequityItem);
         }
     },
 });
 
+////////* End of debttoequity Events *//////
 
-////////* Budget Events *//////
-
-
+////////* Start of budget Events *//////
 
 
 Template.addbudgetItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var budgetitemName = $('[name="budgetitemName"]').val();
-    Agenda.insert({
-        budget: budgetitemName,
-        createdAt: new Date()
-    });
-    $('[name="budgetitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const budgetitemName = target.budgetitemName.value;
+    
+    // Insert a budget item into the collection
+    Meteor.call('budgetitemName.insert', budgetitemName);
+
+    // Clear form
+    target.budgetitemName.value = '';
+    },
 });
 
 Template.budgetItem.events({
     // events go here
-    'click .delete-budgetitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-budgetitem'(){
+     Meteor.call('budgetitemName.remove', this._id);
     },
 
     'keyup [name=budgetItem]': function(event){
@@ -412,10 +417,52 @@ Template.budgetItem.events({
     } else {
         var documentId = this._id;
         var budgetItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { budget: budgetItem }});
+        Meteor.call('updateListItem', documentId, budgetItem);
         }
     },
 });
+
+////////* End of budget Events *//////
+
+////////* Start of improveMoneypage Events *//////
+
+
+Template.addimproveMoneypageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveMoneypageitemName = target.improveMoneypageitemName.value;
+    
+    // Insert a improveMoneypage item into the collection
+    Meteor.call('improveMoneypageitemName.insert', improveMoneypageitemName);
+
+    // Clear form
+    target.improveMoneypageitemName.value = '';
+    },
+});
+
+Template.improveMoneypageItem.events({
+    // events go here
+    'click .delete-improveMoneypageitem'(){
+     Meteor.call('improveMoneypageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveMoneypageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveMoneypageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveMoneypageItem);
+        }
+    },
+});
+
+////////* End of improveMoneypage Events *//////
+
 
 
 

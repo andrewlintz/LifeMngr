@@ -1,23 +1,119 @@
 <template name="fengPage">
 	<h1>Fengshui Page</h1>
 
-<!--  Hometightiness Card -->
+<!-- Start of choreslog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputHometightiness">
-	Hometightiness</div>
+	<div class="panel-heading2" for="inputchoreslog">
+	choreslog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addchoreslogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsechoreslog" aria-expanded="false" aria-controls="collapsechoreslog">
+    			choreslog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsechoreslog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each choreslogEach}}
+								{{> choreslogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of choreslog card #1 -->
+
+<!-- Start of chorestodo Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputchorestodo">
+	chorestodo</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addchorestodoItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsechorestodo" aria-expanded="false" aria-controls="collapsechorestodo">
+    			chorestodo Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsechorestodo">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each chorestodoEach}}
+								{{> chorestodoItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of chorestodo card #1 -->
+
+<!-- Start of homemess Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputhomemess">
+	homemess</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addhomemessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsehomemess" aria-expanded="false" aria-controls="collapsehomemess">
+    			homemess Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsehomemess">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each homemessEach}}
+								{{> homemessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of homemess card #1 -->
+
+<!-- Start of hometightiness Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputhometightiness">
+	hometightiness</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addhometightinessItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHometightiness" aria-expanded="false" aria-controls="collapseHometightiness">
-    			Hometightiness:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsehometightiness" aria-expanded="false" aria-controls="collapsehometightiness">
+    			hometightiness Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseHometightiness">
+				<div class="collapse" id="collapsehometightiness">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each hometightinessEach}}
@@ -30,23 +126,58 @@
 	</div>
 </div>
 
-<!--  Cartightiness Card -->
+
+<!-- End of hometightiness card #1 -->
+
+<!-- Start of carmess Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputCartightiness">
-	Cartightiness</div>
+	<div class="panel-heading2" for="inputcarmess">
+	carmess</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addcarmessItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsecarmess" aria-expanded="false" aria-controls="collapsecarmess">
+    			carmess Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsecarmess">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each carmessEach}}
+								{{> carmessItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of carmess card #1 -->
+
+<!-- Start of cartightiness Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputcartightiness">
+	cartightiness</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addcartightinessItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCartightiness" aria-expanded="false" aria-controls="collapseCartightiness">
-    			Cartightiness:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsecartightiness" aria-expanded="false" aria-controls="collapsecartightiness">
+    			cartightiness Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseCartightiness">
+				<div class="collapse" id="collapsecartightiness">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each cartightinessEach}}
@@ -59,29 +190,30 @@
 	</div>
 </div>
 
-<!-- end of Cartightiness card -->
 
-<!--  Workspacetightiness Card -->
+<!-- End of cartightiness card #1 -->
+
+<!-- Start of workmess Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputWorkspacetightiness">
-	Workspacetightiness</div>
+	<div class="panel-heading2" for="inputworkmess">
+	workmess</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addworkspacetightinessItem}}
+			{{> addworkmessItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWorkspacetightiness" aria-expanded="false" aria-controls="collapseWorkspacetightiness">
-    			Workspacetightiness:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseworkmess" aria-expanded="false" aria-controls="collapseworkmess">
+    			workmess Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseWorkspacetightiness">
+				<div class="collapse" id="collapseworkmess">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each workspacetightinessEach}}
-								{{> workspacetightinessItem}}
+  						{{#each workmessEach}}
+								{{> workmessItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -90,29 +222,30 @@
 	</div>
 </div>
 
-<!-- end of Workspacetightiness card -->
 
-<!--  Chores Card -->
+<!-- End of workmess card #1 -->
+
+<!-- Start of workspacetightines Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputChores">
-	Chores</div>
+	<div class="panel-heading2" for="inputworkspacetightines">
+	workspacetightines</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addchoresItem}}
+			{{> addworkspacetightinesItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChores" aria-expanded="false" aria-controls="collapseChores">
-    			Chores:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseworkspacetightines" aria-expanded="false" aria-controls="collapseworkspacetightines">
+    			workspacetightines Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseChores">
+				<div class="collapse" id="collapseworkspacetightines">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each choresEach}}
-								{{> choresItem}}
+  						{{#each workspacetightinesEach}}
+								{{> workspacetightinesItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -121,7 +254,42 @@
 	</div>
 </div>
 
-<!-- end of Chores card -->
+
+<!-- End of workspacetightines card #1 -->
+
+<!-- Start of improveFengpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveFengpage">
+	improveFengpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveFengpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveFengpage" aria-expanded="false" aria-controls="collapseimproveFengpage">
+    			improveFengpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveFengpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveFengpageEach}}
+								{{> improveFengpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveFengpage card #1 -->
+
+
 
 </template>
 
@@ -131,64 +299,183 @@
 
 
 
-<!-- Hometightiness Card -->
+<!-- Start of Add choreslog Item #2 -->
 
+<template name="addchoreslogItem">
+    <form>
+        choreslog:
+        <input type="text" class="form-control" placeholder="What are your choreslog" name="choreslogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve choreslog Item #3 -->
+<template name="choreslogItem"> 
+
+      <input type="text" value="{{choreslogitemName}}" name="choreslogItem">
+      [<a href="#" class="delete-choreslogitem">  Delete </a>]
+</template>
+
+<!-- End of choreslog Item #3 -->
+
+<!-- Start of Add chorestodo Item #2 -->
+
+<template name="addchorestodoItem">
+    <form>
+        chorestodo:
+        <input type="text" class="form-control" placeholder="What are your chorestodo" name="chorestodoitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve chorestodo Item #3 -->
+<template name="chorestodoItem"> 
+
+      <input type="text" value="{{chorestodoitemName}}" name="chorestodoItem">
+      [<a href="#" class="delete-chorestodoitem">  Delete </a>]
+</template>
+
+<!-- End of chorestodo Item #3 -->
+
+<!-- Start of Add homemess Item #2 -->
+
+<template name="addhomemessItem">
+    <form>
+        homemess:
+        <input type="text" class="form-control" placeholder="What are your homemess" name="homemessitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve homemess Item #3 -->
+<template name="homemessItem"> 
+
+      <input type="text" value="{{homemessitemName}}" name="homemessItem">
+      [<a href="#" class="delete-homemessitem">  Delete </a>]
+</template>
+
+<!-- End of homemess Item #3 -->
+
+<!-- Start of Add hometightiness Item #2 -->
 
 <template name="addhometightinessItem">
     <form>
-        Hometightiness History:
+        hometightiness:
         <input type="text" class="form-control" placeholder="What are your hometightiness" name="hometightinessitemName">
     </form>
 </template>
 
-<template name="hometightinessItem">	
-    	<input type="text" value="{{hometightiness}}" name="hometightinessItem">
-    	[<a href="#" class="delete-hometightinessitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve hometightiness Item #3 -->
+<template name="hometightinessItem"> 
+
+      <input type="text" value="{{hometightinessitemName}}" name="hometightinessItem">
+      [<a href="#" class="delete-hometightinessitem">  Delete </a>]
 </template>
 
+<!-- End of hometightiness Item #3 -->
 
-<!-- Cartightiness Card -->
+<!-- Start of Add carmess Item #2 -->
 
+<template name="addcarmessItem">
+    <form>
+        carmess:
+        <input type="text" class="form-control" placeholder="What are your carmess" name="carmessitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve carmess Item #3 -->
+<template name="carmessItem"> 
+
+      <input type="text" value="{{carmessitemName}}" name="carmessItem">
+      [<a href="#" class="delete-carmessitem">  Delete </a>]
+</template>
+
+<!-- End of carmess Item #3 -->
+
+<!-- Start of Add cartightiness Item #2 -->
 
 <template name="addcartightinessItem">
     <form>
-        Cartightiness History:
+        cartightiness:
         <input type="text" class="form-control" placeholder="What are your cartightiness" name="cartightinessitemName">
     </form>
 </template>
 
-<template name="cartightinessItem">	
-    	<input type="text" value="{{cartightiness}}" name="cartightinessItem">
-    	[<a href="#" class="delete-cartightinessitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve cartightiness Item #3 -->
+<template name="cartightinessItem"> 
+
+      <input type="text" value="{{cartightinessitemName}}" name="cartightinessItem">
+      [<a href="#" class="delete-cartightinessitem">  Delete </a>]
 </template>
 
+<!-- End of cartightiness Item #3 -->
 
-<!-- Workspacetightiness Card -->
+<!-- Start of Add workmess Item #2 -->
 
-
-<template name="addworkspacetightinessItem">
+<template name="addworkmessItem">
     <form>
-        Workspacetightiness History:
-        <input type="text" class="form-control" placeholder="What are your workspacetightiness" name="workspacetightinessitemName">
+        workmess:
+        <input type="text" class="form-control" placeholder="What are your workmess" name="workmessitemName">
     </form>
 </template>
 
-<template name="workspacetightinessItem">	
-    	<input type="text" value="{{workspacetightiness}}" name="workspacetightinessItem">
-    	[<a href="#" class="delete-workspacetightinessitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve workmess Item #3 -->
+<template name="workmessItem"> 
+
+      <input type="text" value="{{workmessitemName}}" name="workmessItem">
+      [<a href="#" class="delete-workmessitem">  Delete </a>]
 </template>
 
-<!-- Chores Card -->
+<!-- End of workmess Item #3 -->
 
+<!-- Start of Add workspacetightines Item #2 -->
 
-<template name="addchoresItem">
+<template name="addworkspacetightinesItem">
     <form>
-        Chores History:
-        <input type="text" class="form-control" placeholder="What are your chores" name="choresitemName">
+        workspacetightines:
+        <input type="text" class="form-control" placeholder="What are your workspacetightines" name="workspacetightinesitemName">
     </form>
 </template>
 
-<template name="choresItem">	
-    	<input type="text" value="{{chores}}" name="choresItem">
-    	[<a href="#" class="delete-choresitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve workspacetightines Item #3 -->
+<template name="workspacetightinesItem"> 
+
+      <input type="text" value="{{workspacetightinesitemName}}" name="workspacetightinesItem">
+      [<a href="#" class="delete-workspacetightinesitem">  Delete </a>]
 </template>
+
+<!-- End of workspacetightines Item #3 -->
+
+<!-- Start of Add improveFengpage Item #2 -->
+
+<template name="addimproveFengpageItem">
+    <form>
+        improveFengpage:
+        <input type="text" class="form-control" placeholder="What are your improveFengpage" name="improveFengpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveFengpage Item #3 -->
+<template name="improveFengpageItem"> 
+
+      <input type="text" value="{{improveFengpageitemName}}" name="improveFengpageItem">
+      [<a href="#" class="delete-improveFengpageitem">  Delete </a>]
+</template>
+
+<!-- End of improveFengpage Item #3 -->
+

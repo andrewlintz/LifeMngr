@@ -6,12 +6,13 @@
 
 Template.societyPage.helpers({
     govtEach() {
-        return Agenda.find( { govt: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { govtitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     policiesEach() {
-        return Agenda.find( { policies: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { policiesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     voteEach() {
-        return Agenda.find( { vote: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { voteitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveSocietypageEach() {
+        return Agenda.find( { improveSocietypageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -20,29 +21,30 @@ Template.societyPage.helpers({
 
 
 
-////////* Govt Events *//////
+////////* Start of govt Events *//////
 
 
 Template.addgovtItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var govtitemName = $('[name="govtitemName"]').val();
-    Agenda.insert({
-        govt: govtitemName,
-        createdAt: new Date()
-    });
-    $('[name="govtitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const govtitemName = target.govtitemName.value;
+    
+    // Insert a govt item into the collection
+    Meteor.call('govtitemName.insert', govtitemName);
+
+    // Clear form
+    target.govtitemName.value = '';
+    },
 });
 
 Template.govtItem.events({
     // events go here
-    'click .delete-govtitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-govtitem'(){
+     Meteor.call('govtitemName.remove', this._id);
     },
 
     'keyup [name=govtItem]': function(event){
@@ -51,38 +53,37 @@ Template.govtItem.events({
     } else {
         var documentId = this._id;
         var govtItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { govt: govtItem }});
+        Meteor.call('updateListItem', documentId, govtItem);
         }
     },
 });
 
+////////* End of govt Events *//////
 
-
-////////* Policies Events *//////
-
-
+////////* Start of policies Events *//////
 
 
 Template.addpoliciesItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var policiesitemName = $('[name="policiesitemName"]').val();
-    Agenda.insert({
-        policies: policiesitemName,
-        createdAt: new Date()
-    });
-    $('[name="policiesitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const policiesitemName = target.policiesitemName.value;
+    
+    // Insert a policies item into the collection
+    Meteor.call('policiesitemName.insert', policiesitemName);
+
+    // Clear form
+    target.policiesitemName.value = '';
+    },
 });
 
 Template.policiesItem.events({
     // events go here
-    'click .delete-policiesitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-policiesitem'(){
+     Meteor.call('policiesitemName.remove', this._id);
     },
 
     'keyup [name=policiesItem]': function(event){
@@ -91,39 +92,37 @@ Template.policiesItem.events({
     } else {
         var documentId = this._id;
         var policiesItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { policies: policiesItem }});
+        Meteor.call('updateListItem', documentId, policiesItem);
         }
     },
 });
 
+////////* End of policies Events *//////
 
-
-
-////////* Vote Events *//////
-
-
+////////* Start of vote Events *//////
 
 
 Template.addvoteItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var voteitemName = $('[name="voteitemName"]').val();
-    Agenda.insert({
-        vote: voteitemName,
-        createdAt: new Date()
-    });
-    $('[name="voteitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const voteitemName = target.voteitemName.value;
+    
+    // Insert a vote item into the collection
+    Meteor.call('voteitemName.insert', voteitemName);
+
+    // Clear form
+    target.voteitemName.value = '';
+    },
 });
 
 Template.voteItem.events({
     // events go here
-    'click .delete-voteitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-voteitem'(){
+     Meteor.call('voteitemName.remove', this._id);
     },
 
     'keyup [name=voteItem]': function(event){
@@ -132,7 +131,49 @@ Template.voteItem.events({
     } else {
         var documentId = this._id;
         var voteItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { vote: voteItem }});
+        Meteor.call('updateListItem', documentId, voteItem);
         }
     },
 });
+
+////////* End of vote Events *//////
+
+////////* Start of improveSocietypage Events *//////
+
+
+Template.addimproveSocietypageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveSocietypageitemName = target.improveSocietypageitemName.value;
+    
+    // Insert a improveSocietypage item into the collection
+    Meteor.call('improveSocietypageitemName.insert', improveSocietypageitemName);
+
+    // Clear form
+    target.improveSocietypageitemName.value = '';
+    },
+});
+
+Template.improveSocietypageItem.events({
+    // events go here
+    'click .delete-improveSocietypageitem'(){
+     Meteor.call('improveSocietypageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveSocietypageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveSocietypageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveSocietypageItem);
+        }
+    },
+});
+
+////////* End of improveSocietypage Events *//////
+

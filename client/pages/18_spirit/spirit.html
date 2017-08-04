@@ -9,8 +9,8 @@
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputSpirit">
-	Starter</div>
+	<div class="panel-heading2" for="inputSpirit">
+	Spirit</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -36,6 +36,71 @@
 
 
 <!-- end of Spirit card #1 -->
+
+<!-- Start of mantras Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputmantras">
+	mantras</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addmantrasItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemantras" aria-expanded="false" aria-controls="collapsemantras">
+    			mantras Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsemantras">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each mantrasEach}}
+								{{> mantrasItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of mantras card #1 -->
+
+<!-- Start of improveSpiritpage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveSpiritpage">
+	improveSpiritpage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveSpiritpageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveSpiritpage" aria-expanded="false" aria-controls="collapseimproveSpiritpage">
+    			improveSpiritpage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveSpiritpage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveSpiritpageEach}}
+								{{> improveSpiritpageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveSpiritpage card #1 -->
+
 
 </template>
 
@@ -66,3 +131,44 @@
 </template>
 
 <!-- End of Spirit Item #3 -->
+
+<!-- Start of Add mantras Item #2 -->
+
+<template name="addmantrasItem">
+    <form>
+        mantras:
+        <input type="text" class="form-control" placeholder="What are your mantras" name="mantrasitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve mantras Item #3 -->
+<template name="mantrasItem"> 
+
+      <input type="text" value="{{mantrasitemName}}" name="mantrasItem">
+      [<a href="#" class="delete-mantrasitem">  Delete </a>]
+</template>
+
+<!-- End of mantras Item #3 -->
+
+<!-- Start of Add improveSpiritpage Item #2 -->
+
+<template name="addimproveSpiritpageItem">
+    <form>
+        improveSpiritpage:
+        <input type="text" class="form-control" placeholder="What are your improveSpiritpage" name="improveSpiritpageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveSpiritpage Item #3 -->
+<template name="improveSpiritpageItem"> 
+
+      <input type="text" value="{{improveSpiritpageitemName}}" name="improveSpiritpageItem">
+      [<a href="#" class="delete-improveSpiritpageitem">  Delete </a>]
+</template>
+
+<!-- End of improveSpiritpage Item #3 -->
+

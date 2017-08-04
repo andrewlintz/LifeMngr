@@ -1,33 +1,27 @@
 <template name="lovePage">
 	<h1>Love Page</h1>
  
-	{{> currentsocard}}
-	{{> lovehist}}
-	{{> dreamsocard}}
+<!-- Start of howSodoing Card #1-->
 
-</template>
-<!--  Dreamso Card -->
 
-<template name="dreamsocard">
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputDreamso">
-	Dream so</div>
+	<div class="panel-heading2" for="inputhowSodoing">
+	howSodoing</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			
+			{{> addhowSodoingItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDreamso" aria-expanded="false" aria-controls="collapseDreamso">
-    			Dreamso list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsehowSodoing" aria-expanded="false" aria-controls="collapsehowSodoing">
+    			howSodoing Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseDreamso">
+				<div class="collapse" id="collapsehowSodoing">
 					<div class="list-group">
 							<ul class="list-group-item">
-						{{> adddreamsoItem}}
-  						{{#each dreamsoEach}}
-								{{> dreamsoItem}}
+  						{{#each howSodoingEach}}
+								{{> howSodoingItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -35,33 +29,31 @@
 			</ul>
 	</div>
 </div>
-</template>
-<!-- end of Dreamso card -->
 
 
-<!--  Currentso Card -->
+<!-- End of howSodoing card #1 -->
 
-<template name="currentsocard">
+<!-- Start of soLikes Card #1-->
+
+
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading">
-	My SO</div>
+	<div class="panel-heading2" for="inputsoLikes">
+	soLikes</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			
+			{{> addsoLikesItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePeriod" aria-expanded="false" aria-controls="collapsePeriod">
-    			Period Tracker
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesoLikes" aria-expanded="false" aria-controls="collapsesoLikes">
+    			soLikes Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePeriod">
+				<div class="collapse" id="collapsesoLikes">
 					<div class="list-group">
 							<ul class="list-group-item">
-						{{> addperiodItem}}
-						<hr style="width: 98%">
-  						{{#each periodEach}}
-								{{> periodItem}}
+  						{{#each soLikesEach}}
+								{{> soLikesItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -69,32 +61,189 @@
 			</ul>
 	</div>
 </div>
-</template>
-<!-- end of Currentso card -->
 
 
+<!-- End of soLikes card #1 -->
 
+<!-- Start of soDislikes Card #1-->
 
-<!--  Lovehist Card -->
-<template name="lovehist">
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputLovehist">
-	Love history</div>
+	<div class="panel-heading2" for="inputsoDislikes">
+	soDislikes</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			
+			{{> addsoDislikesItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLovehist" aria-expanded="false" aria-controls="collapseLovehist">
-    			Love Record:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesoDislikes" aria-expanded="false" aria-controls="collapsesoDislikes">
+    			soDislikes Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseLovehist">
+				<div class="collapse" id="collapsesoDislikes">
 					<div class="list-group">
 							<ul class="list-group-item">
-						{{> addlovehistItem}}
+  						{{#each soDislikesEach}}
+								{{> soDislikesItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of soDislikes card #1 -->
+
+<!-- Start of soWants Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsoWants">
+	soWants</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsoWantsItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesoWants" aria-expanded="false" aria-controls="collapsesoWants">
+    			soWants Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesoWants">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each soWantsEach}}
+								{{> soWantsItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of soWants card #1 -->
+
+<!-- Start of sogiftideas Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsogiftideas">
+	sogiftideas</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsogiftideasItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesogiftideas" aria-expanded="false" aria-controls="collapsesogiftideas">
+    			sogiftideas Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesogiftideas">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each sogiftideasEach}}
+								{{> sogiftideasItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of sogiftideas card #1 -->
+
+<!-- Start of soArguementlog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsoArguementlog">
+	soArguementlog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsoArguementlogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesoArguementlog" aria-expanded="false" aria-controls="collapsesoArguementlog">
+    			soArguementlog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesoArguementlog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each soArguementlogEach}}
+								{{> soArguementlogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of soArguementlog card #1 -->
+
+<!-- Start of soPeriodlog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsoPeriodlog">
+	soPeriodlog</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsoPeriodlogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesoPeriodlog" aria-expanded="false" aria-controls="collapsesoPeriodlog">
+    			soPeriodlog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesoPeriodlog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each soPeriodlogEach}}
+								{{> soPeriodlogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of soPeriodlog card #1 -->
+
+<!-- Start of lovehist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputlovehist">
+	lovehist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addlovehistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapselovehist" aria-expanded="false" aria-controls="collapselovehist">
+    			lovehist Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapselovehist">
+					<div class="list-group">
+							<ul class="list-group-item">
   						{{#each lovehistEach}}
 								{{> lovehistItem}}
   						{{/each}}
@@ -104,8 +253,107 @@
 			</ul>
 	</div>
 </div>
+
+
+<!-- End of lovehist card #1 -->
+
+<!-- Start of dreamSo Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputdreamSo">
+	dreamSo</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddreamSoItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedreamSo" aria-expanded="false" aria-controls="collapsedreamSo">
+    			dreamSo Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedreamSo">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each dreamSoEach}}
+								{{> dreamSoItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of dreamSo card #1 -->
+
+<!-- Start of sexhist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputsexhist">
+	sexhist</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addsexhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesexhist" aria-expanded="false" aria-controls="collapsesexhist">
+    			sexhist Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapsesexhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each sexhistEach}}
+								{{> sexhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of sexhist card #1 -->
+
+<!-- Start of improveLovepage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveLovepage">
+	improveLovepage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveLovepageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveLovepage" aria-expanded="false" aria-controls="collapseimproveLovepage">
+    			improveLovepage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveLovepage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveLovepageEach}}
+								{{> improveLovepageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveLovepage card #1 -->
+
 </template>
-<!-- end of Lovehist card -->
 
 
 
@@ -114,73 +362,224 @@
 
 
 
+<!-- Start of Add howSodoing Item #2 -->
 
-
-
-
-<!-- Dreamso Program Card -->
-
-
-<template name="adddreamsoItem">
+<template name="addhowSodoingItem">
     <form>
-        What Attributes does your ideal mate have?:
-        <input type="text" class="form-control" placeholder="Physical, Mental, Attitudes, Personality, Likes, Dislikes." name="dreamsoitemName">
+        howSodoing:
+        <input type="text" class="form-control" placeholder="What are your howSodoing" name="howSodoingitemName">
     </form>
 </template>
 
-<template name="dreamsoItem">	
-    	<input type="text" value="{{dreamso}}" name="dreamsoItem">
-    	[<a href="#" class="delete-dreamsoitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve howSodoing Item #3 -->
+<template name="howSodoingItem"> 
+
+      <input type="text" value="{{howSodoingitemName}}" name="howSodoingItem">
+      [<a href="#" class="delete-howSodoingitem">  Delete </a>]
 </template>
 
+<!-- End of howSodoing Item #3 -->
 
+<!-- Start of Add soLikes Item #2 -->
 
-<!-- Currentso Program Card -->
-
-
-<template name="addperiodItem">
-<form class="form-inline" id="addPeriod">
-
-    <div class="col-sm-2">
-      <button type="submit" class="btn btn-warning">Add</button>
-    </div>
+<template name="addsoLikesItem">
     <form>
-        <input type="text" class="form-control" style="width: 80%" name="perioditemName" placeholder="Describe Her Current State">
+        soLikes:
+        <input type="text" class="form-control" placeholder="What are your soLikes" name="soLikesitemName">
     </form>
-</form>
 </template>
 
-<template name="periodItem">	
-  <div class="container">
-  	<div class="row">
-  	<div class="col-sm-1">
-		<div class="converteddate"> {{formatDate createdAt}} </div>
-  	</div>
-    <div class="col-sm-3">
-    	<input type="text" class="form-control" value="{{period}}" name="periodItem">
-    </div>
-    <div class="col-sm-1">
-    	<button class="btn btn-danger btn-sm delete-perioditem">Delete</button>
-    	
-    </div>
-    </div>
-  </div>
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve soLikes Item #3 -->
+<template name="soLikesItem"> 
+
+      <input type="text" value="{{soLikesitemName}}" name="soLikesItem">
+      [<a href="#" class="delete-soLikesitem">  Delete </a>]
 </template>
 
+<!-- End of soLikes Item #3 -->
 
+<!-- Start of Add soDislikes Item #2 -->
 
+<template name="addsoDislikesItem">
+    <form>
+        soDislikes:
+        <input type="text" class="form-control" placeholder="What are your soDislikes" name="soDislikesitemName">
+    </form>
+</template>
 
-<!-- Lovehist Program Card -->
+<!-- End of Add Keyword Item #2 -->
 
+<!-- Start of Retrieve soDislikes Item #3 -->
+<template name="soDislikesItem"> 
+
+      <input type="text" value="{{soDislikesitemName}}" name="soDislikesItem">
+      [<a href="#" class="delete-soDislikesitem">  Delete </a>]
+</template>
+
+<!-- End of soDislikes Item #3 -->
+
+<!-- Start of Add soWants Item #2 -->
+
+<template name="addsoWantsItem">
+    <form>
+        soWants:
+        <input type="text" class="form-control" placeholder="What are your soWants" name="soWantsitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve soWants Item #3 -->
+<template name="soWantsItem"> 
+
+      <input type="text" value="{{soWantsitemName}}" name="soWantsItem">
+      [<a href="#" class="delete-soWantsitem">  Delete </a>]
+</template>
+
+<!-- End of soWants Item #3 -->
+
+<!-- Start of Add sogiftideas Item #2 -->
+
+<template name="addsogiftideasItem">
+    <form>
+        sogiftideas:
+        <input type="text" class="form-control" placeholder="What are your sogiftideas" name="sogiftideasitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve sogiftideas Item #3 -->
+<template name="sogiftideasItem"> 
+
+      <input type="text" value="{{sogiftideasitemName}}" name="sogiftideasItem">
+      [<a href="#" class="delete-sogiftideasitem">  Delete </a>]
+</template>
+
+<!-- End of sogiftideas Item #3 -->
+
+<!-- Start of Add soArguementlog Item #2 -->
+
+<template name="addsoArguementlogItem">
+    <form>
+        soArguementlog:
+        <input type="text" class="form-control" placeholder="What are your soArguementlog" name="soArguementlogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve soArguementlog Item #3 -->
+<template name="soArguementlogItem"> 
+
+      <input type="text" value="{{soArguementlogitemName}}" name="soArguementlogItem">
+      [<a href="#" class="delete-soArguementlogitem">  Delete </a>]
+</template>
+
+<!-- End of soArguementlog Item #3 -->
+
+<!-- Start of Add soPeriodlog Item #2 -->
+
+<template name="addsoPeriodlogItem">
+    <form>
+        soPeriodlog:
+        <input type="text" class="form-control" placeholder="What are your soPeriodlog" name="soPeriodlogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve soPeriodlog Item #3 -->
+<template name="soPeriodlogItem"> 
+
+      <input type="text" value="{{soPeriodlogitemName}}" name="soPeriodlogItem">
+      [<a href="#" class="delete-soPeriodlogitem">  Delete </a>]
+</template>
+
+<!-- End of soPeriodlog Item #3 -->
+
+<!-- Start of Add lovehist Item #2 -->
 
 <template name="addlovehistItem">
     <form>
-        
-        <input type="text" class="form-control" placeholder="Sexual History" name="lovehistitemName">
+        lovehist:
+        <input type="text" class="form-control" placeholder="What are your lovehist" name="lovehistitemName">
     </form>
 </template>
 
-<template name="lovehistItem">	
-    	<input type="text" value="{{lovehist}}" name="lovehistItem">
-    	[<a href="#" class="delete-lovehistitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve lovehist Item #3 -->
+<template name="lovehistItem"> 
+
+      <input type="text" value="{{lovehistitemName}}" name="lovehistItem">
+      [<a href="#" class="delete-lovehistitem">  Delete </a>]
 </template>
+
+<!-- End of lovehist Item #3 -->
+
+<!-- Start of Add dreamSo Item #2 -->
+
+<template name="adddreamSoItem">
+    <form>
+        dreamSo:
+        <input type="text" class="form-control" placeholder="What are your dreamSo" name="dreamSoitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve dreamSo Item #3 -->
+<template name="dreamSoItem"> 
+
+      <input type="text" value="{{dreamSoitemName}}" name="dreamSoItem">
+      [<a href="#" class="delete-dreamSoitem">  Delete </a>]
+</template>
+
+<!-- End of dreamSo Item #3 -->
+
+<!-- Start of Add sexhist Item #2 -->
+
+<template name="addsexhistItem">
+    <form>
+        sexhist:
+        <input type="text" class="form-control" placeholder="What are your sexhist" name="sexhistitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve sexhist Item #3 -->
+<template name="sexhistItem"> 
+
+      <input type="text" value="{{sexhistitemName}}" name="sexhistItem">
+      [<a href="#" class="delete-sexhistitem">  Delete </a>]
+</template>
+
+<!-- End of sexhist Item #3 -->
+
+<!-- Start of Add improveLovepage Item #2 -->
+
+<template name="addimproveLovepageItem">
+    <form>
+        improveLovepage:
+        <input type="text" class="form-control" placeholder="What are your improveLovepage" name="improveLovepageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveLovepage Item #3 -->
+<template name="improveLovepageItem"> 
+
+      <input type="text" value="{{improveLovepageitemName}}" name="improveLovepageItem">
+      [<a href="#" class="delete-improveLovepageitem">  Delete </a>]
+</template>
+
+<!-- End of improveLovepage Item #3 -->
+
+

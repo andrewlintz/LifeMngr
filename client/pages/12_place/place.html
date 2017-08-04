@@ -3,23 +3,23 @@
  
 
 
-<!--  Placesbeen Card -->
+<!-- Start of placesbeen Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPlacesbeen">
-	Placesbeen</div>
+	<div class="panel-heading2" for="inputplacesbeen">
+	placesbeen</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addplacesbeenItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlacesbeen" aria-expanded="false" aria-controls="collapsePlacesbeen">
-    			Placesbeen list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseplacesbeen" aria-expanded="false" aria-controls="collapseplacesbeen">
+    			placesbeen Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePlacesbeen">
+				<div class="collapse" id="collapseplacesbeen">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each placesbeenEach}}
@@ -32,27 +32,26 @@
 	</div>
 </div>
 
-<!-- end of Placesbeen card -->
 
+<!-- End of placesbeen card #1 -->
 
-
-<!--  Placeswant Card -->
+<!-- Start of placeswant Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPlaceswant">
-	Placeswant</div>
+	<div class="panel-heading2" for="inputplaceswant">
+	placeswant</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addplaceswantItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlaceswant" aria-expanded="false" aria-controls="collapsePlaceswant">
-    			Placeswant list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseplaceswant" aria-expanded="false" aria-controls="collapseplaceswant">
+    			placeswant Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePlaceswant">
+				<div class="collapse" id="collapseplaceswant">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each placeswantEach}}
@@ -65,27 +64,26 @@
 	</div>
 </div>
 
-<!-- end of Placeswant card -->
 
+<!-- End of placeswant card #1 -->
 
-
-<!--  Placesplanner Card -->
+<!-- Start of placesplanner Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading" for="inputPlacesplanner">
-	Placesplanner</div>
+	<div class="panel-heading2" for="inputplacesplanner">
+	placesplanner</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
 			{{> addplacesplannerItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePlacesplanner" aria-expanded="false" aria-controls="collapsePlacesplanner">
-    			Placesplanner list:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseplacesplanner" aria-expanded="false" aria-controls="collapseplacesplanner">
+    			placesplanner Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapsePlacesplanner">
+				<div class="collapse" id="collapseplacesplanner">
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each placesplannerEach}}
@@ -98,7 +96,42 @@
 	</div>
 </div>
 
-<!-- end of Placesplanner card -->
+
+<!-- End of placesplanner card #1 -->
+
+<!-- Start of improveSpacepage Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputimproveSpacepage">
+	improveSpacepage</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addimproveSpacepageItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveSpacepage" aria-expanded="false" aria-controls="collapseimproveSpacepage">
+    			improveSpacepage Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseimproveSpacepage">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each improveSpacepageEach}}
+								{{> improveSpacepageItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of improveSpacepage card #1 -->
+
+
 </template>
 
 
@@ -114,51 +147,84 @@
 
 
 
-<!-- Placesbeen Program Card -->
-
+<!-- Start of Add placesbeen Item #2 -->
 
 <template name="addplacesbeenItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placesbeenitemName">
+        placesbeen:
+        <input type="text" class="form-control" placeholder="What are your placesbeen" name="placesbeenitemName">
     </form>
 </template>
 
-<template name="placesbeenItem">	
-    	<input type="text" value="{{placesbeen}}" name="placesbeenItem">
-    	[<a href="#" class="delete-placesbeenitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve placesbeen Item #3 -->
+<template name="placesbeenItem"> 
+
+      <input type="text" value="{{placesbeenitemName}}" name="placesbeenItem">
+      [<a href="#" class="delete-placesbeenitem">  Delete </a>]
 </template>
 
+<!-- End of placesbeen Item #3 -->
 
-<!-- Placeswant Program Card -->
-
+<!-- Start of Add placeswant Item #2 -->
 
 <template name="addplaceswantItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placeswantitemName">
+        placeswant:
+        <input type="text" class="form-control" placeholder="What are your placeswant" name="placeswantitemName">
     </form>
 </template>
 
-<template name="placeswantItem">	
-    	<input type="text" value="{{placeswant}}" name="placeswantItem">
-    	[<a href="#" class="delete-placeswantitem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve placeswant Item #3 -->
+<template name="placeswantItem"> 
+
+      <input type="text" value="{{placeswantitemName}}" name="placeswantItem">
+      [<a href="#" class="delete-placeswantitem">  Delete </a>]
 </template>
 
+<!-- End of placeswant Item #3 -->
 
-
-<!-- Placesplanner Program Card -->
-
+<!-- Start of Add placesplanner Item #2 -->
 
 <template name="addplacesplannerItem">
     <form>
-        Fitness Program History:
-        <input type="text" class="form-control" placeholder="What are your fitness Program" name="placesplanneritemName">
+        placesplanner:
+        <input type="text" class="form-control" placeholder="What are your placesplanner" name="placesplanneritemName">
     </form>
 </template>
 
-<template name="placesplannerItem">	
-    	<input type="text" value="{{placesplanner}}" name="placesplannerItem">
-    	[<a href="#" class="delete-placesplanneritem">	Delete </a>]
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve placesplanner Item #3 -->
+<template name="placesplannerItem"> 
+
+      <input type="text" value="{{placesplanneritemName}}" name="placesplannerItem">
+      [<a href="#" class="delete-placesplanneritem">  Delete </a>]
 </template>
+
+<!-- End of placesplanner Item #3 -->
+
+<!-- Start of Add improveSpacepage Item #2 -->
+
+<template name="addimproveSpacepageItem">
+    <form>
+        improveSpacepage:
+        <input type="text" class="form-control" placeholder="What are your improveSpacepage" name="improveSpacepageitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve improveSpacepage Item #3 -->
+<template name="improveSpacepageItem"> 
+
+      <input type="text" value="{{improveSpacepageitemName}}" name="improveSpacepageItem">
+      [<a href="#" class="delete-improveSpacepageitem">  Delete </a>]
+</template>
+
+<!-- End of improveSpacepage Item #3 -->
+
 

@@ -5,85 +5,210 @@
 
 
 Template.foodPage.helpers({
-    eatlogEach() {
-        return Agenda.find( { eatlog: {$exists: true}}, {sort: {createdAt: -1}}); },
+    eathistoryEach() {
+        return Agenda.find( { eathistoryitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    drinkhistoryEach() {
+        return Agenda.find( { drinkhistoryitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    alcohollogEach() {
+        return Agenda.find( { alcohollogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    druglogEach() {
+        return Agenda.find( { druglogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     ingredientinventoryEach() {
-        return Agenda.find( { ingredientinventory: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { ingredientinventoryitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     shoppinglistEach() {
-        return Agenda.find( { shoppinglist: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return Agenda.find( { shoppinglistitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     menuEach() {
-        return Agenda.find( { menu: {$exists: true}}, {sort: {createdAt: -1}}); },
-    mealplanEach() {
-        return Agenda.find( { mealplan: {$exists: true}}, {sort: {createdAt: -1}}); },
-
+        return Agenda.find( { menuitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    menuplanEach() {
+        return Agenda.find( { menuplanitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    improveFoodpageEach() {
+        return Agenda.find( { improveFoodpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 
 
 
-////////* Eatlog Events *//////
+////////* Start of eathistory Events *//////
 
 
-Template.addeatlogItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addeathistoryItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var eatlogitemName = $('[name="eatlogitemName"]').val();
-    Agenda.insert({
-        eatlog: eatlogitemName,
-        createdAt: new Date()
-    });
-    $('[name="eatlogitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const eathistoryitemName = target.eathistoryitemName.value;
+    
+    // Insert a eathistory item into the collection
+    Meteor.call('eathistoryitemName.insert', eathistoryitemName);
+
+    // Clear form
+    target.eathistoryitemName.value = '';
+    },
 });
 
-Template.eatlogItem.events({
+Template.eathistoryItem.events({
     // events go here
-    'click .delete-eatlogitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-eathistoryitem'(){
+     Meteor.call('eathistoryitemName.remove', this._id);
     },
 
-    'keyup [name=eatlogItem]': function(event){
+    'keyup [name=eathistoryItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var eatlogItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { eatlog: eatlogItem }});
+        var eathistoryItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, eathistoryItem);
         }
     },
 });
 
+////////* End of eathistory Events *//////
+
+////////* Start of drinkhistory Events *//////
 
 
+Template.adddrinkhistoryItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const drinkhistoryitemName = target.drinkhistoryitemName.value;
+    
+    // Insert a drinkhistory item into the collection
+    Meteor.call('drinkhistoryitemName.insert', drinkhistoryitemName);
 
-////////* Ingredientinventory Events *//////
+    // Clear form
+    target.drinkhistoryitemName.value = '';
+    },
+});
+
+Template.drinkhistoryItem.events({
+    // events go here
+    'click .delete-drinkhistoryitem'(){
+     Meteor.call('drinkhistoryitemName.remove', this._id);
+    },
+
+    'keyup [name=drinkhistoryItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var drinkhistoryItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, drinkhistoryItem);
+        }
+    },
+});
+
+////////* End of drinkhistory Events *//////
+
+////////* Start of alcohollog Events *//////
+
+
+Template.addalcohollogItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const alcohollogitemName = target.alcohollogitemName.value;
+    
+    // Insert a alcohollog item into the collection
+    Meteor.call('alcohollogitemName.insert', alcohollogitemName);
+
+    // Clear form
+    target.alcohollogitemName.value = '';
+    },
+});
+
+Template.alcohollogItem.events({
+    // events go here
+    'click .delete-alcohollogitem'(){
+     Meteor.call('alcohollogitemName.remove', this._id);
+    },
+
+    'keyup [name=alcohollogItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var alcohollogItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, alcohollogItem);
+        }
+    },
+});
+
+////////* End of alcohollog Events *//////
+
+////////* Start of druglog Events *//////
+
+
+Template.adddruglogItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const druglogitemName = target.druglogitemName.value;
+    
+    // Insert a druglog item into the collection
+    Meteor.call('druglogitemName.insert', druglogitemName);
+
+    // Clear form
+    target.druglogitemName.value = '';
+    },
+});
+
+Template.druglogItem.events({
+    // events go here
+    'click .delete-druglogitem'(){
+     Meteor.call('druglogitemName.remove', this._id);
+    },
+
+    'keyup [name=druglogItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var druglogItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, druglogItem);
+        }
+    },
+});
+
+////////* End of druglog Events *//////
+
+////////* Start of ingredientinventory Events *//////
 
 
 Template.addingredientinventoryItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var ingredientinventoryitemName = $('[name="ingredientinventoryitemName"]').val();
-    Agenda.insert({
-        ingredientinventory: ingredientinventoryitemName,
-        createdAt: new Date()
-    });
-    $('[name="ingredientinventoryitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const ingredientinventoryitemName = target.ingredientinventoryitemName.value;
+    
+    // Insert a ingredientinventory item into the collection
+    Meteor.call('ingredientinventoryitemName.insert', ingredientinventoryitemName);
+
+    // Clear form
+    target.ingredientinventoryitemName.value = '';
+    },
 });
 
 Template.ingredientinventoryItem.events({
     // events go here
-    'click .delete-ingredientinventoryitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-ingredientinventoryitem'(){
+     Meteor.call('ingredientinventoryitemName.remove', this._id);
     },
 
     'keyup [name=ingredientinventoryItem]': function(event){
@@ -92,37 +217,37 @@ Template.ingredientinventoryItem.events({
     } else {
         var documentId = this._id;
         var ingredientinventoryItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { ingredientinventory: ingredientinventoryItem }});
+        Meteor.call('updateListItem', documentId, ingredientinventoryItem);
         }
     },
 });
 
+////////* End of ingredientinventory Events *//////
 
-
-
-////////* Shoppinglist Events *//////
+////////* Start of shoppinglist Events *//////
 
 
 Template.addshoppinglistItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var shoppinglistitemName = $('[name="shoppinglistitemName"]').val();
-    Agenda.insert({
-        shoppinglist: shoppinglistitemName,
-        createdAt: new Date()
-    });
-    $('[name="shoppinglistitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const shoppinglistitemName = target.shoppinglistitemName.value;
+    
+    // Insert a shoppinglist item into the collection
+    Meteor.call('shoppinglistitemName.insert', shoppinglistitemName);
+
+    // Clear form
+    target.shoppinglistitemName.value = '';
+    },
 });
 
 Template.shoppinglistItem.events({
     // events go here
-    'click .delete-shoppinglistitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-shoppinglistitem'(){
+     Meteor.call('shoppinglistitemName.remove', this._id);
     },
 
     'keyup [name=shoppinglistItem]': function(event){
@@ -131,37 +256,37 @@ Template.shoppinglistItem.events({
     } else {
         var documentId = this._id;
         var shoppinglistItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { shoppinglist: shoppinglistItem }});
+        Meteor.call('updateListItem', documentId, shoppinglistItem);
         }
     },
 });
 
+////////* End of shoppinglist Events *//////
 
-
-
-////////* Menu Events *//////
+////////* Start of menu Events *//////
 
 
 Template.addmenuItem.events({
-    /// events go here
-    'submit form': function(event){
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var menuitemName = $('[name="menuitemName"]').val();
-    Agenda.insert({
-        menu: menuitemName,
-        createdAt: new Date()
-    });
-    $('[name="menuitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const menuitemName = target.menuitemName.value;
+    
+    // Insert a menu item into the collection
+    Meteor.call('menuitemName.insert', menuitemName);
+
+    // Clear form
+    target.menuitemName.value = '';
+    },
 });
 
 Template.menuItem.events({
     // events go here
-    'click .delete-menuitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-menuitem'(){
+     Meteor.call('menuitemName.remove', this._id);
     },
 
     'keyup [name=menuItem]': function(event){
@@ -170,46 +295,88 @@ Template.menuItem.events({
     } else {
         var documentId = this._id;
         var menuItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { menu: menuItem }});
+        Meteor.call('updateListItem', documentId, menuItem);
         }
     },
 });
 
+////////* End of menu Events *//////
+
+////////* Start of menuplan Events *//////
 
 
-
-////////* Mealplan Events *//////
-
-
-Template.addmealplanItem.events({
-    /// events go here
-    'submit form': function(event){
+Template.addmenuplanItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
     event.preventDefault();
-    var mealplanitemName = $('[name="mealplanitemName"]').val();
-    Agenda.insert({
-        mealplan: mealplanitemName,
-        createdAt: new Date()
-    });
-    $('[name="mealplanitemName"]').val('');
-}
+    
+    // Get value from form element
+    const target = event.target;
+    const menuplanitemName = target.menuplanitemName.value;
+    
+    // Insert a menuplan item into the collection
+    Meteor.call('menuplanitemName.insert', menuplanitemName);
+
+    // Clear form
+    target.menuplanitemName.value = '';
+    },
 });
 
-Template.mealplanItem.events({
+Template.menuplanItem.events({
     // events go here
-    'click .delete-mealplanitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-            Agenda.remove({ _id: documentId });
+    'click .delete-menuplanitem'(){
+     Meteor.call('menuplanitemName.remove', this._id);
     },
 
-    'keyup [name=mealplanItem]': function(event){
+    'keyup [name=menuplanItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var mealplanItem = $(event.target).val();
-        Agenda.update({ _id: documentId }, {$set: { mealplan: mealplanItem }});
+        var menuplanItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, menuplanItem);
         }
     },
 });
+
+////////* End of menuplan Events *//////
+
+////////* Start of improveFoodpage Events *//////
+
+
+Template.addimproveFoodpageItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const improveFoodpageitemName = target.improveFoodpageitemName.value;
+    
+    // Insert a improveFoodpage item into the collection
+    Meteor.call('improveFoodpageitemName.insert', improveFoodpageitemName);
+
+    // Clear form
+    target.improveFoodpageitemName.value = '';
+    },
+});
+
+Template.improveFoodpageItem.events({
+    // events go here
+    'click .delete-improveFoodpageitem'(){
+     Meteor.call('improveFoodpageitemName.remove', this._id);
+    },
+
+    'keyup [name=improveFoodpageItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var improveFoodpageItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, improveFoodpageItem);
+        }
+    },
+});
+
+////////* End of improveFoodpage Events *//////
+
