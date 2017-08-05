@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 import './mind.html'; 
 
 
@@ -59,7 +63,7 @@ Template.moodItem.events({
     } else {
         var documentId = this._id;
         var moodItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, moodItem);
+        Meteor.call('updatemoodItem', documentId, moodItem);
         }
     },
 });
@@ -98,7 +102,7 @@ Template.creativeartideasItem.events({
     } else {
         var documentId = this._id;
         var creativeartideasItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, creativeartideasItem);
+        Meteor.call('updatecreativeartideasItem', documentId, creativeartideasItem);
         }
     },
 });
@@ -137,7 +141,7 @@ Template.jokesItem.events({
     } else {
         var documentId = this._id;
         var jokesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, jokesItem);
+        Meteor.call('updatejokesItem', documentId, jokesItem);
         }
     },
 });
@@ -176,7 +180,7 @@ Template.inventionItem.events({
     } else {
         var documentId = this._id;
         var inventionItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, inventionItem);
+        Meteor.call('updateinventionItem', documentId, inventionItem);
         }
     },
 });
@@ -215,7 +219,7 @@ Template.entreprenuerialideaItem.events({
     } else {
         var documentId = this._id;
         var entreprenuerialideaItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, entreprenuerialideaItem);
+        Meteor.call('updateentreprenuerialideaItem', documentId, entreprenuerialideaItem);
         }
     },
 });
@@ -254,7 +258,7 @@ Template.opinionItem.events({
     } else {
         var documentId = this._id;
         var opinionItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, opinionItem);
+        Meteor.call('updateopinionItem', documentId, opinionItem);
         }
     },
 });
@@ -293,7 +297,7 @@ Template.improveMindpageItem.events({
     } else {
         var documentId = this._id;
         var improveMindpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveMindpageItem);
+        Meteor.call('updateimproveMindpageItem', documentId, improveMindpageItem);
         }
     },
 });

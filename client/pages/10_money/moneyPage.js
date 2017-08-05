@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './money.html'
 
 
@@ -66,7 +70,7 @@ Template.networthItem.events({
     } else {
         var documentId = this._id;
         var networthItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, networthItem);
+        Meteor.call('updatenetworthItem', documentId, networthItem);
         }
     },
 });
@@ -105,7 +109,7 @@ Template.fireplanItem.events({
     } else {
         var documentId = this._id;
         var fireplanItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, fireplanItem);
+        Meteor.call('updatefireplanItem', documentId, fireplanItem);
         }
     },
 });
@@ -144,7 +148,7 @@ Template.earningsrateItem.events({
     } else {
         var documentId = this._id;
         var earningsrateItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, earningsrateItem);
+        Meteor.call('updateearningsrateItem', documentId, earningsrateItem);
         }
     },
 });
@@ -183,7 +187,7 @@ Template.spendingrateItem.events({
     } else {
         var documentId = this._id;
         var spendingrateItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, spendingrateItem);
+        Meteor.call('updatespendingrateItem', documentId, spendingrateItem);
         }
     },
 });
@@ -222,7 +226,7 @@ Template.assetsItem.events({
     } else {
         var documentId = this._id;
         var assetsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, assetsItem);
+        Meteor.call('updateassetsItem', documentId, assetsItem);
         }
     },
 });
@@ -261,7 +265,7 @@ Template.borrowdebtItem.events({
     } else {
         var documentId = this._id;
         var borrowdebtItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, borrowdebtItem);
+        Meteor.call('updateborrowdebtItem', documentId, borrowdebtItem);
         }
     },
 });
@@ -300,7 +304,7 @@ Template.savingsrateItem.events({
     } else {
         var documentId = this._id;
         var savingsrateItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, savingsrateItem);
+        Meteor.call('updatesavingsrateItem', documentId, savingsrateItem);
         }
     },
 });
@@ -339,7 +343,7 @@ Template.runrateItem.events({
     } else {
         var documentId = this._id;
         var runrateItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, runrateItem);
+        Meteor.call('updaterunrateItem', documentId, runrateItem);
         }
     },
 });
@@ -378,7 +382,7 @@ Template.debttoequityItem.events({
     } else {
         var documentId = this._id;
         var debttoequityItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, debttoequityItem);
+        Meteor.call('updatedebttoequityItem', documentId, debttoequityItem);
         }
     },
 });
@@ -417,7 +421,7 @@ Template.budgetItem.events({
     } else {
         var documentId = this._id;
         var budgetItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, budgetItem);
+        Meteor.call('updatebudgetItem', documentId, budgetItem);
         }
     },
 });
@@ -456,7 +460,7 @@ Template.improveMoneypageItem.events({
     } else {
         var documentId = this._id;
         var improveMoneypageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveMoneypageItem);
+        Meteor.call('updateimproveMoneypageItem', documentId, improveMoneypageItem);
         }
     },
 });

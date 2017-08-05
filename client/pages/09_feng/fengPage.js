@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './feng.html'
 
 
@@ -61,7 +65,7 @@ Template.choreslogItem.events({
     } else {
         var documentId = this._id;
         var choreslogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, choreslogItem);
+        Meteor.call('updatechoreslogItem', documentId, choreslogItem);
         }
     },
 });
@@ -100,7 +104,7 @@ Template.chorestodoItem.events({
     } else {
         var documentId = this._id;
         var chorestodoItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, chorestodoItem);
+        Meteor.call('updatechorestodoItem', documentId, chorestodoItem);
         }
     },
 });
@@ -139,7 +143,7 @@ Template.homemessItem.events({
     } else {
         var documentId = this._id;
         var homemessItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, homemessItem);
+        Meteor.call('updatehomemessItem', documentId, homemessItem);
         }
     },
 });
@@ -178,7 +182,7 @@ Template.hometightinessItem.events({
     } else {
         var documentId = this._id;
         var hometightinessItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, hometightinessItem);
+        Meteor.call('updatehometightinessItem', documentId, hometightinessItem);
         }
     },
 });
@@ -217,7 +221,7 @@ Template.carmessItem.events({
     } else {
         var documentId = this._id;
         var carmessItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, carmessItem);
+        Meteor.call('updatecarmessItem', documentId, carmessItem);
         }
     },
 });
@@ -256,7 +260,7 @@ Template.cartightinessItem.events({
     } else {
         var documentId = this._id;
         var cartightinessItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, cartightinessItem);
+        Meteor.call('updatecartightinessItem', documentId, cartightinessItem);
         }
     },
 });
@@ -295,7 +299,7 @@ Template.workmessItem.events({
     } else {
         var documentId = this._id;
         var workmessItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, workmessItem);
+        Meteor.call('updateworkmessItem', documentId, workmessItem);
         }
     },
 });
@@ -334,7 +338,7 @@ Template.workspacetightinesItem.events({
     } else {
         var documentId = this._id;
         var workspacetightinesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, workspacetightinesItem);
+        Meteor.call('updateworkspacetightinesItem', documentId, workspacetightinesItem);
         }
     },
 });
@@ -373,7 +377,7 @@ Template.improveFengpageItem.events({
     } else {
         var documentId = this._id;
         var improveFengpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveFengpageItem);
+        Meteor.call('updateimproveFengpageItem', documentId, improveFengpageItem);
         }
     },
 });

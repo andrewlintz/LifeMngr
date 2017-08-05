@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './place.html'
 
 
@@ -50,7 +54,7 @@ Template.placesbeenItem.events({
     } else {
         var documentId = this._id;
         var placesbeenItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, placesbeenItem);
+        Meteor.call('updateplacesbeenItem', documentId, placesbeenItem);
         }
     },
 });
@@ -89,7 +93,7 @@ Template.placeswantItem.events({
     } else {
         var documentId = this._id;
         var placeswantItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, placeswantItem);
+        Meteor.call('updateplaceswantItem', documentId, placeswantItem);
         }
     },
 });
@@ -128,7 +132,7 @@ Template.placesplannerItem.events({
     } else {
         var documentId = this._id;
         var placesplannerItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, placesplannerItem);
+        Meteor.call('updateplacesplannerItem', documentId, placesplannerItem);
         }
     },
 });
@@ -167,7 +171,7 @@ Template.improveSpacepageItem.events({
     } else {
         var documentId = this._id;
         var improveSpacepageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveSpacepageItem);
+        Meteor.call('updateimproveSpacepageItem', documentId, improveSpacepageItem);
         }
     },
 });

@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './stuff.html'
 
 
@@ -56,7 +60,7 @@ Template.stuffhaveItem.events({
     } else {
         var documentId = this._id;
         var stuffhaveItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stuffhaveItem);
+        Meteor.call('updatestuffhaveItem', documentId, stuffhaveItem);
         }
     },
 });
@@ -95,7 +99,7 @@ Template.stufflostItem.events({
     } else {
         var documentId = this._id;
         var stufflostItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stufflostItem);
+        Meteor.call('updatestufflostItem', documentId, stufflostItem);
         }
     },
 });
@@ -134,7 +138,7 @@ Template.stufflentItem.events({
     } else {
         var documentId = this._id;
         var stufflentItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stufflentItem);
+        Meteor.call('updatestufflentItem', documentId, stufflentItem);
         }
     },
 });
@@ -173,7 +177,7 @@ Template.stuffborrowedItem.events({
     } else {
         var documentId = this._id;
         var stuffborrowedItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stuffborrowedItem);
+        Meteor.call('updatestuffborrowedItem', documentId, stuffborrowedItem);
         }
     },
 });
@@ -212,7 +216,7 @@ Template.stuffwantItem.events({
     } else {
         var documentId = this._id;
         var stuffwantItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stuffwantItem);
+        Meteor.call('updatestuffwantItem', documentId, stuffwantItem);
         }
     },
 });
@@ -251,7 +255,7 @@ Template.stuffplannerItem.events({
     } else {
         var documentId = this._id;
         var stuffplannerItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, stuffplannerItem);
+        Meteor.call('updatestuffplannerItem', documentId, stuffplannerItem);
         }
     },
 });
@@ -290,7 +294,7 @@ Template.improveStuffpageItem.events({
     } else {
         var documentId = this._id;
         var improveStuffpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveStuffpageItem);
+        Meteor.call('updateimproveStuffpageItem', documentId, improveStuffpageItem);
         }
     },
 });

@@ -50,7 +50,7 @@ Template.spiritItem.events({
     } else {
         var documentId = this._id;
         var spiritItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, spiritItem);
+        Meteor.call('updatespiritItem', documentId, spiritItem);
         }
     },
 });
@@ -89,7 +89,7 @@ Template.mantrasItem.events({
     } else {
         var documentId = this._id;
         var mantrasItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, mantrasItem);
+        Meteor.call('updateMantrasItem', documentId, mantrasItem);
         }
     },
 });
@@ -128,7 +128,7 @@ Template.improveSpiritpageItem.events({
     } else {
         var documentId = this._id;
         var improveSpiritpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveSpiritpageItem);
+        Meteor.call('updateimproveSpiritItem', documentId, improveSpiritpageItem);
         }
     },
 });

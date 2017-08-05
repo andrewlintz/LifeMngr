@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './hygiene.html'
 
 
@@ -70,7 +74,7 @@ Template.showerItem.events({
     } else {
         var documentId = this._id;
         var showerItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, showerItem);
+        Meteor.call('updateshowerItem', documentId, showerItem);
         }
     },
 });
@@ -109,7 +113,7 @@ Template.bathItem.events({
     } else {
         var documentId = this._id;
         var bathItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, bathItem);
+        Meteor.call('updatebathItem', documentId, bathItem);
         }
     },
 });
@@ -148,7 +152,7 @@ Template.shaveItem.events({
     } else {
         var documentId = this._id;
         var shaveItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, shaveItem);
+        Meteor.call('updateshaveItem', documentId, shaveItem);
         }
     },
 });
@@ -187,7 +191,7 @@ Template.nailsItem.events({
     } else {
         var documentId = this._id;
         var nailsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, nailsItem);
+        Meteor.call('updatenailsItem', documentId, nailsItem);
         }
     },
 });
@@ -226,7 +230,7 @@ Template.hairItem.events({
     } else {
         var documentId = this._id;
         var hairItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, hairItem);
+        Meteor.call('updatehairItem', documentId, hairItem);
         }
     },
 });
@@ -265,7 +269,7 @@ Template.hairconditionItem.events({
     } else {
         var documentId = this._id;
         var hairconditionItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, hairconditionItem);
+        Meteor.call('updatehairconditionItem', documentId, hairconditionItem);
         }
     },
 });
@@ -304,7 +308,7 @@ Template.brushedteethItem.events({
     } else {
         var documentId = this._id;
         var brushedteethItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, brushedteethItem);
+        Meteor.call('updatebrushedteethItem', documentId, brushedteethItem);
         }
     },
 });
@@ -343,7 +347,7 @@ Template.flossedItem.events({
     } else {
         var documentId = this._id;
         var flossedItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, flossedItem);
+        Meteor.call('updateflossedItem', documentId, flossedItem);
         }
     },
 });
@@ -382,7 +386,7 @@ Template.deoderantItem.events({
     } else {
         var documentId = this._id;
         var deoderantItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, deoderantItem);
+        Meteor.call('updatedeoderantItem', documentId, deoderantItem);
         }
     },
 });
@@ -421,7 +425,7 @@ Template.dressedlogItem.events({
     } else {
         var documentId = this._id;
         var dressedlogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, dressedlogItem);
+        Meteor.call('updatedressedItem', documentId, dressedlogItem);
         }
     },
 });
@@ -460,7 +464,7 @@ Template.improveHygienepageItem.events({
     } else {
         var documentId = this._id;
         var improveHygienepageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveHygienepageItem);
+        Meteor.call('updateimproveHygienepageItem', documentId, improveHygienepageItem);
         }
     },
 });

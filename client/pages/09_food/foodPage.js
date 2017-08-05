@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './food.html'
 
 
@@ -61,7 +65,7 @@ Template.eathistoryItem.events({
     } else {
         var documentId = this._id;
         var eathistoryItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, eathistoryItem);
+        Meteor.call('updateeathistoryItem', documentId, eathistoryItem);
         }
     },
 });
@@ -100,7 +104,7 @@ Template.drinkhistoryItem.events({
     } else {
         var documentId = this._id;
         var drinkhistoryItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, drinkhistoryItem);
+        Meteor.call('updatedrinkhistoryItem', documentId, drinkhistoryItem);
         }
     },
 });
@@ -139,7 +143,7 @@ Template.alcohollogItem.events({
     } else {
         var documentId = this._id;
         var alcohollogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, alcohollogItem);
+        Meteor.call('updatealcohollogItem', documentId, alcohollogItem);
         }
     },
 });
@@ -178,7 +182,7 @@ Template.druglogItem.events({
     } else {
         var documentId = this._id;
         var druglogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, druglogItem);
+        Meteor.call('updatedruglogItem', documentId, druglogItem);
         }
     },
 });
@@ -217,7 +221,7 @@ Template.ingredientinventoryItem.events({
     } else {
         var documentId = this._id;
         var ingredientinventoryItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, ingredientinventoryItem);
+        Meteor.call('updateingredientinventoryItem', documentId, ingredientinventoryItem);
         }
     },
 });
@@ -256,7 +260,7 @@ Template.shoppinglistItem.events({
     } else {
         var documentId = this._id;
         var shoppinglistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, shoppinglistItem);
+        Meteor.call('updateshoppinglistItem', documentId, shoppinglistItem);
         }
     },
 });
@@ -295,7 +299,7 @@ Template.menuItem.events({
     } else {
         var documentId = this._id;
         var menuItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, menuItem);
+        Meteor.call('updatemenuItem', documentId, menuItem);
         }
     },
 });
@@ -334,7 +338,7 @@ Template.menuplanItem.events({
     } else {
         var documentId = this._id;
         var menuplanItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, menuplanItem);
+        Meteor.call('updatemenuplanItem', documentId, menuplanItem);
         }
     },
 });
@@ -373,7 +377,7 @@ Template.improveFoodpageItem.events({
     } else {
         var documentId = this._id;
         var improveFoodpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveFoodpageItem);
+        Meteor.call('updateimproveFoodpageItem', documentId, improveFoodpageItem);
         }
     },
 });

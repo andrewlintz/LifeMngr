@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './fit.html'
 
 
@@ -49,7 +53,7 @@ Template.fitnesslogItem.events({
     } else {
         var documentId = this._id;
         var fitnesslogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, fitnesslogItem);
+        Meteor.call('updatefitnesslogItem', documentId, fitnesslogItem);
         }
     },
 });
@@ -88,7 +92,7 @@ Template.fitnessprogramItem.events({
     } else {
         var documentId = this._id;
         var fitnessprogramItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, fitnessprogramItem);
+        Meteor.call('updatefitnessprogramItem', documentId, fitnessprogramItem);
         }
     },
 });
@@ -127,7 +131,7 @@ Template.improveFitpageItem.events({
     } else {
         var documentId = this._id;
         var improveFitpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveFitpageItem);
+        Meteor.call('updateimproveFitpageItem', documentId, improveFitpageItem);
         }
     },
 });

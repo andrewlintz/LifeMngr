@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './people.html'
 
 
@@ -50,7 +54,7 @@ Template.pplengagedwithItem.events({
     } else {
         var documentId = this._id;
         var pplengagedwithItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, pplengagedwithItem);
+        Meteor.call('updatepplengagedwithItem', documentId, pplengagedwithItem);
         }
     },
 });
@@ -89,7 +93,7 @@ Template.pplconstactItem.events({
     } else {
         var documentId = this._id;
         var pplconstactItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, pplconstactItem);
+        Meteor.call('updatepplconstactItem', documentId, pplconstactItem);
         }
     },
 });
@@ -128,7 +132,7 @@ Template.pplGiftideasItem.events({
     } else {
         var documentId = this._id;
         var pplGiftideasItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, pplGiftideasItem);
+        Meteor.call('updatepplGiftideasItem', documentId, pplGiftideasItem);
         }
     },
 });
@@ -167,7 +171,7 @@ Template.improvePeoplepageItem.events({
     } else {
         var documentId = this._id;
         var improvePeoplepageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improvePeoplepageItem);
+        Meteor.call('updateimprovePeoplepageItem', documentId, improvePeoplepageItem);
         }
     },
 });

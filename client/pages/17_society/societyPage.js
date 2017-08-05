@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './society.html'
 
 
@@ -53,7 +57,7 @@ Template.govtItem.events({
     } else {
         var documentId = this._id;
         var govtItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, govtItem);
+        Meteor.call('updategovtItem', documentId, govtItem);
         }
     },
 });
@@ -92,7 +96,7 @@ Template.policiesItem.events({
     } else {
         var documentId = this._id;
         var policiesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, policiesItem);
+        Meteor.call('updatepoliciesItem', documentId, policiesItem);
         }
     },
 });
@@ -131,7 +135,7 @@ Template.voteItem.events({
     } else {
         var documentId = this._id;
         var voteItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, voteItem);
+        Meteor.call('updatevoteItem', documentId, voteItem);
         }
     },
 });
@@ -170,7 +174,7 @@ Template.improveSocietypageItem.events({
     } else {
         var documentId = this._id;
         var improveSocietypageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveSocietypageItem);
+        Meteor.call('updateimproveSocietypageItem', documentId, improveSocietypageItem);
         }
     },
 });

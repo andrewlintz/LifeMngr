@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './love.html'
 
 
@@ -68,7 +72,7 @@ Template.howSodoingItem.events({
     } else {
         var documentId = this._id;
         var howSodoingItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, howSodoingItem);
+        Meteor.call('updatehowSodoingItem', documentId, howSodoingItem);
         }
     },
 });
@@ -107,7 +111,7 @@ Template.soLikesItem.events({
     } else {
         var documentId = this._id;
         var soLikesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, soLikesItem);
+        Meteor.call('updatesoLikesItem', documentId, soLikesItem);
         }
     },
 });
@@ -146,7 +150,7 @@ Template.soDislikesItem.events({
     } else {
         var documentId = this._id;
         var soDislikesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, soDislikesItem);
+        Meteor.call('updatesoDislikesItem', documentId, soDislikesItem);
         }
     },
 });
@@ -185,7 +189,7 @@ Template.soWantsItem.events({
     } else {
         var documentId = this._id;
         var soWantsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, soWantsItem);
+        Meteor.call('updatesoWantsItem', documentId, soWantsItem);
         }
     },
 });
@@ -224,7 +228,7 @@ Template.sogiftideasItem.events({
     } else {
         var documentId = this._id;
         var sogiftideasItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, sogiftideasItem);
+        Meteor.call('updatesogiftideasItem', documentId, sogiftideasItem);
         }
     },
 });
@@ -263,7 +267,7 @@ Template.soArguementlogItem.events({
     } else {
         var documentId = this._id;
         var soArguementlogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, soArguementlogItem);
+        Meteor.call('updatesoArguementlogItem', documentId, soArguementlogItem);
         }
     },
 });
@@ -302,7 +306,7 @@ Template.soPeriodlogItem.events({
     } else {
         var documentId = this._id;
         var soPeriodlogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, soPeriodlogItem);
+        Meteor.call('updatesoPeriodlogItem', documentId, soPeriodlogItem);
         }
     },
 });
@@ -341,7 +345,7 @@ Template.lovehistItem.events({
     } else {
         var documentId = this._id;
         var lovehistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, lovehistItem);
+        Meteor.call('updatelovehistItem', documentId, lovehistItem);
         }
     },
 });
@@ -380,7 +384,7 @@ Template.dreamSoItem.events({
     } else {
         var documentId = this._id;
         var dreamSoItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, dreamSoItem);
+        Meteor.call('updatedreamSoItem', documentId, dreamSoItem);
         }
     },
 });
@@ -419,7 +423,7 @@ Template.sexhistItem.events({
     } else {
         var documentId = this._id;
         var sexhistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, sexhistItem);
+        Meteor.call('updatesexhistItem', documentId, sexhistItem);
         }
     },
 });
@@ -458,7 +462,7 @@ Template.improveLovepageItem.events({
     } else {
         var documentId = this._id;
         var improveLovepageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveLovepageItem);
+        Meteor.call('updateimproveLovepageItem', documentId, improveLovepageItem);
         }
     },
 });

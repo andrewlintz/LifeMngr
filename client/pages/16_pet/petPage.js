@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './pet.html'
 
 
@@ -48,7 +52,7 @@ Template.petlogItem.events({
     } else {
         var documentId = this._id;
         var petlogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, petlogItem);
+        Meteor.call('updatepetlogItem', documentId, petlogItem);
         }
     },
 });
@@ -87,7 +91,7 @@ Template.petbiometricsItem.events({
     } else {
         var documentId = this._id;
         var petbiometricsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, petbiometricsItem);
+        Meteor.call('updatepetbiometricsItem', documentId, petbiometricsItem);
         }
     },
 });
@@ -126,7 +130,7 @@ Template.petMedhistItem.events({
     } else {
         var documentId = this._id;
         var petMedhistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, petMedhistItem);
+        Meteor.call('updatepetMedhistItem', documentId, petMedhistItem);
         }
     },
 });
@@ -165,7 +169,7 @@ Template.improvePetpageItem.events({
     } else {
         var documentId = this._id;
         var improvePetpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improvePetpageItem);
+        Meteor.call('updateimprovePetpageItem', documentId, improvePetpageItem);
         }
     },
 });

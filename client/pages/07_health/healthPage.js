@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Agenda } from '../../../lib/collections/collections.js';
+
 './health.html'
 
 
@@ -72,7 +76,7 @@ Template.biostatsItem.events({
     } else {
         var documentId = this._id;
         var biostatsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, biostatsItem);
+        Meteor.call('updatebiostatsItem', documentId, biostatsItem);
         }
     },
 });
@@ -111,7 +115,7 @@ Template.familyMedhistItem.events({
     } else {
         var documentId = this._id;
         var familyMedhistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, familyMedhistItem);
+        Meteor.call('updatefamilyMedhistItem', documentId, familyMedhistItem);
         }
     },
 });
@@ -150,7 +154,7 @@ Template.allergiesItem.events({
     } else {
         var documentId = this._id;
         var allergiesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, allergiesItem);
+        Meteor.call('updateallergiesItem', documentId, allergiesItem);
         }
     },
 });
@@ -189,7 +193,7 @@ Template.symptomsItem.events({
     } else {
         var documentId = this._id;
         var symptomsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, symptomsItem);
+        Meteor.call('updatesymptomsItem', documentId, symptomsItem);
         }
     },
 });
@@ -228,7 +232,7 @@ Template.bodyachelogItem.events({
     } else {
         var documentId = this._id;
         var bodyachelogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, bodyachelogItem);
+        Meteor.call('updatebodyachelogItem', documentId, bodyachelogItem);
         }
     },
 });
@@ -267,7 +271,7 @@ Template.sicklogItem.events({
     } else {
         var documentId = this._id;
         var sicklogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, sicklogItem);
+        Meteor.call('updatesicklogItem', documentId, sicklogItem);
         }
     },
 });
@@ -306,7 +310,7 @@ Template.medhistoryItem.events({
     } else {
         var documentId = this._id;
         var medhistoryItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, medhistoryItem);
+        Meteor.call('updatemedhistoryItem', documentId, medhistoryItem);
         }
     },
 });
@@ -345,7 +349,7 @@ Template.medicineItem.events({
     } else {
         var documentId = this._id;
         var medicineItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, medicineItem);
+        Meteor.call('updatemedicineItem', documentId, medicineItem);
         }
     },
 });
@@ -384,7 +388,7 @@ Template.dentallogItem.events({
     } else {
         var documentId = this._id;
         var dentallogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, dentallogItem);
+        Meteor.call('updatedentallogItem', documentId, dentallogItem);
         }
     },
 });
@@ -423,7 +427,7 @@ Template.dentistryhistItem.events({
     } else {
         var documentId = this._id;
         var dentistryhistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, dentistryhistItem);
+        Meteor.call('updatedentistryhistItem', documentId, dentistryhistItem);
         }
     },
 });
@@ -462,7 +466,7 @@ Template.visionhistItem.events({
     } else {
         var documentId = this._id;
         var visionhistItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, visionhistItem);
+        Meteor.call('updatevisionhistItem', documentId, visionhistItem);
         }
     },
 });
@@ -501,7 +505,7 @@ Template.pooplogItem.events({
     } else {
         var documentId = this._id;
         var pooplogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, pooplogItem);
+        Meteor.call('updatepooplogItem', documentId, pooplogItem);
         }
     },
 });
@@ -540,7 +544,7 @@ Template.peelogItem.events({
     } else {
         var documentId = this._id;
         var peelogItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, peelogItem);
+        Meteor.call('updatepeelogItem', documentId, peelogItem);
         }
     },
 });
@@ -579,7 +583,7 @@ Template.improveHealthpageItem.events({
     } else {
         var documentId = this._id;
         var improveHealthpageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveHealthpageItem);
+        Meteor.call('updateimproveHealthpageItem', documentId, improveHealthpageItem);
         }
     },
 });

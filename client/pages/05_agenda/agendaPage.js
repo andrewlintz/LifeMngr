@@ -96,7 +96,7 @@ Template.visionItem.events({
     } else {
         var documentId = this._id;
         var visionItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, visionItem);
+        Meteor.call('updatevisionItem', documentId, visionItem);
         }
     },
 });
@@ -134,7 +134,7 @@ Template.opportunityItem.events({
     } else {
         var documentId = this._id;
         var opportunityItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, opportunityItem);
+        Meteor.call('updateopportunityItem', documentId, opportunityItem);
         }
     },
 });
@@ -173,7 +173,7 @@ Template.missionItem.events({
     } else {
         var documentId = this._id;
         var missionItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, missionItem);
+        Meteor.call('updatemissionItem', documentId, missionItem);
         }
     },
 });
@@ -212,7 +212,7 @@ Template.goalItem.events({
     } else {
         var documentId = this._id;
         var goalItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, goalItem);
+        Meteor.call('updategoalItem', documentId, goalItem);
         }
     },
 });
@@ -251,7 +251,7 @@ Template.strategyItem.events({
     } else {
         var documentId = this._id;
         var strategyItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, strategyItem);
+        Meteor.call('updatestrategyItem', documentId, strategyItem);
         }
     },
 });
@@ -290,7 +290,7 @@ Template.todosItem.events({
     } else {
         var documentId = this._id;
         var todosItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, todosItem);
+        Meteor.call('updatetodosItem', documentId, todosItem);
         }
     },
 });
@@ -329,7 +329,7 @@ Template.accomplishmentsItem.events({
     } else {
         var documentId = this._id;
         var accomplishmentsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, accomplishmentsItem);
+        Meteor.call('updateaccomplishmentsItem', documentId, accomplishmentsItem);
         }
     },
 });
@@ -368,7 +368,7 @@ Template.successesItem.events({
     } else {
         var documentId = this._id;
         var successesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, successesItem);
+        Meteor.call('updatesuccessesItem', documentId, successesItem);
         }
     },
 });
@@ -407,7 +407,7 @@ Template.failureItem.events({
     } else {
         var documentId = this._id;
         var failureItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, failureItem);
+        Meteor.call('updatefailureItem', documentId, failureItem);
         }
     },
 });
@@ -446,7 +446,7 @@ Template.strengthsItem.events({
     } else {
         var documentId = this._id;
         var strengthsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, strengthsItem);
+        Meteor.call('updatestrengthsItem', documentId, strengthsItem);
         }
     },
 });
@@ -485,7 +485,7 @@ Template.weaknessesItem.events({
     } else {
         var documentId = this._id;
         var weaknessesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, weaknessesItem);
+        Meteor.call('updateweaknessesItem', documentId, weaknessesItem);
         }
     },
 });
@@ -524,7 +524,7 @@ Template.goodhabitsItem.events({
     } else {
         var documentId = this._id;
         var goodhabitsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, goodhabitsItem);
+        Meteor.call('updategoodhabitsItem', documentId, goodhabitsItem);
         }
     },
 });
@@ -563,7 +563,7 @@ Template.badhabitsItem.events({
     } else {
         var documentId = this._id;
         var badhabitsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, badhabitsItem);
+        Meteor.call('updatebadhabitsItem', documentId, badhabitsItem);
         }
     },
 });
@@ -602,7 +602,7 @@ Template.valuesItem.events({
     } else {
         var documentId = this._id;
         var valuesItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, valuesItem);
+        Meteor.call('updatevaluesItem', documentId, valuesItem);
         }
     },
 });
@@ -641,7 +641,7 @@ Template.wantsItem.events({
     } else {
         var documentId = this._id;
         var wantsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, wantsItem);
+        Meteor.call('updatewantsItem', documentId, wantsItem);
         }
     },
 });
@@ -680,7 +680,7 @@ Template.problemsItem.events({
     } else {
         var documentId = this._id;
         var problemsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, problemsItem);
+        Meteor.call('updateproblemsItem', documentId, problemsItem);
         }
     },
 });
@@ -719,7 +719,7 @@ Template.careerItem.events({
     } else {
         var documentId = this._id;
         var careerItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, careerItem);
+        Meteor.call('updatecareerItem', documentId, careerItem);
         }
     },
 });
@@ -758,7 +758,7 @@ Template.projectsItem.events({
     } else {
         var documentId = this._id;
         var projectsItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, projectsItem);
+        Meteor.call('updateprojectsItem', documentId, projectsItem);
         }
     },
 });
@@ -797,7 +797,7 @@ Template.improveAgendapageItem.events({
     } else {
         var documentId = this._id;
         var improveAgendapageItem = $(event.target).val();
-        Meteor.call('updateListItem', documentId, improveAgendapageItem);
+        Meteor.call('updateimproveAgendapageItem', documentId, improveAgendapageItem);
         }
     },
 });
