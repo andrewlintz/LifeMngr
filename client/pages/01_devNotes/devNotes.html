@@ -1,0 +1,172 @@
+<template name="devNotesPage">
+  <h1>Dev Notes</h1>
+
+<!-- Start of LOSbuglog Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSbuglog">
+	Bug log</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSbuglogItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSbuglog" aria-expanded="false" aria-controls="collapseLOSbuglog">
+    			LOSbuglog Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSbuglog">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSbuglogEach}}
+								{{> LOSbuglogItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSbuglog card #1 -->
+
+<!-- Start of LOSdevTodo Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSdevTodo">
+	Dev To Do</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSdevTodoItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSdevTodo" aria-expanded="false" aria-controls="collapseLOSdevTodo">
+    			LOSdevTodo Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSdevTodo">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSdevTodoEach}}
+								{{> LOSdevTodoItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSdevTodo card #1 -->
+
+<!-- Start of LOSfeatureRequest Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSfeatureRequest">
+	Feature Request</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSfeatureRequestItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSfeatureRequest" aria-expanded="false" aria-controls="collapseLOSfeatureRequest">
+    			LOSfeatureRequest Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSfeatureRequest">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSfeatureRequestEach}}
+								{{> LOSfeatureRequestItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSfeatureRequest card #1 -->
+
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of Add LOSbuglog Item #2 -->
+
+<template name="addLOSbuglogItem">
+    <form>
+        Bug Log:
+        <input type="text" class="form-control" placeholder="Wat's up with LOS?" name="LOSbuglogitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSbuglog Item #3 -->
+<template name="LOSbuglogItem"> 
+
+      <input type="text" value="{{LOSbuglogitemName}}" name="LOSbuglogItem">
+      [<a href="#" class="delete-LOSbuglogitem">  Delete </a>]
+</template>
+
+<!-- End of LOSbuglog Item #3 -->
+
+<!-- Start of Add LOSdevTodo Item #2 -->
+
+<template name="addLOSdevTodoItem">
+    <form>
+        Dev To do:
+        <input type="text" class="form-control" placeholder="What needs to happen?" name="LOSdevTodoitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSdevTodo Item #3 -->
+<template name="LOSdevTodoItem"> 
+
+      <input type="text" value="{{LOSdevTodoitemName}}" name="LOSdevTodoItem">
+      [<a href="#" class="delete-LOSdevTodoitem">  Delete </a>]
+</template>
+
+<!-- End of LOSdevTodo Item #3 -->
+
+<!-- Start of Add LOSfeatureRequest Item #2 -->
+
+<template name="addLOSfeatureRequestItem">
+    <form>
+        LOS Feature Request:
+        <input type="text" class="form-control" placeholder="What big Idea do you have?" name="LOSfeatureRequestitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSfeatureRequest Item #3 -->
+<template name="LOSfeatureRequestItem"> 
+
+      <input type="text" value="{{LOSfeatureRequestitemName}}" name="LOSfeatureRequestItem">
+      [<a href="#" class="delete-LOSfeatureRequestitem">  Delete </a>]
+</template>
+
+<!-- End of LOSfeatureRequest Item #3 -->

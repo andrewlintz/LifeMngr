@@ -38,4 +38,8 @@ if (Meteor.isClient) {
 
 Template.body.onCreated(function bodyOnCreated() {
   Meteor.subscribe('agenda');
+  Meteor.subscribe('admindb');
+  Meteor.subscribe('devNotes');
+  Meteor.subscribe('devTest');
+  Meteor.subscribe('livedb');  
 });

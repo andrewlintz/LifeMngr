@@ -1,0 +1,323 @@
+<template name="aboutPage">
+  <h1>About LOS</h1>
+
+
+<!-- Start of LOSelevatorpitch Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSelevatorpitch">
+	LOS Elevator Pitch</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSelevatorpitchItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSelevatorpitch" aria-expanded="false" aria-controls="collapseLOSelevatorpitch">
+    			Elevator Pitch Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSelevatorpitch">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSelevatorpitchEach}}
+								{{> LOSelevatorpitchItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSelevatorpitch card #1 -->
+
+<!-- Start of LOSsummary Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSsummary">
+	LOS Summary</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSsummaryItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSsummary" aria-expanded="false" aria-controls="collapseLOSsummary">
+    			LOS Summary Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSsummary">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSsummaryEach}}
+								{{> LOSsummaryItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSsummary card #1 -->
+
+<!-- Start of LOSindepth Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSindepth">
+	LOS Indepth</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSindepthItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSindepth" aria-expanded="false" aria-controls="collapseLOSindepth">
+    			LOS Indepth Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSindepth">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSindepthEach}}
+								{{> LOSindepthItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSindepth card #1 -->
+
+<!-- Start of LOSproblemsolve Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSproblemsolve">
+	Problems Solved by LOS</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSproblemsolveItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSproblemsolve" aria-expanded="false" aria-controls="collapseLOSproblemsolve">
+    			Problems Solved Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSproblemsolve">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSproblemsolveEach}}
+								{{> LOSproblemsolveItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSproblemsolve card #1 -->
+
+<!-- Start of LOSfeature Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSfeature">
+	LOS Features</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSfeatureItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSfeature" aria-expanded="false" aria-controls="collapseLOSfeature">
+    			Features Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSfeature">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSfeatureEach}}
+								{{> LOSfeatureItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSfeature card #1 -->
+
+<!-- Start of LOSbenefit Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputLOSbenefit">
+	LOS Benefits</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addLOSbenefitItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSbenefit" aria-expanded="false" aria-controls="collapseLOSbenefit">
+    			LOS Benefits Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseLOSbenefit">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each LOSbenefitEach}}
+								{{> LOSbenefitItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of LOSbenefit card #1 -->
+
+</template>
+
+
+
+
+
+
+<!-- Start of Add LOSelevatorpitch Item #2 -->
+
+<template name="addLOSelevatorpitchItem">
+    <form>
+        LOS Elevator Pitch:
+        <input type="text" class="form-control" placeholder="What's your Elevator Pitch?" name="LOSelevatorpitchitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+
+<!-- Start of Retrieve LOSelevatorpitch Item #3 -->
+<template name="LOSelevatorpitchItem"> 
+
+      <input type="text" value="{{LOSelevatorpitchitemName}}" name="LOSelevatorpitchItem">
+      [<a href="#" class="delete-LOSelevatorpitchitem">  Delete </a>]
+</template>
+
+<!-- End of LOSelevatorpitch Item #3 -->
+
+<!-- Start of Add LOSsummary Item #2 -->
+
+<template name="addLOSsummaryItem">
+    <form>
+        LOS Summary:
+        <input type="text" class="form-control" placeholder="Describe to me the LOS summary." name="LOSsummaryitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSsummary Item #3 -->
+<template name="LOSsummaryItem"> 
+
+      <input type="text" value="{{LOSsummaryitemName}}" name="LOSsummaryItem">
+      [<a href="#" class="delete-LOSsummaryitem">  Delete </a>]
+</template>
+
+<!-- End of LOSsummary Item #3 -->
+
+<!-- Start of Add LOSindepth Item #2 -->
+
+<template name="addLOSindepthItem">
+    <form>
+        LOS Indepth:
+        <input type="text" class="form-control" placeholder="Go indepth with your ideads about the LOS." name="LOSindepthitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSindepth Item #3 -->
+<template name="LOSindepthItem"> 
+
+      <input type="text" value="{{LOSindepthitemName}}" name="LOSindepthItem">
+      [<a href="#" class="delete-LOSindepthitem">  Delete </a>]
+</template>
+
+<!-- End of LOSindepth Item #3 -->
+
+<!-- Start of Add LOSproblemsolve Item #2 -->
+
+<template name="addLOSproblemsolveItem">
+    <form>
+        Problems solved by the LOS:
+        <input type="text" class="form-control" placeholder="What problems are solved by the LOS?" name="LOSproblemsolveitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSproblemsolve Item #3 -->
+<template name="LOSproblemsolveItem"> 
+
+      <input type="text" value="{{LOSproblemsolveitemName}}" name="LOSproblemsolveItem">
+      [<a href="#" class="delete-LOSproblemsolveitem">  Delete </a>]
+</template>
+
+<!-- End of LOSproblemsolve Item #3 -->
+
+<!-- Start of Add LOSfeature Item #2 -->
+
+<template name="addLOSfeatureItem">
+    <form>
+        Features of the LOS:
+        <input type="text" class="form-control" placeholder="Describe to me the Features of the LOS: LOS does X, so that you can enjoy Y benefit." name="LOSfeatureitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSfeature Item #3 -->
+<template name="LOSfeatureItem"> 
+
+      <input type="text" value="{{LOSfeatureitemName}}" name="LOSfeatureItem">
+      [<a href="#" class="delete-LOSfeatureitem">  Delete </a>]
+</template>
+
+<!-- End of LOSfeature Item #3 -->
+
+<!-- Start of Add LOSbenefit Item #2 -->
+
+<template name="addLOSbenefitItem">
+    <form>
+        Benefits:
+        <input type="text" class="form-control" placeholder="What are the Benefits of the LOS?" name="LOSbenefititemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve LOSbenefit Item #3 -->
+<template name="LOSbenefitItem"> 
+
+      <input type="text" value="{{LOSbenefititemName}}" name="LOSbenefitItem">
+      [<a href="#" class="delete-LOSbenefititem">  Delete </a>]
+</template>
+
+<!-- End of LOSbenefit Item #3 -->

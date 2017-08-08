@@ -1,0 +1,274 @@
+<template name="bioPage">
+  <h1>Bio Profile</h1>
+
+
+<!-- Start of ProfilePic Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputProfilePic">
+	ProfilePic</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addProfilePicItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseProfilePic" aria-expanded="false" aria-controls="collapseProfilePic">
+    			ProfilePic Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseProfilePic">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each ProfilePicEach}}
+								{{> ProfilePicItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of ProfilePic card #1 -->
+
+<!-- Start of userFirstName Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputuserFirstName">
+	userFirstName</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adduserFirstNameItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseuserFirstName" aria-expanded="false" aria-controls="collapseuserFirstName">
+    			userFirstName Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseuserFirstName">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each userFirstNameEach}}
+								{{> userFirstNameItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of userFirstName card #1 -->
+
+<!-- Start of userMiddleName Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputuserMiddleName">
+	userMiddleName</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adduserMiddleNameItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseuserMiddleName" aria-expanded="false" aria-controls="collapseuserMiddleName">
+    			userMiddleName Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseuserMiddleName">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each userMiddleNameEach}}
+								{{> userMiddleNameItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of userMiddleName card #1 -->
+
+<!-- Start of userLastName Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputuserLastName">
+	userLastName</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adduserLastNameItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseuserLastName" aria-expanded="false" aria-controls="collapseuserLastName">
+    			userLastName Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseuserLastName">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each userLastNameEach}}
+								{{> userLastNameItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of userLastName card #1 -->
+
+<!-- Start of userbirthday Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputuserbirthday">
+	userbirthday</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adduserbirthdayItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseuserbirthday" aria-expanded="false" aria-controls="collapseuserbirthday">
+    			userbirthday Card:
+  					</button>
+			</p>
+				<div class="collapse" id="collapseuserbirthday">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each userbirthdayEach}}
+								{{> userbirthdayItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of userbirthday card #1 -->
+
+</template>
+
+
+
+
+
+
+
+
+
+
+<!-- Start of Add ProfilePic Item #2 -->
+
+<template name="addProfilePicItem">
+    <form>
+        ProfilePic:
+        <input type="text" class="form-control" placeholder="What are your ProfilePic" name="ProfilePicitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve ProfilePic Item #3 -->
+<template name="ProfilePicItem"> 
+
+      <input type="text" value="{{ProfilePicitemName}}" name="ProfilePicItem">
+      [<a href="#" class="delete-ProfilePicitem">  Delete </a>]
+</template>
+
+<!-- End of ProfilePic Item #3 -->
+
+<!-- Start of Add userFirstName Item #2 -->
+
+<template name="adduserFirstNameItem">
+    <form>
+        userFirstName:
+        <input type="text" class="form-control" placeholder="What are your userFirstName" name="userFirstNameitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve userFirstName Item #3 -->
+<template name="userFirstNameItem"> 
+
+      <input type="text" value="{{userFirstNameitemName}}" name="userFirstNameItem">
+      [<a href="#" class="delete-userFirstNameitem">  Delete </a>]
+</template>
+
+<!-- End of userFirstName Item #3 -->
+
+<!-- Start of Add userMiddleName Item #2 -->
+
+<template name="adduserMiddleNameItem">
+    <form>
+        userMiddleName:
+        <input type="text" class="form-control" placeholder="What are your userMiddleName" name="userMiddleNameitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve userMiddleName Item #3 -->
+<template name="userMiddleNameItem"> 
+
+      <input type="text" value="{{userMiddleNameitemName}}" name="userMiddleNameItem">
+      [<a href="#" class="delete-userMiddleNameitem">  Delete </a>]
+</template>
+
+<!-- End of userMiddleName Item #3 -->
+
+<!-- Start of Add userLastName Item #2 -->
+
+<template name="adduserLastNameItem">
+    <form>
+        userLastName:
+        <input type="text" class="form-control" placeholder="What are your userLastName" name="userLastNameitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve userLastName Item #3 -->
+<template name="userLastNameItem"> 
+
+      <input type="text" value="{{userLastNameitemName}}" name="userLastNameItem">
+      [<a href="#" class="delete-userLastNameitem">  Delete </a>]
+</template>
+
+<!-- End of userLastName Item #3 -->
+
+<!-- Start of Add userbirthday Item #2 -->
+
+<template name="adduserbirthdayItem">
+    <form>
+        userbirthday:
+        <input type="text" class="form-control" placeholder="What are your userbirthday" name="userbirthdayitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve userbirthday Item #3 -->
+<template name="userbirthdayItem"> 
+
+      <input type="text" value="{{userbirthdayitemName}}" name="userbirthdayItem">
+      [<a href="#" class="delete-userbirthdayitem">  Delete </a>]
+</template>
+
+<!-- End of userbirthday Item #3 -->

@@ -3,15 +3,15 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-export const Agenda = new Mongo.Collection('agenda');
+
 Daily = new Mongo.Collection('daily');
 
 
 if (Meteor.isServer) {
   // This code only runs on the server
   // Only publish tasks that are public or belong to the current user
-  Meteor.publish('agenda', function agendaPublication() {
-    return Agenda.find({
+  Meteor.publish('devTest', function devTestPublication() {
+    return DevTest.find({
         $or: [
             { private: { $ne: true } },
             { owner: this.userId },
@@ -33,7 +33,7 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    Agenda.insert({
+    DevTest.insert({
       title: spirititemName,
       description: spirititemName,
       spirititemName: spirititemName,
@@ -52,13 +52,13 @@ Meteor.methods({
   'spirititemName.remove'(documentId) {
     check(documentId, String);
 
-    const spirit = Agenda.findOne(documentId);
+    const spirit = DevTest.findOne(documentId);
     if (spirit.private && spirit.owner !== Meteor.userId()) {
       // If the spirit item is private, make sure only the owner can delete it
       throw new Meteor.Error('not-authorized');
     }
  
-    Agenda.remove(documentId);
+    DevTest.remove(documentId);
   },
   'updateListItem': function(documentId, spiritItem){
     check(spiritItem, String); 
@@ -68,7 +68,7 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    Agenda.update({ _id: documentId }, {$set: { spirititemName : spiritItem, title : spiritItem, description : spiritItem }});
+    DevTest.update({ _id: documentId }, {$set: { spirititemName : spiritItem, title : spiritItem, description : spiritItem }});
   },
 
 
