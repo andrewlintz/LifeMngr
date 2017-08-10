@@ -6,7 +6,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputmood">
-	mood</div>
+	Mood</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -14,7 +14,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemood" aria-expanded="false" aria-controls="collapsemood">
-    			mood Card:
+    			Mood history
   					</button>
 			</p>
 				<div class="collapse" id="collapsemood">
@@ -38,7 +38,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputcreativeartideas">
-	creativeartideas</div>
+	Creative Art Ideas</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -46,7 +46,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsecreativeartideas" aria-expanded="false" aria-controls="collapsecreativeartideas">
-    			creativeartideas Card:
+    			Creative Art Ideas
   					</button>
 			</p>
 				<div class="collapse" id="collapsecreativeartideas">
@@ -70,7 +70,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputjokes">
-	jokes</div>
+	Jokes</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -78,7 +78,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsejokes" aria-expanded="false" aria-controls="collapsejokes">
-    			jokes Card:
+    			Jokes
   					</button>
 			</p>
 				<div class="collapse" id="collapsejokes">
@@ -102,7 +102,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputinvention">
-	invention</div>
+	Invention</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -110,7 +110,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseinvention" aria-expanded="false" aria-controls="collapseinvention">
-    			invention Card:
+    			Inventions
   					</button>
 			</p>
 				<div class="collapse" id="collapseinvention">
@@ -134,7 +134,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputentreprenuerialidea">
-	entreprenuerialidea</div>
+	Entreprenuerial Ideas</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -142,7 +142,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseentreprenuerialidea" aria-expanded="false" aria-controls="collapseentreprenuerialidea">
-    			entreprenuerialidea Card:
+    			Entreprenuerial Ideas
   					</button>
 			</p>
 				<div class="collapse" id="collapseentreprenuerialidea">
@@ -161,44 +161,14 @@
 
 <!-- End of entreprenuerialidea card #1 -->
 
-<!-- Start of opinion Card #1-->
 
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading2" for="inputopinion">
-	opinion</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addopinionItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseopinion" aria-expanded="false" aria-controls="collapseopinion">
-    			opinion Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapseopinion">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each opinionEach}}
-								{{> opinionItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-
-<!-- End of opinion card #1 -->
 
 <!-- Start of improveMindpage Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputimproveMindpage">
-	improveMindpage</div>
+	Improve Mind Page</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -242,8 +212,8 @@
 
 <template name="addmoodItem">
     <form>
-        mood:
-        <input type="text" class="form-control" placeholder="What are your mood" name="mooditemName">
+        How you Feeling Right Now?
+        <input type="text" class="form-control" placeholder="Tell me how you feel!" name="mooditemName">
     </form>
 </template>
 
@@ -262,8 +232,8 @@
 
 <template name="addcreativeartideasItem">
     <form>
-        creativeartideas:
-        <input type="text" class="form-control" placeholder="What are your creativeartideas" name="creativeartideasitemName">
+        Creative Art ideas:
+        <input type="text" class="form-control" placeholder="What's dope?" name="creativeartideasitemName">
     </form>
 </template>
 
@@ -282,8 +252,8 @@
 
 <template name="addjokesItem">
     <form>
-        jokes:
-        <input type="text" class="form-control" placeholder="What are your jokes" name="jokesitemName">
+        Warning Lame Dad Jokes Ahead:
+        <input type="text" class="form-control" placeholder="Alright, lay it on me." name="jokesitemName">
     </form>
 </template>
 
@@ -302,8 +272,8 @@
 
 <template name="addinventionItem">
     <form>
-        invention:
-        <input type="text" class="form-control" placeholder="What are your invention" name="inventionitemName">
+        Invention:
+        <input type="text" class="form-control" placeholder="Got a Noval Idea?" name="inventionitemName">
     </form>
 </template>
 
@@ -322,8 +292,8 @@
 
 <template name="addentreprenuerialideaItem">
     <form>
-        entreprenuerialidea:
-        <input type="text" class="form-control" placeholder="What are your entreprenuerialidea" name="entreprenuerialideaitemName">
+        Business Ventures
+        <input type="text" class="form-control" placeholder="What's clever and viable?" name="entreprenuerialideaitemName">
     </form>
 </template>
 
@@ -338,32 +308,13 @@
 
 <!-- End of entreprenuerialidea Item #3 -->
 
-<!-- Start of Add opinion Item #2 -->
-
-<template name="addopinionItem">
-    <form>
-        opinion:
-        <input type="text" class="form-control" placeholder="What are your opinion" name="opinionitemName">
-    </form>
-</template>
-
-<!-- End of Add Keyword Item #2 -->
-
-<!-- Start of Retrieve opinion Item #3 -->
-<template name="opinionItem"> 
-
-      <input type="text" value="{{opinionitemName}}" name="opinionItem">
-      [<a href="#" class="delete-opinionitem">  Delete </a>]
-</template>
-
-<!-- End of opinion Item #3 -->
 
 <!-- Start of Add improveMindpage Item #2 -->
 
 <template name="addimproveMindpageItem">
     <form>
-        improveMindpage:
-        <input type="text" class="form-control" placeholder="What are your improveMindpage" name="improveMindpageitemName">
+        Improve Mind Page:
+        <input type="text" class="form-control" placeholder="What would improve the Mind page?" name="improveMindpageitemName">
     </form>
 </template>
 

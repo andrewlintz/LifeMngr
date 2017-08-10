@@ -11,8 +11,8 @@ import { DevTest } from '../../../lib/collections/collections.js';
 Template.peoplePage.helpers({
     pplengagedwithEach() {
         return DevTest.find( { pplengagedwithitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    pplconstactEach() {
-        return DevTest.find( { pplconstactitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    pplscontactEach() {
+        return DevTest.find( { pplscontactitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     pplGiftideasEach() {
         return DevTest.find( { pplGiftideasitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     improvePeoplepageEach() {
@@ -61,44 +61,44 @@ Template.pplengagedwithItem.events({
 
 ////////* End of pplengagedwith Events *//////
 
-////////* Start of pplconstact Events *//////
+////////* Start of pplscontact Events *//////
 
 
-Template.addpplconstactItem.events({
+Template.addpplscontactItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const pplconstactitemName = target.pplconstactitemName.value;
+    const pplscontactitemName = target.pplscontactitemName.value;
     
-    // Insert a pplconstact item into the collection
-    Meteor.call('pplconstactitemName.insert', pplconstactitemName);
+    // Insert a pplscontact item into the collection
+    Meteor.call('pplscontactitemName.insert', pplscontactitemName);
 
     // Clear form
-    target.pplconstactitemName.value = '';
+    target.pplscontactitemName.value = '';
     },
 });
 
-Template.pplconstactItem.events({
+Template.pplscontactItem.events({
     // events go here
-    'click .delete-pplconstactitem'(){
-     Meteor.call('pplconstactitemName.remove', this._id);
+    'click .delete-pplscontactitem'(){
+     Meteor.call('pplscontactitemName.remove', this._id);
     },
 
-    'keyup [name=pplconstactItem]': function(event){
+    'keyup [name=pplscontactItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var pplconstactItem = $(event.target).val();
-        Meteor.call('updatepplconstactItem', documentId, pplconstactItem);
+        var pplscontactItem = $(event.target).val();
+        Meteor.call('updatepplscontactItem', documentId, pplscontactItem);
         }
     },
 });
 
-////////* End of pplconstact Events *//////
+////////* End of pplscontact Events *//////
 
 ////////* Start of pplGiftideas Events *//////
 

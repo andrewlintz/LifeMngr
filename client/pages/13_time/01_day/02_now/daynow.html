@@ -48,6 +48,85 @@
 </template>
 
 
+<!-- //// BUTTONS //// -->
+<template name="greatButtoNator">
+<p>
+  <div id="myGroup" class="accordion">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" data-parent="#myGroup" aria-expanded="true" aria-controls="lastnightsleep">
+      Sleep
+      </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" data-parent="#myGroup" aria-expanded="false" aria-controls="morning">
+      Wake
+      </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" data-parent="#myGroup" aria-expanded="false" aria-controls="agenda">
+      Agenda
+      </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" data-parent="#myGroup" aria-expanded="false" aria-controls="mind">
+      Mind
+      </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" data-parent="#myGroup" aria-expanded="false" aria-controls="Hygiene">
+    Hygiene
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" data-parent="#myGroup" aria-expanded="false" aria-controls="Health">
+    Health
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" data-parent="#myGroup" aria-expanded="false" aria-controls="Food">
+    Food
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" data-parent="#myGroup" aria-expanded="false" aria-controls="Fit">
+    Fit
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Time" data-parent="#myGroup" aria-expanded="false" aria-controls="Time">
+    Time
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" data-parent="#myGroup" aria-expanded="false" aria-controls="Money">
+    Money
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Places" data-parent="#myGroup" aria-expanded="false" aria-controls="Places">
+    Spaces & Places
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" data-parent="#myGroup" aria-expanded="false" aria-controls="Things">
+    Things
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" data-parent="#myGroup" aria-expanded="false" aria-controls="Fengshui">
+    Fengshui
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" data-parent="#myGroup" aria-expanded="false" aria-controls="People">
+    People
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" data-parent="#myGroup" aria-expanded="false" aria-controls="Love">
+    Love
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" data-parent="#myGroup" aria-expanded="false" aria-controls="Companion">
+    Companion
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" data-parent="#myGroup" aria-expanded="false" aria-controls="Society">
+    Society
+    </button>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" data-parent="#myGroup" aria-expanded="false" aria-controls="Spirit">
+    Spirit
+    </button>
+  <hr>
+  </div>
+</p>
+</template>
+
+<template name="timepicker">
+    <input id="whatever" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
+</template>
+
+<template name="tempName">
+
+  <div class="input-group datetimepicker">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input class="set-due-date form-control" type="text"/>
+  </div>
+
+</template>
+
+
+
+
 
 <!--   ////  Today's Story ////  -->
 
@@ -80,83 +159,6 @@
 </p>
 </template>
 
-
-
-
-
-<!-- //// BUTTONS //// -->
-<template name="greatButtoNator">
-<p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" aria-expanded="true" aria-controls="lastnightsleep">
-    Sleep
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" aria-expanded="false" aria-controls="morning">
-    Wake
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" aria-expanded="false" aria-controls="agenda">
-    Agenda
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mind" aria-expanded="false" aria-controls="mind">
-    Mind
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Hygiene" aria-expanded="false" aria-controls="Hygiene">
-    Hygiene
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Health" aria-expanded="false" aria-controls="Health">
-    Health
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Food" aria-expanded="false" aria-controls="Food">
-    Food
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fit" aria-expanded="false" aria-controls="Fit">
-    Fit
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Time" aria-expanded="false" aria-controls="Time">
-    Time
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Money" aria-expanded="false" aria-controls="Money">
-    Money
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Places" aria-expanded="false" aria-controls="Places">
-    Spaces & Places
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Things" aria-expanded="false" aria-controls="Things">
-    Things
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Fengshui" aria-expanded="false" aria-controls="Fengshui">
-    Fengshui
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#People" aria-expanded="false" aria-controls="People">
-    People
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Love" aria-expanded="false" aria-controls="Love">
-    Love
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Companion" aria-expanded="false" aria-controls="Companion">
-    Companion
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Society" aria-expanded="false" aria-controls="Society">
-    Society
-  </button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Spirit" aria-expanded="false" aria-controls="Spirit">
-    Spirit
-  </button>
-  <hr>
-</p>
-</template>
-
-<template name="timepicker">
-    <input id="whatever" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
-</template>
-
-<template name="tempName">
-
-  <div class="input-group datetimepicker">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <input class="set-due-date form-control" type="text"/>
-  </div>
-
-</template>
 
 
 <!-- //// SLEEP //// 
@@ -1510,7 +1512,7 @@ Naps and when went to sleep last night
     <form class="form-horizontal">
       <div class="form-group">
         <div class="col-sm-9">
-          {{> addworkspacetightinesItem}}
+          {{> addworkspacetightinessItem}}
         </div>
       </div>
     </form>
@@ -1567,12 +1569,12 @@ Naps and when went to sleep last night
       </div>
     </form>
 
-<!--- pplconstact DayNow LOGGER FORMS -->
+<!--- pplscontact DayNow LOGGER FORMS -->
   <p></p>
     <form class="form-horizontal">
       <div class="form-group">
         <div class="col-sm-9">
-          {{> addpplconstactItem}}
+          {{> addpplscontactItem}}
         </div>
       </div>
     </form>

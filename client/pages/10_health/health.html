@@ -8,7 +8,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputbiostats">
-	biostats</div>
+	Bio Stats</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -16,7 +16,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebiostats" aria-expanded="false" aria-controls="collapsebiostats">
-    			biostats Card:
+    			Bio Stats
   					</button>
 			</p>
 				<div class="collapse" id="collapsebiostats">
@@ -35,27 +35,28 @@
 
 <!-- End of biostats card #1 -->
 
-<!-- Start of familyMedhist Card #1-->
+
+<!-- Start of bodyachelog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading2" for="inputfamilyMedhist">
-	familyMedhist</div>
+	<div class="panel-heading2" for="inputbodyachelog">
+	Body Ache</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addfamilyMedhistItem}}
+			{{> addbodyachelogItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefamilyMedhist" aria-expanded="false" aria-controls="collapsefamilyMedhist">
-    			familyMedhist Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebodyachelog" aria-expanded="false" aria-controls="collapsebodyachelog">
+    			Body Ache log
   					</button>
 			</p>
-				<div class="collapse" id="collapsefamilyMedhist">
+				<div class="collapse" id="collapsebodyachelog">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each familyMedhistEach}}
-								{{> familyMedhistItem}}
+  						{{#each bodyachelogEach}}
+								{{> bodyachelogItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -65,14 +66,14 @@
 </div>
 
 
-<!-- End of familyMedhist card #1 -->
+<!-- End of bodyachelog card #1 -->
 
 <!-- Start of allergies Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputallergies">
-	allergies</div>
+	Allergies</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -80,7 +81,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseallergies" aria-expanded="false" aria-controls="collapseallergies">
-    			allergies Card:
+    			Allergies Record
   					</button>
 			</p>
 				<div class="collapse" id="collapseallergies">
@@ -104,7 +105,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputsymptoms">
-	symptoms</div>
+	Symptoms</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -112,7 +113,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesymptoms" aria-expanded="false" aria-controls="collapsesymptoms">
-    			symptoms Card:
+    			Symptoms
   					</button>
 			</p>
 				<div class="collapse" id="collapsesymptoms">
@@ -131,44 +132,13 @@
 
 <!-- End of symptoms card #1 -->
 
-<!-- Start of bodyachelog Card #1-->
-
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading2" for="inputbodyachelog">
-	bodyachelog</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addbodyachelogItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsebodyachelog" aria-expanded="false" aria-controls="collapsebodyachelog">
-    			bodyachelog Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapsebodyachelog">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each bodyachelogEach}}
-								{{> bodyachelogItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-
-<!-- End of bodyachelog card #1 -->
 
 <!-- Start of sicklog Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputsicklog">
-	sicklog</div>
+	Sick Log</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -176,7 +146,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsesicklog" aria-expanded="false" aria-controls="collapsesicklog">
-    			sicklog Card:
+    			Sick log
   					</button>
 			</p>
 				<div class="collapse" id="collapsesicklog">
@@ -200,7 +170,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputmedhistory">
-	medhistory</div>
+	Medical History</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -208,7 +178,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemedhistory" aria-expanded="false" aria-controls="collapsemedhistory">
-    			medhistory Card:
+    			Meddical History
   					</button>
 			</p>
 				<div class="collapse" id="collapsemedhistory">
@@ -227,12 +197,44 @@
 
 <!-- End of medhistory card #1 -->
 
+<!-- Start of familyMedhist Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputfamilyMedhist">
+	Family Medical History</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addfamilyMedhistItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsefamilyMedhist" aria-expanded="false" aria-controls="collapsefamilyMedhist">
+    			Family Medical History
+  					</button>
+			</p>
+				<div class="collapse" id="collapsefamilyMedhist">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each familyMedhistEach}}
+								{{> familyMedhistItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of familyMedhist card #1 -->
+
 <!-- Start of medicine Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputmedicine">
-	medicine</div>
+	Medicine Record</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -240,7 +242,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsemedicine" aria-expanded="false" aria-controls="collapsemedicine">
-    			medicine Card:
+    			Medicine Taken
   					</button>
 			</p>
 				<div class="collapse" id="collapsemedicine">
@@ -264,7 +266,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputdentallog">
-	dentallog</div>
+	Dental log</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -272,7 +274,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedentallog" aria-expanded="false" aria-controls="collapsedentallog">
-    			dentallog Card:
+    			Dental log
   					</button>
 			</p>
 				<div class="collapse" id="collapsedentallog">
@@ -296,7 +298,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputdentistryhist">
-	dentistryhist</div>
+	Dental Records</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -304,7 +306,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedentistryhist" aria-expanded="false" aria-controls="collapsedentistryhist">
-    			dentistryhist Card:
+    			Dental Records
   					</button>
 			</p>
 				<div class="collapse" id="collapsedentistryhist">
@@ -328,7 +330,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputvisionhist">
-	visionhist</div>
+	Vision Record</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -336,7 +338,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsevisionhist" aria-expanded="false" aria-controls="collapsevisionhist">
-    			visionhist Card:
+    			Vision Record
   					</button>
 			</p>
 				<div class="collapse" id="collapsevisionhist">
@@ -360,7 +362,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputpooplog">
-	pooplog</div>
+	Poop log</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -368,7 +370,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepooplog" aria-expanded="false" aria-controls="collapsepooplog">
-    			pooplog Card:
+    			Past Poops
   					</button>
 			</p>
 				<div class="collapse" id="collapsepooplog">
@@ -392,7 +394,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputpeelog">
-	peelog</div>
+	Pee log</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -400,7 +402,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepeelog" aria-expanded="false" aria-controls="collapsepeelog">
-    			peelog Card:
+    			Past Pee
   					</button>
 			</p>
 				<div class="collapse" id="collapsepeelog">
@@ -424,7 +426,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputimproveHealthpage">
-	improveHealthpage</div>
+	Improve Health Page</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -432,7 +434,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimproveHealthpage" aria-expanded="false" aria-controls="collapseimproveHealthpage">
-    			improveHealthpage Card:
+    			Improve Health Page
   					</button>
 			</p>
 				<div class="collapse" id="collapseimproveHealthpage">
@@ -471,8 +473,8 @@
 
 <template name="addbiostatsItem">
     <form>
-        biostats:
-        <input type="text" class="form-control" placeholder="What are your biostats" name="biostatsitemName">
+        Bio Stats:
+        <input type="text" class="form-control" placeholder="What are your Bio Stats" name="biostatsitemName">
     </form>
 </template>
 
@@ -491,8 +493,8 @@
 
 <template name="addfamilyMedhistItem">
     <form>
-        familyMedhist:
-        <input type="text" class="form-control" placeholder="What are your familyMedhist" name="familyMedhistitemName">
+        Family Medical history:
+        <input type="text" class="form-control" placeholder="What is your Family Medical History?" name="familyMedhistitemName">
     </form>
 </template>
 
@@ -511,8 +513,8 @@
 
 <template name="addallergiesItem">
     <form>
-        allergies:
-        <input type="text" class="form-control" placeholder="What are your allergies" name="allergiesitemName">
+        Allergies:
+        <input type="text" class="form-control" placeholder="Feeling Allergies?" name="allergiesitemName">
     </form>
 </template>
 
@@ -531,8 +533,8 @@
 
 <template name="addsymptomsItem">
     <form>
-        symptoms:
-        <input type="text" class="form-control" placeholder="What are your symptoms" name="symptomsitemName">
+        Symptoms:
+        <input type="text" class="form-control" placeholder="What are your symptoms?" name="symptomsitemName">
     </form>
 </template>
 
@@ -551,8 +553,8 @@
 
 <template name="addbodyachelogItem">
     <form>
-        bodyachelog:
-        <input type="text" class="form-control" placeholder="What are your bodyachelog" name="bodyachelogitemName">
+        Body Aches log:
+        <input type="text" class="form-control" placeholder="Is your body aching?" name="bodyachelogitemName">
     </form>
 </template>
 
@@ -571,8 +573,8 @@
 
 <template name="addsicklogItem">
     <form>
-        sicklog:
-        <input type="text" class="form-control" placeholder="What are your sicklog" name="sicklogitemName">
+        Sick log:
+        <input type="text" class="form-control" placeholder="Feeling sick?" name="sicklogitemName">
     </form>
 </template>
 
@@ -591,8 +593,8 @@
 
 <template name="addmedhistoryItem">
     <form>
-        medhistory:
-        <input type="text" class="form-control" placeholder="What are your medhistory" name="medhistoryitemName">
+        Medical History:
+        <input type="text" class="form-control" placeholder="What is your medical history?" name="medhistoryitemName">
     </form>
 </template>
 
@@ -611,8 +613,8 @@
 
 <template name="addmedicineItem">
     <form>
-        medicine:
-        <input type="text" class="form-control" placeholder="What are your medicine" name="medicineitemName">
+        Medicine:
+        <input type="text" class="form-control" placeholder="Taking any medicine?" name="medicineitemName">
     </form>
 </template>
 
@@ -631,8 +633,8 @@
 
 <template name="adddentallogItem">
     <form>
-        dentallog:
-        <input type="text" class="form-control" placeholder="What are your dentallog" name="dentallogitemName">
+        Dental log:
+        <input type="text" class="form-control" placeholder="Have you been brushing your teeth? Got any aches?" name="dentallogitemName">
     </form>
 </template>
 
@@ -651,8 +653,8 @@
 
 <template name="adddentistryhistItem">
     <form>
-        dentistryhist:
-        <input type="text" class="form-control" placeholder="What are your dentistryhist" name="dentistryhistitemName">
+        Dentistry Records:
+        <input type="text" class="form-control" placeholder="How was your Dentist visit?" name="dentistryhistitemName">
     </form>
 </template>
 
@@ -671,8 +673,8 @@
 
 <template name="addvisionhistItem">
     <form>
-        visionhist:
-        <input type="text" class="form-control" placeholder="What are your visionhist" name="visionhistitemName">
+        Vision:
+        <input type="text" class="form-control" placeholder="How's your vision?" name="visionhistitemName">
     </form>
 </template>
 
@@ -691,8 +693,8 @@
 
 <template name="addpooplogItem">
     <form>
-        pooplog:
-        <input type="text" class="form-control" placeholder="What are your pooplog" name="pooplogitemName">
+        The Great Poop Log: Frequency Hardness Color Float?
+        <input type="text" class="form-control" placeholder="How's your poop?" name="pooplogitemName">
     </form>
 </template>
 
@@ -711,8 +713,8 @@
 
 <template name="addpeelogItem">
     <form>
-        peelog:
-        <input type="text" class="form-control" placeholder="What are your peelog" name="peelogitemName">
+        Urine Frequency and color:
+        <input type="text" class="form-control" placeholder="How's your pee?" name="peelogitemName">
     </form>
 </template>
 
@@ -731,8 +733,8 @@
 
 <template name="addimproveHealthpageItem">
     <form>
-        improveHealthpage:
-        <input type="text" class="form-control" placeholder="What are your improveHealthpage" name="improveHealthpageitemName">
+        Improve the Health Page:
+        <input type="text" class="form-control" placeholder="What will Improve the Health Page?" name="improveHealthpageitemName">
     </form>
 </template>
 

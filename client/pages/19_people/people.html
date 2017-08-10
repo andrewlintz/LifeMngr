@@ -7,7 +7,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputpplengagedwith">
-	pplengagedwith</div>
+	Engaged With</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -15,7 +15,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplengagedwith" aria-expanded="false" aria-controls="collapsepplengagedwith">
-    			pplengagedwith Card:
+    			Engaged With
   					</button>
 			</p>
 				<div class="collapse" id="collapsepplengagedwith">
@@ -34,27 +34,27 @@
 
 <!-- End of pplengagedwith card #1 -->
 
-<!-- Start of pplconstact Card #1-->
+<!-- Start of pplscontact Card #1-->
 
 
 <div class="panel-primary col-sm-6">
-	<div class="panel-heading2" for="inputpplconstact">
-	pplconstact</div>
+	<div class="panel-heading2" for="inputpplscontact">
+	People's Contact</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
-			{{> addpplconstactItem}}
+			{{> addpplscontactItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplconstact" aria-expanded="false" aria-controls="collapsepplconstact">
-    			pplconstact Card:
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplscontact" aria-expanded="false" aria-controls="collapsepplscontact">
+    			People's Contact
   					</button>
 			</p>
-				<div class="collapse" id="collapsepplconstact">
+				<div class="collapse" id="collapsepplscontact">
 					<div class="list-group">
 							<ul class="list-group-item">
-  						{{#each pplconstactEach}}
-								{{> pplconstactItem}}
+  						{{#each pplscontactEach}}
+								{{> pplscontactItem}}
   						{{/each}}
   						</ul>
 					</div>
@@ -64,14 +64,14 @@
 </div>
 
 
-<!-- End of pplconstact card #1 -->
+<!-- End of pplscontact card #1 -->
 
 <!-- Start of pplGiftideas Card #1-->
 
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputpplGiftideas">
-	pplGiftideas</div>
+	Gift Ideas for People</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -79,7 +79,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsepplGiftideas" aria-expanded="false" aria-controls="collapsepplGiftideas">
-    			pplGiftideas Card:
+    			Gift Ideas
   					</button>
 			</p>
 				<div class="collapse" id="collapsepplGiftideas">
@@ -103,7 +103,7 @@
 
 <div class="panel-primary col-sm-6">
 	<div class="panel-heading2" for="inputimprovePeoplepage">
-	improvePeoplepage</div>
+	Improve People Page</div>
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -111,7 +111,7 @@
 	<p></p>	 
   			<p>
   					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseimprovePeoplepage" aria-expanded="false" aria-controls="collapseimprovePeoplepage">
-    			improvePeoplepage Card:
+    			Improve People Page
   					</button>
 			</p>
 				<div class="collapse" id="collapseimprovePeoplepage">
@@ -144,8 +144,8 @@
 
 <template name="addpplengagedwithItem">
     <form>
-        pplengagedwith:
-        <input type="text" class="form-control" placeholder="What are your pplengagedwith" name="pplengagedwithitemName">
+        People You've Engaged With:
+        <input type="text" class="form-control" placeholder="Who did you talk to?" name="pplengagedwithitemName">
     </form>
 </template>
 
@@ -160,32 +160,32 @@
 
 <!-- End of pplengagedwith Item #3 -->
 
-<!-- Start of Add pplconstact Item #2 -->
+<!-- Start of Add pplscontact Item #2 -->
 
-<template name="addpplconstactItem">
+<template name="addpplscontactItem">
     <form>
-        pplconstact:
-        <input type="text" class="form-control" placeholder="What are your pplconstact" name="pplconstactitemName">
+        People's contact:
+        <input type="text" class="form-control" placeholder="Who did you meet?" name="pplscontactitemName">
     </form>
 </template>
 
 <!-- End of Add Keyword Item #2 -->
 
-<!-- Start of Retrieve pplconstact Item #3 -->
-<template name="pplconstactItem"> 
+<!-- Start of Retrieve pplscontact Item #3 -->
+<template name="pplscontactItem"> 
 
-      <input type="text" value="{{pplconstactitemName}}" name="pplconstactItem">
-      [<a href="#" class="delete-pplconstactitem">  Delete </a>]
+      <input type="text" value="{{pplscontactitemName}}" name="pplscontactItem">
+      [<a href="#" class="delete-pplscontactitem">  Delete </a>]
 </template>
 
-<!-- End of pplconstact Item #3 -->
+<!-- End of pplscontact Item #3 -->
 
 <!-- Start of Add pplGiftideas Item #2 -->
 
 <template name="addpplGiftideasItem">
     <form>
-        pplGiftideas:
-        <input type="text" class="form-control" placeholder="What are your pplGiftideas" name="pplGiftideasitemName">
+        Gift Ideas for People:
+        <input type="text" class="form-control" placeholder="What's a good gift for that person?" name="pplGiftideasitemName">
     </form>
 </template>
 
@@ -204,8 +204,8 @@
 
 <template name="addimprovePeoplepageItem">
     <form>
-        improvePeoplepage:
-        <input type="text" class="form-control" placeholder="What are your improvePeoplepage" name="improvePeoplepageitemName">
+        Improve People Page:
+        <input type="text" class="form-control" placeholder="How can we improve the People's page" name="improvePeoplepageitemName">
     </form>
 </template>
 

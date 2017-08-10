@@ -23,8 +23,8 @@ Template.fengPage.helpers({
         return DevTest.find( { cartightinessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     workmessEach() {
         return DevTest.find( { workmessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-    workspacetightinesEach() {
-        return DevTest.find( { workspacetightinesitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    workspacetightinessEach() {
+        return DevTest.find( { workspacetightinessitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     improveFengpageEach() {
         return DevTest.find( { improveFengpageitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
@@ -306,44 +306,44 @@ Template.workmessItem.events({
 
 ////////* End of workmess Events *//////
 
-////////* Start of workspacetightines Events *//////
+////////* Start of workspacetightiness Events *//////
 
 
-Template.addworkspacetightinesItem.events({
+Template.addworkspacetightinessItem.events({
   'submit form': function(event){
     // Prevent default browser form submit
     event.preventDefault();
     
     // Get value from form element
     const target = event.target;
-    const workspacetightinesitemName = target.workspacetightinesitemName.value;
+    const workspacetightinessitemName = target.workspacetightinessitemName.value;
     
-    // Insert a workspacetightines item into the collection
-    Meteor.call('workspacetightinesitemName.insert', workspacetightinesitemName);
+    // Insert a workspacetightiness item into the collection
+    Meteor.call('workspacetightinessitemName.insert', workspacetightinessitemName);
 
     // Clear form
-    target.workspacetightinesitemName.value = '';
+    target.workspacetightinessitemName.value = '';
     },
 });
 
-Template.workspacetightinesItem.events({
+Template.workspacetightinessItem.events({
     // events go here
-    'click .delete-workspacetightinesitem'(){
-     Meteor.call('workspacetightinesitemName.remove', this._id);
+    'click .delete-workspacetightinessitem'(){
+     Meteor.call('workspacetightinessitemName.remove', this._id);
     },
 
-    'keyup [name=workspacetightinesItem]': function(event){
+    'keyup [name=workspacetightinessItem]': function(event){
     if(event.which == 13 || event.which == 27){
         $(event.target).blur();
     } else {
         var documentId = this._id;
-        var workspacetightinesItem = $(event.target).val();
-        Meteor.call('updateworkspacetightinesItem', documentId, workspacetightinesItem);
+        var workspacetightinessItem = $(event.target).val();
+        Meteor.call('updateworkspacetightinessItem', documentId, workspacetightinessItem);
         }
     },
 });
 
-////////* End of workspacetightines Events *//////
+////////* End of workspacetightiness Events *//////
 
 ////////* Start of improveFengpage Events *//////
 
