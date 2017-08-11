@@ -4,4 +4,214 @@
 
 
 
+
+<!-- Start of howUsleep Card #1-->
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputhowUsleep">
+	How Did You Sleep</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addhowUsleepItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsehowUsleep" aria-expanded="false" aria-controls="collapsehowUsleep">
+    			How You've slept
+  					</button>
+			</p>
+				<div class="collapse" id="collapsehowUsleep">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each howUsleepEach}}
+								{{> howUsleepItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of howUsleep card #1 -->
+
+<!-- Start of dreamDiary Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputdreamDiary">
+	Dream Diary</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> adddreamDiaryItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedreamDiary" aria-expanded="false" aria-controls="collapsedreamDiary">
+    			Dream Diary
+  					</button>
+			</p>
+				<div class="collapse" id="collapsedreamDiary">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each dreamDiaryEach}}
+								{{> dreamDiaryItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of dreamDiary card #1 -->
+
+<!-- Start of nap Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputnap">
+	Naps</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addnapItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsenap" aria-expanded="false" aria-controls="collapsenap">
+    			Past Naps
+  					</button>
+			</p>
+				<div class="collapse" id="collapsenap">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each napEach}}
+								{{> napItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+
+<!-- End of nap card #1 -->
+
+<!-- Start of wentToBed Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+	<div class="panel-heading2" for="inputwentToBed">
+	Went To Bed</div>
+
+<div class="list-group">
+			<ul class="list-group-item">
+			{{> addwentToBedItem}}
+	<p></p>	 
+  			<p>
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsewentToBed" aria-expanded="false" aria-controls="collapsewentToBed">
+    			Gone To Bed
+  					</button>
+			</p>
+				<div class="collapse" id="collapsewentToBed">
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each wentToBedEach}}
+								{{> wentToBedItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+				</div>	
+			</ul>
+	</div>
+</div>
+
+<!-- End of wentToBed card #1 -->
 </template>
+
+
+
+
+
+
+<!-- Start of Add howUsleep Item #2 -->
+
+<template name="addhowUsleepItem">
+    <form>
+        How did you sleep last night?:
+        <input type="text" class="form-control" placeholder="How did you sleep last night?" name="howUsleepitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve howUsleep Item #3 -->
+<template name="howUsleepItem"> 
+
+      <input type="text" value="{{howUsleepitemName}}" name="howUsleepItem">
+      [<a href="#" class="delete-howUsleepitem">  Delete </a>]
+</template>
+
+<!-- End of howUsleep Item #3 -->
+
+<!-- Start of Add dreamDiary Item #2 -->
+
+<template name="adddreamDiaryItem">
+    <form>
+        Dream Diary:
+        <input type="text" class="form-control" placeholder="Tell me the story of your Dream you dreamt last night." name="dreamDiaryitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve dreamDiary Item #3 -->
+<template name="dreamDiaryItem"> 
+
+      <input type="text" value="{{dreamDiaryitemName}}" name="dreamDiaryItem">
+      [<a href="#" class="delete-dreamDiaryitem">  Delete </a>]
+</template>
+
+<!-- End of dreamDiary Item #3 -->
+
+<!-- Start of Add nap Item #2 -->
+
+<template name="addnapItem">
+    <form>
+        Nappers:
+        <input type="text" class="form-control" placeholder="Did you take a Nap?" name="napitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve nap Item #3 -->
+<template name="napItem"> 
+
+      <input type="text" value="{{napitemName}}" name="napItem">
+      [<a href="#" class="delete-napitem">  Delete </a>]
+</template>
+
+<!-- End of nap Item #3 -->
+
+<!-- Start of Add wentToBed Item #2 -->
+
+<template name="addwentToBedItem">
+    <form>
+        When did you go to Bed?:
+        <input type="text" class="form-control" placeholder="When did you go to bed?" name="wentToBeditemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve wentToBed Item #3 -->
+<template name="wentToBedItem"> 
+
+      <input type="text" value="{{wentToBeditemName}}" name="wentToBedItem">
+      [<a href="#" class="delete-wentToBeditem">  Delete </a>]
+</template>
+
+<!-- End of wentToBed Item #3 -->

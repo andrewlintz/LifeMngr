@@ -1,7 +1,158 @@
 <template name="wakePage">
-  <h1>wake</h1>
+  <h1>Rise & Shine!</h1>
 
 
+<!-- Start of whenWoke Card #1-->
 
+<div class="panel-primary col-sm-6">
+  <div class="panel-heading2" for="inputwhenWoke">
+  When did you Wake Up?</div>
+
+<div class="list-group">
+      <ul class="list-group-item">
+      {{> addwhenWokeItem}}
+  <p></p>  
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsewhenWoke" aria-expanded="false" aria-controls="collapsewhenWoke">
+          Waking Log
+            </button>
+      </p>
+        <div class="collapse" id="collapsewhenWoke">
+          <div class="list-group">
+              <ul class="list-group-item">
+              {{#each whenWokeEach}}
+                {{> whenWokeItem}}
+              {{/each}}
+              </ul>
+          </div>
+        </div>  
+      </ul>
+  </div>
+</div>
+
+
+<!-- End of whenWoke card #1 -->
+
+<!-- Start of outofBed Card #1-->
+
+
+<div class="panel-primary col-sm-6">
+  <div class="panel-heading2" for="inputoutofBed">
+  Out of Bed</div>
+
+<div class="list-group">
+      <ul class="list-group-item">
+      {{> addoutofBedItem}}
+  <p></p>  
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseoutofBed" aria-expanded="false" aria-controls="collapseoutofBed">
+          Out of Bed Log
+            </button>
+      </p>
+        <div class="collapse" id="collapseoutofBed">
+          <div class="list-group">
+              <ul class="list-group-item">
+              {{#each outofBedEach}}
+                {{> outofBedItem}}
+              {{/each}}
+              </ul>
+          </div>
+        </div>  
+      </ul>
+  </div>
+</div>
+
+
+<!-- End of outofBed card #1 -->
 
 </template>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of Add whenWoke Item #2 -->
+
+<template name="addwhenWokeItem">
+  <form class="form-horizontal" id="dnwakeupSubmitter">
+    <div class="Container">
+    Woke Up:  
+      <span>
+        <input id="dnwakeuptime" class="form-control timepicker-precise" name="startTime" type="text">
+      </span>
+    </div>
+    <div class="input-group">
+      <span>
+        <input type="text" class="form-control" placeholder="How was waking up?" name="howWakeitemName">
+      </span>
+      <span class="input-group-addon">
+        <button id="submtPost" type="submit" class="btn-info glyphicon glyphicon-plus">
+        </button>
+      </span>
+    </div>
+  </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve whenWoke Item #3 -->
+<template name="whenWokeItem"> 
+      <input type="text" value="{{wakeuptime}}" name="whenWokeItem">
+      [<a href="#" class="delete-wakeuptimeitem">  Delete </a>]
+</template>
+
+<!-- End of whenWoke Item #3 -->
+
+
+<!-- Start of Add outofBed Item #2 -->
+
+<template name="addoutofBedItem">
+    <form class="form-horizontal" id="dnoutofBedSubmitter">
+      <div class="Container">
+      Out of Bed:  
+        <span>
+          <input id="dnoutofBedtime" class="form-control timepicker-precise" name="startTime" type="text">
+        </span>
+      </div>
+      <div class="input-group">
+        <span>
+          <input type="text" class="form-control" placeholder="How was Getting Out of Bed?" name="howoutofBeditemName">
+        </span>
+        <span class="input-group-addon">
+          <button id="submtPost" type="submit" class="btn-info glyphicon glyphicon-plus">
+          </button>
+        </span>
+      </div>
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Retrieve outofBed Item #3 -->
+<template name="outofBedItem"> 
+
+      <input type="text" value="{{outofBedtime}}" name="outofBedItem">
+      [<a href="#" class="delete-outofBeditem">  Delete </a>]
+</template>
+
+<!-- End of outofBed Item #3 -->
+
+
+
+
+
+
+
+
+
+
+
+
+

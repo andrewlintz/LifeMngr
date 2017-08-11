@@ -1,77 +1,100 @@
-import './life.html';
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { DevTest } from '../../../lib/collections/collections.js';
 
+import './life.html';
 
 
 ///// HELPERS /////
 
 
 Template.pastdayslogger.helpers({
-  dayoflife() {
-    return Daily.find({}, {sort: {createdAt: -1}});  },
+    dayHeadlineEach() {
+        return DevTest.find( { dayHeadlineitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+    dayStoryEach() {
+        return DevTest.find( { dayStoryitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
 ///// EVENTS /////
 
-// submitter //
+////////* Start of dayHeadline Events *//////
 
-Template.journalEntry.events({
-    'submit #todaysstory1':function(e){
-        e.preventDefault();
-        var headline1 = $('#dayHeadline1').val();
-        var story1 = $('#dayStory1').val();
-    Daily.insert({
-        headline: headline1,
-        story: story1,
-        createdAt: new Date()
-    });
 
-   }
+Template.adddayHeadlineItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const dayHeadlineitemName = target.dayHeadlineitemName.value;
+    
+    // Insert a dayHeadline item into the collection
+    Meteor.call('dayHeadlineitemName.insert', dayHeadlineitemName);
+
+    // Clear form
+    target.dayHeadlineitemName.value = '';
+    },
 });
 
-
-
-// past logging ///
-
-Template.lifeheadliner.events({
-	// events go here
-    'click .delete-lifeheadlineritem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-    		Daily.remove({ _id: documentId });
-	},
-
-	'keyup [name=lifeheadlinerItem]': function(event){
-    if(event.which == 13 || event.which == 27){
-    	$(event.target).blur();
-    } else {
-        var documentId = this._id;
-        var lifeheadlinerItem = $(event.target).val();
-        Daily.update({ _id: documentId }, {$set: { headline: lifeheadlinerItem }});
-    	}
+Template.dayHeadlineItem.events({
+    // events go here
+    'click .delete-dayHeadlineitem'(){
+     Meteor.call('dayHeadlineitemName.remove', this._id);
     },
 
-});
-
-Template.lifestory.events({
-	// events go here
-    'click .delete-lifestoryitem': function(event){
-    event.preventDefault();
-    var documentId = this._id;
-    var confirm = 
-    		Daily.remove({ _id: documentId });
-	},
-
-	'keyup [name=lifestoryItem]': function(event){
+    'keyup [name=dayHeadlineItem]': function(event){
     if(event.which == 13 || event.which == 27){
-    	$(event.target).blur();
+        $(event.target).blur();
     } else {
         var documentId = this._id;
-        var lifestoryItem = $(event.target).val();
-        Daily.update({ _id: documentId }, {$set: { story: lifestoryItem }});
-    	}
+        var dayHeadlineItem = $(event.target).val();
+        Meteor.call('updatedayHeadlineItem', documentId, dayHeadlineItem);
+        }
+    },
+});
+
+////////* End of dayHeadline Events *//////
+
+////////* Start of dayStory Events *//////
+
+
+Template.adddayStoryItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const dayStoryitemName = target.dayStoryitemName.value;
+    
+    // Insert a dayStory item into the collection
+    Meteor.call('dayStoryitemName.insert', dayStoryitemName);
+
+    // Clear form
+    target.dayStoryitemName.value = '';
+    },
+});
+
+Template.dayStoryItem.events({
+    // events go here
+    'click .delete-dayStoryitem'(){
+     Meteor.call('dayStoryitemName.remove', this._id);
     },
 
+    'keyup [name=dayStoryItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var dayStoryItem = $(event.target).val();
+        Meteor.call('updatedayStoryItem', documentId, dayStoryItem);
+        }
+    },
 });
+
+////////* End of dayStory Events *//////
+
+
 

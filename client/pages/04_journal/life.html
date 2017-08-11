@@ -1,85 +1,115 @@
-<!-- TOP LEVEL PAGE VIEW -->
-
 <template name="lifePage">
 	<h1>Life Page</h1>
 
 {{> journalEntry}}
-{{> pastdayslogger}}
 <br>
+{{> pastdayslogger}}
 </template>
 
-<!-- End Of TOP LEVEL PAGE VIEW -->
 
-<!-- Journal Entry Temaplate -->
 
 <template name="journalEntry">
-<form class="form-horizontal" id="todaysstory1">
-  <div class="form-group">
-    <label for="inputHeadline" class="col-sm-1 control-label">Headline</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="dayHeadline1" placeholder="Highlights of your day">
-    </div>
-  </div>
 
-  <div class="form-group">
-    <label class="col-sm-1 control-label">Story <br> <p></p><button id="submtPost" type="submit" class="btn btn-sm btn-default">Submit</button></label>
-    <div class="col-sm-10">
-      <textarea id="dayStory1" class="form-control" rows="3" placeholder="Story of the day"></textarea>
-    </div>
+<!-- Start of dayHeadline Card #1-->
+
+<p>
+  <div id="todaysstory">
+  <p></p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-12">
+          {{> adddayHeadlineItem}}
+        </div>
+        <div class="col-sm-12">
+          {{> adddayStoryItem}}
+        </div>
+      </div>
+      <hr>
+    </form>
   </div>
-</form>
- 
-<hr>
+</p>
+
+<!-- End of dayStory card #1 -->
 </template>
 
-<!-- End of Journal Entry Temaplate -->
 
-<!-- History Looper Temaplate -->
+<!-- Start of Add dayHeadline Item #2 -->
+
+<template name="adddayHeadlineItem">
+    <form>
+        <input type="text" class="form-control" placeholder="Day's Highlights" name="dayHeadlineitemName">
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+<!-- Start of Add dayStory Item #2 -->
+
+<template name="adddayStoryItem">
+    <form>
+        <textarea type="text" class="form-control" rows="3" placeholder="The Story of Your Day! New" name="dayStoryitemName"></textarea>
+        <button id="submtPost" type="submit" class="btn btn-sm btn-default">Submit</button>
+    </form>
+</template>
+
+<!-- End of Add Keyword Item #2 -->
+
+
+
+
+
+<!-- Start of Retrieve dayHeadline Item #3 -->
+<template name="dayHeadlineItem"> 
+
+      <input type="text" value="{{dayHeadlineitemName}}" name="dayHeadlineItem">
+      [<a href="#" class="delete-dayHeadlineitem">  Delete </a>]
+</template>
+
+<!-- End of dayHeadline Item #3 -->
+
+<!-- Start of Retrieve dayStory Item #3 -->
+<template name="dayStoryItem"> 
+
+      <input type="text" value="{{dayStoryitemName}}" name="dayStoryItem">
+      [<a href="#" class="delete-dayStoryitem">  Delete </a>]
+</template>
+
+<!-- End of dayStory Item #3 -->
+
+
 
 <template name="pastdayslogger">
-  <div class="container">
-    <div class="row">
-      
-        {{#each dayoflife}}
-          {{> lifeheadliner}}
-          <p></p>
-          {{> lifestory}}  
-        {{/each}} 
-      
-    </div>
-  </div>
-</template>
+<div class="panel-primary col-sm-12">
+  <div class="panel-heading2" for="inputdayHeadline">
+  My Day</div>
 
-<!-- End of History Looper Temaplate -->
-
-<!-- Life Headline LoaderTemaplate -->
-
-<template name="lifeheadliner">
- <div class="container">   
-  <div class="row">
-      <br>
-        <div>
-          <label for="inputHeadline" class="col-sm-1 control-label">{{formatDate createdAt}} </label>  
-          <div class="col-sm-10">
-          <textarea class="form-control" rows="1" value="{{headline}}" name="lifeheadlinerItem"></textarea>
+<div class="list-group">
+      <ul class="list-group-item">  
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsedayHeadline" aria-expanded="false" aria-controls="collapsedayHeadline">
+          Expand
+            </button>
+      </p>
+        <div class="collapse" id="collapsedayHeadline">
+          <div class="list-group">
+              <ul class="list-group-item">
+              {{#each dayHeadlineEach}}
+                {{> dayHeadlineItem}}
+              {{/each}}
+              </ul>
+              <ul class="list-group-item">
+              {{#each dayStoryEach}}
+                {{> dayStoryItem}}
+              {{/each}}
+              </ul>
           </div>
-        </div>
-    
-    </div>
- </div>   
+        </div>  
+      </ul>
+  </div>
+</div>
+
 </template>
 
-<!-- Life Story LoaderTemaplate -->
 
-<template name="lifestory">
- <div class="container">   
-  <div class="row">
-      
-        <label for="inputStory" class="col-sm-1 control-label"> <br><a href="" class="delete-lifestoryitem"> Delete </a></label> 
-        <div class="col-sm-10">
-          <textarea class="form-control" rows="5" value="{{story}}" name="lifestoryItem"></textarea>
-        </div>
-      
-    </div>
- </div>   
-</template>
+
+

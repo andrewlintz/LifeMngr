@@ -1,5 +1,3 @@
-
-
 <template name="daynowPage">
 
 <div style="overflow-x: scroll;">
@@ -9,7 +7,7 @@
   <hr>
   {{> daysStory}}
   {{> greatButtoNator}}
-  {{> sleepLogger}}
+  {{> sleepLogger2}}
   {{> wakeLogger}}
   {{> mindLogger}}
   {{> agendaLogger}}
@@ -27,9 +25,21 @@
   {{> SocietyLogger}}
   {{> SpiritLogger}}
   
-
 </template>
 
+
+
+
+<template name="timepicker">
+    <input id="whatever" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
+</template>
+
+<template name="tempName">
+  <div class="input-group datetimepicker">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <input class="set-due-date form-control" type="text"/>
+  </div>
+</template>
 <template name="Greatdaytobealive">
   <div class="col-sm-2">
     <a class="btn btn btn-info" href="/time/dayplan" role="button">Plan
@@ -48,6 +58,16 @@
 </template>
 
 
+
+
+<!--   ////  Today's Story ////  -->
+
+<template name="daysStory">
+{{> journalEntry}}
+</template>
+
+
+
 <!-- //// BUTTONS //// -->
 <template name="greatButtoNator">
 <p>
@@ -55,7 +75,7 @@
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lastnightsleep" data-parent="#myGroup" aria-expanded="true" aria-controls="lastnightsleep">
       Sleep
       </button>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#morning" data-parent="#myGroup" aria-expanded="false" aria-controls="morning">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#wake" data-parent="#myGroup" aria-expanded="false" aria-controls="wake">
       Wake
       </button>
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#agenda" data-parent="#myGroup" aria-expanded="false" aria-controls="agenda">
@@ -111,54 +131,6 @@
 </p>
 </template>
 
-<template name="timepicker">
-    <input id="whatever" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
-</template>
-
-<template name="tempName">
-
-  <div class="input-group datetimepicker">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <input class="set-due-date form-control" type="text"/>
-  </div>
-
-</template>
-
-
-
-
-
-<!--   ////  Today's Story ////  -->
-
-<template name="daysStory">
-<p>
-
-<div id="todaysstory">
-  <p></p>
-  <form class="form-horizontal" id="todaysstory2">
-  <div class="form-group">
-    
-    <div class="col-sm-12">
-      <input type="text" class="form-control" id="dayHeadline" placeholder="Day's Highlights">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-12">
-      <textarea id="dayStory" class="form-control" rows="3" placeholder="The Story of Your Day!"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-1 control-label" style="bottom: 5px">
-        <button id="submtPost" type="submit" class="btn btn-sm btn-default">Submit</button>
-    </div>
-  </div>
-<hr>
-</form>
-</div>
-</p>
-</template>
-
 
 
 <!-- //// SLEEP //// 
@@ -175,39 +147,57 @@
 //************************************************//
 -->
 
-<template name="sleepLogger">
-<p>
-<div class="collapse" id="lastnightsleep">
+<template name="sleepLogger2">
   <p></p>
-    <form class="form-horizontal" id="sleepLoggersubmitter">
+    <div class="collapse" id="lastnightsleep">
+      <div class="card card-block">
+
+        <a class="btn btn-primary" href="/sleep" role="button">Sleep Page</a> 
+
+<!--- How did you sleep DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
       <div class="form-group">
-        <label class="col-sm-1 control-label">How Did You Sleep?</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
         <div class="col-sm-9">
-          <textarea id="dnhowdidUsleep" class="form-control" rows="3" placeholder="How Did You Sleep?"></textarea>
+          {{> addhowUsleepItem}}
         </div>
       </div>
     </form>
-    <form class="form-horizontal" id="dndreamdiarysubmitter">
+
+<!--- Dream Diary DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
       <div class="form-group">
-      <label class="col-sm-1 control-label">Dream Naratives</label>
-        <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-        </label>
         <div class="col-sm-9">
-            <textarea id="dndreamDiary" class="form-control" rows="3" placeholder="Tell Me About Your Dreams Last Night."></textarea>
+          {{> adddreamDiaryItem}}
         </div>
-       </div>
-Naps and when went to sleep last night
-      <hr>
+      </div>
     </form>
-</div>
-</p>
-</template>
+
+<!--- Nappers DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-9">
+          {{> addnapItem}}
+        </div>
+      </div>
+    </form>
+
+<!--- Wake up Time DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-9">
+          {{> addwentToBedItem}}
+        </div>
+      </div>
+    </form>
+
+
+      </div>
+    </div>
+</template>  
 
 
  <!-- //// WAKE //// 
@@ -224,41 +214,39 @@ Naps and when went to sleep last night
 //************************************************//
 -->
 
-
-
-
 <template name="wakeLogger">
-<p></p>
-<div class="collapse" id="morning">
-  <div class="card card-block">  
-  <form class="form-horizontal" id="dnwakeupSubmitter">
-    <div class="form-group">
-      <label class="col-sm-3  control-label">When did you Wake Up?</label>
-        <div class="col-sm-2">  
-          <input id="dnwakeuptime" class="timepicker-precise" name="startTime" type="bootstrap-timepicker">
+  <p></p>
+    <div class="collapse" id="wake">
+      <div class="card card-block">
+
+        <a class="btn btn-primary" href="/wake" role="button">Wake Page</a> 
+
+<!--- Wake up Time DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-9">
+          {{> addwhenWokeItem}}
         </div>
-      <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-      </label>
+      </div>
+    </form>
+
+<!--- Out of Bed Time DayNow LOGGER FORMS -->
+  <p></p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-9">
+          {{> addoutofBedItem}}
+        </div>
+      </div>
+    </form>
+
+
+      </div>
     </div>
-  </form>
-  <form class="form-group" id="dnoutofbedSubmitter">
-    <div class="form">
-      <label class="col-sm-3 control-label" style="align: left;">What Time Did You Get Out of Bed?</label>
-        <div class="col-sm-2">  
-          <input id="dnoutofBed" class="timepicker-precise" name="startTime" style="align: center !important;" type="bootstrap-timepicker">
-        </div>
-      <label class="col-sm-1 control-label" style="bottom: 5px">
-          <button id="submtPost" type="submit" class="btn btn-sm btn-default">
-          Submit</button>
-      </label>
-    </div>      
-<hr>
-  </form> 
-  </div>
-</div>
-</template>
+</template>        
+
+
 
 
 
@@ -557,16 +545,6 @@ Naps and when went to sleep last night
       <div class="form-group">
         <div class="col-sm-9">
           {{> addentreprenuerialideaItem}}
-        </div>
-      </div>
-    </form>
-
-<!--- opinion DayNow LOGGER FORMS -->
-  <p></p>
-    <form class="form-horizontal">
-      <div class="form-group">
-        <div class="col-sm-9">
-          {{> addopinionItem}}
         </div>
       </div>
     </form>

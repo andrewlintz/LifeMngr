@@ -226,44 +226,6 @@ Template.entreprenuerialideaItem.events({
 
 ////////* End of entreprenuerialidea Events *//////
 
-////////* Start of opinion Events *//////
-
-
-Template.addopinionItem.events({
-  'submit form': function(event){
-    // Prevent default browser form submit
-    event.preventDefault();
-    
-    // Get value from form element
-    const target = event.target;
-    const opinionitemName = target.opinionitemName.value;
-    
-    // Insert a opinion item into the collection
-    Meteor.call('opinionitemName.insert', opinionitemName);
-
-    // Clear form
-    target.opinionitemName.value = '';
-    },
-});
-
-Template.opinionItem.events({
-    // events go here
-    'click .delete-opinionitem'(){
-     Meteor.call('opinionitemName.remove', this._id);
-    },
-
-    'keyup [name=opinionItem]': function(event){
-    if(event.which == 13 || event.which == 27){
-        $(event.target).blur();
-    } else {
-        var documentId = this._id;
-        var opinionItem = $(event.target).val();
-        Meteor.call('updateopinionItem', documentId, opinionItem);
-        }
-    },
-});
-
-////////* End of opinion Events *//////
 
 ////////* Start of improveMindpage Events *//////
 
