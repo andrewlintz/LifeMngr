@@ -1,0 +1,1306 @@
+<template name="daynowPage2">
+
+  <div style="overflow-x: scroll;">
+    {{> timesifter}}
+  </div>
+  <div>
+    {{> journalEntry}}
+  </div>
+  <hr>
+  <p>
+    <div id="myGroup">
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#sleep"><i class="icon-chevron-right"></i> Sleep</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#wake"><i class="icon-chevron-right"></i> Wake</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#agenda"><i class="icon-chevron-right"></i> Agenda</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#mind"><i class="icon-chevron-right"></i> Mind</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#hygiene"><i class="icon-chevron-right"></i> Hygiene</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#health"><i class="icon-chevron-right"></i> Health</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#food"><i class="icon-chevron-right"></i> Food</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#fit"><i class="icon-chevron-right"></i> Fit</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#time"><i class="icon-chevron-right"></i> Time</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#money"><i class="icon-chevron-right"></i> Money</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#spaces"><i class="icon-chevron-right"></i> Spaces & Places</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#things"><i class="icon-chevron-right"></i> Things</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#feng"><i class="icon-chevron-right"></i> Fengshui</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#people"><i class="icon-chevron-right"></i> People</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#love"><i class="icon-chevron-right"></i> Love</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#companion"><i class="icon-chevron-right"></i> Companion</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#society"><i class="icon-chevron-right"></i> Society</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#spirit"><i class="icon-chevron-right"></i> Spirit</button>
+        
+            <div class="collapse indent" id="sleep">
+              <!--- How did you sleep DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhowUsleepItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- Dream Diary DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddreamDiaryItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- Nappers DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addnapItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- Wake up Time DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addwentToBedItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="wake">
+              <!--- Wake up Time DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addwhenWokeItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- Out of Bed Time DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addoutofBedItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="agenda">
+              <!--- Future vision of self LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addvisionItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- opportunity DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addopportunityItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- mission DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmissionItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- goal DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addgoalItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- strategy DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstrategyItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- todos DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addtodosItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- accomplishments DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addaccomplishmentsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- successes DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsuccessesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- failure DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addfailureItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- strengths DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstrengthsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- weaknesses DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addweaknessesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- goodhabits DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addgoodhabitsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- badhabits DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbadhabitsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- values DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addvaluesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- wants DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addwantsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- problems DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addproblemsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- career DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addcareerItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- projects DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addprojectsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveAgendapage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveAgendapageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="mind">
+              <!--- mood DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmoodItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- creativeartideas DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addcreativeartideasItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- jokes DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addjokesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- invention DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addinventionItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- entreprenuerialidea DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addentreprenuerialideaItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveMindpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveMindpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="hygiene">
+              <!--- shower DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addshowerItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- bath DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbathItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- shave DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addshaveItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- nails DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addnailsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- hair DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhairItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- haircondition DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhairconditionItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- brushedteeth DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbrushedteethItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- flossed DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addflossedItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- deoderant DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddeoderantItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- dressedlog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddressedlogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveHygienepage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveHygienepageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="health">
+              <!--- biostats DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbiostatsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- familyMedhist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addfamilyMedhistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- allergies DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addallergiesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- symptoms DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsymptomsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- bodyachelog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbodyachelogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- sicklog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsicklogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- medhistory DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmedhistoryItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- medicine DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmedicineItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- dentallog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddentallogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- dentistryhist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddentistryhistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- visionhist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addvisionhistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- pooplog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpooplogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- peelog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpeelogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveHealthpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveHealthpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="food">
+              <!--- eathistory DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addeathistoryItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- drinkhistory DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddrinkhistoryItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- alcohollog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addalcohollogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- druglog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddruglogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- ingredientinventory DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addingredientinventoryItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- shoppinglist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addshoppinglistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- menu DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmenuItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- menuplan DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmenuplanItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveFoodpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveFoodpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="fit">
+              <!--- fitnesslog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addfitnesslogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- fitnessprogram DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addfitnessprogramItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveFitpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveFitpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="time">
+                time
+              </div>
+            <div class="collapse" id="money">
+              <!--- networth DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addnetworthItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- fireplan DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addfireplanItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- earningsrate DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addearningsrateItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- spendingrate DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addspendingrateItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- assets DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addassetsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- borrowdebt DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addborrowdebtItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- savingsrate DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsavingsrateItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- runrate DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addrunrateItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- debttoequity DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddebttoequityItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- budget DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addbudgetItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveMoneypage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveMoneypageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="spaces">
+              <!--- placesbeen DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addplacesbeenItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- placeswant DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addplaceswantItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- placesplanner DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addplacesplannerItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveSpacepage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveSpacepageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="things">
+              <!--- stuffhave DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstuffhaveItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- stufflost DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstufflostItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- stufflent DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstufflentItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- stuffborrowed DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstuffborrowedItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- stuffwant DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstuffwantItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- stuffplanner DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addstuffplannerItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveStuffpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveStuffpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="feng">
+              <!--- choreslog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addchoreslogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- chorestodo DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addchorestodoItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- homemess DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhomemessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- hometightiness DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhometightinessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- carmess DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addcarmessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- cartightiness DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addcartightinessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- workmess DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addworkmessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- workspacetightines DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addworkspacetightinessItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveFengpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveFengpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="people">
+              <!--- pplengagedwith DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpplengagedwithItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- pplscontact DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpplscontactItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- pplGiftideas DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpplGiftideasItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improvePeoplepage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimprovePeoplepageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="love">
+              <!--- howSodoing DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addhowSodoingItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- soLikes DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsoLikesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- soDislikes DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsoDislikesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- soWants DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsoWantsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- sogiftideas DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsogiftideasItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- soArguementlog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsoArguementlogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- soPeriodlog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsoPeriodlogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- lovehist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addlovehistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- dreamSo DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> adddreamSoItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- sexhist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addsexhistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveLovepage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveLovepageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="companion">
+              <!--- petlog DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpetlogItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- petbiometrics DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpetbiometricsItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- petMedhist DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpetMedhistItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improvePetpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimprovePetpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse indent" id="society">
+              <!--- govt DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addgovtItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- policies DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addpoliciesItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- vote DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addvoteItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveSocietypage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveSocietypageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+            <div class="collapse" id="spirit">
+              <!--- meditated LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal" id="dnmeditatedSubmitter">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addspiritItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- mantras DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addmantrasItem}}
+                      </div>
+                    </div>
+                  </form>
+
+              <!--- improveSpiritpage DayNow LOGGER FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        {{> addimproveSpiritpageItem}}
+                      </div>
+                    </div>
+                  </form>
+              </div>
+    </div>
+
+  </p>
+  <hr>
+
+</template>
