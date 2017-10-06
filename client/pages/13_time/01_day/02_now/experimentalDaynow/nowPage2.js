@@ -10,7 +10,7 @@
 
 
 
-Template.daynowPage2.onRendered(function(){
+Template.daynowPage3.onRendered(function(){
 		var $myGroup = $('#myGroup');
 		$myGroup.on('show.bs.collapse','.collapse', function() {
     		$myGroup.find('.collapse.in').collapse('hide');
