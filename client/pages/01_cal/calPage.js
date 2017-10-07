@@ -136,7 +136,7 @@ Template.calPage.events({
 
 Template.calPage.helpers({
     event: function(){
-        return DevTest.find();
+        return DevTest.find({}, { sort: { createdAt: -1 } });
     }
 });
 

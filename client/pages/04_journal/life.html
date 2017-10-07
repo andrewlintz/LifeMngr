@@ -21,6 +21,9 @@
           {{> adddayHeadlineItem}}
         </div>
         <div class="col-sm-12">
+          {{> addjotItem}}
+        </div>
+        <div class="col-sm-12">
           {{> adddayStoryItem}}
         </div>
       </div>
@@ -32,6 +35,15 @@
 <!-- End of dayStory card #1 -->
 </template>
 
+<!--  Start of Add jot Item #2 -->
+
+<template name="addjotItem">
+    <form>
+      <input type="text" class="form-control" placeholder="What are your jot" name="jotitemName">
+    </form>
+</template>
+
+<!-- End of Add jot Item #2 -->
 
 <!-- Start of Add dayHeadline Item #2 -->
 
@@ -57,6 +69,14 @@
 
 
 
+<!-- Start of Retrieve jot Item #3 -->
+<template name="jotItem"> 
+
+      <input type="text" value="{{jotitemName}}" name="jotItem">
+      [<a href="#" class="delete-jotitem">  Delete </a>]
+</template>
+
+<!-- End of jot Item #3 -->
 
 <!-- Start of Retrieve dayHeadline Item #3 -->
 <template name="dayHeadlineItem"> 

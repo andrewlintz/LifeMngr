@@ -9,6 +9,8 @@ import './life.html';
 
 
 Template.pastdayslogger.helpers({
+    jotEach() {
+        return Agenda.find( { jotitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     dayHeadlineEach() {
         return DevTest.find( { dayHeadlineitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
     dayStoryEach() {
@@ -17,6 +19,46 @@ Template.pastdayslogger.helpers({
 
 
 ///// EVENTS /////
+
+////////* Start of jot Events  *//////
+
+
+Template.addjotItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get value from form element
+    const target = event.target;
+    const jotitemName = target.jotitemName.value;
+    
+    // Insert a jot item into the collection
+    Meteor.call('jotitemName.insert', jotitemName);
+
+    // Clear form
+    target.jotitemName.value = '';
+    },
+});
+
+Template.jotItem.events({
+    // events go here
+    'click .delete-jotitem'(){
+     Meteor.call('jotitemName.remove', this._id);
+    },
+
+    'keyup [name=jotItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var jotItem = $(event.target).val();
+        Meteor.call('updateListItem', documentId, jotItem);
+        }
+    },
+});
+
+////////* End of jot Events *//////
+
 
 ////////* Start of dayHeadline Events *//////
 
