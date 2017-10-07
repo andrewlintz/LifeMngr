@@ -1,4 +1,4 @@
-'./daynow2.html'
+'./daynow.html'
 
 
 ///// HELPERS /////

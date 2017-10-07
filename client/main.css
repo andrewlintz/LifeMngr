@@ -1,45 +1,3 @@
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
- 
-#wrapper.toggled {
-    padding-left: 250px;
-}
- 
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
- 
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
- 
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
- 
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
 /* Top Navbar Styles */
 .navbar {
 /*
@@ -184,36 +142,6 @@ height: 25px;
 
 
 
-/*  panel  */ 
-
-.panel-heading2 {
-  color: #fff;
-  background-color: #255b7a;
-  border-color: #255b7a;
-  padding: 10px 15px;
-  border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding: 10px 20px;
-}
-
-.list-group-item:first-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  background-color: #f2f7fb;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #3c7596;
-  border-color: #3c7596
-}
-
-
-
-
 
 
 
@@ -224,9 +152,7 @@ height: 25px;
     color: #FFFFFF;
 }
 
-H1 {
-    color: #315481;
-}
+
 
 header { 
   max-height: 50px;
@@ -269,6 +195,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e9f7', end
 
 
 
+h1 {
+    color: #315481;
+}
+
 .fill-height {
     min-height: 100%;
     height:auto !important; /* cross-browser */
@@ -281,6 +211,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e9f7', end
     font-size: 30px;
     color: white;
 }
+
 
 hr {
    display: block;
@@ -296,6 +227,21 @@ hr {
    border: none;
    border-top: 1px solid #aaaaaa;
    border-bottom: 1px solid #ffffff;
+}
+
+/*correcting Fullcalendar HR dividing bar that lacks a defined witdth of 100% */
+hr.fc-divider {
+  height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 2px;
+  /* height is unreliable across browsers, so use padding */
+  border-width: 1px 0;
+}
+
+/*Correting Fullcandar "today's" Background color*/
+.fc-unthemed .fc-today {
+  background: #ffffff;
 }
 
 
@@ -339,19 +285,31 @@ hr {
 
 
 
-/*correcting Fullcalendar HR dividing bar that lacks a defined witdth of 100% */
-hr.fc-divider {
-  height: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 2px;
-  /* height is unreliable across browsers, so use padding */
-  border-width: 1px 0;
+/*  panel  */ 
+
+.panel-heading2 {
+  color: #fff;
+  background-color: #255b7a;
+  border-color: #255b7a;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding: 10px 20px;
 }
 
-/*Correting Fullcandar "today's" Background color*/
-.fc-unthemed .fc-today {
-  background: #ffffff;
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: #f2f7fb;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #3c7596;
+  border-color: #3c7596
 }
 
 
