@@ -39,7 +39,12 @@
 
 <template name="addjotItem">
     <form>
-      <input type="text" class="form-control" placeholder="What are your jot" name="jotitemName">
+      <div class=input-group>
+        <input type="text" class="form-control" placeholder="Quick Jot" name="jotitemName">
+        <span class="input-group-btn">
+          <button id="submtPost" type="submit" class="glyphicon glyphicon-plus-sign btn btn-secondary"></button>
+        </span>
+      </div>
     </form>
 </template>
 
