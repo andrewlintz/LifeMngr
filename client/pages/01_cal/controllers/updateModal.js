@@ -1,2 +1,1 @@
-import '../components/updateModal.html'
-
+import '../components/updateModal.html';

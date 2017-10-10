@@ -1,23 +1,20 @@
 <template name="updateModal">
-    <div class="modal fade in updateModal" id="umodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade in updateModal" id="uModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <form id="update-event">
             <div class="modal-dialog">
                 <div class="modal-content">
-
                     <div class="modal-header">
+                        <span>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title text-info">Edit Event2</h4>
+                        <h4 class="modal-title text-info">Edit Event</h4>
+                    </span>
                     </div>
-
                     <div class="modal-body">
                         <div class="row">
-
                             <div class="col-sm-12">
-
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="title" value="{{title}}"/>
                                 </div>
-
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -34,15 +31,65 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <textarea class="form-control" rows="4" name="description">{{description}}</textarea>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="public-item btn btn-primary">Edit Event</button>
+                                <!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
 
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <form id="update-event">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-info">Edit Event</h4>
+                    </span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="title" value="{{title}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group datetimepicker">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                <input class="set-due-date form-control" type="text" name="start" value="{{start}}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group datetimepicker">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                <input class="set-due-date form-control" type="text" name="end" value="{{end}}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4" name="description">{{description}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="public-item btn btn-primary">Edit Event</button>
@@ -51,5 +98,72 @@
             </div>
         </form>
     </div>
+  </div>
+</div>
 
+</template>
+
+
+<template name="tempholdspace_for_updateModel">
+<!--   
+
+
+-->
+</template>
+
+<template name="tempholdspace_for_createModel">
+    <!--
+<div class="modal fade in up" id="uModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        
+        <form id="new-event">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-info">Create Event</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="title" placeholder="Add new Event"/>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="input-group datetimepicker">
+                                                <button type="button" class="btn btn-info" name="now" id="NowTime">Now</button>        
+                                            </div>
+                                        </div>
+                                            <div class="col-md-5">
+                                                <div class="input-group datetimepicker">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                    <input class="set-due-date form-control" type="text" name="start" id="startTime"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="input-group datetimepicker">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                    <input class="set-due-date form-control" type="text" name="end" id="endTime"/>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" name="description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="public-item btn btn-primary">Create Event</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    -->
 </template>

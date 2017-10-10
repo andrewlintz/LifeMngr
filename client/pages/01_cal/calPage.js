@@ -2,6 +2,10 @@ import { DevTest } from '../../../lib/collections/collections.js';
 
 import './cal.html';
 
+////////////////////////////////
+// BELOW IS THE CALENDAR VIEW //
+////////////////////////////////
+
 Template.body.rendered = function () {
     var fc = this.$('.fc');
     this.autorun(function () {
@@ -10,7 +14,11 @@ Template.body.rendered = function () {
     });
 };
 
-Template.calendarEdit.helpers({
+////////////////////////////////////////
+// BELOW IS THE CALENDAR VIEW HELPERS //
+////////////////////////////////////////
+
+Template.calendarView.helpers({
     events: function(){
         var fc = $('.fc');
         return function (start, end, tz, callback) {
@@ -85,10 +93,9 @@ Template.calendarEdit.helpers({
             	}
     		},
     		eventClick: function(event, element) {
-        		$(".updateModal").show();
+        		$('.updateModal').modal('show');
         		$('#calendar').fullCalendar('updateEvent', event);
-
-    		}
+    		},
         };
     }
 });
@@ -105,6 +112,10 @@ Template.calPage.onRendered(function(){
         format: 'YYYY-MM-DD H:mm:ss'
     });
 });
+
+//////////////////////////////////////////////////////
+// BELOW IS THE CREATE EVENT MODAL LAUNCHING BUTTON //
+//////////////////////////////////////////////////////
 
 Template.calPage.events({
     'submit #new-event': function(event){
@@ -134,6 +145,10 @@ Template.calPage.events({
     }
 });
 
+//////////////////////////////////
+// BELOW IS THE EVENTS LIST APP //
+//////////////////////////////////
+
 Template.calPage.helpers({
     event: function(){
         //below is the code that retrieves the last 24hrs && sorting in decending order //
@@ -160,6 +175,11 @@ Template.eventList.events({
         Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
     }
 });
+
+
+/////////////////////////////////////
+// BELOW IS THE UPDATE EVENT MODAL //
+/////////////////////////////////////
 
 Template.calPage.events({
     'submit #update-event': function(event){
