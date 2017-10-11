@@ -97,23 +97,15 @@ Template.calendarView.helpers({
                 $('#calendar').fullCalendar('changeView', 'agendaDay');
             	}
     		},           
-/*
-    		eventClick: function(title, start, end, jsEvent, element) {
-                $('#eventTitle').val("purple"+'title');
-                $('#startTime').val(start);
-                $('#endTime').val(end);
-        		$('.updateModal').modal('show');
-        		$('#calendar').fullCalendar('updateEvent', event);
-                console.log(title);
-    		},
-*/
+
             eventClick: function(title, start, end, jsEvent, element) {    
                 $('#eventTitle').val(title.title);
-                $('#startTime').val(this.start);
-                $('#endTime').val(this.end); 
+                $('#startTime').val(title.start);
+                $('#endTime').val(title.end); 
+                $('#eventDescription').val(title.description); 
                 $('.updateModal').modal('show');
                 $('#calendar').fullCalendar('updateEvent', event);
-                console.log(this.start);    
+                console.log(title.start);    
             },
         };
     }
@@ -178,8 +170,8 @@ Template.calPage.helpers({
 
         // below is the code to fetch all, and correctly limiting the results to 5 //
         // return DevTest.find({}, {sort:{createdAt: -1}, limit: 5});  //
-    }
-});
+        },
+    });
 
 Template.eventList.events({
     'click .delete': function(event){
@@ -188,10 +180,14 @@ Template.eventList.events({
         Meteor.call('deleteEvent', id);
     },
 
-    'click .update': function(e){
-        e.preventDefault();
-        $(".updateModal").show();
-        Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
+    'click .update': function(title, start, end, jsEvent, element){
+        event.preventDefault();
+        $('#eventTitle').val(this.title);
+        $('#startTime').val(this.start);
+        $('#endTime').val(this.end); 
+        $('#eventDescription').val(this.description); 
+        $(".updateModal").modal("show");
+       // Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
     }
 });
 
@@ -199,13 +195,7 @@ Template.eventList.events({
 /////////////////////////////////////
 // BELOW IS THE UPDATE EVENT MODAL //
 /////////////////////////////////////
-Template.calPage.helpers({   
-    myEventClick: function() {
-        return function(calEvent, jsEvent, view) {
-            alert("Event clicked: "+calEvent.title);
-        }
-    },
-});
+
 
 Template.calPage.events({
     'submit #update-event': function(event){
@@ -220,6 +210,6 @@ Template.calPage.events({
         event.target.start.value = "";
         event.target.end.value = "";
         event.target.description.value = "";
-        $("#uModal").modal("hide");
+        $(".updateModal").modal("hide");
     },
 });
