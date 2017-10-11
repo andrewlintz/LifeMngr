@@ -21,9 +21,9 @@ Template.body.rendered = function () {
 Template.calendarView.helpers({
     events: function(){
         var fc = $('.fc');
-        return function (start, end, tz, callback) {
+        return function (title, start, end, tz, callback) {
             //subscribe only to specified date range
-            Meteor.subscribe('events', start, end, function () {
+            Meteor.subscribe('events', title, start, end, function () {
                 //trigger event rendering when collection is downloaded
                 fc.fullCalendar('refetchEvents');
             });
@@ -40,6 +40,9 @@ Template.calendarView.helpers({
         };
     },
 
+
+
+    // Start of calendar options
     options: function() {
         return {
             id: 'myid2',
@@ -67,10 +70,12 @@ Template.calendarView.helpers({
             defaultTimedEventDuration: '00:15:00', 
         //START from https://usingfullcalendar.wordpress.com/2016/03/31/creating-a-fullcalendar-event-interactively/
 
+        // Make possible to respond to clicks and selections
             selectable: true,
             selectHelper: true,
 
-       	// My tweaking over what is below
+       	// This is the callback that will be triggered when a selection is made.
+        // It gets start and end date/time as part of its arguments
        		select: function(start, end, jsEvent, view) {
        	// Ties Click time/date to the DateTimePicker Input Field	
        	// Specifically helped by http://jsfiddle.net/mccannf/AzmJv/16/	
@@ -91,11 +96,25 @@ Template.calendarView.helpers({
                 $('#calendar').fullCalendar('gotoDate', date);
                 $('#calendar').fullCalendar('changeView', 'agendaDay');
             	}
-    		},
-    		eventClick: function(event, element) {
+    		},           
+/*
+    		eventClick: function(title, start, end, jsEvent, element) {
+                $('#eventTitle').val("purple"+'title');
+                $('#startTime').val(start);
+                $('#endTime').val(end);
         		$('.updateModal').modal('show');
         		$('#calendar').fullCalendar('updateEvent', event);
+                console.log(title);
     		},
+*/
+            eventClick: function(title, start, end, jsEvent, element) {    
+                $('#eventTitle').val(title.title);
+                $('#startTime').val(this.start);
+                $('#endTime').val(this.end); 
+                $('.updateModal').modal('show');
+                $('#calendar').fullCalendar('updateEvent', event);
+                console.log(this.start);    
+            },
         };
     }
 });
@@ -180,6 +199,13 @@ Template.eventList.events({
 /////////////////////////////////////
 // BELOW IS THE UPDATE EVENT MODAL //
 /////////////////////////////////////
+Template.calPage.helpers({   
+    myEventClick: function() {
+        return function(calEvent, jsEvent, view) {
+            alert("Event clicked: "+calEvent.title);
+        }
+    },
+});
 
 Template.calPage.events({
     'submit #update-event': function(event){
