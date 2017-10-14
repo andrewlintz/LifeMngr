@@ -21,10 +21,12 @@
           {{> adddayHeadlineItem}}
         </div>
         <div class="col-sm-12">
-          {{> addjotItem}}
-        </div>
-        <div class="col-sm-12">
           {{> adddayStoryItem}}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          {{> addjotItem}}
         </div>
       </div>
       <hr>
@@ -35,12 +37,22 @@
 <!-- End of dayStory card #1 -->
 </template>
 
-<!--  Start of Add jot Item #2 -->
 
-<template name="addjotItem">
+
+
+
+
+
+
+
+
+
+<!-- Start of Add dayHeadline Item #2 -->
+
+<template name="adddayHeadlineItem">
     <form>
       <div class=input-group>
-        <input type="text" class="form-control" placeholder="Quick Jot" name="jotitemName">
+        <input type="text" class="form-control" placeholder="Day's Highlights" name="dayHeadlineitemName">
         <span class="input-group-btn">
           <button id="submtPost" type="submit" class="glyphicon glyphicon-plus-sign btn btn-secondary"></button>
         </span>
@@ -48,40 +60,45 @@
     </form>
 </template>
 
-<!-- End of Add jot Item #2 -->
-
-<!-- Start of Add dayHeadline Item #2 -->
-
-<template name="adddayHeadlineItem">
-    <form>
-        <input type="text" class="form-control" placeholder="Day's Highlights" name="dayHeadlineitemName">
-    </form>
-</template>
-
-<!-- End of Add Keyword Item #2 -->
+<!-- End of Add dayHeadline Item #2 -->
 
 <!-- Start of Add dayStory Item #2 -->
 
 <template name="adddayStoryItem">
     <form>
+      <div class="buttonwrapper">
         <textarea type="text" class="form-control" rows="3" placeholder="The Story of Your Day! New" name="dayStoryitemName"></textarea>
-        <button id="submtPost" type="submit" class="btn btn-sm btn-default">Submit</button>
+        <button id="submtPost" type="submit" class="submitbutton">Submit</button>     
+      </div>
     </form>
 </template>
 
-<!-- End of Add Keyword Item #2 -->
+<!-- End of Add dayStory Item #2 -->
 
 
+<!--  Start of Add jotItem #2 -->
 
-
-<!-- Start of Retrieve jot Item #3 -->
-<template name="jotItem"> 
-
-      <input type="text" value="{{jotitemName}}" name="jotItem">
-      [<a href="#" class="delete-jotitem">  Delete </a>]
+<template name="addjotItem">
+    <form>
+      <div class=input-group>
+        <input type="text" class="form-control" placeholder="Jot yo thoght" name="jotitemName">
+        <span class="input-group-btn">
+          <button id="submtPost" type="submit" class="glyphicon glyphicon-plus-sign btn btn-secondary"></button>
+        </span>
+      </div>
+      <div class="buttonwrapper">
+        <textarea type="text" class="form-control" rows="3" placeholder="Mo Deets on yo Jot" name="jotDescriptionitemName"></textarea>
+        <button id="submtPost" type="submit" class="submitbutton">Submit</button>     
+      </div>
+    </form>
 </template>
 
-<!-- End of jot Item #3 -->
+<!-- End of Add jotItem #2 -->
+
+
+
+
+
 
 <!-- Start of Retrieve dayHeadline Item #3 -->
 <template name="dayHeadlineItem"> 
@@ -99,7 +116,30 @@
       [<a href="#" class="delete-dayStoryitem">  Delete </a>]
 </template>
 
-<!-- End of dayStory Item #3 -->
+<!-- End of Retrieve dayStory Item #3 -->
+
+
+<!-- Start of Retrieve jot Item #3 -->
+<template name="jotItem"> 
+
+      <input type="text" value="{{jotitemName}}: {{jotDescriptionitemName}}" name="jotItem">
+      [<a href="#" class="delete-jotitem">  Delete </a>]
+</template>
+
+<!-- End of Add jotItem #3 -->
+
+<!-- Start of Retrieve jotDescription Item #3 -->
+<template name="jotDescriptionItem"> 
+
+      <input type="text" value="" name="jotDescriptionItem">
+      [<a href="#" class="delete-jotDescriptionitem">  Delete </a>]
+</template>
+
+<!-- End of Retrieve jotDescription Item #3 -->
+
+
+
+
 
 
 

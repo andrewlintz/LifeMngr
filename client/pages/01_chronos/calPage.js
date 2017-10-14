@@ -2,6 +2,16 @@ import { DevTest } from '../../../lib/collections/collections.js';
 
 import './cal.html';
 
+Template.calPage.onRendered(function(){
+    var fc = this.$('.fc');
+    this.autorun(function () {
+        //1) trigger event re-rendering when the collection is changed in any way
+        //2) find all, because we've already subscribed to a specific range
+        DevTest.find();
+        fc.fullCalendar('refetchEvents');
+    });
+});
+
 ////////////////////////////////
 // BELOW IS THE CALENDAR VIEW //
 ////////////////////////////////
@@ -105,24 +115,13 @@ Template.calendarView.helpers({
                 $('#eventDescription').val(title.description); 
                 $('.updateModal').modal('show');
                 $('#calendar').fullCalendar('updateEvent', event);
-                console.log(title.start);    
+                console.log(title._id);    
             },
         };
     }
 });
 
-Template.calPage.onRendered(function(){
-    var fc = this.$('.fc');
-    this.autorun(function () {
-        //1) trigger event re-rendering when the collection is changed in any way
-        //2) find all, because we've already subscribed to a specific range
-        DevTest.find();
-        fc.fullCalendar('refetchEvents');
-    });
-    this.$('.datetimepicker').datetimepicker({
-        format: 'YYYY-MM-DD H:mm:ss'
-    });
-});
+
 
 //////////////////////////////////////////////////////
 // BELOW IS THE CREATE EVENT MODAL LAUNCHING BUTTON //
@@ -130,13 +129,19 @@ Template.calPage.onRendered(function(){
 
 Template.calPage.events({
     'submit #new-event': function(event){
+        // Prevent default browser form submit
         event.preventDefault();
+
+        // Get value from form element
         var title = event.target.title.value;
         var start = event.target.start.value;
         var end = event.target.end.value;
         var description = event.target.description.value;
 
-        Meteor.call("addEvent", title, start, end, description);
+        // Insert a spirit item into the collection
+        Meteor.call('addEvent.insert', title, start, end, description);
+        
+        // Clear form & closes modal
         event.target.title.value = "";
         event.target.start.value = "";
         event.target.end.value = "";
@@ -187,6 +192,7 @@ Template.eventList.events({
         $('#endTime').val(this.end); 
         $('#eventDescription').val(this.description); 
         $(".updateModal").modal("show");
+        console.log("nipples")
        // Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
     }
 });
@@ -198,18 +204,26 @@ Template.eventList.events({
 
 
 Template.calPage.events({
-    'submit #update-event': function(event){
+    'submit #update-event': function(event, title, _id){
+        // Prevent default browser form submit
         event.preventDefault();
-        var title = event.target.title.value;
-        var start = event.target.start.value;
-        var end = event.target.end.value;
-        var description = event.target.description.value;
+        var tid = $('#eventTitle').data(this.id);
+        
+        // Get value from form element
+        console.log("2nd "+this._id);
+        var updatetitle = event.target.updatetitle.value;
+        //var start = event.target.start.value;
+        //var end = event.target.end.value;
+        var updatedescription = event.target.updatedescription.value;
 
-        Meteor.call("updateEvent", title, start, end, description);
-        event.target.title.value = "";
-        event.target.start.value = "";
-        event.target.end.value = "";
-        event.target.description.value = "";
+        // Insert a spirit item into the collection
+        Meteor.call("updateEvent", updatetitle, updatedescription);
+        
+        // Clear form & closes modal
+        event.target.updatetitle.value = "";
+        //event.target.start.value = "";
+        //event.target.end.value = "";
+        event.target.updatedescription.value = "";
         $(".updateModal").modal("hide");
     },
 });
