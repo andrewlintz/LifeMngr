@@ -126,8 +126,19 @@
 <!-- Start of Retrieve Spirit Item #3 -->
 <template name="spiritItem">	
 
-    	<input type="text" value="{{spirititemName}}" name="spiritItem">
-    	[<a href="#" class="delete-spirititem">	Delete </a>]
+	<li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{spirititemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-spirititem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
 <!-- End of Spirit Item #3 -->
