@@ -634,14 +634,24 @@
 <!-- End of Add vision Item #2 -->
 
 <!-- Start of Retrieve vision Item #3 -->
-<template name="visionItem">	
+<template name="visionItem"> 
 
-    	<input type="text" value="{{visionitemName}}" name="visionItem">
-    	[<a href="#" class="delete-visionitem">	Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{visionitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-visionitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of vision Item #3 -->
-
+<!-- End of Retrieve vision Item #3 -->
 <!-- Start of Add opportunity Item #2 -->
 
 <template name="addopportunityItem">
@@ -656,11 +666,22 @@
 <!-- Start of Retrieve opportunity Item #3 -->
 <template name="opportunityItem"> 
 
-      <input type="text" value="{{opportunityitemName}}" name="opportunityItem">
-      [<a href="#" class="delete-opportunityitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{opportunityitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-opportunityitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of opportunity Item #3 -->
+<!-- End of Retrieve opportunity Item #3 -->
 
 <!-- Start of Add mission Item #2 -->
 
@@ -676,11 +697,22 @@
 <!-- Start of Retrieve mission Item #3 -->
 <template name="missionItem"> 
 
-      <input type="text" value="{{missionitemName}}" name="missionItem">
-      [<a href="#" class="delete-missionitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{missionitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-missionitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of mission Item #3 -->
+<!-- End of Retrieve mission Item #3 -->
 
 <!-- Start of Add goal Item #2 -->
 
@@ -696,11 +728,22 @@
 <!-- Start of Retrieve goal Item #3 -->
 <template name="goalItem"> 
 
-      <input type="text" value="{{goalitemName}}" name="goalItem">
-      [<a href="#" class="delete-goalitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{goalitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-goalitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of goal Item #3 -->
+<!-- End of Retrieve goal Item #3 -->
 
 <!-- Start of Add strategy Item #2 -->
 
@@ -716,11 +759,22 @@
 <!-- Start of Retrieve strategy Item #3 -->
 <template name="strategyItem"> 
 
-      <input type="text" value="{{strategyitemName}}" name="strategyItem">
-      [<a href="#" class="delete-strategyitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{strategyitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-strategyitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of strategy Item #3 -->
+<!-- End of Retrieve strategy Item #3 -->
 
 <!-- Start of Add todos Item #2 -->
 
@@ -736,11 +790,22 @@
 <!-- Start of Retrieve todos Item #3 -->
 <template name="todosItem"> 
 
-      <input type="text" value="{{todositemName}}" name="todosItem">
-      [<a href="#" class="delete-todositem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{todositemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-todositem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of todos Item #3 -->
+<!-- End of Retrieve todos Item #3 -->
 
 <!-- Start of Add accomplishments Item #2 -->
 
@@ -756,11 +821,22 @@
 <!-- Start of Retrieve accomplishments Item #3 -->
 <template name="accomplishmentsItem"> 
 
-      <input type="text" value="{{accomplishmentsitemName}}" name="accomplishmentsItem">
-      [<a href="#" class="delete-accomplishmentsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{accomplishmentsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-accomplishmentsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of accomplishments Item #3 -->
+<!-- End of Retrieve accomplishments Item #3 -->
 
 <!-- Start of Add successes Item #2 -->
 
@@ -776,11 +852,22 @@
 <!-- Start of Retrieve successes Item #3 -->
 <template name="successesItem"> 
 
-      <input type="text" value="{{successesitemName}}" name="successesItem">
-      [<a href="#" class="delete-successesitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{successesitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-successesitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of successes Item #3 -->
+<!-- End of Retrieve successes Item #3 -->
 
 <!-- Start of Add failure Item #2 -->
 
@@ -796,11 +883,22 @@
 <!-- Start of Retrieve failure Item #3 -->
 <template name="failureItem"> 
 
-      <input type="text" value="{{failureitemName}}" name="failureItem">
-      [<a href="#" class="delete-failureitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{failureitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-failureitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of failure Item #3 -->
+<!-- End of Retrieve failure Item #3 -->
 
 <!-- Start of Add strengths Item #2 -->
 
@@ -816,11 +914,22 @@
 <!-- Start of Retrieve strengths Item #3 -->
 <template name="strengthsItem"> 
 
-      <input type="text" value="{{strengthsitemName}}" name="strengthsItem">
-      [<a href="#" class="delete-strengthsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{strengthsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-strengthsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of strengths Item #3 -->
+<!-- End of Retrieve strengths Item #3 -->
 
 <!-- Start of Add weaknesses Item #2 -->
 
@@ -836,11 +945,22 @@
 <!-- Start of Retrieve weaknesses Item #3 -->
 <template name="weaknessesItem"> 
 
-      <input type="text" value="{{weaknessesitemName}}" name="weaknessesItem">
-      [<a href="#" class="delete-weaknessesitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{weaknessesitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-weaknessesitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of weaknesses Item #3 -->
+<!-- End of Retrieve weaknesses Item #3 -->
 
 <!-- Start of Add goodhabits Item #2 -->
 
@@ -856,11 +976,22 @@
 <!-- Start of Retrieve goodhabits Item #3 -->
 <template name="goodhabitsItem"> 
 
-      <input type="text" value="{{goodhabitsitemName}}" name="goodhabitsItem">
-      [<a href="#" class="delete-goodhabitsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{goodhabitsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-goodhabitsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of goodhabits Item #3 -->
+<!-- End of Retrieve goodhabits Item #3 -->
 
 <!-- Start of Add badhabits Item #2 -->
 
@@ -876,11 +1007,22 @@
 <!-- Start of Retrieve badhabits Item #3 -->
 <template name="badhabitsItem"> 
 
-      <input type="text" value="{{badhabitsitemName}}" name="badhabitsItem">
-      [<a href="#" class="delete-badhabitsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{badhabitsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-badhabitsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of badhabits Item #3 -->
+<!-- End of Retrieve badhabits Item #3 -->
 
 <!-- Start of Add values Item #2 -->
 
@@ -896,11 +1038,22 @@
 <!-- Start of Retrieve values Item #3 -->
 <template name="valuesItem"> 
 
-      <input type="text" value="{{valuesitemName}}" name="valuesItem">
-      [<a href="#" class="delete-valuesitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{valuesitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-valuesitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of values Item #3 -->
+<!-- End of Retrieve values Item #3 -->
 
 <!-- Start of Add wants Item #2 -->
 
@@ -916,11 +1069,22 @@
 <!-- Start of Retrieve wants Item #3 -->
 <template name="wantsItem"> 
 
-      <input type="text" value="{{wantsitemName}}" name="wantsItem">
-      [<a href="#" class="delete-wantsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{wantsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-wantsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of wants Item #3 -->
+<!-- End of Retrieve wants Item #3 -->
 
 <!-- Start of Add problems Item #2 -->
 
@@ -936,11 +1100,22 @@
 <!-- Start of Retrieve problems Item #3 -->
 <template name="problemsItem"> 
 
-      <input type="text" value="{{problemsitemName}}" name="problemsItem">
-      [<a href="#" class="delete-problemsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{problemsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-problemsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of problems Item #3 -->
+<!-- End of Retrieve problems Item #3 -->
 
 <!-- Start of Add career Item #2 -->
 
@@ -956,11 +1131,22 @@
 <!-- Start of Retrieve career Item #3 -->
 <template name="careerItem"> 
 
-      <input type="text" value="{{careeritemName}}" name="careerItem">
-      [<a href="#" class="delete-careeritem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{careeritemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-careeritem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of career Item #3 -->
+<!-- End of Retrieve career Item #3 -->
 
 <!-- Start of Add projects Item #2 -->
 
@@ -976,11 +1162,22 @@
 <!-- Start of Retrieve projects Item #3 -->
 <template name="projectsItem"> 
 
-      <input type="text" value="{{projectsitemName}}" name="projectsItem">
-      [<a href="#" class="delete-projectsitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{projectsitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-projectsitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of projects Item #3 -->
+<!-- End of Retrieve projects Item #3 -->
 
 <!-- Start of Add improveAgendapage Item #2 -->
 
@@ -996,11 +1193,22 @@
 <!-- Start of Retrieve improveAgendapage Item #3 -->
 <template name="improveAgendapageItem"> 
 
-      <input type="text" value="{{improveAgendapageitemName}}" name="improveAgendapageItem">
-      [<a href="#" class="delete-improveAgendapageitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{improveAgendapageitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-improveAgendapageitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of improveAgendapage Item #3 -->
+<!-- End of Retrieve improveAgendapage Item #3 -->
 
 
 

@@ -104,11 +104,23 @@
 
 <!-- Start of Retrieve whenWoke Item #3 -->
 <template name="whenWokeItem"> 
-      <input type="text" value="{{wakeuptime}}" name="whenWokeItem">
-      [<a href="#" class="delete-wakeuptimeitem">  Delete </a>]
+
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{whenWokeitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-whenWokeitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of whenWoke Item #3 -->
+<!-- End of Retrieve whenWoke Item #3 -->
 
 
 <!-- Start of Add outofBed Item #2 -->
@@ -138,11 +150,22 @@
 <!-- Start of Retrieve outofBed Item #3 -->
 <template name="outofBedItem"> 
 
-      <input type="text" value="{{outofBedtime}}" name="outofBedItem">
-      [<a href="#" class="delete-outofBeditem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{outofBeditemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-outofBeditem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of outofBed Item #3 -->
+<!-- End of Retrieve outofBed Item #3 -->
 
 
 

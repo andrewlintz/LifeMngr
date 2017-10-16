@@ -168,7 +168,7 @@ body {
   min-height: 600px;
 */
 
-/* Below is Dev Environment CSS */
+/* Below is Dev Environment CSS 
 
 background: rgba(241,142,153,1);
 background: -moz-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
@@ -178,9 +178,9 @@ background: -o-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, 
 background: -ms-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 background: linear-gradient(to bottom, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f18e99', endColorstr='#52e6fa', GradientType=0 );
+*/
 
-
-/* Below is Live Production CSS 
+/* Below is Live Production CSS */
 
 background: rgba(198,233,247,1);
 background: -moz-linear-gradient(top, rgba(198,233,247,1) 0%, rgba(73,162,189,1) 82%, rgba(188,224,238,1) 100%);
@@ -191,7 +191,7 @@ background: -ms-linear-gradient(top, rgba(198,233,247,1) 0%, rgba(73,162,189,1) 
 background: linear-gradient(to bottom, rgba(198,233,247,1) 0%, rgba(73,162,189,1) 82%, rgba(188,224,238,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e9f7', endColorstr='#bce0ee', GradientType=0 );
 
-*/
+
 
   font-family: sans-serif;
   height: 100%;

@@ -120,11 +120,22 @@
 <!-- Start of Retrieve fitnesslog Item #3 -->
 <template name="fitnesslogItem"> 
 
-      <input type="text" value="{{fitnesslogitemName}}" name="fitnesslogItem">
-      [<a href="#" class="delete-fitnesslogitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{fitnesslogitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-fitnesslogitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of fitnesslog Item #3 -->
+<!-- End of Retrieve fitnesslog Item #3 -->
 
 <!-- Start of Add fitnessprogram Item #2 -->
 
@@ -140,11 +151,22 @@
 <!-- Start of Retrieve fitnessprogram Item #3 -->
 <template name="fitnessprogramItem"> 
 
-      <input type="text" value="{{fitnessprogramitemName}}" name="fitnessprogramItem">
-      [<a href="#" class="delete-fitnessprogramitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{fitnessprogramitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-fitnessprogramitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of fitnessprogram Item #3 -->
+<!-- End of Retrieve fitnessprogram Item #3 -->
 
 <!-- Start of Add improveFitpage Item #2 -->
 
@@ -160,9 +182,20 @@
 <!-- Start of Retrieve improveFitpage Item #3 -->
 <template name="improveFitpageItem"> 
 
-      <input type="text" value="{{improveFitpageitemName}}" name="improveFitpageItem">
-      [<a href="#" class="delete-improveFitpageitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{improveFitpageitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-improveFitpageitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of improveFitpage Item #3 -->
+<!-- End of Retrieve improveFitpage Item #3 -->
 

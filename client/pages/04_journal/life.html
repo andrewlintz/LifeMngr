@@ -103,17 +103,39 @@
 <!-- Start of Retrieve dayHeadline Item #3 -->
 <template name="dayHeadlineItem"> 
 
-      <input type="text" value="{{dayHeadlineitemName}}" name="dayHeadlineItem">
-      [<a href="#" class="delete-dayHeadlineitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{dayHeadlineitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-dayHeadlineitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of dayHeadline Item #3 -->
+<!-- End of Retrieve dayHeadline Item #3 -->
 
 <!-- Start of Retrieve dayStory Item #3 -->
 <template name="dayStoryItem"> 
 
-      <input type="text" value="{{dayStoryitemName}}" name="dayStoryItem">
-      [<a href="#" class="delete-dayStoryitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{dayStoryitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-dayStoryitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
 <!-- End of Retrieve dayStory Item #3 -->
@@ -122,17 +144,39 @@
 <!-- Start of Retrieve jot Item #3 -->
 <template name="jotItem"> 
 
-      <input type="text" value="{{jotitemName}}: {{jotDescriptionitemName}}" name="jotItem">
-      [<a href="#" class="delete-jotitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{jotitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-jotitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
-<!-- End of Add jotItem #3 -->
+<!-- End of Retrieve jot Item #3 -->
 
 <!-- Start of Retrieve jotDescription Item #3 -->
 <template name="jotDescriptionItem"> 
 
-      <input type="text" value="" name="jotDescriptionItem">
-      [<a href="#" class="delete-jotDescriptionitem">  Delete </a>]
+  <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a type="button" href="#" class="update">{{jotDescriptionitemName}}</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-jotDescriptionitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </h4>
+        <p class="list-group-item-text">{{description}}</p>
+    </li>
 </template>
 
 <!-- End of Retrieve jotDescription Item #3 -->
