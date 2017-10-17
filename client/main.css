@@ -178,8 +178,8 @@ background: -o-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, 
 background: -ms-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 background: linear-gradient(to bottom, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f18e99', endColorstr='#52e6fa', GradientType=0 );
-*/
 
+*/
 /* Below is Live Production CSS */
 
 background: rgba(198,233,247,1);

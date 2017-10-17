@@ -179,10 +179,10 @@ Template.calPage.helpers({
     });
 
 Template.eventList.events({
-    'click .delete': function(event){
+    'click .delete-event': function(event){
         event.preventDefault();
-        id = this._id;
-        Meteor.call('deleteEvent', id);
+        var documentId = this._id;
+        Meteor.call('deleteEvent.remove', documentId);
     },
 
     'click .update': function(title, start, end, jsEvent, element){
