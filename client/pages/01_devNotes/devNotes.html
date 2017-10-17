@@ -4,9 +4,18 @@
 <!-- Start of LOSbuglog Card #1-->
 
 
-<div class="panel-primary col-sm-6">
+<div class="panel-primary col-sm-12">
 	<div class="panel-heading2" for="inputLOSbuglog">
-	Bug log</div>
+	Bug log
+    <div class="pull-right">
+      <label class="hide-completed">
+      <input type="checkbox" />
+      Hide Completed Bugs
+      </label>
+    </div>
+  </div>
+
+
 
 <div class="list-group">
 			<ul class="list-group-item">
@@ -33,42 +42,10 @@
 
 <!-- End of LOSbuglog card #1 -->
 
-<!-- Start of LOSdevTodo Card #1-->
-
-
-<div class="panel-primary col-sm-6">
-	<div class="panel-heading2" for="inputLOSdevTodo">
-	Dev To Do</div>
-
-<div class="list-group">
-			<ul class="list-group-item">
-			{{> addLOSdevTodoItem}}
-	<p></p>	 
-  			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSdevTodo" aria-expanded="false" aria-controls="collapseLOSdevTodo">
-    			LOSdevTodo Card:
-  					</button>
-			</p>
-				<div class="collapse" id="collapseLOSdevTodo">
-					<div class="list-group">
-							<ul class="list-group-item">
-  						{{#each LOSdevTodoEach}}
-								{{> LOSdevTodoItem}}
-  						{{/each}}
-  						</ul>
-					</div>
-				</div>	
-			</ul>
-	</div>
-</div>
-
-
-<!-- End of LOSdevTodo card #1 -->
-
 <!-- Start of LOSfeatureRequest Card #1-->
 
 
-<div class="panel-primary col-sm-6">
+<div class="panel-primary col-sm-12">
 	<div class="panel-heading2" for="inputLOSfeatureRequest">
 	Feature Request</div>
 
@@ -98,6 +75,38 @@
 <!-- End of LOSfeatureRequest card #1 -->
 
 
+<!-- Start of LOSdevTodo Card #1-->
+
+
+<div class="panel-primary col-sm-12">
+  <div class="panel-heading2" for="inputLOSdevTodo">
+  Dev To Do</div>
+
+<div class="list-group">
+      <ul class="list-group-item">
+      {{> addLOSdevTodoItem}}
+  <p></p>  
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSdevTodo" aria-expanded="false" aria-controls="collapseLOSdevTodo">
+          LOSdevTodo Card:
+            </button>
+      </p>
+        <div class="collapse" id="collapseLOSdevTodo">
+          <div class="list-group">
+              <ul class="list-group-item">
+              {{#each LOSdevTodoEach}}
+                {{> LOSdevTodoItem}}
+              {{/each}}
+              </ul>
+          </div>
+        </div>  
+      </ul>
+  </div>
+</div>
+
+
+<!-- End of LOSdevTodo card #1 -->
+
 </template>
 
 
@@ -118,6 +127,7 @@
         Bug Log:
         <input type="text" class="form-control" placeholder="Wat's up with LOS?" name="LOSbuglogitemName">
     </form>
+
 </template>
 
 <!-- End of Add Keyword Item #2 -->
@@ -125,19 +135,29 @@
 <!-- Start of Retrieve LOSbuglog Item #3 -->
 <template name="LOSbuglogItem"> 
 
-  <li class="list-group-item">
-        <h4 class="list-group-item-heading">
-            <div class="row">
-                <div class="col-sm-10">
-                    <a type="button" href="#" class="update">{{LOSbuglogitemName}}</a>
-                </div>
-                <div class="col-sm-2">
-                    <a href="#" class="btn btn-default delete pull-right"><span class="delete-LOSbuglogitem glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
-                </div>
-            </div>
-        </h4>
-        <p class="list-group-item-text">{{description}}</p>
+
+
+    <li class="{{#if checked}}checked{{/if}}  list-group-item">
+      <div class="row">
+        <div class="col-sm-2">          
+          <label class="control control--checkbox">
+          <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+          <div class="control__indicator"></div>
+          </label>
+        </div>
+
+        <div class="col-sm-8">
+          <span type="text" checked="{{checked}}">{{LOSbuglogitemName}}</span>
+        </div>
+
+        <div class="col-sm-2">
+          <a href="#" class="btn btn-default delete pull-right">
+            <span class="delete-LOSbuglogitem glyphicon glyphicon-trash text-danger"></span>
+          </a>
+        </div>
+      </div>
     </li>
+
 </template>
 
 <!-- End of Retrieve LOSbuglog Item #3 -->

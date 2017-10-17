@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { ReactiveDict } from 'meteor/reactive-dict';
 import { DevNotes } from '../../../lib/collections/collections.js';
 
 import './devNotes.html';
@@ -8,6 +9,12 @@ import './devNotes.html';
 
 Template.devNotesPage.helpers({
 	LOSbuglogEach() {
+        const instance = Template.instance();
+        if (instance.state.get('hideCompleted')) {
+            // If hide completed is checked, filter tasks
+            return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, { checked: { $ne: true } }, {sort: {createdAt: -1}}); 
+        }
+        // Otherwise, return all of the tasks
         return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 	LOSdevTodoEach() {
         return DevNotes.find( { LOSdevTodoitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
@@ -17,7 +24,9 @@ Template.devNotesPage.helpers({
 
 
 
-
+Template.devNotesPage.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+});
 
 
 ////////* Events *//////
@@ -43,6 +52,13 @@ Template.addLOSbuglogItem.events({
 });
 
 Template.LOSbuglogItem.events({
+    'change .hide-completed input'(event, instance) {
+    instance.state.set('hideCompleted', event.target.checked);
+  },
+    'click .toggle-checked'(){
+    // Set the checked property to the opposite of its current value
+    Meteor.call('LOSbuglogitemName.setChecked', this._id, !this.checked);
+  },
     // events go here
     'click .delete-LOSbuglogitem'(){
      Meteor.call('LOSbuglogitemName.remove', this._id);
