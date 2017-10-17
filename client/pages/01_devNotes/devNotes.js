@@ -16,10 +16,16 @@ Template.devNotesPage.helpers({
         }
         // Otherwise, return all of the tasks
         return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-	LOSdevTodoEach() {
-        return DevNotes.find( { LOSdevTodoitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 	LOSfeatureRequestEach() {
+        const instance = Template.instance();
+        if (instance.state.get('hideCompleted')) {
+            // If hide completed is checked, filter tasks
+            return DevNotes.find( { LOSfeatureRequestitemName: {$exists: true}}, { checked: { $ne: true } }, {sort: {createdAt: -1}}); 
+        }
+        // Otherwise, return all of the tasks
         return DevNotes.find( { LOSfeatureRequestitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+        LOSdevTodoEach() {
+        return DevNotes.find( { LOSdevTodoitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
 
@@ -77,6 +83,55 @@ Template.LOSbuglogItem.events({
 
 ////////* End of LOSbuglog Events *//////
 
+
+
+////////* Start of LOSfeatureRequest Events *//////
+
+
+Template.addLOSfeatureRequestItem.events({
+  'submit form': function(event){
+    // Prevent default browser form submit
+    event.preventDefault();
+    
+    // Get value from form element
+    const target = event.target;
+    const LOSfeatureRequestitemName = target.LOSfeatureRequestitemName.value;
+    
+    // Insert a LOSfeatureRequest item into the collection
+    Meteor.call('LOSfeatureRequestitemName.insert', LOSfeatureRequestitemName);
+
+    // Clear form
+    target.LOSfeatureRequestitemName.value = '';
+    },
+});
+
+Template.LOSfeatureRequestItem.events({
+    'click .toggle-checked'(){
+    // Set the checked property to the opposite of its current value
+    Meteor.call('LOSfeatureRequestitemName.setChecked', this._id, !this.checked);
+    },
+    // events go here
+    'click .delete-LOSfeatureRequestitem'(){
+     Meteor.call('LOSfeatureRequestitemName.remove', this._id);
+    },
+
+    'keyup [name=LOSfeatureRequestItem]': function(event){
+    if(event.which == 13 || event.which == 27){
+        $(event.target).blur();
+    } else {
+        var documentId = this._id;
+        var LOSfeatureRequestItem = $(event.target).val();
+        Meteor.call('updateLOSfeatureRequestItem', documentId, LOSfeatureRequestItem);
+        }
+    },
+});
+
+////////* End of LOSfeatureRequest Events *//////
+
+
+
+
+
 ////////* Start of LOSdevTodo Events *//////
 
 
@@ -115,42 +170,3 @@ Template.LOSdevTodoItem.events({
 });
 
 ////////* End of LOSdevTodo Events *//////
-
-////////* Start of LOSfeatureRequest Events *//////
-
-
-Template.addLOSfeatureRequestItem.events({
-  'submit form': function(event){
-    // Prevent default browser form submit
-    event.preventDefault();
-    
-    // Get value from form element
-    const target = event.target;
-    const LOSfeatureRequestitemName = target.LOSfeatureRequestitemName.value;
-    
-    // Insert a LOSfeatureRequest item into the collection
-    Meteor.call('LOSfeatureRequestitemName.insert', LOSfeatureRequestitemName);
-
-    // Clear form
-    target.LOSfeatureRequestitemName.value = '';
-    },
-});
-
-Template.LOSfeatureRequestItem.events({
-    // events go here
-    'click .delete-LOSfeatureRequestitem'(){
-     Meteor.call('LOSfeatureRequestitemName.remove', this._id);
-    },
-
-    'keyup [name=LOSfeatureRequestItem]': function(event){
-    if(event.which == 13 || event.which == 27){
-        $(event.target).blur();
-    } else {
-        var documentId = this._id;
-        var LOSfeatureRequestItem = $(event.target).val();
-        Meteor.call('updateLOSfeatureRequestItem', documentId, LOSfeatureRequestItem);
-        }
-    },
-});
-
-////////* End of LOSfeatureRequest Events *//////
