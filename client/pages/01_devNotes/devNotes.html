@@ -22,11 +22,13 @@
 			{{> addLOSbuglogItem}}
 	<p></p>	 
   			<p>
-  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSbuglog" aria-expanded="false" aria-controls="collapseLOSbuglog">
+  					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseLOSbuglog" aria-expanded="true" aria-controls="collapseLOSbuglog">
     			LOSbuglog Card:
   					</button>
 			</p>
-				<div class="collapse" id="collapseLOSbuglog">
+        <!-- below div is temporary to keep the aria from collapsing -->
+        <div>
+				<!-- <div class="collapse" id="collapseLOSbuglog"> -->
 					<div class="list-group">
 							<ul class="list-group-item">
   						{{#each LOSbuglogEach}}
@@ -147,9 +149,11 @@
         </div>
 
         <div class="col-sm-8">
-          <span type="text" checked="{{checked}}">{{LOSbuglogitemName}}</span>
+          <span type="text" checked="{{checked}}">{{LOSbuglogitemName}} is {{documentId}} {{rating}}</span>
         </div>
-
+       
+       <span class="rateit" id="add-rating" data-rateit-value="{{rating}}"></span>
+        
         <div class="col-sm-2">
           <a href="#" class="btn btn-default delete pull-right">
             <span class="delete-LOSbuglogitem glyphicon glyphicon-trash text-danger"></span>
@@ -242,3 +246,13 @@
 </template>
 
 <!-- End of Retrieve LOSdevTodo Item #3 -->
+
+
+
+<!-- Start RATINGS TEMPATE --
+<template name="rating">
+  is rated {{rating}}: 
+  <div class="rateit" data-rateit-value="{{rating}}"></div>
+</template>
+
+-- END of RATINGS Tempate --> 

@@ -92,7 +92,7 @@ Template.calendarView.helpers({
         // Below is the Trick that correctly return whether or not user selects allDay or specific time on the calendar
         // Answer sourced from here: https://stackoverflow.com/questions/29780273/fullcalendar-select-check-if-allday
                 var allDay2 = !start.hasTime() && !end.hasTime();
-                    console.log("This is " + allDay2)
+                    console.log("This is " + allDay2);
 
         /* switch string to boolean : https://stackoverflow.com/questions/14757994/jquery-fullcalendar-change-allday-criteria-to-check-for-string-instead-of-bool
                 if(event.allDay === true){
