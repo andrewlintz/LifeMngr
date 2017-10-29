@@ -34,12 +34,7 @@ Template.devNotesPage.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
 });
 
-////////* Rendering *///////
 
-Template.LOSbuglogItem.rendered = function () {
-    // at .created() time, it's too early to run rateit(), so run it at rendered()
-    this.$('.rateit').rateit();
-  };
 
 ////////* Events *//////
 
@@ -64,14 +59,7 @@ Template.addLOSbuglogItem.events({
 });
 
 Template.LOSbuglogItem.events({
-    'click .rateit'(){
-        console.log("you clicked on the stars!")
-        const target = event.target;
-        var documentId = this._id;
-        var rating = $('#add-rating').rateit('value');  // that's how you fetch the rating
-        console.log(documentId+" is rated as a "+rating);
-        Meteor.call('LOSbuglogRatings.insert', documentId, rating);
-    },
+
     'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
@@ -184,3 +172,25 @@ Template.LOSdevTodoItem.events({
 });
 
 ////////* End of LOSdevTodo Events *//////
+
+
+///////* Start of RATING EVENTS */////////
+Template.rating.events({
+    'click .rateit': function(e,template){
+     var rating = template.$('.rateit').rateit('value');
+     console.log(rating);
+     
+     var documentId = this._id;
+     console.log(documentId);
+
+     Meteor.call('LOSbuglogRatings.insert', documentId, rating);
+  }
+
+});
+
+////////* Rendering *///////
+
+Template.rating.rendered = function () {
+    // at .created() time, it's too early to run rateit(), so run it at rendered()
+    this.$('.rateit').rateit();
+  };

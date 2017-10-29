@@ -148,11 +148,11 @@
           </label>
         </div>
 
-        <div class="col-sm-8">
-          <span type="text" checked="{{checked}}">{{LOSbuglogitemName}} is {{documentId}} {{rating}}</span>
+        <div class="col-sm-5">
+          <span type="text" checked="{{checked}}">{{LOSbuglogitemName}} is {{_id}} at {{rating}}</span>
         </div>
-       
-       <span class="rateit" id="add-rating" data-rateit-value="{{rating}}"></span>
+
+        {{> rating}}
         
         <div class="col-sm-2">
           <a href="#" class="btn btn-default delete pull-right">
@@ -248,11 +248,10 @@
 <!-- End of Retrieve LOSdevTodo Item #3 -->
 
 
-
-<!-- Start RATINGS TEMPATE --
+<!-- Start RATINGS TEMPATE -->
 <template name="rating">
-  is rated {{rating}}: 
-  <div class="rateit" data-rateit-value="{{rating}}"></div>
+  <div class="col-sm-3">
+    <span class="rateit" id="add-rating" data-rateit-value="{{rating}}"></span>
+  </div>
 </template>
-
--- END of RATINGS Tempate --> 
+<!-- END of RATINGS Tempate --> 
