@@ -15,7 +15,7 @@ Template.devNotesPage.helpers({
             return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, { checked: { $ne: true } }, {sort: {createdAt: -1}}); 
         }
         // Otherwise, return all of the tasks
-        return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
+        return DevNotes.find( { LOSbuglogitemName: {$exists: true}}, {sort: {createdAt: -1}}); },        
 	LOSfeatureRequestEach() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
@@ -24,7 +24,7 @@ Template.devNotesPage.helpers({
         }
         // Otherwise, return all of the tasks
         return DevNotes.find( { LOSfeatureRequestitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
-        LOSdevTodoEach() {
+    LOSdevTodoEach() {
         return DevNotes.find( { LOSdevTodoitemName: {$exists: true}}, {sort: {createdAt: -1}}); },
 });
 
@@ -33,6 +33,7 @@ Template.devNotesPage.helpers({
 Template.devNotesPage.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
 });
+
 
 
 ////////* Events *//////
@@ -58,6 +59,7 @@ Template.addLOSbuglogItem.events({
 });
 
 Template.LOSbuglogItem.events({
+
     'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
@@ -170,3 +172,25 @@ Template.LOSdevTodoItem.events({
 });
 
 ////////* End of LOSdevTodo Events *//////
+
+
+///////* Start of RATING EVENTS */////////
+Template.rating.events({
+    'click .rateit': function(e,template){
+     var rating = template.$('.rateit').rateit('value');
+     console.log(rating);
+     
+     var documentId = this._id;
+     console.log(documentId);
+
+     Meteor.call('LOSbuglogRatings.insert', documentId, rating);
+  }
+
+});
+
+////////* Rendering *///////
+
+Template.rating.rendered = function () {
+    // at .created() time, it's too early to run rateit(), so run it at rendered()
+    this.$('.rateit').rateit();
+  };
