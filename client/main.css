@@ -178,6 +178,7 @@ background: -o-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, 
 background: -ms-linear-gradient(top, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 background: linear-gradient(to bottom, rgba(241,142,153,1) 0%, rgba(56,3,9,1) 18%, rgba(82,230,250,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f18e99', endColorstr='#52e6fa', GradientType=0 );
+
 */
 
 /* Below is Live Production CSS */
@@ -380,7 +381,7 @@ input{
   padding-left: 30px;
   margin-bottom: 15px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 /* Hide default browser input */
@@ -510,4 +511,21 @@ input{
 }
 .select select:disabled ~ .select__arrow {
   border-top-color: #ccc;
+}
+
+
+/* RATE IT CSS OVERWRITE */ 
+
+.rateit {
+  display: -moz-inline-box;
+  display: inline-block;
+  position: relative;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  cursor: pointer;
 }
