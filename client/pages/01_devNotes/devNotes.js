@@ -177,12 +177,9 @@ Template.LOSdevTodoItem.events({
 ///////* Start of RATING EVENTS */////////
 Template.rating.events({
     'click .rateit': function(e,template){
-     var rating = template.$('.rateit').rateit('value');
-     console.log(rating);
-     
+     var rating = template.$('.rateit').rateit('value');     
      var documentId = this._id;
-     console.log(documentId);
-
+     
      Meteor.call('LOSbuglogRatings.insert', documentId, rating);
   }
 
