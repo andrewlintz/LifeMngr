@@ -528,4 +528,14 @@ input{
   user-select: none;
   -webkit-touch-callout: none;
   cursor: pointer;
+} 
+
+.rateit .rateit-range {
+  cursor: pointer;  
+}
+
+.rateit .rateit-selected {
+  position: absolute;
+  left: 0px;
+  cursor: pointer;
 }
