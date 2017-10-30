@@ -539,3 +539,11 @@ input{
   left: 0px;
   cursor: pointer;
 }
+
+.rateit .rateit-selected-rtl {
+  cursor: pointer;
+}
+
+.rateit .rateit-range * {
+  cursor: pointer;
+}
