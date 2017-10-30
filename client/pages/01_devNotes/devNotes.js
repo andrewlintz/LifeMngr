@@ -179,7 +179,7 @@ Template.rating.events({
     'click .rateit': function(e,template){
      var rating = template.$('.rateit').rateit('value');     
      var documentId = this._id;
-     
+     alert('You clicked this star and its rated at '+rating)
      Meteor.call('LOSbuglogRatings.insert', documentId, rating);
   }
 
