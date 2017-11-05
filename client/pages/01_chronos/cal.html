@@ -1,24 +1,24 @@
 <template name="calPage">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-12">
-				{{> calendarView eventClick=myEventClick}}
-			</div>
-			<div class="col-md-6 col-sm-12" style="overflow: scroll;">
-				{{> daynowPage}}
+			<div class="col-md-12 col-sm-12">
+				
+				{{> daynowCRUD}}
 
 				! Love the old below, Lust the new above!
 				<hr>
-				
+				{{> timesifter}}
 			</div>
-			 
+			<div class="col-md-12 col-sm-12">
+				{{> calendarView eventClick=myEventClick}}
+			</div> 
 		</div>
 	</div>
 
 
 	<div class="container">
 		<div class="row">	
-			<div class="col-md-6 col-sm-12">
+			<div class="col-md-12 col-sm-12">
                 <h3>Events App <a href="#" id="add-Event" class="create btn btn-secondary pull-right"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></h3>
 
                 <ul class="list-group">

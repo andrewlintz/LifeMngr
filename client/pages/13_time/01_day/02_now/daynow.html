@@ -1,15 +1,24 @@
 <template name="daynowPage">
 
-  <div style="overflow-x: scroll;">
+  <div>
     {{> timesifter}}
+    <div class="col-sm-12">
+      <h1 align="center"> Great Day to be alive!</h1>
+    </div>
     {{> dayshifter}} 
+    <div>
+      {{> daynowCRUD}}
+    </div>
   </div>
+</template>
+
+<template name="daynowCRUD">
   <div>
     {{> journalEntry}}
   </div>
   <p>
-    <div id="myGroup">
-        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#sleep"><i class="icon-chevron-right"></i> Sleep</button>
+    <div id="myGroup" class="col-md-12 text-center">
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#sleep"><i class="icon-chevron-right"></i>Sleep</button>
         <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#wake"><i class="icon-chevron-right"></i> Wake</button>
         <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#agenda"><i class="icon-chevron-right"></i> Agenda</button>
         <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#mind"><i class="icon-chevron-right"></i> Mind</button>
