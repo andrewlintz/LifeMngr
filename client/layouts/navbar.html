@@ -5,49 +5,32 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                 </button>
-                <a class="navbar-brand" href="/">Life.is</a><a class="navbar-brandVersion" href="/">v0.1.073</a>
+                <a class="navbar-brand" href="/">Life.is</a><a class="navbar-brandVersion" href="/">v0.1.072</a>
                 
             </div>
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" align="center">
+                    <li><a href="/cal">Journal</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Future Self<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboards<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/">Inputter</a></li>
                     <li><a href="/gyst">Gyst Dashboard</a></li>
+                </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dev/Admin<span class="caret"></span></a>
+                <ul class="dropdown-menu">
                     <li><a href="/about">About LOS</a></li>
                     <li><a href="/devNotes">Dev Notes</a></li>
                 </ul>
                     </li>
-
-                    <li><a href="/cal">Journal</a></li>
-                    
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Life<span class="caret"></span></a>
-                <ul class="dropdown-menu"> 
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/life">Life Story</a></li>
-                    <li><a href="/sleep">Sleep</a></li>
-                    <li><a href="/wake">Wake</a></li>
-                    <li><a href="/agenda">Agenda</a></li>        
-                    <li><a href="/mind">Mind</a></li>
-                    <li><a href="/hygiene">Hygiene</a></li>
-                    <li><a href="/health">Health</a></li>
-                    <li><a href="/food">Food</a></li>
-                    <li><a href="/fit">Fit</a></li>
-                    <li><a href="/time/daynow">Time</a></li>
-                    <li><a href="/money">Money</a></li>
-                    <li><a href="/place">Space | Place</a></li>
-                    <li><a href="/stuff">Stuff | Things</a></li>
-                    <li><a href="/feng">Feng</a></li>
-                    <li><a href="/people">People</a></li>
-                    <li><a href="/love">Love</a></li>
-                    <li><a href="/pet">Companion</a></li>
-                    <li><a href="/society">Society</a></li>
-                    <li><a href="/spirit">Spirit</a></li>
-
                 </ul>
-                    </li>
+                <ul class="nav navbar-nav"> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu"> 
+                    <li><a href="/profile">Account</a></li>
                     <li>
                         <a>
                             {{#if currentUser}}
@@ -59,10 +42,11 @@
                         </a>
                     </li>
                 </ul>
+                    </li>
+                </ul>
             </div>
-
         </div>
     </nav>
-
+ 
     
 </template>
