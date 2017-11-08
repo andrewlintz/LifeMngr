@@ -81,7 +81,7 @@ height: 25px;
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 150px;
+    width: 120px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -95,13 +95,23 @@ height: 25px;
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: rgb(51, 51, 51);
 }
  
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(73, 162, 189, 0.5);
+    color: rgb(51, 51, 51);
+    background: rgba(252,165,241,.5);
+    /*Regular gradients*/
+    background: -webkit-linear-gradient(left, rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    background: -moz-linear-gradient(left,  rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    -webkit-background-clip: padding-box; 
+    background-clip: padding-box; 
+    border: 1px solid #ccc; 
+    border: 1px solid rgba(0, 0, 0, .15); 
+    border-radius: 4px; 
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
 }
  
 .sidebar-nav li a:active,
@@ -166,20 +176,12 @@ height: 25px;
     text-align: left; 
     list-style: none; 
 
- /* Browser that dont support gradients*/
-background: rgba(0,119,170, 0.25);
-/*Regular gradients*/
-background: -webkit-linear-gradient(left, rgba(0,119,170, 0.5), rgba(25,170,170, 0.25));
-background: -moz-linear-gradient(left, rgba(0,119,170, 0.5), rgba(25,170,170, 0.25));
+    /* Browser that dont support gradients*/
+    background: rgba(252,165,241,.5);
+    /*Regular gradients*/
+    background: -webkit-linear-gradient(left, rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    background: -moz-linear-gradient(left,  rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
 
- /* Browser that dont support gradients
-background: #f5f7fa;
-/*Regular gradients
-background: -webkit-linear-gradient(top, #f5f7fa, #c3cfe2);
-background: -moz-linear-gradient(top, #f5f7fa, #c3cfe2);
-
-    /* below is just transparent white */
-    /* background-color: rgba(255, 255, 255, 0.5); */
     -webkit-background-clip: padding-box; 
     background-clip: padding-box; 
     border: 1px solid #ccc; 
@@ -188,6 +190,32 @@ background: -moz-linear-gradient(top, #f5f7fa, #c3cfe2);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
 } 
+
+.dropdown-menu > li > a {
+    display: block;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: rgb(51, 51, 51);
+    white-space: nowrap;
+    padding: 3px 20px;
+}
+
+.dropdown-menu > li > a:hover {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    background: rgba(252,165,241,.5);
+    /*Regular gradients*/
+    background: -webkit-linear-gradient(left, rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    background: -moz-linear-gradient(left,  rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    -webkit-background-clip: padding-box; 
+    background-clip: padding-box; 
+    border: 1px solid #ccc; 
+    border: 1px solid rgba(0, 0, 0, .15); 
+    border-radius: 4px; 
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
+}
 
 .open > .dropdown-menu-leftside {
     display: block;
@@ -200,27 +228,19 @@ background: -moz-linear-gradient(top, #f5f7fa, #c3cfe2);
     z-index: 1000; 
     display: none; 
     float: left; 
-    min-width: 160px; 
+    min-width: 120px; 
     padding: 0px 0; 
     margin: 2px 0 0; 
     font-size: 14px; 
     text-align: left; 
     list-style: none; 
 
- /* Browser that dont support gradients*/
-background: rgba(0,119,170, 0.25);
-/*Regular gradients*/
-background: -webkit-linear-gradient(left, rgba(0,119,170, 0.5), rgba(25,170,170, 0.25));
-background: -moz-linear-gradient(left, rgba(0,119,170, 0.5), rgba(25,170,170, 0.25));
+    /* Browser that dont support gradients*/
+    background: rgba(252,165,241,.5);
+    /*Regular gradients*/
+    background: -webkit-linear-gradient(left, rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
+    background: -moz-linear-gradient(left,  rgba(245,247,250,.15) 50%, rgba(181,255,255,.35));
 
- /* Browser that dont support gradients
-background: #f5f7fa;
-/*Regular gradients
-background: -webkit-linear-gradient(top, #f5f7fa, #c3cfe2);
-background: -moz-linear-gradient(top, #f5f7fa, #c3cfe2);
-
-    /* below is just transparent white */
-    /* background-color: rgba(255, 255, 255, 0.5); */
     -webkit-background-clip: padding-box; 
     background-clip: padding-box; 
     border: 1px solid #ccc; 
@@ -237,11 +257,11 @@ background: -moz-linear-gradient(top, #f5f7fa, #c3cfe2);
     border-radius: 7px;
     padding: 1px 25px;
     margin: 10px 5px;
-    background: rgba(0,119,170, 0.10);
-    background: -webkit-linear-gradient(right, rgba(0,119,170, 0.10) 0%, rgba(25,170,170, 0.075) 80%);
-    background: -moz-linear-gradient(right, rgba(0,119,170, 0.10) 0%, rgba(25,170,170, 0.075) 80%);
-    
-
+    /* Browser that dont support gradients*/
+    background: rgba(252,165,241,.5);
+    /*Regular gradients*/
+    background: -webkit-linear-gradient(left, rgba(245,247,250,.5) 50%, rgba(181,255,255,.35));
+    background: -moz-linear-gradient(left, rgba(181,255,255,.35) 0%, rgba(245,247,250,.5) 50%, rgba(181,255,255,.35));
 }
 
 
@@ -439,6 +459,8 @@ header .hide-completed {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   background-color: #f2f7fb;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
 /* Start of Inline submit button in input field */
