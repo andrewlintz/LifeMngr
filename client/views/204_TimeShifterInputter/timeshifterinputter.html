@@ -1,0 +1,159 @@
+<template name="timeshifterinputterPage">
+
+  <p>
+    <div id="timeshifterinputterbuttonGroup" class="col-md-12 text-center">
+
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#day"><i class="icon-chevron-right"></i>Day</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="timeshifterinputterbuttonGroup" data-target="#week"><i class="icon-chevron-right"></i>Week</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#month"><i class="icon-chevron-right"></i>Month</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#quater2"><i class="icon-chevron-right"></i>Quarter</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#season"><i class="icon-chevron-right"></i>Season</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#year"><i class="icon-chevron-right"></i>Year</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#3year"><i class="icon-chevron-right"></i>3 Year</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#10year"><i class="icon-chevron-right"></i>10 Year</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-parent="#myGroup" data-target="#lifetime"><i class="icon-chevron-right"></i>Life's Big Picture</button>
+
+        
+
+<!-- Day -->
+            <div class="collapse colortest" id="day">
+              <h3><a href="/time/daynow">Day</a></h3>
+              <!--- Day Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Week -->
+            <div class="collapse colortest" id="week">
+
+
+              <!--- Week Now App Form -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        {{> weekwidget}}
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Month -->
+            <div class="collapse colortest" id="month">
+              <h3><a href="/time/monthnow">Month</a></h3>
+
+              <!--- Month Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Quarter -->
+            <div class="collapse colortest" id="quater2">
+              <h3><a href="/time/quarternow">Quarter</a></h3>
+              <!--- Quarter Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                       
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+
+<!-- Season -->
+            <div class="collapse colortest" id="season">
+              <h3><a href="/time/seasonnow">Season</a></h3>
+
+              <!--- Season Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Year -->
+            <div class="collapse colortest" id="year">
+              <h3><a href="/time/yearnow">Year</a></h3>
+
+              <!--- Year Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- 3 Year -->
+            <div class="collapse colortest" id="3year">
+              <h3><a href="/time/threeyearnow">3 Year</a></h3>
+
+              <!--- 3 Year Now App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                       
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- 10 Year -->
+            <div class="collapse colortest" id="10year">
+              <h3><a href="/time/decadenow">10 Year</a></h3>
+
+              <!--- 10 Year Now FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Life Time -->
+            <div class="collapse colortest" id="lifetime">
+                <h3><a href="/time/lifenow">Life Time Big Picture</a></h3>
+            <!--- Life Time App FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                      
+                      </div>
+                    </div>
+                  </form>
+
+            </div>
+    </div>
+
+  </p>
+  <hr>
+
+
+
+
+</template>
