@@ -15,23 +15,16 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="input-group datetimepicker">
-                                                <button type="button" class="btn btn-info" name="now" id="NowTime">Now</button>        
-                                            </div>
-                                        </div>
-                                            <div class="col-md-5">
-                                                <div class="input-group datetimepicker">
-                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                                    <input class="set-due-date form-control" type="text" name="start" id="startTime"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="input-group datetimepicker">
-                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                                    <input class="set-due-date form-control" type="text" name="end" id="endTime"/>
-                                                </div>
-                                            </div>
+                                        
+<div class="col-sm-12">
+    <div class="input-group">
+        <input type="text" class="input-sm form-control col-md-12" name="daterangeStart" value="11/17/2017 1:30 PM" id="start"/>
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control col-md-12" name="daterangeEnd" value="11/17/2017 2:30 PM" id="end"/>
+    </div>
+</div>
+
+
                                         <input type="hidden" id="apptAllDay"/>
                                     </div>
                                 </div>
