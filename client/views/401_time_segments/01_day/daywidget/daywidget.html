@@ -1,0 +1,187 @@
+<template name="daywidget">
+
+
+<!-- Planner --> 
+
+	<div class="panel panel-primary">		
+  <div class="panel-heading clickable">
+    <h3 class="panel-title">Plan</h3>
+
+  </div>
+  <div class="panel-body">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Vision of a Perfect Run Day</h3>
+    
+      </div>
+      <div class="panel-body">
+        {{> addvisionItem}}
+
+<div>
+	<ul>
+		<li>When wake up</li>
+		<li>out of bed</li>
+		<li>morning routine</li>
+		<li>Food plan to eat</li>
+		<li>exercise</li>
+	</ul>
+</div>
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Mission & Objective</h3>
+    
+      </div>
+      <div class="panel-body">
+        {{> addmissionItem}}
+      </div>
+
+					<div class="list-group">
+							<ul class="list-group-item">
+  						{{#each missionEach}}
+								{{> missionItem}}
+  						{{/each}}
+  						</ul>
+					</div>
+
+
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Strategy</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+	<div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Todo's & Obligations</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+	<div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">People to Talk To:</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Day Capture --> 
+
+<div class="panel panel-primary">		
+  <div class="panel-heading clickable">
+    <h3 class="panel-title">Capture</h3>
+
+  </div>
+  <div class="panel-body">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Übersicht</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Export</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Review Past --> 
+
+<div class="panel panel-primary">		
+  <div class="panel-heading clickable">
+  <h3 class="panel-title">Review Past</h3>
+
+  </div>
+  <div class="panel-body">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Übersicht</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">stuff</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Score --> 
+
+<div class="panel panel-primary">		
+  <div class="panel-heading clickable">
+  <h3 class="panel-title">Day's Score</h3>
+
+  </div>
+  <div class="panel-body">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">Übersicht</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading clickable panel-collapsed">
+        <h3 class="panel-title">stuff</h3>
+    
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+</div>
+</template>

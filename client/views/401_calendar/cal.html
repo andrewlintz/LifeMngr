@@ -2,12 +2,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
+
+				<div>
+   					 {{> addjotItem}}
+  				</div>
 				
-				{{> categoriesPage}}
+				<hr>
+
+				{{> timeshifterinputterPage}}
 
 				<div align="center"> Positive Affirmation Rando Widget Here </div>
+
 				<hr>
-				{{> timesifter}}
+
+				{{> categoriesPage}}
+
 			</div>
 			<div class="col-md-12 col-sm-12">
 				{{> calendarView eventClick=myEventClick}}

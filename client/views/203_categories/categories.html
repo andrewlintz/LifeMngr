@@ -1,8 +1,5 @@
 <template name="categoriesPage">
 
-  <div>
-    {{> journalEntry}}
-  </div>
   <p>
     <div id="myGroup" class="col-md-12 text-center">
         <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#sleep"><i class="icon-chevron-right"></i>Sleep</button>
@@ -71,7 +68,7 @@
 
 <!-- Wake -->
             <div class="collapse colortest" id="wake">
-              <h3><a href="/wake">Wake</a></h3>
+              <h3><a href="/wake">Wake Routine</a></h3>
 
               <!--- Wake up Time DayNow LOGGER FORMS -->
                 <p></p>
@@ -92,7 +89,19 @@
                       </div>
                     </div>
                   </form>
+                
+                <br>
+                <p></p>
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      {{> randoMidasMenta}}
+                    </div>
+                  </div>
+                </form>
               </div>
+
+              
 
 <!-- Agenda -->
             <div class="collapse colortest" id="agenda">

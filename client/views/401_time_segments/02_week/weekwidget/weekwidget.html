@@ -1,0 +1,124 @@
+<template name="weekwidget">
+
+
+
+		 <p>
+    <div id="wkwidgetGroup" class="col-md-12 text-center">
+
+        <button class="btn btn-primary dropdown" data-toggle="collapse"  data-target="#wkplan"><i class="icon-chevron-right"></i>Weekly Planner</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse" data-target="#wknow"><i class="icon-chevron-right"></i>Week Now</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse"  data-target="#wkpast"><i class="icon-chevron-right"></i>Week Review</button>
+        <button class="btn btn-primary dropdown" data-toggle="collapse"  data-target="#wkscore"><i class="icon-chevron-right"></i>Weekly Score</button>
+  	      
+
+	
+        
+
+<!-- Plan -->
+            <div class="collapse" id="wkplan">
+              <h3><a href="/time/weekplan">Weekly Planner</a></h3>
+              <!--- Weekly Planner FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        {{> weekplanPage}}
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Now -->
+            <div class="collapse" id="wknow">
+				<h3><a href="/time/weeknow">Week Now</a></h3>
+              <!--- Week Now Form -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        hi
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Review -->
+            <div class="collapse" id="wkpast">
+              <h3><a href="/time/weekpast">Week's Review</a></h3>
+
+              <!--- Week Past Review FORMS -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        {{> weekpastPage}}
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+<!-- Score -->
+            <div class="collapse" id="wkscore">
+              <h3><a href="/time/weekreview">Week's Score</a></h3>
+              <!--- Week's Score Form -->
+                <p></p>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        {{> weekreviewPage}}
+                      </div>
+                    </div>
+                  </form>
+            </div>
+    </div>
+
+  </p>
+
+Hello, below should be the code to plug in the weekly strategy thingy! If only i can get the child not close the parent. 
+
+
+<h1 data-toggle="collapse" data-target="#some-id">some heading</h1>
+          <outer-element id="some-id" class="collapse">
+            <h3 data-toggle="collapse" data-target="#some-other-id">someHeading</h3>             
+            <div id="some-other-id" class="collapse">
+              <!-- Bordered Table -->
+              <table class="table table-bordered">
+                table element 
+              </table>
+            </div> 
+          </outer-element>
+          
+          
+<h1 data-toggle="collapse" data-target="#some-id2">some heading2</h1>
+          <outer-element id="some-id2" class="collapse">
+            <h3 data-toggle="collapse" data-target="#some-other-id2">someHeading2</h3>             
+            <div id="some-other-id2" class="collapse">
+              <!-- Bordered Table -->
+              <table class="table table-bordered">
+               table element
+              </table>
+            </div>
+          </outer-element>
+
+
+
+
+</template>
+
+
+<template name="junk">
+	
+
+<!-- 
+	URLS open trying to solve issue:
+		- http://jsfiddle.net/5ntspeun/
+		- https://stackoverflow.com/questions/11476670/bootstrap-collapse-other-sections-when-one-is-expanded
+		- https://stackoverflow.com/questions/36915220/bootstrap-nested-collapsable-panels
+		- https://jsfiddle.net/4qu8qxwa/
+	Open Tabs in Sublime: 
+		- navbar.html, cal.html. daynow.html, thimeshifterinputter.html, timeshifterinputter.js, weekwidget.html, weekwidget.js, categories.html, categories.js
+
+-->
+
+
+</template>

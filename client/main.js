@@ -12,7 +12,7 @@ import { Accounts } from 'meteor/accounts-base';
 Template.registerHelper('formatDate', function(date, format) {
   // Use moment.js formatting to return a date we like (http://momentjs.com/)
   // Example: {{formatDate createdAt 'MM/DD/YYYY'}}
-  return moment(new Date(date)).format('MM/DD/YYYY');
+  return moment(new Date(date)).format('YYYY-MM-DD @ HH:MM:SS');
 }); 
 
 Now = new Date();

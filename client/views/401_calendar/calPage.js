@@ -157,8 +157,12 @@ Template.calPage.events({
         var allDay3 = (event.target.apptAllDay.value == 'true');
         var description = event.target.description.value;
 
+
+        console.log("client says: you created an event at "+start+' and ended at '+end)
+
+
         // Insert a spirit item into the collection
-        Meteor.call('addEvent.insert', title, start, end, allDay3, description);
+    //Meteor.call('addEvent.insert', title, allDay3, description);
         
         // Clear form & closes modal
         event.target.title.value = "";
@@ -187,7 +191,7 @@ Template.calPage.events({
 Template.calPage.helpers({
     event: function(){
         //below is the code that retrieves the last 24hrs && sorting in decending order //
-        return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}}, {sort:{createdAt: -1}});
+        return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}}, {sort:{start: -1}});
 
         //below is the code to fetch all the entries in the past 24hrs in starting oldest first //
         //return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}});
@@ -211,7 +215,7 @@ Template.eventList.events({
         $('#endTime').val(this.end); 
         $('#eventDescription').val(this.description); 
         $(".updateModal").modal("show");
-        console.log("nipples")
+        console.log("Client says you updated");
        // Session.$set("eventInfo", {id: this._id, title: this.title, start: this.start, end: this.end, description: this.description});
     }
 });
