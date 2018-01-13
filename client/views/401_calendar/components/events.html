@@ -3,14 +3,14 @@
         <h4 class="list-group-item-heading">
             <div class="row">
                 <div class="col-sm-10">
-                    <a type="button" href="#" class="update">{{title}}</a>
+                    <a type="button" href="#" class="update">Title: {{title}}</a>
                 </div>
                 <div class="col-sm-2">
                     <a href="#" class="btn btn-default delete-event pull-right"><span class=" glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
                 </div>
             </div>
         </h4>
-        <p>{{start}} | {{end}}</p>
-        <p class="list-group-item-text">{{description}}</p>
+        <h6>Duration: ({{formatDate start}} | {{formatDate end}})</h6>
+        <h5 class="list-group-item-text">Description: {{description}}</h5>
     </li>
 </template>

@@ -191,7 +191,7 @@ Template.calPage.events({
 Template.calPage.helpers({
     event: function(){
         //below is the code that retrieves the last 24hrs && sorting in decending order //
-        return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}}, {sort:{createdAt: -1}});
+        return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}}, {sort:{start: -1}});
 
         //below is the code to fetch all the entries in the past 24hrs in starting oldest first //
         //return DevTest.find({"createdAt":{$gt:new Date(Date.now() - 24*60*60 * 1000)}});

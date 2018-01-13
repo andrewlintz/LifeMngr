@@ -318,6 +318,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e9f7', end
   min-height: 650px;
 }
 
+html {
+    font-size: 100%;
+}
+
+p {
+    font-size: 1rem;
+}
 
 h1 {
     margin-left: 14px;
