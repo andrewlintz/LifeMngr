@@ -21,10 +21,12 @@
   z-index: 999;
 }
 .navbar-brandVersion {
-  float: left;
+  position: absolute;
   height: 50px;
-  margin-left: -39px;
-  margin-top: 33px;
+  margin-left: -63px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   font-size: 10px;
   color: #aabbdd;
   line-height: 5px;
